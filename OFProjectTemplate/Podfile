@@ -13,6 +13,6 @@ def install_pods
 end
 
 
-target 'OFProjectTemplateTests' do
+target 'OFProjectTemplate' do
   install_pods
 end
