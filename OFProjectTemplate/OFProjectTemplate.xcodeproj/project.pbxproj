@@ -166,22 +166,13 @@
 		D30CB19F1ED7F6DE000AC0BB /* OFProjectTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				D65DC8801ED825500030636D /* Application */,
-				D65DC88D1ED825500030636D /* Base */,
-				D65DC8901ED825500030636D /* Channel */,
-				D65DC8971ED825500030636D /* Home */,
-				D65DC8AA1ED825500030636D /* My */,
+				D3207FCA1ED83BEF00240DD2 /* Sections */,
 				D65DC8A61ED825500030636D /* Macro */,
 				D65DC8B31ED825500030636D /* OFFrameworks */,
-				D65DC8BE1ED825500030636D /* RemoteControl */,
 				D30CB1A31ED7F6DE000AC0BB /* AppDelegate.h */,
 				D30CB1A41ED7F6DE000AC0BB /* AppDelegate.m */,
 				D30CB1A61ED7F6DE000AC0BB /* ViewController.h */,
 				D30CB1A71ED7F6DE000AC0BB /* ViewController.m */,
-				D30CB1A91ED7F6DE000AC0BB /* Main.storyboard */,
-				D30CB1AC1ED7F6DE000AC0BB /* Assets.xcassets */,
-				D30CB1AE1ED7F6DE000AC0BB /* LaunchScreen.storyboard */,
-				D30CB1B11ED7F6DE000AC0BB /* Info.plist */,
 				D30CB1A01ED7F6DE000AC0BB /* Supporting Files */,
 			);
 			path = OFProjectTemplate;
@@ -190,6 +181,10 @@
 		D30CB1A01ED7F6DE000AC0BB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D30CB1A91ED7F6DE000AC0BB /* Main.storyboard */,
+				D30CB1AC1ED7F6DE000AC0BB /* Assets.xcassets */,
+				D30CB1AE1ED7F6DE000AC0BB /* LaunchScreen.storyboard */,
+				D30CB1B11ED7F6DE000AC0BB /* Info.plist */,
 				D30CB1A11ED7F6DE000AC0BB /* main.m */,
 			);
 			name = "Supporting Files";
@@ -202,6 +197,19 @@
 				D30CB1BC1ED7F6DE000AC0BB /* Info.plist */,
 			);
 			path = OFProjectTemplateTests;
+			sourceTree = "<group>";
+		};
+		D3207FCA1ED83BEF00240DD2 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				D65DC8BE1ED825500030636D /* RemoteControl */,
+				D65DC88D1ED825500030636D /* Base */,
+				D65DC8801ED825500030636D /* Application */,
+				D65DC8901ED825500030636D /* Channel */,
+				D65DC8971ED825500030636D /* Home */,
+				D65DC8AA1ED825500030636D /* My */,
+			);
+			name = Sections;
 			sourceTree = "<group>";
 		};
 		D65DC8801ED825500030636D /* Application */ = {
