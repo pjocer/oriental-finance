@@ -22,21 +22,21 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"遥控器";
-//    
-//    RemoteView *view = [[RemoteView alloc]initWithFrame:self.view.frame];
-//    view.backgroundColor = [UIColor whiteColor];
-//    [self.view addSubview:view];
+    
+    RemoteView *view = [[RemoteView alloc]initWithFrame:self.view.frame];
+    view.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:view];
     
 
     
     
-    UIImageView *image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"remote"]];
-    
-    [self.view addSubview:image];
-    
-    [image mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.bottom.right.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 49, 0));
-    }];
+//    UIImageView *image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"remote"]];
+//    
+//    [self.view addSubview:image];
+//    
+//    [image mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.left.bottom.right.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 49, 0));
+//    }];
 }
 
 - (void)didReceiveMemoryWarning {
