@@ -63,6 +63,8 @@
 		D30CB1B61ED7F6DE000AC0BB /* OFProjectTemplateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OFProjectTemplateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D30CB1BA1ED7F6DE000AC0BB /* OFProjectTemplateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OFProjectTemplateTests.m; sourceTree = "<group>"; };
 		D30CB1BC1ED7F6DE000AC0BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3207FC81ED82F5E00240DD2 /* OVendorMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVendorMacro.h; sourceTree = "<group>"; };
+		D3207FC91ED82FDC00240DD2 /* OEnviroment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OEnviroment.h; sourceTree = "<group>"; };
 		D3C29BC61ED7FF300030D262 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D3C29BC81ED7FF410030D262 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		D3C29BCA1ED7FF530030D262 /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
@@ -90,7 +92,7 @@
 		D65DC8A21ED825500030636D /* HomeTableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewModel.m; sourceTree = "<group>"; };
 		D65DC8A41ED825500030636D /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		D65DC8A51ED825500030636D /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
-		D65DC8A71ED825500030636D /* OFHomeMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFHomeMacro.h; sourceTree = "<group>"; };
+		D65DC8A71ED825500030636D /* OFHomeMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OFHomeMacro.h; path = ../Macro/OFHomeMacro.h; sourceTree = "<group>"; };
 		D65DC8A81ED825500030636D /* OFNotificationMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFNotificationMacros.h; sourceTree = "<group>"; };
 		D65DC8A91ED825500030636D /* OFUIkitMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFUIkitMacro.h; sourceTree = "<group>"; };
 		D65DC8AC1ED825500030636D /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
@@ -168,8 +170,8 @@
 				D65DC88D1ED825500030636D /* Base */,
 				D65DC8901ED825500030636D /* Channel */,
 				D65DC8971ED825500030636D /* Home */,
-				D65DC8A61ED825500030636D /* Macro */,
 				D65DC8AA1ED825500030636D /* My */,
+				D65DC8A61ED825500030636D /* Macro */,
 				D65DC8B31ED825500030636D /* OFFrameworks */,
 				D65DC8BE1ED825500030636D /* RemoteControl */,
 				D30CB1A31ED7F6DE000AC0BB /* AppDelegate.h */,
@@ -302,6 +304,7 @@
 		D65DC8971ED825500030636D /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				D65DC8A71ED825500030636D /* OFHomeMacro.h */,
 				D65DC8981ED825500030636D /* Controllers */,
 				D65DC89D1ED825500030636D /* Models */,
 				D65DC8A01ED825500030636D /* ViewModels */,
@@ -351,9 +354,10 @@
 		D65DC8A61ED825500030636D /* Macro */ = {
 			isa = PBXGroup;
 			children = (
-				D65DC8A71ED825500030636D /* OFHomeMacro.h */,
 				D65DC8A81ED825500030636D /* OFNotificationMacros.h */,
 				D65DC8A91ED825500030636D /* OFUIkitMacro.h */,
+				D3207FC81ED82F5E00240DD2 /* OVendorMacro.h */,
+				D3207FC91ED82FDC00240DD2 /* OEnviroment.h */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
