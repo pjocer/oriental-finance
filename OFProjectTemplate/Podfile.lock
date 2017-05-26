@@ -16,6 +16,7 @@ PODS:
     - AFNetworking/NSURLSession
   - Masonry (1.0.2)
   - MJRefresh (3.1.12)
+  - QMUIKit (1.6.0)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
   - ReactiveCocoa/Core (2.5):
@@ -31,6 +32,7 @@ DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - Masonry (~> 1.0.2)
   - MJRefresh (~> 3.1.12)
+  - QMUIKit (~> 1.6.0)
   - ReactiveCocoa (~> 2.5)
   - SDWebImage (~> 4.0.0)
 
@@ -38,9 +40,10 @@ SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  QMUIKit: 10d62af5a36b0eb16499d3c6713b37e6d4731170
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
 
-PODFILE CHECKSUM: caf7cafc44ee4727e0700325232643cf4e5bb558
+PODFILE CHECKSUM: 4d8e508716271c03dbffae2d809fbba7d4ddf22a
 
 COCOAPODS: 1.2.1
