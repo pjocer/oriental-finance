@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1310E612230C452C98D63A2C /* libPods-OFProjectTemplateTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9880D6C1C48B4EEC95DA3CA /* libPods-OFProjectTemplateTests.a */; };
+		1F6A1FCD2E092A724762E748 /* libPods-OFProjectTemplateTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F768E05650A828AB4D1F1B5D /* libPods-OFProjectTemplateTests.a */; };
 		D30CB1A21ED7F6DE000AC0BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D30CB1A11ED7F6DE000AC0BB /* main.m */; };
 		D30CB1A51ED7F6DE000AC0BB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D30CB1A41ED7F6DE000AC0BB /* AppDelegate.m */; };
 		D30CB1A81ED7F6DE000AC0BB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D30CB1A71ED7F6DE000AC0BB /* ViewController.m */; };
@@ -29,7 +29,6 @@
 
 /* Begin PBXFileReference section */
 		85BB7CD55F59C436AFA4A7C7 /* Pods-OFProjectTemplateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OFProjectTemplateTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OFProjectTemplateTests/Pods-OFProjectTemplateTests.debug.xcconfig"; sourceTree = "<group>"; };
-		B9880D6C1C48B4EEC95DA3CA /* libPods-OFProjectTemplateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OFProjectTemplateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D30CB19D1ED7F6DE000AC0BB /* OFProjectTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OFProjectTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D30CB1A11ED7F6DE000AC0BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D30CB1A31ED7F6DE000AC0BB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -44,6 +43,12 @@
 		D30CB1BA1ED7F6DE000AC0BB /* OFProjectTemplateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OFProjectTemplateTests.m; sourceTree = "<group>"; };
 		D30CB1BC1ED7F6DE000AC0BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D31927CCAF4D37B196542FE4 /* Pods-OFProjectTemplateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OFProjectTemplateTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OFProjectTemplateTests/Pods-OFProjectTemplateTests.release.xcconfig"; sourceTree = "<group>"; };
+		D3C29BC61ED7FF300030D262 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		D3C29BC81ED7FF410030D262 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		D3C29BCA1ED7FF530030D262 /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
+		D3C29BCC1ED7FF660030D262 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		D3C29BCE1ED802CF0030D262 /* libPods-OFProjectTemplateTests.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-OFProjectTemplateTests.a"; path = "../../Library/Developer/Xcode/DerivedData/OFProjectTemplate-dqaugnwwcdzknyfdcwdbvdyciqfm/Build/Products/Debug-iphonesimulator/libPods-OFProjectTemplateTests.a"; sourceTree = "<group>"; };
+		F768E05650A828AB4D1F1B5D /* libPods-OFProjectTemplateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OFProjectTemplateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1310E612230C452C98D63A2C /* libPods-OFProjectTemplateTests.a in Frameworks */,
+				1F6A1FCD2E092A724762E748 /* libPods-OFProjectTemplateTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,7 +135,12 @@
 		E2D9EF11CB7F47353EABA8EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B9880D6C1C48B4EEC95DA3CA /* libPods-OFProjectTemplateTests.a */,
+				D3C29BCE1ED802CF0030D262 /* libPods-OFProjectTemplateTests.a */,
+				D3C29BCC1ED7FF660030D262 /* libsqlite3.tbd */,
+				D3C29BCA1ED7FF530030D262 /* libz.1.tbd */,
+				D3C29BC81ED7FF410030D262 /* libc++.tbd */,
+				D3C29BC61ED7FF300030D262 /* libz.tbd */,
+				F768E05650A828AB4D1F1B5D /* libPods-OFProjectTemplateTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -187,6 +197,7 @@
 				TargetAttributes = {
 					D30CB19C1ED7F6DE000AC0BB = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 9JT2H9H8X9;
 						ProvisioningStyle = Automatic;
 					};
 					D30CB1B51ED7F6DE000AC0BB = {
@@ -428,10 +439,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9JT2H9H8X9;
 				INFOPLIST_FILE = OFProjectTemplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/**",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oriental-finance.ios.OFProjectTemplate";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/**";
 			};
 			name = Debug;
 		};
@@ -439,10 +456,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9JT2H9H8X9;
 				INFOPLIST_FILE = OFProjectTemplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/**",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oriental-finance.ios.OFProjectTemplate";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/**";
 			};
 			name = Release;
 		};
@@ -491,6 +514,7 @@
 				D30CB1C11ED7F6DE000AC0BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D30CB1C21ED7F6DE000AC0BB /* Build configuration list for PBXNativeTarget "OFProjectTemplateTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +523,7 @@
 				D30CB1C41ED7F6DE000AC0BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
