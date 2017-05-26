@@ -15,6 +15,25 @@
 		D30CB1AD1ED7F6DE000AC0BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D30CB1AC1ED7F6DE000AC0BB /* Assets.xcassets */; };
 		D30CB1B01ED7F6DE000AC0BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D30CB1AE1ED7F6DE000AC0BB /* LaunchScreen.storyboard */; };
 		D30CB1BB1ED7F6DE000AC0BB /* OFProjectTemplateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D30CB1BA1ED7F6DE000AC0BB /* OFProjectTemplateTests.m */; };
+		D65DC8C71ED825500030636D /* ApplicationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8831ED825500030636D /* ApplicationDetailsViewController.m */; };
+		D65DC8C81ED825500030636D /* ApplicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8851ED825500030636D /* ApplicationViewController.m */; };
+		D65DC8C91ED825500030636D /* ApplicationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC88A1ED825500030636D /* ApplicationTableViewCell.m */; };
+		D65DC8CA1ED825500030636D /* ApplicationView.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC88C1ED825500030636D /* ApplicationView.m */; };
+		D65DC8CB1ED825500030636D /* OFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC88F1ED825500030636D /* OFBaseViewController.m */; };
+		D65DC8CC1ED825500030636D /* ChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8931ED825500030636D /* ChannelViewController.m */; };
+		D65DC8CD1ED825500030636D /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC89A1ED825500030636D /* DetailsViewController.m */; };
+		D65DC8CE1ED825500030636D /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC89C1ED825500030636D /* HomeViewController.m */; };
+		D65DC8CF1ED825500030636D /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC89F1ED825500030636D /* HomeModel.m */; };
+		D65DC8D01ED825500030636D /* HomeTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8A21ED825500030636D /* HomeTableViewModel.m */; };
+		D65DC8D11ED825500030636D /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8A51ED825500030636D /* HomeTableViewCell.m */; };
+		D65DC8D21ED825500030636D /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8AD1ED825500030636D /* MyViewController.m */; };
+		D65DC8D31ED825500030636D /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8B21ED825500030636D /* MyView.m */; };
+		D65DC8D41ED825500030636D /* TYPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8B61ED825500030636D /* TYPagerController.m */; };
+		D65DC8D51ED825500030636D /* TYTabButtonPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8B81ED825500030636D /* TYTabButtonPagerController.m */; };
+		D65DC8D61ED825500030636D /* TYTabPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8BA1ED825500030636D /* TYTabPagerController.m */; };
+		D65DC8D71ED825500030636D /* TYTabTitleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8BD1ED825500030636D /* TYTabTitleViewCell.m */; };
+		D65DC8D81ED825500030636D /* RemoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8C11ED825500030636D /* RemoteViewController.m */; };
+		D65DC8D91ED825500030636D /* RemoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8C61ED825500030636D /* RemoteView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +68,48 @@
 		D3C29BCA1ED7FF530030D262 /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
 		D3C29BCC1ED7FF660030D262 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		D3C29BCE1ED802CF0030D262 /* libPods-OFProjectTemplateTests.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-OFProjectTemplateTests.a"; path = "../../Library/Developer/Xcode/DerivedData/OFProjectTemplate-dqaugnwwcdzknyfdcwdbvdyciqfm/Build/Products/Debug-iphonesimulator/libPods-OFProjectTemplateTests.a"; sourceTree = "<group>"; };
+		D65DC8821ED825500030636D /* ApplicationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationDetailsViewController.h; sourceTree = "<group>"; };
+		D65DC8831ED825500030636D /* ApplicationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationDetailsViewController.m; sourceTree = "<group>"; };
+		D65DC8841ED825500030636D /* ApplicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationViewController.h; sourceTree = "<group>"; };
+		D65DC8851ED825500030636D /* ApplicationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationViewController.m; sourceTree = "<group>"; };
+		D65DC8891ED825500030636D /* ApplicationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationTableViewCell.h; sourceTree = "<group>"; };
+		D65DC88A1ED825500030636D /* ApplicationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationTableViewCell.m; sourceTree = "<group>"; };
+		D65DC88B1ED825500030636D /* ApplicationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationView.h; sourceTree = "<group>"; };
+		D65DC88C1ED825500030636D /* ApplicationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationView.m; sourceTree = "<group>"; };
+		D65DC88E1ED825500030636D /* OFBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFBaseViewController.h; sourceTree = "<group>"; };
+		D65DC88F1ED825500030636D /* OFBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFBaseViewController.m; sourceTree = "<group>"; };
+		D65DC8921ED825500030636D /* ChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelViewController.h; sourceTree = "<group>"; };
+		D65DC8931ED825500030636D /* ChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelViewController.m; sourceTree = "<group>"; };
+		D65DC8991ED825500030636D /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		D65DC89A1ED825500030636D /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		D65DC89B1ED825500030636D /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		D65DC89C1ED825500030636D /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		D65DC89E1ED825500030636D /* HomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeModel.h; sourceTree = "<group>"; };
+		D65DC89F1ED825500030636D /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
+		D65DC8A11ED825500030636D /* HomeTableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewModel.h; sourceTree = "<group>"; };
+		D65DC8A21ED825500030636D /* HomeTableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewModel.m; sourceTree = "<group>"; };
+		D65DC8A41ED825500030636D /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
+		D65DC8A51ED825500030636D /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
+		D65DC8A71ED825500030636D /* OFHomeMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFHomeMacro.h; sourceTree = "<group>"; };
+		D65DC8A81ED825500030636D /* OFNotificationMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFNotificationMacros.h; sourceTree = "<group>"; };
+		D65DC8A91ED825500030636D /* OFUIkitMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFUIkitMacro.h; sourceTree = "<group>"; };
+		D65DC8AC1ED825500030636D /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
+		D65DC8AD1ED825500030636D /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
+		D65DC8B11ED825500030636D /* MyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
+		D65DC8B21ED825500030636D /* MyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
+		D65DC8B51ED825500030636D /* TYPagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYPagerController.h; sourceTree = "<group>"; };
+		D65DC8B61ED825500030636D /* TYPagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYPagerController.m; sourceTree = "<group>"; };
+		D65DC8B71ED825500030636D /* TYTabButtonPagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTabButtonPagerController.h; sourceTree = "<group>"; };
+		D65DC8B81ED825500030636D /* TYTabButtonPagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTabButtonPagerController.m; sourceTree = "<group>"; };
+		D65DC8B91ED825500030636D /* TYTabPagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTabPagerController.h; sourceTree = "<group>"; };
+		D65DC8BA1ED825500030636D /* TYTabPagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTabPagerController.m; sourceTree = "<group>"; };
+		D65DC8BB1ED825500030636D /* TYTabTitleCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTabTitleCellProtocol.h; sourceTree = "<group>"; };
+		D65DC8BC1ED825500030636D /* TYTabTitleViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTabTitleViewCell.h; sourceTree = "<group>"; };
+		D65DC8BD1ED825500030636D /* TYTabTitleViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTabTitleViewCell.m; sourceTree = "<group>"; };
+		D65DC8C01ED825500030636D /* RemoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteViewController.h; sourceTree = "<group>"; };
+		D65DC8C11ED825500030636D /* RemoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteViewController.m; sourceTree = "<group>"; };
+		D65DC8C51ED825500030636D /* RemoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteView.h; sourceTree = "<group>"; };
+		D65DC8C61ED825500030636D /* RemoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteView.m; sourceTree = "<group>"; };
 		F768E05650A828AB4D1F1B5D /* libPods-OFProjectTemplateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OFProjectTemplateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -103,6 +164,14 @@
 		D30CB19F1ED7F6DE000AC0BB /* OFProjectTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				D65DC8801ED825500030636D /* Application */,
+				D65DC88D1ED825500030636D /* Base */,
+				D65DC8901ED825500030636D /* Channel */,
+				D65DC8971ED825500030636D /* Home */,
+				D65DC8A61ED825500030636D /* Macro */,
+				D65DC8AA1ED825500030636D /* My */,
+				D65DC8B31ED825500030636D /* OFFrameworks */,
+				D65DC8BE1ED825500030636D /* RemoteControl */,
 				D30CB1A31ED7F6DE000AC0BB /* AppDelegate.h */,
 				D30CB1A41ED7F6DE000AC0BB /* AppDelegate.m */,
 				D30CB1A61ED7F6DE000AC0BB /* ViewController.h */,
@@ -131,6 +200,272 @@
 				D30CB1BC1ED7F6DE000AC0BB /* Info.plist */,
 			);
 			path = OFProjectTemplateTests;
+			sourceTree = "<group>";
+		};
+		D65DC8801ED825500030636D /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				D65DC8811ED825500030636D /* Controllers */,
+				D65DC8861ED825500030636D /* Models */,
+				D65DC8871ED825500030636D /* ViewModels */,
+				D65DC8881ED825500030636D /* Views */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		D65DC8811ED825500030636D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D65DC8821ED825500030636D /* ApplicationDetailsViewController.h */,
+				D65DC8831ED825500030636D /* ApplicationDetailsViewController.m */,
+				D65DC8841ED825500030636D /* ApplicationViewController.h */,
+				D65DC8851ED825500030636D /* ApplicationViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D65DC8861ED825500030636D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D65DC8871ED825500030636D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D65DC8881ED825500030636D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D65DC8891ED825500030636D /* ApplicationTableViewCell.h */,
+				D65DC88A1ED825500030636D /* ApplicationTableViewCell.m */,
+				D65DC88B1ED825500030636D /* ApplicationView.h */,
+				D65DC88C1ED825500030636D /* ApplicationView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D65DC88D1ED825500030636D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D65DC88E1ED825500030636D /* OFBaseViewController.h */,
+				D65DC88F1ED825500030636D /* OFBaseViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		D65DC8901ED825500030636D /* Channel */ = {
+			isa = PBXGroup;
+			children = (
+				D65DC8911ED825500030636D /* Controllers */,
+				D65DC8941ED825500030636D /* Models */,
+				D65DC8951ED825500030636D /* ViewModels */,
+				D65DC8961ED825500030636D /* Views */,
+			);
+			path = Channel;
+			sourceTree = "<group>";
+		};
+		D65DC8911ED825500030636D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D65DC8921ED825500030636D /* ChannelViewController.h */,
+				D65DC8931ED825500030636D /* ChannelViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D65DC8941ED825500030636D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D65DC8951ED825500030636D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D65DC8961ED825500030636D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D65DC8971ED825500030636D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D65DC8981ED825500030636D /* Controllers */,
+				D65DC89D1ED825500030636D /* Models */,
+				D65DC8A01ED825500030636D /* ViewModels */,
+				D65DC8A31ED825500030636D /* Views */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D65DC8981ED825500030636D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D65DC8991ED825500030636D /* DetailsViewController.h */,
+				D65DC89A1ED825500030636D /* DetailsViewController.m */,
+				D65DC89B1ED825500030636D /* HomeViewController.h */,
+				D65DC89C1ED825500030636D /* HomeViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D65DC89D1ED825500030636D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D65DC89E1ED825500030636D /* HomeModel.h */,
+				D65DC89F1ED825500030636D /* HomeModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D65DC8A01ED825500030636D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D65DC8A11ED825500030636D /* HomeTableViewModel.h */,
+				D65DC8A21ED825500030636D /* HomeTableViewModel.m */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D65DC8A31ED825500030636D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D65DC8A41ED825500030636D /* HomeTableViewCell.h */,
+				D65DC8A51ED825500030636D /* HomeTableViewCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D65DC8A61ED825500030636D /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				D65DC8A71ED825500030636D /* OFHomeMacro.h */,
+				D65DC8A81ED825500030636D /* OFNotificationMacros.h */,
+				D65DC8A91ED825500030636D /* OFUIkitMacro.h */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		D65DC8AA1ED825500030636D /* My */ = {
+			isa = PBXGroup;
+			children = (
+				D65DC8AB1ED825500030636D /* Controllers */,
+				D65DC8AE1ED825500030636D /* Models */,
+				D65DC8AF1ED825500030636D /* ViewModels */,
+				D65DC8B01ED825500030636D /* Views */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		D65DC8AB1ED825500030636D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D65DC8AC1ED825500030636D /* MyViewController.h */,
+				D65DC8AD1ED825500030636D /* MyViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D65DC8AE1ED825500030636D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D65DC8AF1ED825500030636D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D65DC8B01ED825500030636D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D65DC8B11ED825500030636D /* MyView.h */,
+				D65DC8B21ED825500030636D /* MyView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D65DC8B31ED825500030636D /* OFFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D65DC8B41ED825500030636D /* TTYPageController */,
+			);
+			path = OFFrameworks;
+			sourceTree = "<group>";
+		};
+		D65DC8B41ED825500030636D /* TTYPageController */ = {
+			isa = PBXGroup;
+			children = (
+				D65DC8B51ED825500030636D /* TYPagerController.h */,
+				D65DC8B61ED825500030636D /* TYPagerController.m */,
+				D65DC8B71ED825500030636D /* TYTabButtonPagerController.h */,
+				D65DC8B81ED825500030636D /* TYTabButtonPagerController.m */,
+				D65DC8B91ED825500030636D /* TYTabPagerController.h */,
+				D65DC8BA1ED825500030636D /* TYTabPagerController.m */,
+				D65DC8BB1ED825500030636D /* TYTabTitleCellProtocol.h */,
+				D65DC8BC1ED825500030636D /* TYTabTitleViewCell.h */,
+				D65DC8BD1ED825500030636D /* TYTabTitleViewCell.m */,
+			);
+			path = TTYPageController;
+			sourceTree = "<group>";
+		};
+		D65DC8BE1ED825500030636D /* RemoteControl */ = {
+			isa = PBXGroup;
+			children = (
+				D65DC8BF1ED825500030636D /* Controllers */,
+				D65DC8C21ED825500030636D /* Models */,
+				D65DC8C31ED825500030636D /* ViewModels */,
+				D65DC8C41ED825500030636D /* Views */,
+			);
+			path = RemoteControl;
+			sourceTree = "<group>";
+		};
+		D65DC8BF1ED825500030636D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D65DC8C01ED825500030636D /* RemoteViewController.h */,
+				D65DC8C11ED825500030636D /* RemoteViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D65DC8C21ED825500030636D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D65DC8C31ED825500030636D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D65DC8C41ED825500030636D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D65DC8C51ED825500030636D /* RemoteView.h */,
+				D65DC8C61ED825500030636D /* RemoteView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		E2D9EF11CB7F47353EABA8EC /* Frameworks */ = {
@@ -301,8 +636,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D65DC8D91ED825500030636D /* RemoteView.m in Sources */,
+				D65DC8D71ED825500030636D /* TYTabTitleViewCell.m in Sources */,
+				D65DC8CC1ED825500030636D /* ChannelViewController.m in Sources */,
+				D65DC8CD1ED825500030636D /* DetailsViewController.m in Sources */,
+				D65DC8CB1ED825500030636D /* OFBaseViewController.m in Sources */,
+				D65DC8CA1ED825500030636D /* ApplicationView.m in Sources */,
+				D65DC8D31ED825500030636D /* MyView.m in Sources */,
+				D65DC8D11ED825500030636D /* HomeTableViewCell.m in Sources */,
+				D65DC8C81ED825500030636D /* ApplicationViewController.m in Sources */,
+				D65DC8D81ED825500030636D /* RemoteViewController.m in Sources */,
+				D65DC8D01ED825500030636D /* HomeTableViewModel.m in Sources */,
+				D65DC8D51ED825500030636D /* TYTabButtonPagerController.m in Sources */,
+				D65DC8D41ED825500030636D /* TYPagerController.m in Sources */,
 				D30CB1A81ED7F6DE000AC0BB /* ViewController.m in Sources */,
+				D65DC8CE1ED825500030636D /* HomeViewController.m in Sources */,
+				D65DC8D21ED825500030636D /* MyViewController.m in Sources */,
+				D65DC8D61ED825500030636D /* TYTabPagerController.m in Sources */,
 				D30CB1A51ED7F6DE000AC0BB /* AppDelegate.m in Sources */,
+				D65DC8CF1ED825500030636D /* HomeModel.m in Sources */,
+				D65DC8C71ED825500030636D /* ApplicationDetailsViewController.m in Sources */,
+				D65DC8C91ED825500030636D /* ApplicationTableViewCell.m in Sources */,
 				D30CB1A21ED7F6DE000AC0BB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

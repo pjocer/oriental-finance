@@ -7,8 +7,15 @@
 //
 
 #import "AppDelegate.h"
+#import "OFUIkitMacro.h"
+#import "HomeViewController.h"
+#import "RemoteViewController.h"
+#import "MyViewController.h"
+#import "ApplicationViewController.h"
+#import "ChannelViewController.h"
 
-@interface AppDelegate ()
+
+@interface AppDelegate () <UITabBarControllerDelegate>
 
 @end
 
@@ -16,9 +23,60 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [self initRootViewController];
+    
     return YES;
 }
+
+
+- (void)initRootViewController {
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = self.rootController;
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+}
+
+- (UITabBarController *)rootController {
+    if (!_rootController) {
+        _rootController = [[UITabBarController alloc] init];
+        _rootController.delegate = self;
+        _rootController.tabBar.barTintColor = [UIColor whiteColor];
+        HomeViewController *home = [[HomeViewController alloc] initWithTitle:@"东方遥控宝"];
+        ChannelViewController *vc2 = [[ChannelViewController alloc] init];
+        RemoteViewController *vc3 = [[RemoteViewController alloc] init];
+        ApplicationViewController *vc4 = [[ApplicationViewController alloc] init];
+        MyViewController *vc5 = [[MyViewController alloc] init];
+        
+        UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:home];
+        UINavigationController *nav2 = [[UINavigationController alloc] initWithRootViewController:vc2];
+        UINavigationController *nav3 = [[UINavigationController alloc] initWithRootViewController:vc3];
+        UINavigationController *nav4 = [[UINavigationController alloc] initWithRootViewController:vc4];
+        UINavigationController *nav5 = [[UINavigationController alloc] initWithRootViewController:vc5];
+        
+        _rootController.viewControllers = @[ nav1, nav2, nav3, nav4, nav5 ];
+        
+        NSArray *titles = @[ @"推荐", @"频道", @"遥控器", @"应用", @"我的" ];
+        NSArray *normalImages = @[ @"tab_home_normal", @"tab_channel_normal", @"tab_remote_normal", @"tab_application_normal", @"tab_my_normal" ];
+        NSArray *selectedImages = @[ @"tab_home_selected", @"tab_channel_selected", @"tab_remote_selected", @"tab_application_selected", @"tab_my_selected" ];
+        
+        [_rootController.tabBar.items enumerateObjectsUsingBlock:^(UITabBarItem * _Nonnull item, NSUInteger idx, BOOL * _Nonnull stop) {
+            item.title = titles[idx];
+            [item setTitleTextAttributes:@{ NSForegroundColorAttributeName : HexColor(0x969696),
+                                            NSFontAttributeName : OFFont(10.0) } forState:UIControlStateNormal];
+            [item setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor colorWithRed:237/255.0 green:73/255.0 blue:25/255.0 alpha:1],
+                                            NSFontAttributeName : OFFont(10.0) } forState:UIControlStateSelected];
+            
+            UIImage *normalImage = [[UIImage imageNamed:normalImages[idx]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+            
+            UIImage *selectedImage = [[UIImage imageNamed:selectedImages[idx]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+            
+            item.image = normalImage;
+            item.selectedImage = selectedImage;
+        }];
+    }
+    return _rootController;
+}
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
