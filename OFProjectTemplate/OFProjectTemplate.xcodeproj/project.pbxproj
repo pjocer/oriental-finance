@@ -163,11 +163,11 @@
 		D30CB19F1ED7F6DE000AC0BB /* OFProjectTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				D30CB1A31ED7F6DE000AC0BB /* AppDelegate.h */,
+				D30CB1A41ED7F6DE000AC0BB /* AppDelegate.m */,
 				D3207FCA1ED83BEF00240DD2 /* Sections */,
 				D65DC8A61ED825500030636D /* Macro */,
 				D65DC8B31ED825500030636D /* OFFrameworks */,
-				D30CB1A31ED7F6DE000AC0BB /* AppDelegate.h */,
-				D30CB1A41ED7F6DE000AC0BB /* AppDelegate.m */,
 				D30CB1A01ED7F6DE000AC0BB /* Supporting Files */,
 			);
 			path = OFProjectTemplate;
@@ -197,8 +197,8 @@
 		D3207FCA1ED83BEF00240DD2 /* Sections */ = {
 			isa = PBXGroup;
 			children = (
-				D65DC8BE1ED825500030636D /* RemoteControl */,
 				D65DC88D1ED825500030636D /* Base */,
+				D65DC8BE1ED825500030636D /* RemoteControl */,
 				D65DC8801ED825500030636D /* Application */,
 				D65DC8901ED825500030636D /* Channel */,
 				D65DC8971ED825500030636D /* Home */,
