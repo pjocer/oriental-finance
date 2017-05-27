@@ -9,4 +9,7 @@
 #ifndef OFHomeMacro_h
 #define OFHomeMacro_h
 
+#define HotTableViewCellRowHeight 280
+#define VerticalVideoCellHeight (HotTableViewCellRowHeight-74)/2.f
+
 #endif /* OFHomeMacro_h */

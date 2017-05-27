@@ -9,6 +9,7 @@
 #import "HotTableViewCellViewModel.h"
 #import "VerticalVideoCollectionCell.h"
 #import "OFUIkitMacro.h"
+#import "OFHomeMacro.h"
 
 @interface HotTableViewCellViewModel ()
 
@@ -30,15 +31,15 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake((SCREEN_WIDTH-32)/3.f, (400-32)/2.f);
+    return CGSizeMake((SCREEN_WIDTH-36)/3.f, VerticalVideoCellHeight);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return 8.f;
+    return 10.f;
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    return 8.f;
+    return 10.f;
 }
 
 @end

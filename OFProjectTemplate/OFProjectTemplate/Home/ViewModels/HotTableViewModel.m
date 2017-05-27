@@ -8,6 +8,7 @@
 
 #import "HotTableViewModel.h"
 #import "HotTableViewCell.h"
+#import "OFHomeMacro.h"
 
 @interface HotTableViewModel ()
 
@@ -21,11 +22,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HotTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HotTableViewCellIdentifier forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor whiteColor];
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 400;
+    return HotTableViewCellRowHeight;
 }
 
 @end
