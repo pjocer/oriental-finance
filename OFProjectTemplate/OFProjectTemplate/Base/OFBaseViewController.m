@@ -30,10 +30,43 @@
 }
 
 - (instancetype)initWithTitle:(NSString *)title {
+    return [self initWithTitle:title navBarBtns:NavBarBtnNone];
+}
+
+- (instancetype)initWithTitle:(NSString *)title navBarBtns:(NavBarBtns)navBarBtns {
     if (self = [super init]) {
         self.title = title;
+        [self buildNavBarBtns:navBarBtns];
     }
     return self;
+}
+
+- (void)buildNavBarBtns:(NavBarBtns)btns {
+    if (btns & NavBarBtnBack) {
+        UIButton *backButton                  = [UIButton buttonWithType:UIButtonTypeCustom];
+        [backButton setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+        [backButton sizeToFit];
+        [backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+        UIBarButtonItem *backItem             = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+        UIBarButtonItem *fixItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+        fixItem.width = -10;
+        self.navigationItem.leftBarButtonItems = @[ fixItem, backItem ];
+    }
+}
+
+- (void)back {
+    @try {
+        [self.view endEditing:YES];
+    }
+    @catch (NSException *ex){
+        NSLog(@"%@", ex.reason);
+    }
+    if (self.navigationController && self.navigationController.viewControllers.count>1) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    if (self.presentingViewController) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 - (void)viewDidLoad {

@@ -8,8 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_OPTIONS(NSUInteger, NavBarBtns) {
+    NavBarBtnNone = 0,
+    NavBarBtnBack = 1UL << 0,//后退
+};
+
 @interface OFBaseViewController : UIViewController
 
 - (instancetype)initWithTitle:(NSString *)title;
+
+- (instancetype)initWithTitle:(NSString *)title
+                   navBarBtns:(NavBarBtns)navBarBtns;
+
+- (void)back;
 
 @end
