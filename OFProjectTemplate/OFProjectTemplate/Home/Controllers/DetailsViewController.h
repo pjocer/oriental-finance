@@ -12,4 +12,7 @@
 @interface DetailsViewController : OFBaseViewController
 @property (nonatomic, strong) OShowDetailsView *detailesView;
 
+@property (strong, nonatomic)UITableView *listTableView;
+
+
 @end

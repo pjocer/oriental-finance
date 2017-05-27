@@ -34,6 +34,7 @@
 		D65DC8D81ED825500030636D /* RemoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8C11ED825500030636D /* RemoteViewController.m */; };
 		D65DC8D91ED825500030636D /* RemoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8C61ED825500030636D /* RemoteView.m */; };
 		D65DC8DC1ED83A490030636D /* OShowDetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8DB1ED83A490030636D /* OShowDetailsView.m */; };
+		D65DC8E21ED94B430030636D /* CommentsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8E11ED94B430030636D /* CommentsCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,8 @@
 		D65DC8C61ED825500030636D /* RemoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteView.m; sourceTree = "<group>"; };
 		D65DC8DA1ED83A490030636D /* OShowDetailsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OShowDetailsView.h; sourceTree = "<group>"; };
 		D65DC8DB1ED83A490030636D /* OShowDetailsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OShowDetailsView.m; sourceTree = "<group>"; };
+		D65DC8E01ED94B430030636D /* CommentsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsCell.h; sourceTree = "<group>"; };
+		D65DC8E11ED94B430030636D /* CommentsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsCell.m; sourceTree = "<group>"; };
 		F768E05650A828AB4D1F1B5D /* libPods-OFProjectTemplateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OFProjectTemplateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -355,6 +358,8 @@
 				D65DC8A51ED825500030636D /* HomeTableViewCell.m */,
 				D65DC8DA1ED83A490030636D /* OShowDetailsView.h */,
 				D65DC8DB1ED83A490030636D /* OShowDetailsView.m */,
+				D65DC8E01ED94B430030636D /* CommentsCell.h */,
+				D65DC8E11ED94B430030636D /* CommentsCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -668,6 +673,7 @@
 				D65DC8CF1ED825500030636D /* HomeModel.m in Sources */,
 				D65DC8DC1ED83A490030636D /* OShowDetailsView.m in Sources */,
 				D65DC8C71ED825500030636D /* ApplicationDetailsViewController.m in Sources */,
+				D65DC8E21ED94B430030636D /* CommentsCell.m in Sources */,
 				D65DC8C91ED825500030636D /* ApplicationTableViewCell.m in Sources */,
 				D30CB1A21ED7F6DE000AC0BB /* main.m in Sources */,
 			);
@@ -810,6 +816,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9JT2H9H8X9;
 				INFOPLIST_FILE = OFProjectTemplate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -828,6 +835,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9JT2H9H8X9;
 				INFOPLIST_FILE = OFProjectTemplate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

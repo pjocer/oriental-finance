@@ -10,6 +10,8 @@
 
 @interface OShowDetailsView : UIView
 
+
+
 @property (nonatomic, strong)UIImageView *backgroundView;
 
 @property (nonatomic, strong)UIImageView *coverImage;
@@ -25,5 +27,9 @@
 @property (nonatomic, strong)UILabel *playcount;
 
 @property (nonatomic, strong)UILabel *scoreLabel;
+
+@property (nonatomic, strong)UIButton *platTVBtn;
+
+@property (nonatomic, strong)UILabel *introductionLabel;
 
 @end
