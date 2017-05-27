@@ -20,13 +20,22 @@
     self.title = @"详情";
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UIImageView *image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"xaingqing"]];
-    image.userInteractionEnabled = YES;
-    [self.view addSubview:image];
+//    UIImageView *image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"xaingqing"]];
+//    image.userInteractionEnabled = YES;
+//    [self.view addSubview:image];
+//    
+//    [image mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.top.right.bottom.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+//    }];
+    self.detailesView = [[OShowDetailsView alloc]init];
+    self.detailesView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:self.detailesView];
     
-    [image mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.right.bottom.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+    [self.detailesView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+        make.height.equalTo(@300);
     }];
+    
     
     
 }

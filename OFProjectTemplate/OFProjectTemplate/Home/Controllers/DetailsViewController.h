@@ -7,7 +7,9 @@
 //
 
 #import "OFBaseViewController.h"
+#import "OShowDetailsView.h"
 
 @interface DetailsViewController : OFBaseViewController
+@property (nonatomic, strong) OShowDetailsView *detailesView;
 
 @end
