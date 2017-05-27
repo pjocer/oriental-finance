@@ -15,6 +15,12 @@
 		D30CB1B01ED7F6DE000AC0BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D30CB1AE1ED7F6DE000AC0BB /* LaunchScreen.storyboard */; };
 		D30CB1BB1ED7F6DE000AC0BB /* OFProjectTemplateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D30CB1BA1ED7F6DE000AC0BB /* OFProjectTemplateTests.m */; };
 		D3207FCD1ED910A500240DD2 /* HomeTabContainerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FCC1ED910A500240DD2 /* HomeTabContainerViewModel.m */; };
+		D3207FD01ED91C8A00240DD2 /* HotPlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FCF1ED91C8A00240DD2 /* HotPlayController.m */; };
+		D3207FD61ED92E1A00240DD2 /* OSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FD51ED92E1A00240DD2 /* OSearchView.m */; };
+		D3207FD91ED9487200240DD2 /* HotTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FD81ED9487200240DD2 /* HotTableViewModel.m */; };
+		D3207FDC1ED9497000240DD2 /* HotTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FDB1ED9497000240DD2 /* HotTableViewCell.m */; };
+		D3207FDF1ED94C5F00240DD2 /* HotTableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FDE1ED94C5F00240DD2 /* HotTableViewCellViewModel.m */; };
+		D3E5435E1ED9505900D8898C /* VerticalVideoCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E5435D1ED9505900D8898C /* VerticalVideoCollectionCell.m */; };
 		D65DC8C71ED825500030636D /* ApplicationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8831ED825500030636D /* ApplicationDetailsViewController.m */; };
 		D65DC8C81ED825500030636D /* ApplicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8851ED825500030636D /* ApplicationViewController.m */; };
 		D65DC8C91ED825500030636D /* ApplicationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC88A1ED825500030636D /* ApplicationTableViewCell.m */; };
@@ -66,11 +72,23 @@
 		D3207FC91ED82FDC00240DD2 /* OEnviroment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OEnviroment.h; sourceTree = "<group>"; };
 		D3207FCB1ED910A500240DD2 /* HomeTabContainerViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTabContainerViewModel.h; sourceTree = "<group>"; };
 		D3207FCC1ED910A500240DD2 /* HomeTabContainerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTabContainerViewModel.m; sourceTree = "<group>"; };
+		D3207FCE1ED91C8A00240DD2 /* HotPlayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotPlayController.h; sourceTree = "<group>"; };
+		D3207FCF1ED91C8A00240DD2 /* HotPlayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotPlayController.m; sourceTree = "<group>"; };
+		D3207FD41ED92E1A00240DD2 /* OSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSearchView.h; sourceTree = "<group>"; };
+		D3207FD51ED92E1A00240DD2 /* OSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSearchView.m; sourceTree = "<group>"; };
+		D3207FD71ED9487200240DD2 /* HotTableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotTableViewModel.h; sourceTree = "<group>"; };
+		D3207FD81ED9487200240DD2 /* HotTableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotTableViewModel.m; sourceTree = "<group>"; };
+		D3207FDA1ED9497000240DD2 /* HotTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotTableViewCell.h; sourceTree = "<group>"; };
+		D3207FDB1ED9497000240DD2 /* HotTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotTableViewCell.m; sourceTree = "<group>"; };
+		D3207FDD1ED94C5F00240DD2 /* HotTableViewCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotTableViewCellViewModel.h; sourceTree = "<group>"; };
+		D3207FDE1ED94C5F00240DD2 /* HotTableViewCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotTableViewCellViewModel.m; sourceTree = "<group>"; };
 		D3C29BC61ED7FF300030D262 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D3C29BC81ED7FF410030D262 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		D3C29BCA1ED7FF530030D262 /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
 		D3C29BCC1ED7FF660030D262 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		D3C29BCE1ED802CF0030D262 /* libPods-OFProjectTemplateTests.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-OFProjectTemplateTests.a"; path = "../../Library/Developer/Xcode/DerivedData/OFProjectTemplate-dqaugnwwcdzknyfdcwdbvdyciqfm/Build/Products/Debug-iphonesimulator/libPods-OFProjectTemplateTests.a"; sourceTree = "<group>"; };
+		D3E5435C1ED9505900D8898C /* VerticalVideoCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalVideoCollectionCell.h; sourceTree = "<group>"; };
+		D3E5435D1ED9505900D8898C /* VerticalVideoCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalVideoCollectionCell.m; sourceTree = "<group>"; };
 		D65DC8821ED825500030636D /* ApplicationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationDetailsViewController.h; sourceTree = "<group>"; };
 		D65DC8831ED825500030636D /* ApplicationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationDetailsViewController.m; sourceTree = "<group>"; };
 		D65DC8841ED825500030636D /* ApplicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationViewController.h; sourceTree = "<group>"; };
@@ -329,6 +347,8 @@
 				D65DC89A1ED825500030636D /* DetailsViewController.m */,
 				D65DC89B1ED825500030636D /* HomeViewController.h */,
 				D65DC89C1ED825500030636D /* HomeViewController.m */,
+				D3207FCE1ED91C8A00240DD2 /* HotPlayController.h */,
+				D3207FCF1ED91C8A00240DD2 /* HotPlayController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -347,6 +367,10 @@
 			children = (
 				D3207FCB1ED910A500240DD2 /* HomeTabContainerViewModel.h */,
 				D3207FCC1ED910A500240DD2 /* HomeTabContainerViewModel.m */,
+				D3207FD71ED9487200240DD2 /* HotTableViewModel.h */,
+				D3207FD81ED9487200240DD2 /* HotTableViewModel.m */,
+				D3207FDD1ED94C5F00240DD2 /* HotTableViewCellViewModel.h */,
+				D3207FDE1ED94C5F00240DD2 /* HotTableViewCellViewModel.m */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -360,6 +384,12 @@
 				D65DC8DB1ED83A490030636D /* OShowDetailsView.m */,
 				D65DC8E01ED94B430030636D /* CommentsCell.h */,
 				D65DC8E11ED94B430030636D /* CommentsCell.m */,
+				D3207FD41ED92E1A00240DD2 /* OSearchView.h */,
+				D3207FD51ED92E1A00240DD2 /* OSearchView.m */,
+				D3207FDA1ED9497000240DD2 /* HotTableViewCell.h */,
+				D3207FDB1ED9497000240DD2 /* HotTableViewCell.m */,
+				D3E5435C1ED9505900D8898C /* VerticalVideoCollectionCell.h */,
+				D3E5435D1ED9505900D8898C /* VerticalVideoCollectionCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -653,28 +683,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3207FD01ED91C8A00240DD2 /* HotPlayController.m in Sources */,
 				D65DC8D91ED825500030636D /* RemoteView.m in Sources */,
 				D65DC8D71ED825500030636D /* TYTabTitleViewCell.m in Sources */,
 				D65DC8CC1ED825500030636D /* ChannelViewController.m in Sources */,
 				D65DC8CD1ED825500030636D /* DetailsViewController.m in Sources */,
 				D65DC8CB1ED825500030636D /* OFBaseViewController.m in Sources */,
 				D65DC8CA1ED825500030636D /* ApplicationView.m in Sources */,
+				D3207FDF1ED94C5F00240DD2 /* HotTableViewCellViewModel.m in Sources */,
 				D65DC8D31ED825500030636D /* MyView.m in Sources */,
 				D3207FCD1ED910A500240DD2 /* HomeTabContainerViewModel.m in Sources */,
 				D65DC8D11ED825500030636D /* HomeTableViewCell.m in Sources */,
 				D65DC8C81ED825500030636D /* ApplicationViewController.m in Sources */,
 				D65DC8D81ED825500030636D /* RemoteViewController.m in Sources */,
+				D3E5435E1ED9505900D8898C /* VerticalVideoCollectionCell.m in Sources */,
 				D65DC8D51ED825500030636D /* TYTabButtonPagerController.m in Sources */,
 				D65DC8D41ED825500030636D /* TYPagerController.m in Sources */,
 				D65DC8CE1ED825500030636D /* HomeViewController.m in Sources */,
 				D65DC8D21ED825500030636D /* MyViewController.m in Sources */,
+				D3207FD61ED92E1A00240DD2 /* OSearchView.m in Sources */,
 				D65DC8D61ED825500030636D /* TYTabPagerController.m in Sources */,
 				D30CB1A51ED7F6DE000AC0BB /* AppDelegate.m in Sources */,
+				D3207FDC1ED9497000240DD2 /* HotTableViewCell.m in Sources */,
 				D65DC8CF1ED825500030636D /* HomeModel.m in Sources */,
 				D65DC8DC1ED83A490030636D /* OShowDetailsView.m in Sources */,
 				D65DC8C71ED825500030636D /* ApplicationDetailsViewController.m in Sources */,
 				D65DC8E21ED94B430030636D /* CommentsCell.m in Sources */,
 				D65DC8C91ED825500030636D /* ApplicationTableViewCell.m in Sources */,
+				D3207FD91ED9487200240DD2 /* HotTableViewModel.m in Sources */,
 				D30CB1A21ED7F6DE000AC0BB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

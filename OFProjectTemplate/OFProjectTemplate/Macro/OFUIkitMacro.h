@@ -14,6 +14,8 @@
 #define HexColor(rgbValue) [UIColor colorWithRed:((float) ((rgbValue & 0xFF0000) >> 16)) / 255.0 green:((float) ((rgbValue & 0xFF00) >> 8)) / 255.0 blue:((float) (rgbValue & 0xFF)) / 255.0 alpha:1.0]
 #define OFFont(x) [UIFont systemFontOfSize:(x)]
 
+#define ImageNamed(name) [UIImage imageNamed:(name)]
+
 #define NAV_HEIGHT 64.0
 #define SCREEN_SCALE (1.0/[UIScreen mainScreen].scale)
 
