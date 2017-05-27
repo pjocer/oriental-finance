@@ -15,15 +15,33 @@ typedef NS_OPTIONS(NSUInteger, NavBarBtns) {
 
 @interface OFBaseViewController : UIViewController
 
+/**
+ *  是否禁用滑动返回（默认启用）
+ */
+@property (nonatomic,assign) BOOL slideBackForbidden;
+/**
+ *  是否隐藏导航栏（默认为NO）
+ */
+@property (nonatomic,assign) BOOL hideNavgationBar;
+
 - (instancetype)initWithTitle:(NSString *)title;
 
 - (instancetype)initWithTitle:(NSString *)title
                    navBarBtns:(NavBarBtns)navBarBtns;
 
-- (void)back;
+/**
+ *  需要拦截NavBar的Back Action时，重写此方法。
+ */
+- (void)back NS_REQUIRES_SUPER;
 
+/**
+ *  Show Loading Toast
+ */
 - (void)startLoading;
 
+/**
+ *  Hidden Loading Toast
+ */
 - (void)stopLoading;
 
 @end

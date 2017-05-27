@@ -8,6 +8,7 @@
 
 #import "OFBaseViewController.h"
 #import "OFUIkitMacro.h"
+#import <UINavigationController+FDFullscreenPopGesture.h>
 
 @interface OFBaseViewController ()
 
@@ -79,22 +80,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.extendedLayoutIncludesOpaqueBars = NO;
+    self.modalPresentationCapturesStatusBarAppearance = NO;
+    self.fd_interactivePopDisabled = NO;
+    self.fd_prefersNavigationBarHidden = NO;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (BOOL)fd_prefersNavigationBarHidden{
+    return self.hideNavgationBar;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (BOOL)fd_interactivePopDisabled{
+    return self.slideBackForbidden;
 }
-*/
 
 @end
