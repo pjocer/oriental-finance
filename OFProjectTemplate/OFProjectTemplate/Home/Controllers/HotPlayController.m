@@ -12,6 +12,7 @@
 #import "OSearchView.h"
 #import "HotTableViewModel.h"
 #import "HotTableViewCell.h"
+#import "DetailsViewController.h"
 
 @interface HotPlayController ()
 @property (nonatomic, strong) OSearchView *searchView;
@@ -65,6 +66,13 @@
 - (HotTableViewModel *)tableViewModel {
     if (!_tableViewModel) {
         _tableViewModel = [[HotTableViewModel alloc] init];
+        WEAKSELF
+        [_tableViewModel setDidSelectedBlock:^{
+            STRONGSELF
+            DetailsViewController *vc = [[DetailsViewController alloc] initWithTitle:@"详情" navBarBtns:NavBarBtnBack];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+        }];
     }
     return _tableViewModel;
 }

@@ -9,7 +9,6 @@
 #import "HomeViewController.h"
 #import <ReactiveCocoa.h>
 #import <Masonry.h>
-#import "DetailsViewController.h"
 #import "HomeTabContainerViewModel.h"
 #import "OFUIkitMacro.h"
 
@@ -30,22 +29,6 @@
     self.pagerController.view.frame = self.view.bounds;
     [self addChildViewController:self.pagerController];
     [self.view addSubview:self.pagerController.view];
-//    UIScrollView *hotView = [[UIScrollView alloc] init];
-//    hotView.contentSize = CGSizeMake(0, 1230);
-//    [self.view addSubview:hotView];
-//    
-//    [hotView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.left.right.bottom.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
-//    }];
-//    
-//    
-//    UIImageView *image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"shouye"]];
-//    image.frame = CGRectMake(0, 0, self.view.frame.size.width, 1230);
-//    image.userInteractionEnabled = YES;
-//    [hotView addSubview:image];
-//    
-//     UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
-//    [image addGestureRecognizer:tapGR];
 }
 
 - (void)initNavigationBar {
@@ -69,11 +52,6 @@
     
 }
 
-- (void)tapAction:(UITapGestureRecognizer *)tap {
-    DetailsViewController *vc = [[DetailsViewController alloc]init];
-    vc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:vc animated:YES];
-}
 - (UIButton *)backBtn {
     if (!_backBtn) {
         _backBtn = [UIButton buttonWithType:UIButtonTypeCustom];

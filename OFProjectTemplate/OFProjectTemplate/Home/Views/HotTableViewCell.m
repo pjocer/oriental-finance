@@ -19,6 +19,7 @@
 @property (nonatomic, strong) UILabel *gapLabel;
 @property (nonatomic, strong) UICollectionView *gridView;
 @property (nonatomic, strong) HotTableViewCellViewModel *viewModel;
+@property (nonatomic, copy) dispatch_block_t block;
 @end
 
 @implementation HotTableViewCell
@@ -43,6 +44,7 @@
         NSIndexPath *indexPath = x.second;
         DLog(@"%ld",indexPath.item);
         DLog(@"%@ --- %@ --- %s",self,self.viewModel, __func__);
+        if (_block) _block();
     }];
     return self;
 }
@@ -68,6 +70,10 @@
         make.bottom.mas_equalTo(-8);
     }];
     return self;
+}
+
+- (void)setDidSelectedBlock:(void (^)())block {
+    _block = block;
 }
 
 - (UILabel *)gapLabel {

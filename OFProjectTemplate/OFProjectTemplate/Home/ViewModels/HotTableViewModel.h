@@ -11,4 +11,6 @@
 
 @interface HotTableViewModel : NSObject <UITableViewDelegate, UITableViewDataSource>
 
+- (void)setDidSelectedBlock:(void(^)())block;
+
 @end
