@@ -356,12 +356,12 @@
 		D65DC8981ED825500030636D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D65DC8991ED825500030636D /* DetailsViewController.h */,
-				D65DC89A1ED825500030636D /* DetailsViewController.m */,
 				D65DC89B1ED825500030636D /* HomeViewController.h */,
 				D65DC89C1ED825500030636D /* HomeViewController.m */,
 				D3207FCE1ED91C8A00240DD2 /* HotPlayController.h */,
 				D3207FCF1ED91C8A00240DD2 /* HotPlayController.m */,
+				D65DC8991ED825500030636D /* DetailsViewController.h */,
+				D65DC89A1ED825500030636D /* DetailsViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

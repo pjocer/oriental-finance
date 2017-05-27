@@ -11,6 +11,7 @@
 #import "HotTableViewCellViewModel.h"
 #import "VerticalVideoCollectionCell.h"
 #import <Masonry.h>
+#import <ReactiveCocoa.h>
 
 @interface HotTableViewCell () 
 @property (nonatomic, strong) UIImageView *titleIcon;
@@ -38,6 +39,11 @@
 }
 
 - (instancetype)subscribe {
+    [[self.viewModel rac_signalForSelector:@selector(collectionView:didSelectItemAtIndexPath:) fromProtocol:@protocol(UICollectionViewDelegate)] subscribeNext:^(RACTuple *x) {
+        NSIndexPath *indexPath = x.second;
+        DLog(@"%ld",indexPath.item);
+        DLog(@"%@ --- %@ --- %s",self,self.viewModel, __func__);
+    }];
     return self;
 }
 
