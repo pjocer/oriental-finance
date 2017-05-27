@@ -22,4 +22,8 @@ typedef NS_OPTIONS(NSUInteger, NavBarBtns) {
 
 - (void)back;
 
+- (void)startLoading;
+
+- (void)stopLoading;
+
 @end
