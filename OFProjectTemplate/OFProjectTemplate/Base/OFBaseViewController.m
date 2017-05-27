@@ -15,17 +15,8 @@
 
 @implementation OFBaseViewController
 
-
-- (instancetype)initWithTitle:(NSString *)title {
-    if (self = [super init]) {
-        self.title = title;
-        [self buildNavBarBtns];
-    }
-    return self;
-}
-
-- (void)buildNavBarBtns{
-    
++ (void)initialize {
+    [super initialize];
     [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
         [UINavigationBar appearance].translucent = NO;
@@ -36,6 +27,13 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{ NSFontAttributeName : OFFont(17.0), NSForegroundColorAttributeName : [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1] }];
     
     [UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[[UISearchBar class]]];
+}
+
+- (instancetype)initWithTitle:(NSString *)title {
+    if (self = [super init]) {
+        self.title = title;
+    }
+    return self;
 }
 
 - (void)viewDidLoad {
