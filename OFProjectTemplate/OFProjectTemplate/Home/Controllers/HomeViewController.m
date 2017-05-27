@@ -7,15 +7,15 @@
 //
 
 #import "HomeViewController.h"
-#import "HomeTableViewModel.h"
 #import <ReactiveCocoa.h>
 #import <Masonry.h>
 #import "DetailsViewController.h"
+#import "HomeTabContainerViewModel.h"
+#import "OFUIkitMacro.h"
 
 @interface HomeViewController ()
-@property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) HomeTableViewModel *tableViewModel;
-
+@property (nonatomic, strong)  HomeTabContainerViewModel* viewModel;
+@property (nonatomic, strong) TYTabButtonPagerController *pagerController;
 @end
 
 @implementation HomeViewController
@@ -23,38 +23,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initNavigationBar];
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
     self.view.backgroundColor = [UIColor whiteColor];
-    
-    UIScrollView *hotView = [[UIScrollView alloc] init];
-    hotView.contentSize = CGSizeMake(0, 1230);
-    [self.view addSubview:hotView];
-    
-    [hotView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.right.bottom.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
-    }];
-    
-    
-    UIImageView *image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"shouye"]];
-    image.frame = CGRectMake(0, 0, self.view.frame.size.width, 1230);
-    image.userInteractionEnabled = YES;
-    [hotView addSubview:image];
-    
-     UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
-    [image addGestureRecognizer:tapGR];
-    
-    
+    self.pagerController.view.frame = self.view.bounds;
+    [self addChildViewController:self.pagerController];
+    [self.view addSubview:self.pagerController.view];
+//    UIScrollView *hotView = [[UIScrollView alloc] init];
+//    hotView.contentSize = CGSizeMake(0, 1230);
+//    [self.view addSubview:hotView];
 //    
-//    [image mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.right.equalTo(hotView).insets(UIEdgeInsetsMake(0, 0, 0, 0));
-//        make.top.equalTo(hotView);
-//        make.height.equalTo(@1230);
+//    [hotView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.left.right.bottom.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
 //    }];
-
-    
-    
-//    [self.tableViewModel fetchDataWithCompeletion:^(NSArray<HomeModel *> *source) {
-//        [self.tableView reloadData];
-//    }];
+//    
+//    
+//    UIImageView *image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"shouye"]];
+//    image.frame = CGRectMake(0, 0, self.view.frame.size.width, 1230);
+//    image.userInteractionEnabled = YES;
+//    [hotView addSubview:image];
+//    
+//     UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
+//    [image addGestureRecognizer:tapGR];
 }
 
 - (void)initNavigationBar {
@@ -73,13 +64,6 @@
     UIBarButtonItem *negativeSeperator2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     negativeSeperator2.width = -5;
     self.navigationItem.rightBarButtonItems = @[negativeSeperator2, buttonItem2];
-    
-    
-    
-    
-    
-    
-
 }
 - (void)setup {
     
@@ -87,9 +71,8 @@
 
 - (void)tapAction:(UITapGestureRecognizer *)tap {
     DetailsViewController *vc = [[DetailsViewController alloc]init];
-    self.hidesBottomBarWhenPushed=YES;
+    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
-    self.hidesBottomBarWhenPushed=NO;
 }
 - (UIButton *)backBtn {
     if (!_backBtn) {
@@ -100,22 +83,26 @@
     
     return _backBtn;
 }
-//- (UITableView *)tableView {
-//    if (!_tableView) {
-//        _tableView.delegate = self.tableViewModel;
-//        _tableView.dataSource = self.tableViewModel;
-//    }
-//    return _tableView;
-//}
-//
-//- (HomeTableViewModel *)tableViewModel {
-//    if (!_tableViewModel) {
-//        _tableViewModel = [[HomeTableViewModel alloc] init];
-//        _tableViewModel.didSelectedBlock = ^(HomeModel *model) {
-//            NSLog(@"aaaa");
-//        };
-//    }
-//    return _tableViewModel;
-//}
+- (TYTabButtonPagerController *)pagerController {
+    if (!_pagerController) {
+        _pagerController = [TYTabButtonPagerController new];
+        _pagerController.dataSource = self.viewModel;
+        _pagerController.barStyle = TYPagerBarStyleProgressElasticView;
+        _pagerController.cellSpacing = 0;
+        _pagerController.progressColor = [UIColor orangeColor];
+        _pagerController.normalTextColor = HexColor(0x969696);
+        _pagerController.selectedTextColor = [UIColor orangeColor];
+        _pagerController.normalTextFont = OFFont(15);
+        _pagerController.selectedTextFont = OFFont(17);
+        _pagerController.cellWidth = SCREEN_WIDTH/5.f;
+    }
+    return _pagerController;
+}
+- (HomeTabContainerViewModel *)viewModel {
+    if (!_viewModel) {
+        _viewModel = [HomeTabContainerViewModel new];
+    }
+    return _viewModel;
+}
 
 @end
