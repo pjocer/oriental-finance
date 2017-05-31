@@ -13,10 +13,12 @@
 #import "HotTableViewModel.h"
 #import "HotTableViewCell.h"
 #import "DetailsViewController.h"
+#import "OBannerView.h"
 
 @interface HotPlayController ()
 @property (nonatomic, strong) OSearchView *searchView;
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) OBannerView *banner;
 @property (nonatomic, strong) HotTableViewModel *tableViewModel;
 @end
 
@@ -58,6 +60,7 @@
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.delegate = self.tableViewModel;
         _tableView.dataSource = self.tableViewModel;
+        _tableView.tableHeaderView = self.banner;
         [_tableView registerClass:[HotTableViewCell class] forCellReuseIdentifier:HotTableViewCellIdentifier];
     }
     return _tableView;
@@ -67,14 +70,29 @@
     if (!_tableViewModel) {
         _tableViewModel = [[HotTableViewModel alloc] init];
         WEAKSELF
-        [_tableViewModel setDidSelectedBlock:^{
+        [_tableViewModel setDidSelectedBlock:^(HotTableViewSelectType type, id data) {
             STRONGSELF
-            DetailsViewController *vc = [[DetailsViewController alloc] initWithTitle:@"详情" navBarBtns:NavBarBtnBack];
-            vc.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:vc animated:YES];
+            if (type == HotTableViewSelectTypeHot) {
+                DetailsViewController *vc = [[DetailsViewController alloc] initWithTitle:@"详情" navBarBtns:NavBarBtnBack];
+                vc.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:vc animated:YES];
+            } else if (type == HotTableViewSelectTypeUnknow) {
+                
+            }
         }];
     }
     return _tableViewModel;
+}
+
+- (OBannerView *)banner {
+    if (!_banner) {
+        _banner = [[OBannerView alloc] initWithChangeModel:ChangeModeFade];
+        _banner.frame = CGRectMake(0, 0, SCREEN_WIDTH, 100);
+        _banner.imageClickBlock = ^(NSInteger index) {
+            NSLog(@"%ld",index);
+        };
+    }
+    return _banner;
 }
 
 @end

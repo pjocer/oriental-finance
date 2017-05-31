@@ -9,8 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+typedef NS_OPTIONS(NSInteger, HotTableViewSelectType) {
+    HotTableViewSelectTypeHot,
+    HotTableViewSelectTypeUnknow,
+} ;
+
 @interface HotTableViewModel : NSObject <UITableViewDelegate, UITableViewDataSource>
 
-- (void)setDidSelectedBlock:(void(^)())block;
+- (void)setDidSelectedBlock:(void(^)(HotTableViewSelectType type, id data))block;
 
 @end

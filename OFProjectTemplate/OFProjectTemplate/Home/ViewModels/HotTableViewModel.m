@@ -11,12 +11,12 @@
 #import "OFHomeMacro.h"
 
 @interface HotTableViewModel ()
-@property (nonatomic, copy) dispatch_block_t block;
+@property (nonatomic, copy) void (^block)(HotTableViewSelectType, id) ;
 @end
 
 @implementation HotTableViewModel
 
-- (void)setDidSelectedBlock:(void (^)())block {
+- (void)setDidSelectedBlock:(void (^)(HotTableViewSelectType, id))block {
     _block = block;
 }
 
@@ -26,7 +26,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HotTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HotTableViewCellIdentifier forIndexPath:indexPath];
-    [cell setDidSelectedBlock:_block];
+    [cell setDidSelectedBlock:^{
+        if (self.block) self.block(HotTableViewSelectTypeHot, nil);
+    }];
     cell.backgroundColor = [UIColor whiteColor];
     return cell;
 }

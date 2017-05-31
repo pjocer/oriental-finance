@@ -22,6 +22,7 @@
 		D3207FDF1ED94C5F00240DD2 /* HotTableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FDE1ED94C5F00240DD2 /* HotTableViewCellViewModel.m */; };
 		D3E5435E1ED9505900D8898C /* VerticalVideoCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E5435D1ED9505900D8898C /* VerticalVideoCollectionCell.m */; };
 		D3E543681ED959EF00D8898C /* UITableView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E543671ED959EF00D8898C /* UITableView+Extension.m */; };
+		D3E5436C1EDE546E00D8898C /* OBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E5436B1EDE546D00D8898C /* OBannerView.m */; };
 		D65DC8C71ED825500030636D /* ApplicationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8831ED825500030636D /* ApplicationDetailsViewController.m */; };
 		D65DC8C81ED825500030636D /* ApplicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8851ED825500030636D /* ApplicationViewController.m */; };
 		D65DC8C91ED825500030636D /* ApplicationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC88A1ED825500030636D /* ApplicationTableViewCell.m */; };
@@ -92,6 +93,8 @@
 		D3E5435D1ED9505900D8898C /* VerticalVideoCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalVideoCollectionCell.m; sourceTree = "<group>"; };
 		D3E543661ED959EF00D8898C /* UITableView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Extension.h"; sourceTree = "<group>"; };
 		D3E543671ED959EF00D8898C /* UITableView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Extension.m"; sourceTree = "<group>"; };
+		D3E5436A1EDE546D00D8898C /* OBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBannerView.h; sourceTree = "<group>"; };
+		D3E5436B1EDE546D00D8898C /* OBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBannerView.m; sourceTree = "<group>"; };
 		D65DC8821ED825500030636D /* ApplicationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationDetailsViewController.h; sourceTree = "<group>"; };
 		D65DC8831ED825500030636D /* ApplicationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationDetailsViewController.m; sourceTree = "<group>"; };
 		D65DC8841ED825500030636D /* ApplicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationViewController.h; sourceTree = "<group>"; };
@@ -224,6 +227,7 @@
 		D3207FCA1ED83BEF00240DD2 /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				D3E543691EDE543700D8898C /* Components */,
 				D3E5435F1ED9593E00D8898C /* Extensions */,
 				D65DC88D1ED825500030636D /* Base */,
 				D65DC8BE1ED825500030636D /* RemoteControl */,
@@ -242,6 +246,15 @@
 				D3E543671ED959EF00D8898C /* UITableView+Extension.m */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		D3E543691EDE543700D8898C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D3E5436A1EDE546D00D8898C /* OBannerView.h */,
+				D3E5436B1EDE546D00D8898C /* OBannerView.m */,
+			);
+			name = Components;
 			sourceTree = "<group>";
 		};
 		D65DC8801ED825500030636D /* Application */ = {
@@ -698,6 +711,7 @@
 			files = (
 				D3207FD01ED91C8A00240DD2 /* HotPlayController.m in Sources */,
 				D65DC8D91ED825500030636D /* RemoteView.m in Sources */,
+				D3E5436C1EDE546E00D8898C /* OBannerView.m in Sources */,
 				D65DC8D71ED825500030636D /* TYTabTitleViewCell.m in Sources */,
 				D65DC8CC1ED825500030636D /* ChannelViewController.m in Sources */,
 				D65DC8CD1ED825500030636D /* DetailsViewController.m in Sources */,
