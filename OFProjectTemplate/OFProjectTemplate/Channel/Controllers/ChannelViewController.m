@@ -8,55 +8,50 @@
 
 #import "ChannelViewController.h"
 #import <Masonry.h>
+#import <ReactiveCocoa.h>
+#import "OFUIkitMacro.h"
 #import "DetailsViewController.h"
+#import "ChannelTabViewModel.h"
 
 @interface ChannelViewController ()
-
+@property (nonatomic, strong) ChannelTabViewModel *viewModel;
+@property (nonatomic, strong) TYTabButtonPagerController *pagerController;
 @end
 
 @implementation ChannelViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"频道";
-    UIScrollView *hotView = [[UIScrollView alloc] init];
-    hotView.contentSize = CGSizeMake(0, 900);
-    [self.view addSubview:hotView];
-    
-    [hotView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.right.bottom.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
-        //        make.height.equalTo(@1230);
-    }];
-    
-    
-    UIImageView *image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"pingdao"]];
-    image.frame = CGRectMake(0, 0, self.view.frame.size.width, 900);
-    image.userInteractionEnabled = YES;
-    [hotView addSubview:image];
-    
-    UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
-    [image addGestureRecognizer:tapGR];
+    [self addTabContainerController];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)addTabContainerController {
+    self.pagerController.view.frame = self.view.bounds;
+    [self addChildViewController:self.pagerController];
+    [self.view addSubview:self.pagerController.view];
 }
-- (void)tapAction:(UITapGestureRecognizer *)tap {
-    DetailsViewController *vc = [[DetailsViewController alloc]init];
-    self.hidesBottomBarWhenPushed=YES;
-    [self.navigationController pushViewController:vc animated:YES];
-    self.hidesBottomBarWhenPushed=NO;
-}
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (TYTabButtonPagerController *)pagerController {
+    if (!_pagerController) {
+        _pagerController = [TYTabButtonPagerController new];
+        _pagerController.dataSource = self.viewModel;
+        _pagerController.barStyle = TYPagerBarStyleProgressElasticView;
+        _pagerController.cellSpacing = 0;
+        _pagerController.progressColor = [UIColor orangeColor];
+        _pagerController.normalTextColor = HexColor(0x969696);
+        _pagerController.selectedTextColor = [UIColor orangeColor];
+        _pagerController.normalTextFont = OFFont(15);
+        _pagerController.selectedTextFont = OFFont(17);
+        _pagerController.cellWidth = SCREEN_WIDTH/4.f;
+    }
+    return _pagerController;
 }
-*/
+
+- (ChannelTabViewModel *)viewModel {
+    if (!_viewModel) {
+        _viewModel = [ChannelTabViewModel new];
+    }
+    return _viewModel;
+}
 
 @end

@@ -27,6 +27,10 @@
 		D3E543731EDE68B800D8898C /* UIImageView+FadeForSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E543721EDE68B800D8898C /* UIImageView+FadeForSDWebImage.m */; };
 		D3E543761EDE691000D8898C /* UIButton+FadeForSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E543751EDE691000D8898C /* UIButton+FadeForSDWebImage.m */; };
 		D3E543791EDE698900D8898C /* UIControl+Interval.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E543781EDE698900D8898C /* UIControl+Interval.m */; };
+		D3E5437F1EDE8EA700D8898C /* ChannelTabViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E5437E1EDE8EA700D8898C /* ChannelTabViewModel.m */; };
+		D3E543821EDE940200D8898C /* LocalChannelController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E543811EDE940200D8898C /* LocalChannelController.m */; };
+		D3E543851EDE94E100D8898C /* LocalChannelTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E543841EDE94E100D8898C /* LocalChannelTableViewModel.m */; };
+		D3E543881EDE95A200D8898C /* LocalChannelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E543871EDE95A200D8898C /* LocalChannelCell.m */; };
 		D65DC8C71ED825500030636D /* ApplicationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8831ED825500030636D /* ApplicationDetailsViewController.m */; };
 		D65DC8C81ED825500030636D /* ApplicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8851ED825500030636D /* ApplicationViewController.m */; };
 		D65DC8C91ED825500030636D /* ApplicationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC88A1ED825500030636D /* ApplicationTableViewCell.m */; };
@@ -107,6 +111,15 @@
 		D3E543751EDE691000D8898C /* UIButton+FadeForSDWebImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+FadeForSDWebImage.m"; sourceTree = "<group>"; };
 		D3E543771EDE698900D8898C /* UIControl+Interval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+Interval.h"; sourceTree = "<group>"; };
 		D3E543781EDE698900D8898C /* UIControl+Interval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+Interval.m"; sourceTree = "<group>"; };
+		D3E5437C1EDE8E8900D8898C /* ChannelMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelMacros.h; sourceTree = "<group>"; };
+		D3E5437D1EDE8EA700D8898C /* ChannelTabViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelTabViewModel.h; path = OFProjectTemplate/Channel/ChannelTabViewModel.h; sourceTree = SOURCE_ROOT; };
+		D3E5437E1EDE8EA700D8898C /* ChannelTabViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelTabViewModel.m; path = OFProjectTemplate/Channel/ChannelTabViewModel.m; sourceTree = SOURCE_ROOT; };
+		D3E543801EDE940200D8898C /* LocalChannelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalChannelController.h; sourceTree = "<group>"; };
+		D3E543811EDE940200D8898C /* LocalChannelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalChannelController.m; sourceTree = "<group>"; };
+		D3E543831EDE94E100D8898C /* LocalChannelTableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalChannelTableViewModel.h; path = OFProjectTemplate/Channel/Controllers/LocalChannelTableViewModel.h; sourceTree = SOURCE_ROOT; };
+		D3E543841EDE94E100D8898C /* LocalChannelTableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalChannelTableViewModel.m; path = OFProjectTemplate/Channel/Controllers/LocalChannelTableViewModel.m; sourceTree = SOURCE_ROOT; };
+		D3E543861EDE95A200D8898C /* LocalChannelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalChannelCell.h; path = OFProjectTemplate/Channel/Controllers/LocalChannelCell.h; sourceTree = SOURCE_ROOT; };
+		D3E543871EDE95A200D8898C /* LocalChannelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalChannelCell.m; path = OFProjectTemplate/Channel/Controllers/LocalChannelCell.m; sourceTree = SOURCE_ROOT; };
 		D65DC8821ED825500030636D /* ApplicationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationDetailsViewController.h; sourceTree = "<group>"; };
 		D65DC8831ED825500030636D /* ApplicationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationDetailsViewController.m; sourceTree = "<group>"; };
 		D65DC8841ED825500030636D /* ApplicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationViewController.h; sourceTree = "<group>"; };
@@ -336,6 +349,7 @@
 		D65DC8901ED825500030636D /* Channel */ = {
 			isa = PBXGroup;
 			children = (
+				D3E5437C1EDE8E8900D8898C /* ChannelMacros.h */,
 				D65DC8911ED825500030636D /* Controllers */,
 				D65DC8941ED825500030636D /* Models */,
 				D65DC8951ED825500030636D /* ViewModels */,
@@ -349,6 +363,8 @@
 			children = (
 				D65DC8921ED825500030636D /* ChannelViewController.h */,
 				D65DC8931ED825500030636D /* ChannelViewController.m */,
+				D3E543801EDE940200D8898C /* LocalChannelController.h */,
+				D3E543811EDE940200D8898C /* LocalChannelController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -363,6 +379,10 @@
 		D65DC8951ED825500030636D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				D3E5437D1EDE8EA700D8898C /* ChannelTabViewModel.h */,
+				D3E5437E1EDE8EA700D8898C /* ChannelTabViewModel.m */,
+				D3E543831EDE94E100D8898C /* LocalChannelTableViewModel.h */,
+				D3E543841EDE94E100D8898C /* LocalChannelTableViewModel.m */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -370,6 +390,8 @@
 		D65DC8961ED825500030636D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D3E543861EDE95A200D8898C /* LocalChannelCell.h */,
+				D3E543871EDE95A200D8898C /* LocalChannelCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -733,6 +755,7 @@
 				D65DC8D91ED825500030636D /* RemoteView.m in Sources */,
 				D3E5436C1EDE546E00D8898C /* OBannerView.m in Sources */,
 				D65DC8D71ED825500030636D /* TYTabTitleViewCell.m in Sources */,
+				D3E5437F1EDE8EA700D8898C /* ChannelTabViewModel.m in Sources */,
 				D65DC8CC1ED825500030636D /* ChannelViewController.m in Sources */,
 				D65DC8CD1ED825500030636D /* DetailsViewController.m in Sources */,
 				D3E543681ED959EF00D8898C /* UITableView+Extension.m in Sources */,
@@ -743,6 +766,7 @@
 				D3207FDF1ED94C5F00240DD2 /* HotTableViewCellViewModel.m in Sources */,
 				D65DC8D31ED825500030636D /* MyView.m in Sources */,
 				D3207FCD1ED910A500240DD2 /* HomeTabContainerViewModel.m in Sources */,
+				D3E543851EDE94E100D8898C /* LocalChannelTableViewModel.m in Sources */,
 				D65DC8D11ED825500030636D /* HomeTableViewCell.m in Sources */,
 				D65DC8C81ED825500030636D /* ApplicationViewController.m in Sources */,
 				D65DC8D81ED825500030636D /* RemoteViewController.m in Sources */,
@@ -758,8 +782,10 @@
 				D3207FDC1ED9497000240DD2 /* HotTableViewCell.m in Sources */,
 				D3E543791EDE698900D8898C /* UIControl+Interval.m in Sources */,
 				D65DC8CF1ED825500030636D /* HomeModel.m in Sources */,
+				D3E543881EDE95A200D8898C /* LocalChannelCell.m in Sources */,
 				D65DC8DC1ED83A490030636D /* OShowDetailsView.m in Sources */,
 				D65DC8C71ED825500030636D /* ApplicationDetailsViewController.m in Sources */,
+				D3E543821EDE940200D8898C /* LocalChannelController.m in Sources */,
 				D65DC8E21ED94B430030636D /* CommentsCell.m in Sources */,
 				D65DC8C91ED825500030636D /* ApplicationTableViewCell.m in Sources */,
 				D3207FD91ED9487200240DD2 /* HotTableViewModel.m in Sources */,

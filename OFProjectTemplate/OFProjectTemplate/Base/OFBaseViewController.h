@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_OPTIONS(NSUInteger, NavBarBtns) {
-    NavBarBtnNone = 0,
+    NavBarBtnNone = 0 ,
     NavBarBtnBack = 1UL << 0,//后退
 };
 

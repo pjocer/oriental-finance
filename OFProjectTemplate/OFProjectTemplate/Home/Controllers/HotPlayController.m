@@ -96,4 +96,9 @@
     return _banner;
 }
 
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    [OBannerView clearDiskCache];
+}
+
 @end

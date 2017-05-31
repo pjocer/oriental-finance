@@ -42,13 +42,13 @@
         _rootController.delegate = self;
         _rootController.tabBar.barTintColor = [UIColor whiteColor];
         HomeViewController *home = [[HomeViewController alloc] initWithTitle:@"东方遥控宝"];
-        ChannelViewController *vc2 = [[ChannelViewController alloc] init];
+        ChannelViewController *channel = [[ChannelViewController alloc] initWithTitle:@"频道"];
         RemoteViewController *vc3 = [[RemoteViewController alloc] init];
         ApplicationViewController *vc4 = [[ApplicationViewController alloc] init];
         MyViewController *vc5 = [[MyViewController alloc] init];
         
         UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:home];
-        UINavigationController *nav2 = [[UINavigationController alloc] initWithRootViewController:vc2];
+        UINavigationController *nav2 = [[UINavigationController alloc] initWithRootViewController:channel];
         UINavigationController *nav3 = [[UINavigationController alloc] initWithRootViewController:vc3];
         UINavigationController *nav4 = [[UINavigationController alloc] initWithRootViewController:vc4];
         UINavigationController *nav5 = [[UINavigationController alloc] initWithRootViewController:vc5];
