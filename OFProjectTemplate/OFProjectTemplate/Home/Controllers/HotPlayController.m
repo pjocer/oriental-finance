@@ -14,6 +14,7 @@
 #import "HotTableViewCell.h"
 #import "DetailsViewController.h"
 #import "OBannerView.h"
+#import "OShowHud.h"
 
 @interface HotPlayController ()
 @property (nonatomic, strong) OSearchView *searchView;
@@ -87,9 +88,9 @@
 - (OBannerView *)banner {
     if (!_banner) {
         _banner = [[OBannerView alloc] initWithChangeModel:ChangeModeFade];
-        _banner.frame = CGRectMake(0, 0, SCREEN_WIDTH, 100);
+        _banner.frame = CGRectMake(0, 0, SCREEN_WIDTH, 200);
         _banner.imageClickBlock = ^(NSInteger index) {
-            NSLog(@"%ld",index);
+            [OShowHud showErrorHudWith:[NSString stringWithFormat:@"点击了第%ld张图片",index] animated:YES];
         };
     }
     return _banner;
