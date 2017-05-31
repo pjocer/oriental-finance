@@ -32,6 +32,10 @@
     #define LogRed(...)
 #endif
 
+#define ARRAYHASVALUE(array)    ((array) && ([(array) isKindOfClass:[NSArray class]]) && ([(array) count] > 0))
+#define DICTHASVALUE(dict)      ((dict) && [(dict) isKindOfClass:[NSDictionary class]] && [((NSDictionary *)dict) count] > 0)
+#define STRINGHASVALUE(str)		(str && [str isKindOfClass:[NSString class]] && [str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]].length > 0)
+
 #define WEAKSELF    @weakify(self);
 #define STRONGSELF  @strongify(self);
 

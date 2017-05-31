@@ -23,6 +23,7 @@
 		D3E5435E1ED9505900D8898C /* VerticalVideoCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E5435D1ED9505900D8898C /* VerticalVideoCollectionCell.m */; };
 		D3E543681ED959EF00D8898C /* UITableView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E543671ED959EF00D8898C /* UITableView+Extension.m */; };
 		D3E5436C1EDE546E00D8898C /* OBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E5436B1EDE546D00D8898C /* OBannerView.m */; };
+		D3E5436F1EDE615900D8898C /* OShowHud.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E5436E1EDE615900D8898C /* OShowHud.m */; };
 		D65DC8C71ED825500030636D /* ApplicationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8831ED825500030636D /* ApplicationDetailsViewController.m */; };
 		D65DC8C81ED825500030636D /* ApplicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8851ED825500030636D /* ApplicationViewController.m */; };
 		D65DC8C91ED825500030636D /* ApplicationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC88A1ED825500030636D /* ApplicationTableViewCell.m */; };
@@ -95,6 +96,8 @@
 		D3E543671ED959EF00D8898C /* UITableView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Extension.m"; sourceTree = "<group>"; };
 		D3E5436A1EDE546D00D8898C /* OBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBannerView.h; sourceTree = "<group>"; };
 		D3E5436B1EDE546D00D8898C /* OBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBannerView.m; sourceTree = "<group>"; };
+		D3E5436D1EDE615900D8898C /* OShowHud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OShowHud.h; sourceTree = "<group>"; };
+		D3E5436E1EDE615900D8898C /* OShowHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OShowHud.m; sourceTree = "<group>"; };
 		D65DC8821ED825500030636D /* ApplicationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationDetailsViewController.h; sourceTree = "<group>"; };
 		D65DC8831ED825500030636D /* ApplicationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationDetailsViewController.m; sourceTree = "<group>"; };
 		D65DC8841ED825500030636D /* ApplicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationViewController.h; sourceTree = "<group>"; };
@@ -253,6 +256,8 @@
 			children = (
 				D3E5436A1EDE546D00D8898C /* OBannerView.h */,
 				D3E5436B1EDE546D00D8898C /* OBannerView.m */,
+				D3E5436D1EDE615900D8898C /* OShowHud.h */,
+				D3E5436E1EDE615900D8898C /* OShowHud.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -731,6 +736,7 @@
 				D65DC8D21ED825500030636D /* MyViewController.m in Sources */,
 				D3207FD61ED92E1A00240DD2 /* OSearchView.m in Sources */,
 				D65DC8D61ED825500030636D /* TYTabPagerController.m in Sources */,
+				D3E5436F1EDE615900D8898C /* OShowHud.m in Sources */,
 				D30CB1A51ED7F6DE000AC0BB /* AppDelegate.m in Sources */,
 				D3207FDC1ED9497000240DD2 /* HotTableViewCell.m in Sources */,
 				D65DC8CF1ED825500030636D /* HomeModel.m in Sources */,
