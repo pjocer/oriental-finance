@@ -11,6 +11,7 @@
 #import <Masonry.h>
 #import "OFUIkitMacro.h"
 #import <ReactiveCocoa.h>
+#import "OShowHud.h"
 
 @interface LocalChannelController ()
 @property (nonatomic, strong) UITableView *tableView;
@@ -30,7 +31,7 @@
 
 - (void)subscribe {
     [[self.tableViewModel rac_signalForSelector:@selector(tableView:didSelectRowAtIndexPath:) fromProtocol:@protocol(UITableViewDelegate)] subscribeNext:^(id x) {
-        NSLog(@"%@",x);
+        [OShowHud showErrorHudWith:@"123" animated:YES];
     }];
 }
 

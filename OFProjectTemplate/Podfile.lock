@@ -29,6 +29,7 @@ PODS:
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
+  - UMengAnalytics-NO-IDFA (4.2.5)
   - XRCarouselView (2.5.6)
 
 DEPENDENCIES:
@@ -40,6 +41,7 @@ DEPENDENCIES:
   - QMUIKit (~> 1.6.0)
   - ReactiveCocoa (~> 2.5)
   - SDWebImage (~> 4.0.0)
+  - UMengAnalytics-NO-IDFA (~> 4.2.5)
   - XRCarouselView (~> 2.5.6)
 
 SPEC CHECKSUMS:
@@ -51,8 +53,9 @@ SPEC CHECKSUMS:
   QMUIKit: 10d62af5a36b0eb16499d3c6713b37e6d4731170
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  UMengAnalytics-NO-IDFA: 16666e32edce5be44ae5b14aaaa7f3582e09d6ab
   XRCarouselView: 52529f924d26ee4787f9bd958150800b73e60922
 
-PODFILE CHECKSUM: 331cfa13c9ca7ce610e29a2451bd787649ed530f
+PODFILE CHECKSUM: 2e437961b47f14abc047fd7251e62c18fee48d77
 
 COCOAPODS: 1.2.1
