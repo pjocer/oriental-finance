@@ -24,7 +24,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self initRootViewController];
-
+    NSLog(@"xxxxxxxxxx");
     return YES;
 }
 

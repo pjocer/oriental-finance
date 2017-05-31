@@ -42,8 +42,8 @@
 - (instancetype)subscribe {
     [[self.viewModel rac_signalForSelector:@selector(collectionView:didSelectItemAtIndexPath:) fromProtocol:@protocol(UICollectionViewDelegate)] subscribeNext:^(RACTuple *x) {
         NSIndexPath *indexPath = x.second;
-        DLog(@"%ld",indexPath.item);
-        DLog(@"%@ --- %@ --- %s",self,self.viewModel, __func__);
+        NSLog(@"%ld",indexPath.item);
+        NSLog(@"%@ --- %@ --- %s",self,self.viewModel, __func__);
         if (_block) _block();
     }];
     return self;

@@ -23,13 +23,11 @@
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 
 #ifdef DEBUG
-    #define DLog(...) NSLog((@"%s [Line %d] %@"), __PRETTY_FUNCTION__, __LINE__, [NSString stringWithFormat:__VA_ARGS__])
-    #define SLog(...) NSLog(__VA_ARGS__)
     #define LogRed(frmt, ...) NSLog((XCODE_COLORS_ESCAPE @"fg255,0,0;" frmt XCODE_COLORS_RESET), ##__VA_ARGS__)
+    #define NSLog(...) NSLog((@"%s [Line %d] %@"), __PRETTY_FUNCTION__, __LINE__, [NSString stringWithFormat:__VA_ARGS__])
 #else
-    #define DLog(...)
-    #define SLog(...)
     #define LogRed(...)
+    #define NSlog(...)
 #endif
 
 #define ARRAYHASVALUE(array)    ((array) && ([(array) isKindOfClass:[NSArray class]]) && ([(array) count] > 0))

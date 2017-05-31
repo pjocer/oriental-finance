@@ -35,12 +35,12 @@
     WEAKSELF
     [[self rac_signalForSelector:@selector(searchBarTextDidBeginEditing:) fromProtocol:@protocol(UISearchBarDelegate)] subscribeNext:^(id x) {
         STRONGSELF
-        DLog(@"XXXXXXXXXXXXXXXXXX");
+        NSLog(@"XXXXXXXXXXXXXXXXXX");
     }];
     
     [[self.orderButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
        STRONGSELF
-        DLog(@"OOOOOOOOOOOOOOOOOO");
+        NSLog(@"OOOOOOOOOOOOOOOOOO");
     }];
     
     return self;
