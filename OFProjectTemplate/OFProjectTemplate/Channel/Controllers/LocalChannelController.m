@@ -9,6 +9,8 @@
 #import "LocalChannelController.h"
 #import "LocalChannelTableViewModel.h"
 #import <Masonry.h>
+#import "OFUIkitMacro.h"
+#import <ReactiveCocoa.h>
 
 @interface LocalChannelController ()
 @property (nonatomic, strong) UITableView *tableView;
@@ -22,6 +24,13 @@
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.bottom.right.equalTo(self.view);
+    }];
+    [self subscribe];
+}
+
+- (void)subscribe {
+    [[self.tableViewModel rac_signalForSelector:@selector(tableView:didSelectRowAtIndexPath:) fromProtocol:@protocol(UITableViewDelegate)] subscribeNext:^(id x) {
+        NSLog(@"%@",x);
     }];
 }
 
