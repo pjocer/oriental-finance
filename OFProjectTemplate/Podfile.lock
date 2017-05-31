@@ -28,6 +28,7 @@ PODS:
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
+  - XRCarouselView (2.5.6)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
@@ -37,6 +38,7 @@ DEPENDENCIES:
   - QMUIKit (~> 1.6.0)
   - ReactiveCocoa (~> 2.5)
   - SDWebImage (~> 4.0.0)
+  - XRCarouselView (~> 2.5.6)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -46,7 +48,8 @@ SPEC CHECKSUMS:
   QMUIKit: 10d62af5a36b0eb16499d3c6713b37e6d4731170
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  XRCarouselView: 52529f924d26ee4787f9bd958150800b73e60922
 
-PODFILE CHECKSUM: 80aaea70294f561d15d4f6c553800c32d60c2c25
+PODFILE CHECKSUM: aadb2dd4c8f49aaed7d9a64733eaa840824f8b55
 
 COCOAPODS: 1.2.1

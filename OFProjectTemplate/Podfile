@@ -12,6 +12,7 @@ def install_pods
     pod 'Masonry', '~> 1.0.2'
     pod 'QMUIKit', '~> 1.6.0'
     pod 'FDFullscreenPopGesture', '~> 1.1'
+    pod 'XRCarouselView', '~> 2.5.6'
 end
 
 
