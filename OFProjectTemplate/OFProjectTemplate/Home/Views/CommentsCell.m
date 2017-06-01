@@ -42,6 +42,7 @@
         make.top.equalTo(self.nameLabel.mas_bottom).offset(5);
         make.left.equalTo(self.nameLabel);
         make.right.equalTo(self.timeLabel);
+        make.bottom.equalTo(self.contentView.mas_bottom).offset(-10);
     }];
     
 }

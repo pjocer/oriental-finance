@@ -9,10 +9,7 @@
 #import "OShowDetailsView.h"
 #import <Masonry.h>
 
-@implementation OShowDetailsView {
-    UIButton *dropDownBtn;
-}
-
+@implementation OShowDetailsView 
 
 - (instancetype)init {
     if (self = [super init]) {
@@ -28,8 +25,7 @@
         make.height.equalTo(@([UIScreen mainScreen].bounds.size.width*0.58));
     }];
     
-    UIVisualEffectView *effectView =[[UIVisualEffectView alloc]initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight]];
-    effectView.alpha = 0.8;
+    UIVisualEffectView *effectView =[[UIVisualEffectView alloc]initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleLight]];
     effectView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width*0.58);
     [self.backgroundView addSubview:effectView];
     
@@ -75,85 +71,78 @@
         make.top.equalTo(self.backgroundView.mas_bottom).offset(10);
         make.left.right.equalTo(self).insets(UIEdgeInsetsMake(0, 20, 0, 20));
         make.height.equalTo(@35);
-        
+        make.bottom.equalTo(self.mas_bottom).offset(-10);
     }];
     
     
-    UILabel *label = [[UILabel alloc] init];
-    label.text = @"简介";
-    label.font = [UIFont systemFontOfSize:16];
-    [self addSubview:label];
-    
-    [label mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.platTVBtn.mas_bottom).offset(15);
-        make.left.equalTo(self.platTVBtn);
-    }];
-    
-    [self.introductionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(label.mas_bottom).offset(10);
-        make.left.right.bottom.equalTo(self).insets(UIEdgeInsetsMake(0, 20, 55, 20));
-    }];
-    
-    self.userInteractionEnabled = YES;
-    
-
-    
-    CGFloat labelHeight = [self.introductionLabel sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width-40, MAXFLOAT)].height;
-    NSNumber *count = @((labelHeight) / self.introductionLabel.font.lineHeight);
-    if ([count integerValue] > 3 ) {
-        self.introductionLabel.numberOfLines = 3;
-        dropDownBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [dropDownBtn setTitle:@"∨" forState:UIControlStateNormal];
-        [dropDownBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        dropDownBtn.layer.cornerRadius = 5;
-        dropDownBtn.titleLabel.font = [UIFont systemFontOfSize:15];
-        dropDownBtn.selected = NO;
-        [dropDownBtn addTarget:self action:@selector(dropDownAction:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:dropDownBtn];
-        
-        [dropDownBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.introductionLabel.mas_bottom);
-            make.left.right.equalTo(self.introductionLabel);
-            make.height.equalTo(@30);
-        }];
-    }
-
-    UILabel *label2 = [[UILabel alloc] init];
-    label2.text = @"评论";
-    label2.font = [UIFont systemFontOfSize:16];
-    [self addSubview:label2];
-    
-    [label2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(dropDownBtn.mas_bottom);
-        make.left.equalTo(self.platTVBtn);
-    }];
+//    UILabel *label = [[UILabel alloc] init];
+//    label.text = @"简介";
+//    label.font = [UIFont systemFontOfSize:16];
+//    [self addSubview:label];
+//    
+//    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self.platTVBtn.mas_bottom).offset(15);
+//        make.left.equalTo(self.platTVBtn);
+//    }];
+//    
+//    [self.introductionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(label.mas_bottom).offset(10);
+//        make.left.right.equalTo(self).insets(UIEdgeInsetsMake(0, 20, 55, 20));
+//    }];
+//        
+//
+//    
+//    CGFloat labelHeight = [self.introductionLabel sizeThatFits:CGSizeMake([UIScreen mainScreen].bounds.size.width-40, MAXFLOAT)].height;
+//    NSNumber *count = @((labelHeight) / self.introductionLabel.font.lineHeight);
+//    if ([count integerValue] > 3 ) {
+//        self.introductionLabel.numberOfLines = 3;
+//        dropDownBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//        [dropDownBtn setTitle:@"∨" forState:UIControlStateNormal];
+//        [dropDownBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//        dropDownBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+//        dropDownBtn.selected = NO;
+//        [dropDownBtn addTarget:self action:@selector(dropDownAction:) forControlEvents:UIControlEventTouchUpInside];
+//        [self addSubview:dropDownBtn];
+//        
+//        [dropDownBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.top.equalTo(self.introductionLabel.mas_bottom);
+//            make.left.right.equalTo(self.introductionLabel);
+//            make.height.equalTo(@30);
+//        }];
+//    }
+//
+//    UILabel *label2 = [[UILabel alloc] init];
+//    label2.text = @"评论";
+//    label2.font = [UIFont systemFontOfSize:16];
+//    [self addSubview:label2];
+//    
+//    [label2 mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(dropDownBtn.mas_bottom);
+//        make.left.equalTo(self.platTVBtn);
+//        make.bottom.equalTo(self.mas_bottom).offset(-10);
+//    }];
 
 
-    
-    
-    
-    
-    
 }
 
 
-- (void)dropDownAction:(UIButton *)btn {
-    if (btn.selected == NO) {
-        self.introductionLabel.numberOfLines = 0;
-        [dropDownBtn setTitle:@"∧" forState:UIControlStateNormal];
-        btn.selected = YES;
-    }else{
-        self.introductionLabel.numberOfLines = 3;
-        [dropDownBtn setTitle:@"∨" forState:UIControlStateNormal];
-        btn.selected = NO;
-    }
-    [self setNeedsLayout];
-    [self setNeedsUpdateConstraints];
-    [self layoutIfNeeded];
-    NSLog(@"%f",btn.frame.origin.y);
-    
-    
-}
+//- (void)dropDownAction:(UIButton *)btn {
+//    if (btn.selected == NO) {
+//        self.introductionLabel.numberOfLines = 0;
+//        [dropDownBtn setTitle:@"∧" forState:UIControlStateNormal];
+//        btn.selected = YES;
+//    }else{
+//        self.introductionLabel.numberOfLines = 3;
+//        [dropDownBtn setTitle:@"∨" forState:UIControlStateNormal];
+//        btn.selected = NO;
+//    }
+//    [self setNeedsLayout];
+//    [self setNeedsUpdateConstraints];
+//    [self layoutIfNeeded];
+//    NSLog(@"%f",btn.frame.origin.y);
+//    
+//    
+//}
 
 - (UIImageView *)backgroundView {
     if (!_backgroundView) {
