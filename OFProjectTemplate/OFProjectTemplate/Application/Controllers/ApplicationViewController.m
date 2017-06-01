@@ -11,6 +11,7 @@
 #import <Masonry.h>
 #import "ApplicationTableViewCell.h"
 #import "ApplicationDetailsViewController.h"
+#import "ChanneldetailsVC.h"
 
 @interface ApplicationViewController ()<UITableViewDelegate, UITableViewDataSource, applicationViewDelegate>
 
@@ -72,6 +73,11 @@
     }
     
     return cell;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ChanneldetailsVC *vc = [[ChanneldetailsVC alloc] initWithTitle:@"xxx电视台" navBarBtns:NavBarBtnBack];
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 - (UITableView *)listTableView{

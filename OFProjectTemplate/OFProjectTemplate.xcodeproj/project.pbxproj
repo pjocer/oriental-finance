@@ -32,6 +32,10 @@
 		D3E543851EDE94E100D8898C /* LocalChannelTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E543841EDE94E100D8898C /* LocalChannelTableViewModel.m */; };
 		D3E543881EDE95A200D8898C /* LocalChannelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E543871EDE95A200D8898C /* LocalChannelCell.m */; };
 		D609C2881EDFA67900A09C19 /* IntroductionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C2871EDFA67900A09C19 /* IntroductionCell.m */; };
+		D609C28B1EDFB76800A09C19 /* ChanneldetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C28A1EDFB76800A09C19 /* ChanneldetailsVC.m */; };
+		D609C2931EE00F5F00A09C19 /* ZYBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C28E1EE00F5F00A09C19 /* ZYBannerCell.m */; };
+		D609C2941EE00F5F00A09C19 /* ZYBannerFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C2901EE00F5F00A09C19 /* ZYBannerFooter.m */; };
+		D609C2951EE00F5F00A09C19 /* ZYBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C2921EE00F5F00A09C19 /* ZYBannerView.m */; };
 		D65DC8C71ED825500030636D /* ApplicationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8831ED825500030636D /* ApplicationDetailsViewController.m */; };
 		D65DC8C81ED825500030636D /* ApplicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8851ED825500030636D /* ApplicationViewController.m */; };
 		D65DC8C91ED825500030636D /* ApplicationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC88A1ED825500030636D /* ApplicationTableViewCell.m */; };
@@ -123,6 +127,14 @@
 		D3E543871EDE95A200D8898C /* LocalChannelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalChannelCell.m; path = OFProjectTemplate/Channel/Controllers/LocalChannelCell.m; sourceTree = SOURCE_ROOT; };
 		D609C2861EDFA67900A09C19 /* IntroductionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroductionCell.h; sourceTree = "<group>"; };
 		D609C2871EDFA67900A09C19 /* IntroductionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroductionCell.m; sourceTree = "<group>"; };
+		D609C2891EDFB76800A09C19 /* ChanneldetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChanneldetailsVC.h; sourceTree = "<group>"; };
+		D609C28A1EDFB76800A09C19 /* ChanneldetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChanneldetailsVC.m; sourceTree = "<group>"; };
+		D609C28D1EE00F5F00A09C19 /* ZYBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYBannerCell.h; sourceTree = "<group>"; };
+		D609C28E1EE00F5F00A09C19 /* ZYBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYBannerCell.m; sourceTree = "<group>"; };
+		D609C28F1EE00F5F00A09C19 /* ZYBannerFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYBannerFooter.h; sourceTree = "<group>"; };
+		D609C2901EE00F5F00A09C19 /* ZYBannerFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYBannerFooter.m; sourceTree = "<group>"; };
+		D609C2911EE00F5F00A09C19 /* ZYBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYBannerView.h; sourceTree = "<group>"; };
+		D609C2921EE00F5F00A09C19 /* ZYBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYBannerView.m; sourceTree = "<group>"; };
 		D65DC8821ED825500030636D /* ApplicationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationDetailsViewController.h; sourceTree = "<group>"; };
 		D65DC8831ED825500030636D /* ApplicationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationDetailsViewController.m; sourceTree = "<group>"; };
 		D65DC8841ED825500030636D /* ApplicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationViewController.h; sourceTree = "<group>"; };
@@ -293,6 +305,19 @@
 			name = Components;
 			sourceTree = "<group>";
 		};
+		D609C28C1EE00F5F00A09C19 /* ZYBannerView */ = {
+			isa = PBXGroup;
+			children = (
+				D609C28D1EE00F5F00A09C19 /* ZYBannerCell.h */,
+				D609C28E1EE00F5F00A09C19 /* ZYBannerCell.m */,
+				D609C28F1EE00F5F00A09C19 /* ZYBannerFooter.h */,
+				D609C2901EE00F5F00A09C19 /* ZYBannerFooter.m */,
+				D609C2911EE00F5F00A09C19 /* ZYBannerView.h */,
+				D609C2921EE00F5F00A09C19 /* ZYBannerView.m */,
+			);
+			path = ZYBannerView;
+			sourceTree = "<group>";
+		};
 		D65DC8801ED825500030636D /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +393,8 @@
 				D65DC8931ED825500030636D /* ChannelViewController.m */,
 				D3E543801EDE940200D8898C /* LocalChannelController.h */,
 				D3E543811EDE940200D8898C /* LocalChannelController.m */,
+				D609C2891EDFB76800A09C19 /* ChanneldetailsVC.h */,
+				D609C28A1EDFB76800A09C19 /* ChanneldetailsVC.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -524,6 +551,7 @@
 		D65DC8B31ED825500030636D /* OFFrameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D609C28C1EE00F5F00A09C19 /* ZYBannerView */,
 				D65DC8B41ED825500030636D /* TTYPageController */,
 			);
 			path = OFFrameworks;
@@ -762,6 +790,7 @@
 				D65DC8D71ED825500030636D /* TYTabTitleViewCell.m in Sources */,
 				D3E5437F1EDE8EA700D8898C /* ChannelTabViewModel.m in Sources */,
 				D65DC8CC1ED825500030636D /* ChannelViewController.m in Sources */,
+				D609C28B1EDFB76800A09C19 /* ChanneldetailsVC.m in Sources */,
 				D65DC8CD1ED825500030636D /* DetailsViewController.m in Sources */,
 				D3E543681ED959EF00D8898C /* UITableView+Extension.m in Sources */,
 				D3E543731EDE68B800D8898C /* UIImageView+FadeForSDWebImage.m in Sources */,
@@ -771,8 +800,11 @@
 				D3207FDF1ED94C5F00240DD2 /* HotTableViewCellViewModel.m in Sources */,
 				D65DC8D31ED825500030636D /* MyView.m in Sources */,
 				D3207FCD1ED910A500240DD2 /* HomeTabContainerViewModel.m in Sources */,
+				D609C2931EE00F5F00A09C19 /* ZYBannerCell.m in Sources */,
+				D609C2951EE00F5F00A09C19 /* ZYBannerView.m in Sources */,
 				D3E543851EDE94E100D8898C /* LocalChannelTableViewModel.m in Sources */,
 				D65DC8D11ED825500030636D /* HomeTableViewCell.m in Sources */,
+				D609C2941EE00F5F00A09C19 /* ZYBannerFooter.m in Sources */,
 				D65DC8C81ED825500030636D /* ApplicationViewController.m in Sources */,
 				D65DC8D81ED825500030636D /* RemoteViewController.m in Sources */,
 				D3E5435E1ED9505900D8898C /* VerticalVideoCollectionCell.m in Sources */,
