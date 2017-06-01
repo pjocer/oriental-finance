@@ -31,6 +31,7 @@
 		D3E543821EDE940200D8898C /* LocalChannelController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E543811EDE940200D8898C /* LocalChannelController.m */; };
 		D3E543851EDE94E100D8898C /* LocalChannelTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E543841EDE94E100D8898C /* LocalChannelTableViewModel.m */; };
 		D3E543881EDE95A200D8898C /* LocalChannelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E543871EDE95A200D8898C /* LocalChannelCell.m */; };
+		D3E543951EDFF66D00D8898C /* OSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E543941EDFF66D00D8898C /* OSearchController.m */; };
 		D609C2881EDFA67900A09C19 /* IntroductionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C2871EDFA67900A09C19 /* IntroductionCell.m */; };
 		D65DC8C71ED825500030636D /* ApplicationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8831ED825500030636D /* ApplicationDetailsViewController.m */; };
 		D65DC8C81ED825500030636D /* ApplicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8851ED825500030636D /* ApplicationViewController.m */; };
@@ -121,6 +122,8 @@
 		D3E543841EDE94E100D8898C /* LocalChannelTableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalChannelTableViewModel.m; path = OFProjectTemplate/Channel/Controllers/LocalChannelTableViewModel.m; sourceTree = SOURCE_ROOT; };
 		D3E543861EDE95A200D8898C /* LocalChannelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalChannelCell.h; path = OFProjectTemplate/Channel/Controllers/LocalChannelCell.h; sourceTree = SOURCE_ROOT; };
 		D3E543871EDE95A200D8898C /* LocalChannelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalChannelCell.m; path = OFProjectTemplate/Channel/Controllers/LocalChannelCell.m; sourceTree = SOURCE_ROOT; };
+		D3E543931EDFF66D00D8898C /* OSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSearchController.h; sourceTree = "<group>"; };
+		D3E543941EDFF66D00D8898C /* OSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSearchController.m; sourceTree = "<group>"; };
 		D609C2861EDFA67900A09C19 /* IntroductionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroductionCell.h; sourceTree = "<group>"; };
 		D609C2871EDFA67900A09C19 /* IntroductionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroductionCell.m; sourceTree = "<group>"; };
 		D65DC8821ED825500030636D /* ApplicationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationDetailsViewController.h; sourceTree = "<group>"; };
@@ -225,6 +228,7 @@
 				D30CB1A41ED7F6DE000AC0BB /* AppDelegate.m */,
 				D3207FCA1ED83BEF00240DD2 /* Sections */,
 				D65DC8A61ED825500030636D /* Macro */,
+				D3E5438C1EDFEA9500D8898C /* Modules */,
 				D65DC8B31ED825500030636D /* OFFrameworks */,
 				D30CB1A01ED7F6DE000AC0BB /* Supporting Files */,
 			);
@@ -291,6 +295,16 @@
 				D3E5436E1EDE615900D8898C /* OShowHud.m */,
 			);
 			name = Components;
+			sourceTree = "<group>";
+		};
+		D3E5438C1EDFEA9500D8898C /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				D3E543931EDFF66D00D8898C /* OSearchController.h */,
+				D3E543941EDFF66D00D8898C /* OSearchController.m */,
+			);
+			name = Modules;
+			path = OFFrameworks;
 			sourceTree = "<group>";
 		};
 		D65DC8801ED825500030636D /* Application */ = {
@@ -771,6 +785,7 @@
 				D3207FDF1ED94C5F00240DD2 /* HotTableViewCellViewModel.m in Sources */,
 				D65DC8D31ED825500030636D /* MyView.m in Sources */,
 				D3207FCD1ED910A500240DD2 /* HomeTabContainerViewModel.m in Sources */,
+				D3E543951EDFF66D00D8898C /* OSearchController.m in Sources */,
 				D3E543851EDE94E100D8898C /* LocalChannelTableViewModel.m in Sources */,
 				D65DC8D11ED825500030636D /* HomeTableViewCell.m in Sources */,
 				D65DC8C81ED825500030636D /* ApplicationViewController.m in Sources */,

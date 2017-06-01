@@ -40,8 +40,8 @@
         _rootController = [[UITabBarController alloc] init];
         _rootController.delegate = self;
         _rootController.tabBar.barTintColor = [UIColor whiteColor];
-        HomeViewController *home = [[HomeViewController alloc] initWithTitle:@"东方遥控宝"];
-        ChannelViewController *channel = [[ChannelViewController alloc] initWithTitle:@"频道"];
+        HomeViewController *home = [[HomeViewController alloc] initWithTitle:@"东方遥控宝" navBarBtns:NavBarBtnNone];
+        ChannelViewController *channel = [[ChannelViewController alloc] initWithTitle:@"频道" navBarBtns:NavBarBtnNone];
         RemoteViewController *vc3 = [[RemoteViewController alloc] init];
         ApplicationViewController *vc4 = [[ApplicationViewController alloc] init];
         MyViewController *vc5 = [[MyViewController alloc] init];

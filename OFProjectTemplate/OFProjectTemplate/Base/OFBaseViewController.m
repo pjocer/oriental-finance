@@ -27,16 +27,22 @@
     
     [[UINavigationBar appearance] setTitleTextAttributes:@{ NSFontAttributeName : OFFont(17.0), NSForegroundColorAttributeName : [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1] }];
     
-    [UIBarButtonItem appearanceWhenContainedInInstancesOfClasses:@[[UISearchBar class]]];
+    [[UIBarButtonItem appearanceWhenContainedIn:[UISearchBar class], nil] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor]} forState:UIControlStateNormal];
+    [[UIBarButtonItem appearanceWhenContainedIn:[UISearchBar class], nil] setTitle:@"取消"];
+}
+
+- (instancetype)init {
+    return [self initWithTitle:nil];
 }
 
 - (instancetype)initWithTitle:(NSString *)title {
-    return [self initWithTitle:title navBarBtns:NavBarBtnNone];
+    return [self initWithTitle:title navBarBtns:NavBarBtnBack];
 }
 
 - (instancetype)initWithTitle:(NSString *)title navBarBtns:(NavBarBtns)navBarBtns {
     if (self = [super init]) {
         self.title = title;
+        self.view.backgroundColor = [UIColor whiteColor];
         [self buildNavBarBtns:navBarBtns];
     }
     return self;
