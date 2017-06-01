@@ -39,4 +39,7 @@
 #pragma mark - 科大讯飞
 #define KDXF_ID @"5927fa81"
 
+#pragma mark - 友盟
+#define UMENG_APP_KEY @"592e7e46c895761d34000e5a"
+
 #endif /* OVendorMacro_h */

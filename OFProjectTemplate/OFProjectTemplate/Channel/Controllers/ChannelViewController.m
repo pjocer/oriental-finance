@@ -22,7 +22,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self customizeNavBarBtns];
     [self addTabContainerController];
+}
+
+- (void)customizeNavBarBtns {
+    
 }
 
 - (void)addTabContainerController {
