@@ -15,6 +15,7 @@
 #import "DetailsViewController.h"
 #import "OBannerView.h"
 #import "OShowHud.h"
+#import "HomeChannelLiveCell.h"
 
 @interface HotPlayController ()
 @property (nonatomic, strong) OSearchView *searchView;
@@ -63,6 +64,7 @@
         _tableView.dataSource = self.tableViewModel;
         _tableView.tableHeaderView = self.banner;
         [_tableView registerClass:[HotTableViewCell class] forCellReuseIdentifier:HotTableViewCellIdentifier];
+        [_tableView registerClass:[HomeChannelLiveCell class] forCellReuseIdentifier:HomeChannelLiveCellIdentifier];
     }
     return _tableView;
 }

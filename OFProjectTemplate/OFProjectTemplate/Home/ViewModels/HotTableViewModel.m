@@ -9,6 +9,7 @@
 #import "HotTableViewModel.h"
 #import "HotTableViewCell.h"
 #import "OFHomeMacro.h"
+#import "HomeChannelLiveCell.h"
 
 @interface HotTableViewModel ()
 @property (nonatomic, copy) void (^block)(HotTableViewSelectType, id) ;
@@ -21,16 +22,21 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    HotTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HotTableViewCellIdentifier forIndexPath:indexPath];
-    [cell setDidSelectedBlock:^{
-        if (self.block) self.block(HotTableViewSelectTypeHot, nil);
-    }];
-    cell.backgroundColor = [UIColor whiteColor];
-    return cell;
+    if (indexPath.row == 0) {
+        HotTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HotTableViewCellIdentifier forIndexPath:indexPath];
+        [cell setDidSelectedBlock:^{
+            if (self.block) self.block(HotTableViewSelectTypeHot, nil);
+        }];
+        return cell;
+    } else {
+        HomeChannelLiveCell *cell = [tableView dequeueReusableCellWithIdentifier:HomeChannelLiveCellIdentifier forIndexPath:indexPath];
+        return cell;
+    }
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

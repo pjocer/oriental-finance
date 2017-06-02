@@ -97,7 +97,7 @@
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
         _titleLabel.font = UIFontMake(15);
-        _titleLabel.text = @"热播热播热播";
+        _titleLabel.text = @"正在热播";
         _titleLabel.textColor = [UIColor blackColor];
     }
     return _titleLabel;

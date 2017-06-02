@@ -10,12 +10,14 @@
 #import "OFUIkitMacro.h"
 #import "HoritalVideoCollectionCell.h"
 #import <Masonry.h>
+#import "HotTableViewCellViewModel.h"
 
 @interface HomeChannelLiveCell ()
 @property (nonatomic, strong) UIImageView *titleIcon;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *gapLabel;
 @property (nonatomic, strong) UICollectionView *gridView;
+@property (nonatomic, strong) HotTableViewCellViewModel *viewModel;
 @end
 
 @implementation HomeChannelLiveCell
@@ -36,7 +38,7 @@
 }
 
 - (instancetype)subscribe {
-
+    
     return self;
 }
 
@@ -82,7 +84,7 @@
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
         _titleLabel.font = UIFontMake(15);
-        _titleLabel.text = @"热播热播热播";
+        _titleLabel.text = @"频道直播";
         _titleLabel.textColor = [UIColor blackColor];
     }
     return _titleLabel;
@@ -93,10 +95,18 @@
         _gridView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:[[UICollectionViewFlowLayout alloc] init]];
         _gridView.backgroundColor = [UIColor clearColor];
         _gridView.scrollEnabled = NO;
+        _gridView.delegate = self.viewModel;
+        _gridView.dataSource = self.viewModel;
         [_gridView registerClass:[HoritalVideoCollectionCell class] forCellWithReuseIdentifier:HoritalVideoCollectionCellIdentifier];
     }
     return _gridView;
 }
 
+- (HotTableViewCellViewModel *)viewModel {
+    if (!_viewModel) {
+        _viewModel = [[HotTableViewCellViewModel alloc] initWithCellType:TableViewCellTypeLiving];
+    }
+    return _viewModel;
+}
 
 @end
