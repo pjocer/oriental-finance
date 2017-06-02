@@ -41,6 +41,8 @@
 		D609C29F1EE0F8EE00A09C19 /* ZYBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C29A1EE0F8EE00A09C19 /* ZYBannerCell.m */; };
 		D609C2A01EE0F8EE00A09C19 /* ZYBannerFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C29C1EE0F8EE00A09C19 /* ZYBannerFooter.m */; };
 		D609C2A11EE0F8EE00A09C19 /* ZYBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C29E1EE0F8EE00A09C19 /* ZYBannerView.m */; };
+		D609C2E81EE1333300A09C19 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D609C2E71EE1333300A09C19 /* AVFoundation.framework */; };
+		D609C2EB1EE1338600A09C19 /* ODQTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C2EA1EE1338600A09C19 /* ODQTool.m */; };
 		D65DC8C71ED825500030636D /* ApplicationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8831ED825500030636D /* ApplicationDetailsViewController.m */; };
 		D65DC8C81ED825500030636D /* ApplicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8851ED825500030636D /* ApplicationViewController.m */; };
 		D65DC8C91ED825500030636D /* ApplicationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC88A1ED825500030636D /* ApplicationTableViewCell.m */; };
@@ -149,6 +151,9 @@
 		D609C29C1EE0F8EE00A09C19 /* ZYBannerFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYBannerFooter.m; sourceTree = "<group>"; };
 		D609C29D1EE0F8EE00A09C19 /* ZYBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYBannerView.h; sourceTree = "<group>"; };
 		D609C29E1EE0F8EE00A09C19 /* ZYBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYBannerView.m; sourceTree = "<group>"; };
+		D609C2E71EE1333300A09C19 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D609C2E91EE1338600A09C19 /* ODQTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODQTool.h; sourceTree = "<group>"; };
+		D609C2EA1EE1338600A09C19 /* ODQTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODQTool.m; sourceTree = "<group>"; };
 		D65DC8821ED825500030636D /* ApplicationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationDetailsViewController.h; sourceTree = "<group>"; };
 		D65DC8831ED825500030636D /* ApplicationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationDetailsViewController.m; sourceTree = "<group>"; };
 		D65DC8841ED825500030636D /* ApplicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationViewController.h; sourceTree = "<group>"; };
@@ -199,6 +204,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D609C2E81EE1333300A09C19 /* AVFoundation.framework in Frameworks */,
 				655A82D5C59CEF78D5B9454D /* libPods-OFProjectTemplate.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,6 +331,8 @@
 				D3E5436B1EDE546D00D8898C /* OBannerView.m */,
 				D3E5436D1EDE615900D8898C /* OShowHud.h */,
 				D3E5436E1EDE615900D8898C /* OShowHud.m */,
+				D609C2E91EE1338600A09C19 /* ODQTool.h */,
+				D609C2EA1EE1338600A09C19 /* ODQTool.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -688,6 +696,7 @@
 		E2D9EF11CB7F47353EABA8EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D609C2E71EE1333300A09C19 /* AVFoundation.framework */,
 				D3C29BCE1ED802CF0030D262 /* libPods-OFProjectTemplateTests.a */,
 				D3C29BCC1ED7FF660030D262 /* libsqlite3.tbd */,
 				D3C29BCA1ED7FF530030D262 /* libz.1.tbd */,
@@ -866,6 +875,7 @@
 				D3E543731EDE68B800D8898C /* UIImageView+FadeForSDWebImage.m in Sources */,
 				D65DC8CB1ED825500030636D /* OFBaseViewController.m in Sources */,
 				D3E543761EDE691000D8898C /* UIButton+FadeForSDWebImage.m in Sources */,
+				D609C2EB1EE1338600A09C19 /* ODQTool.m in Sources */,
 				D65DC8CA1ED825500030636D /* ApplicationView.m in Sources */,
 				D3207FDF1ED94C5F00240DD2 /* HotTableViewCellViewModel.m in Sources */,
 				D65DC8D31ED825500030636D /* MyView.m in Sources */,

@@ -36,7 +36,7 @@
     
     [self.view addSubview:self.listTableView];
     [self.listTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.bottom.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 49, 0));
+        make.left.right.bottom.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
         make.top.equalTo(view.mas_bottom);
     }];
     

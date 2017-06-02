@@ -11,6 +11,7 @@
 #import <Masonry.h>
 #import "HomeTabContainerViewModel.h"
 #import "OFUIkitMacro.h"
+#import "ODQTool.h"
 
 @interface HomeViewController ()
 @property (nonatomic, strong)  HomeTabContainerViewModel* viewModel;
@@ -49,7 +50,11 @@
     self.navigationItem.rightBarButtonItems = @[negativeSeperator2, buttonItem2];
 }
 - (void)setup {
-    
+    ODQTool *dq = [[ODQTool alloc]initWithTitle:@"二维码扫描" navBarBtns:NavBarBtnBack];
+    UINavigationController *navc = [[UINavigationController alloc]initWithRootViewController:dq];
+    [self presentViewController:navc animated:YES completion:^{
+        
+    }];
 }
 
 - (UIButton *)backBtn {
