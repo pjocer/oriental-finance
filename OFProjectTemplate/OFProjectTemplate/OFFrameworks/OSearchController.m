@@ -86,7 +86,7 @@
         _searchBar.delegate = self;
         _searchBar.barTintColor = [UIColor whiteColor];
         _searchBar.layer.borderColor = [UIColor whiteColor].CGColor;
-        _searchBar.layer.borderWidth = 0.5;
+        _searchBar.layer.borderWidth = 3;
         _searchBar.showsCancelButton = YES;
         if (STRINGHASVALUE(self.searchWord)) _searchBar.text = self.searchWord;
     }

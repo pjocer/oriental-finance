@@ -50,7 +50,6 @@
 		D65DC8CD1ED825500030636D /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC89A1ED825500030636D /* DetailsViewController.m */; };
 		D65DC8CE1ED825500030636D /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC89C1ED825500030636D /* HomeViewController.m */; };
 		D65DC8CF1ED825500030636D /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC89F1ED825500030636D /* HomeModel.m */; };
-		D65DC8D11ED825500030636D /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8A51ED825500030636D /* HomeTableViewCell.m */; };
 		D65DC8D21ED825500030636D /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8AD1ED825500030636D /* MyViewController.m */; };
 		D65DC8D31ED825500030636D /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8B21ED825500030636D /* MyView.m */; };
 		D65DC8D41ED825500030636D /* TYPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8B61ED825500030636D /* TYPagerController.m */; };
@@ -168,8 +167,6 @@
 		D65DC89C1ED825500030636D /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		D65DC89E1ED825500030636D /* HomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeModel.h; sourceTree = "<group>"; };
 		D65DC89F1ED825500030636D /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
-		D65DC8A41ED825500030636D /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
-		D65DC8A51ED825500030636D /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		D65DC8A71ED825500030636D /* OFHomeMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OFHomeMacro.h; path = ../Macro/OFHomeMacro.h; sourceTree = "<group>"; };
 		D65DC8A81ED825500030636D /* OFNotificationMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFNotificationMacros.h; sourceTree = "<group>"; };
 		D65DC8A91ED825500030636D /* OFUIkitMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFUIkitMacro.h; sourceTree = "<group>"; };
@@ -549,8 +546,6 @@
 		D65DC8A31ED825500030636D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D65DC8A41ED825500030636D /* HomeTableViewCell.h */,
-				D65DC8A51ED825500030636D /* HomeTableViewCell.m */,
 				D65DC8DA1ED83A490030636D /* OShowDetailsView.h */,
 				D65DC8DB1ED83A490030636D /* OShowDetailsView.m */,
 				D609C2861EDFA67900A09C19 /* IntroductionCell.h */,
@@ -879,7 +874,6 @@
 				D3E543951EDFF66D00D8898C /* OSearchController.m in Sources */,
 				D3E543851EDE94E100D8898C /* LocalChannelTableViewModel.m in Sources */,
 				D609C2A11EE0F8EE00A09C19 /* ZYBannerView.m in Sources */,
-				D65DC8D11ED825500030636D /* HomeTableViewCell.m in Sources */,
 				D65DC8C81ED825500030636D /* ApplicationViewController.m in Sources */,
 				D65DC8D81ED825500030636D /* RemoteViewController.m in Sources */,
 				D33820A21EE1133900D5B99C /* OSearchContentViewModel.m in Sources */,
