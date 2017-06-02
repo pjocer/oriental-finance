@@ -11,6 +11,7 @@
 #import "HoritalVideoCollectionCell.h"
 #import <Masonry.h>
 #import "HotTableViewCellViewModel.h"
+#import "ChannelLiveHeaderView.h"
 
 @interface HomeChannelLiveCell ()
 @property (nonatomic, strong) UIImageView *titleIcon;
@@ -50,6 +51,7 @@
     [self.titleIcon mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.titleLabel);
         make.leading.mas_equalTo(12.5);
+        make.width.height.mas_equalTo(30);
     }];
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.titleIcon.mas_right).offset(13);
@@ -98,6 +100,7 @@
         _gridView.delegate = self.viewModel;
         _gridView.dataSource = self.viewModel;
         [_gridView registerClass:[HoritalVideoCollectionCell class] forCellWithReuseIdentifier:HoritalVideoCollectionCellIdentifier];
+        [_gridView registerClass:[ChannelLiveHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:ChannelLiveHeaderViewIdentifier];
     }
     return _gridView;
 }

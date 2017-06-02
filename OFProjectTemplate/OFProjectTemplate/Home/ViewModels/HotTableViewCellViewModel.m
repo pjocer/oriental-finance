@@ -11,6 +11,7 @@
 #import "OFUIkitMacro.h"
 #import "OFHomeMacro.h"
 #import "HoritalVideoCollectionCell.h"
+#import "ChannelLiveHeaderView.h"
 
 @interface HotTableViewCellViewModel ()
 @property (nonatomic, assign) TableViewCellType type;
@@ -56,12 +57,34 @@
     return cell;
 }
 
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    if (self.type == TableViewCellTypeHot) {
+        UICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"123" forIndexPath:indexPath];
+        return view;
+    }
+    if (self.type == TableViewCellTypeLiving) {
+        ChannelLiveHeaderView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:ChannelLiveHeaderViewIdentifier forIndexPath:indexPath];
+        return header;
+    }
+    return nil;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+    if (self.type == TableViewCellTypeHot) {
+        return CGSizeZero;
+    }
+    if (self.type == TableViewCellTypeLiving) {
+        return CGSizeMake(SCREEN_WIDTH, 204.f);
+    }
+    return CGSizeZero;
+}
+
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     if (self.type == TableViewCellTypeHot) {
         return CGSizeMake((SCREEN_WIDTH-10)/3.f, VerticalVideoCellHeight);
     }
     if (self.type == TableViewCellTypeLiving) {
-        return CGSizeMake(100, 100);
+        return CGSizeMake((SCREEN_WIDTH-5)/2.f, 160.f);
     }
     return CGSizeZero;
 }
@@ -79,7 +102,5 @@
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
     return 5.f;
 }
-
-
 
 @end

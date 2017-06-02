@@ -9,6 +9,7 @@
 #import "HotTableViewModel.h"
 #import "HotTableViewCell.h"
 #import "OFHomeMacro.h"
+#import "OFUIkitMacro.h"
 #import "HomeChannelLiveCell.h"
 
 @interface HotTableViewModel ()
@@ -40,7 +41,11 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return HotTableViewCellRowHeight;
+    if (indexPath.row == 0) {
+        return HotTableViewCellRowHeight;
+    } else {
+        return 580;
+    }
 }
 
 @end

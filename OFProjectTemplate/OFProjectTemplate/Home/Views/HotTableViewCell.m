@@ -111,6 +111,7 @@
         _gridView.dataSource = self.viewModel;
         _gridView.scrollEnabled = NO;
         [_gridView registerClass:[VerticalVideoCollectionCell class] forCellWithReuseIdentifier:VerticalVideoCollectionCellIdentifier];
+        [_gridView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"123"];
     }
     return _gridView;
 }
