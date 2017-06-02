@@ -7,9 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SearchDAO.h"
 
 @interface OSearchContentViewModel : NSObject
 
-+ (void)saveSearchHistory:(NSString *)copy;
++ (void)saveSearchHistory:(NSString *)text;
+
++ (NSMutableArray *)searhHistory;
+
++ (MWDBERROR)deleteSearchHistory;
 
 @end

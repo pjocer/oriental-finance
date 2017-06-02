@@ -34,14 +34,14 @@
             [button setTitle:x[i] forState:UIControlStateNormal];
             button.titleLabel.font = UIFontMake(14);
             button.contentEdgeInsets = UIEdgeInsetsMake(6, 20, 6, 20);
-            [self.hFloatLayoutView addSubview:button];
+            [self.floatLayoutView addSubview:button];
         }
         for (NSInteger i = 0; i < x.count; i++) {
             QMUIGhostButton *button = [[QMUIGhostButton alloc] initWithGhostType:QMUIGhostButtonColorGray];
             [button setTitle:x[i] forState:UIControlStateNormal];
             button.titleLabel.font = UIFontMake(14);
             button.contentEdgeInsets = UIEdgeInsetsMake(6, 20, 6, 20);
-            [self.floatLayoutView addSubview:button];
+            [self.hFloatLayoutView addSubview:button];
         }
     }];
     return self;

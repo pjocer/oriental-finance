@@ -10,4 +10,16 @@
 
 @implementation OSearchContentViewModel
 
++ (void)saveSearchHistory:(NSString *)text {
+    [SearchDAO saveSearchHistory:text];
+}
+
++ (NSMutableArray *)searhHistory {
+    return [SearchDAO searhHistory];
+}
+
++ (MWDBERROR)deleteSearchHistory {
+    return [SearchDAO deleteSearchHistory];
+}
+
 @end

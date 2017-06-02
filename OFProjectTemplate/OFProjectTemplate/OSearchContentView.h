@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong) NSArray *sources;
 
+@property (nonatomic, strong) NSArray *histories;
+
 @end
