@@ -56,7 +56,7 @@
     }];
     [self.titleIcon mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.gapLabel.mas_bottom).offset(8);
-        make.leading.mas_equalTo(8);
+        make.leading.mas_equalTo(13);
         make.width.height.mas_equalTo(30);
     }];
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -65,8 +65,8 @@
     }];
     [self.gridView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.titleIcon.mas_bottom).offset(8);
-        make.leading.mas_equalTo(8);
-        make.trailing.mas_equalTo(-8);
+        make.leading.mas_equalTo(0);
+        make.trailing.mas_equalTo(0);
         make.bottom.mas_equalTo(-8);
     }];
     return self;
@@ -79,7 +79,7 @@
 - (UILabel *)gapLabel {
     if (!_gapLabel) {
         _gapLabel = [UILabel new];
-        _gapLabel.backgroundColor = [UIColor blueColor];
+        _gapLabel.backgroundColor = [UIColor colorWithRed:236/255.0 green:236/255.0  blue:236/255.0  alpha:1];
     }
     return _gapLabel;
 }

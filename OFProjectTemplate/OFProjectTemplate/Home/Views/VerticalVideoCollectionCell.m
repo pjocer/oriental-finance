@@ -11,7 +11,7 @@
 #import "OFUIkitMacro.h"
 #import "OFHomeMacro.h"
 
-static NSInteger rowHeight = HotTableViewCellRowHeight;
+//static NSInteger rowHeight = HotTableViewCellRowHeight;
 
 @interface VerticalVideoCollectionCell ()
 
@@ -47,7 +47,7 @@ static NSInteger rowHeight = HotTableViewCellRowHeight;
 }
 
 - (instancetype)commitSubviews {
-    self.backgroundColor = [UIColor greenColor];
+//    self.backgroundColor = [UIColor greenColor];
     [self.contentView addSubview:self.imageView];
     [self.contentView addSubview:self.titleLabel];
     [self.contentView addSubview:self.detailLabel];
@@ -65,12 +65,12 @@ static NSInteger rowHeight = HotTableViewCellRowHeight;
     }];
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.imageView.mas_bottom).offset(8);
-        make.leading.mas_equalTo(8);
+        make.leading.mas_equalTo(10);
         make.height.mas_equalTo(16);
     }];
     [self.detailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.titleLabel.mas_bottom).offset(2);
-        make.leading.mas_equalTo(8);
+        make.leading.mas_equalTo(10);
         make.height.mas_equalTo(14);
     }];
     return self;
@@ -78,8 +78,8 @@ static NSInteger rowHeight = HotTableViewCellRowHeight;
 
 - (UIImageView *)imageView {
     if (!_imageView) {
-        _imageView = [[UIImageView alloc] initWithImage:ImageNamed(@"time")];
-        _imageView.contentMode = UIViewContentModeScaleAspectFit;
+        _imageView = [[UIImageView alloc] initWithImage:ImageNamed(@"1")];
+        _imageView.contentMode = UIViewContentModeScaleToFill;
     }
     return _imageView;
 }
@@ -87,9 +87,9 @@ static NSInteger rowHeight = HotTableViewCellRowHeight;
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
-        _titleLabel.font = OFFont(15);
+        _titleLabel.font = OFFont(14);
         _titleLabel.text = @"热播热播热播";
-        _titleLabel.textColor = [UIColor redColor];
+        _titleLabel.textColor = [UIColor blackColor];
     }
     return _titleLabel;
 }
@@ -97,9 +97,10 @@ static NSInteger rowHeight = HotTableViewCellRowHeight;
 - (UILabel *)detailLabel {
     if (!_detailLabel) {
         _detailLabel = [[UILabel alloc] init];
-        _detailLabel.font = OFFont(13);
-        _detailLabel.text = @"😝    ";
-        _detailLabel.textColor = [UIColor lightGrayColor];
+        _detailLabel.font = OFFont(11);
+        _detailLabel.text = @"嗯嗯嗯嗯嗯";
+        _detailLabel.textColor = [UIColor grayColor
+                                  ];
     }
     return _detailLabel;
 }

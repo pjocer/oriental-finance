@@ -9,7 +9,8 @@
 #ifndef OFHomeMacro_h
 #define OFHomeMacro_h
 
-#define HotTableViewCellRowHeight 280
+#define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
+#define HotTableViewCellRowHeight (SCREEN_WIDTH-10)/5.f*7-20
 #define VerticalVideoCellHeight (HotTableViewCellRowHeight-74)/2.f
 
 #endif /* OFHomeMacro_h */
