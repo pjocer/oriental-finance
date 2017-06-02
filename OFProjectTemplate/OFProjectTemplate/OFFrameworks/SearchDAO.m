@@ -39,7 +39,7 @@
 }
 
 + (NSMutableArray *)searhHistory {
-    NSMutableArray *arr = [[NSMutableArray alloc]initWithCapacity:0];
+    NSMutableArray *arr = [[NSMutableArray alloc] initWithCapacity:0];
     
     FMDatabase *mydb = [FMDatabase databaseWithPath:SQLPath];
     if (![mydb open]) {

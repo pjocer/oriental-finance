@@ -10,23 +10,45 @@
 #import "OShowHud.h"
 #import "OSearchContentView.h"
 #import <Masonry.h>
+#import "OSearchContentViewModel.h"
 
 @interface OSearchController () <UISearchBarDelegate>
 @property (nonatomic, strong) UISearchBar *searchBar;
 @property (nonatomic, strong) OSearchContentView *searchContentView;
+@property (nonatomic, strong) OSearchContentViewModel *viewModel;
 @end
 
 @implementation OSearchController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self commitViews];
+    [self initSearchData];
+    [self subscribe];
+}
+
+- (void)initSearchData {
+    WEAKSELF
+    [self.viewModel fetchHotSearchWithCompeletion:^{
+        STRONGSELF
+        self.searchContentView.sources = @[@"东野圭吾", @"三体", @"爱", @"红楼梦", @"理智与情感", @"读书热榜", @"免费榜"];
+    }];
+    self.searchContentView.histories = [self.viewModel searhHistory];
+}
+
+- (void)commitViews {
     self.navigationItem.titleView = self.searchBar;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:[[UIView alloc]init]];
     [self.view addSubview:self.searchContentView];
     [self.searchContentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
-    self.searchContentView.sources = @[@"东野圭吾", @"三体", @"爱", @"红楼梦", @"理智与情感", @"读书热榜", @"免费榜"];
+}
+
+- (void)subscribe {
+    [self.searchContentView.clearBtnSignal subscribeNext:^(id x) {
+        [self.viewModel deleteSearchHistory];
+    }];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -41,6 +63,13 @@
         _searchContentView = [[OSearchContentView alloc] init];
     }
     return _searchContentView;
+}
+
+- (OSearchContentViewModel *)viewModel {
+    if (!_viewModel) {
+        _viewModel = [OSearchContentViewModel new];
+    }
+    return _viewModel;
 }
 
 - (UISearchBar *)searchBar {
@@ -80,6 +109,7 @@
     if (!STRINGHASVALUE(searchBar.text)) {
         [OShowHud showErrorHudWith:@"请先输入搜索内容" animated:YES];
     }
+    [self.viewModel saveSearchHistory:searchBar.text];
 }
 
 @end

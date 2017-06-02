@@ -10,16 +10,20 @@
 
 @implementation OSearchContentViewModel
 
-+ (void)saveSearchHistory:(NSString *)text {
+- (void)saveSearchHistory:(NSString *)text {
     [SearchDAO saveSearchHistory:text];
 }
 
-+ (NSMutableArray *)searhHistory {
+- (NSMutableArray *)searhHistory {
     return [SearchDAO searhHistory];
 }
 
-+ (MWDBERROR)deleteSearchHistory {
+- (MWDBERROR)deleteSearchHistory {
     return [SearchDAO deleteSearchHistory];
+}
+
+- (void)fetchHotSearchWithCompeletion:(dispatch_block_t)compeletion {
+    if (compeletion) compeletion();
 }
 
 @end

@@ -11,10 +11,12 @@
 
 @interface OSearchContentViewModel : NSObject
 
-+ (void)saveSearchHistory:(NSString *)text;
+- (void)saveSearchHistory:(NSString *)text;
 
-+ (NSMutableArray *)searhHistory;
+- (NSMutableArray *)searhHistory;
 
-+ (MWDBERROR)deleteSearchHistory;
+- (MWDBERROR)deleteSearchHistory;
+
+- (void)fetchHotSearchWithCompeletion:(dispatch_block_t)compeletion;
 
 @end

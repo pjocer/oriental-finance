@@ -7,7 +7,6 @@
 //
 
 #import "OSearchContentView.h"
-#import <ReactiveCocoa.h>
 
 @interface OSearchContentView ()
 @property (nonatomic, strong) QMUIFloatLayoutView *floatLayoutView;
@@ -28,22 +27,26 @@
 }
 
 - (instancetype)subscribe {
-    [RACObserve(self, sources) subscribeNext:^(NSArray *x) {
-        for (NSInteger i = 0; i < x.count; i++) {
+    [[RACObserve(self, sources) combineLatestWith:RACObserve(self, histories)] subscribeNext:^(RACTuple *x) {
+        RACTupleUnpack(NSArray *hot,NSArray *histories) = x;
+        [self.floatLayoutView qmui_removeAllSubviews];
+        [self.hFloatLayoutView qmui_removeAllSubviews];
+        for (NSInteger i = 0; i < histories.count; i++) {
             QMUIGhostButton *button = [[QMUIGhostButton alloc] initWithGhostType:QMUIGhostButtonColorGray];
-            [button setTitle:x[i] forState:UIControlStateNormal];
+            [button setTitle:histories[i] forState:UIControlStateNormal];
             button.titleLabel.font = UIFontMake(14);
             button.contentEdgeInsets = UIEdgeInsetsMake(6, 20, 6, 20);
             [self.floatLayoutView addSubview:button];
         }
-        for (NSInteger i = 0; i < x.count; i++) {
+        for (NSInteger i = 0; i < hot.count; i++) {
             QMUIGhostButton *button = [[QMUIGhostButton alloc] initWithGhostType:QMUIGhostButtonColorGray];
-            [button setTitle:x[i] forState:UIControlStateNormal];
+            [button setTitle:hot[i] forState:UIControlStateNormal];
             button.titleLabel.font = UIFontMake(14);
             button.contentEdgeInsets = UIEdgeInsetsMake(6, 20, 6, 20);
             [self.hFloatLayoutView addSubview:button];
         }
     }];
+    self.clearBtnSignal = [self.clearBtn rac_signalForControlEvents:UIControlEventTouchUpInside];
     return self;
 }
 

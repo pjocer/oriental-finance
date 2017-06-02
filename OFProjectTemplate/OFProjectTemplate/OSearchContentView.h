@@ -6,13 +6,15 @@
 //  Copyright © 2017年 com.oriental-finance.ios. All rights reserved.
 //
 
-#import "QMUIKit.h"
 #import "OFUIkitMacro.h"
+#import <ReactiveCocoa.h>
 
 @interface OSearchContentView : UIView
 
 @property (nonatomic, strong) NSArray *sources;
 
 @property (nonatomic, strong) NSArray *histories;
+
+@property (nonatomic, strong) RACSignal *clearBtnSignal;
 
 @end
