@@ -9,6 +9,11 @@
 #import "HomeTabContainerViewModel.h"
 #import <UIColor+QMUI.h>
 #import "HotPlayController.h"
+#import "TeleplayViewController.h"
+#import "ProjectViewController.h"
+#import "VarietyViewController.h"
+#import "TVViewController.h"
+
 
 @interface HomeTabContainerViewModel ()
 @property (nonatomic, strong) NSArray *titles;
@@ -36,6 +41,18 @@
     if (index == 0) {
         HotPlayController *hot = [[HotPlayController alloc] init];
         return hot;
+    } else if (index == 1){
+        TeleplayViewController *teleplay = [[TeleplayViewController alloc]init];
+        return teleplay;
+    } else if (index == 2){
+        ProjectViewController *teleplay = [[ProjectViewController alloc]init];
+        return teleplay;
+    } else if (index == 3){
+        VarietyViewController *teleplay = [[VarietyViewController alloc]init];
+        return teleplay;
+    } else if (index == 4){
+        TVViewController *teleplay = [[TVViewController alloc]init];
+        return teleplay;
     }
     UIViewController *vc = [UIViewController new];
     vc.view.backgroundColor = [UIColor qmui_randomColor];

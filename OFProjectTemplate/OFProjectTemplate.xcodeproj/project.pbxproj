@@ -45,6 +45,13 @@
 		D609C2A11EE0F8EE00A09C19 /* ZYBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C29E1EE0F8EE00A09C19 /* ZYBannerView.m */; };
 		D609C2E81EE1333300A09C19 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D609C2E71EE1333300A09C19 /* AVFoundation.framework */; };
 		D609C2EB1EE1338600A09C19 /* ODQTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C2EA1EE1338600A09C19 /* ODQTool.m */; };
+		D609C2F41EE1685800A09C19 /* TeleplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C2F31EE1685800A09C19 /* TeleplayViewController.m */; };
+		D609C2F71EE16A5100A09C19 /* ProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C2F61EE16A5100A09C19 /* ProjectViewController.m */; };
+		D609C2FA1EE16A8B00A09C19 /* VarietyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C2F91EE16A8B00A09C19 /* VarietyViewController.m */; };
+		D609C2FD1EE16AC000A09C19 /* TVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C2FC1EE16AC000A09C19 /* TVViewController.m */; };
+		D609C3001EE16C6600A09C19 /* TVChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C2FF1EE16C6600A09C19 /* TVChannelViewController.m */; };
+		D609C3031EE16C7C00A09C19 /* CCTVChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C3021EE16C7C00A09C19 /* CCTVChannelViewController.m */; };
+		D609C3061EE16C9A00A09C19 /* HDChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C3051EE16C9A00A09C19 /* HDChannelViewController.m */; };
 		D65DC8C71ED825500030636D /* ApplicationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8831ED825500030636D /* ApplicationDetailsViewController.m */; };
 		D65DC8C81ED825500030636D /* ApplicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8851ED825500030636D /* ApplicationViewController.m */; };
 		D65DC8C91ED825500030636D /* ApplicationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC88A1ED825500030636D /* ApplicationTableViewCell.m */; };
@@ -160,6 +167,20 @@
 		D609C2E71EE1333300A09C19 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D609C2E91EE1338600A09C19 /* ODQTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODQTool.h; sourceTree = "<group>"; };
 		D609C2EA1EE1338600A09C19 /* ODQTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODQTool.m; sourceTree = "<group>"; };
+		D609C2F21EE1685800A09C19 /* TeleplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeleplayViewController.h; sourceTree = "<group>"; };
+		D609C2F31EE1685800A09C19 /* TeleplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeleplayViewController.m; sourceTree = "<group>"; };
+		D609C2F51EE16A5100A09C19 /* ProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectViewController.h; sourceTree = "<group>"; };
+		D609C2F61EE16A5100A09C19 /* ProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectViewController.m; sourceTree = "<group>"; };
+		D609C2F81EE16A8B00A09C19 /* VarietyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VarietyViewController.h; sourceTree = "<group>"; };
+		D609C2F91EE16A8B00A09C19 /* VarietyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VarietyViewController.m; sourceTree = "<group>"; };
+		D609C2FB1EE16AC000A09C19 /* TVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVViewController.h; sourceTree = "<group>"; };
+		D609C2FC1EE16AC000A09C19 /* TVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVViewController.m; sourceTree = "<group>"; };
+		D609C2FE1EE16C6600A09C19 /* TVChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TVChannelViewController.h; sourceTree = "<group>"; };
+		D609C2FF1EE16C6600A09C19 /* TVChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TVChannelViewController.m; sourceTree = "<group>"; };
+		D609C3011EE16C7C00A09C19 /* CCTVChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTVChannelViewController.h; sourceTree = "<group>"; };
+		D609C3021EE16C7C00A09C19 /* CCTVChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTVChannelViewController.m; sourceTree = "<group>"; };
+		D609C3041EE16C9A00A09C19 /* HDChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDChannelViewController.h; sourceTree = "<group>"; };
+		D609C3051EE16C9A00A09C19 /* HDChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDChannelViewController.m; sourceTree = "<group>"; };
 		D65DC8821ED825500030636D /* ApplicationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationDetailsViewController.h; sourceTree = "<group>"; };
 		D65DC8831ED825500030636D /* ApplicationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationDetailsViewController.m; sourceTree = "<group>"; };
 		D65DC8841ED825500030636D /* ApplicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationViewController.h; sourceTree = "<group>"; };
@@ -477,6 +498,12 @@
 				D65DC8931ED825500030636D /* ChannelViewController.m */,
 				D3E543801EDE940200D8898C /* LocalChannelController.h */,
 				D3E543811EDE940200D8898C /* LocalChannelController.m */,
+				D609C2FE1EE16C6600A09C19 /* TVChannelViewController.h */,
+				D609C2FF1EE16C6600A09C19 /* TVChannelViewController.m */,
+				D609C3011EE16C7C00A09C19 /* CCTVChannelViewController.h */,
+				D609C3021EE16C7C00A09C19 /* CCTVChannelViewController.m */,
+				D609C3041EE16C9A00A09C19 /* HDChannelViewController.h */,
+				D609C3051EE16C9A00A09C19 /* HDChannelViewController.m */,
 				D609C2891EDFB76800A09C19 /* ChanneldetailsVC.h */,
 				D609C28A1EDFB76800A09C19 /* ChanneldetailsVC.m */,
 			);
@@ -529,6 +556,14 @@
 				D65DC89C1ED825500030636D /* HomeViewController.m */,
 				D3207FCE1ED91C8A00240DD2 /* HotPlayController.h */,
 				D3207FCF1ED91C8A00240DD2 /* HotPlayController.m */,
+				D609C2F21EE1685800A09C19 /* TeleplayViewController.h */,
+				D609C2F31EE1685800A09C19 /* TeleplayViewController.m */,
+				D609C2F51EE16A5100A09C19 /* ProjectViewController.h */,
+				D609C2F61EE16A5100A09C19 /* ProjectViewController.m */,
+				D609C2F81EE16A8B00A09C19 /* VarietyViewController.h */,
+				D609C2F91EE16A8B00A09C19 /* VarietyViewController.m */,
+				D609C2FB1EE16AC000A09C19 /* TVViewController.h */,
+				D609C2FC1EE16AC000A09C19 /* TVViewController.m */,
 				D65DC8991ED825500030636D /* DetailsViewController.h */,
 				D65DC89A1ED825500030636D /* DetailsViewController.m */,
 			);
@@ -872,7 +907,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D609C3061EE16C9A00A09C19 /* HDChannelViewController.m in Sources */,
 				D3207FD01ED91C8A00240DD2 /* HotPlayController.m in Sources */,
+				D609C2FA1EE16A8B00A09C19 /* VarietyViewController.m in Sources */,
+				D609C2F71EE16A5100A09C19 /* ProjectViewController.m in Sources */,
 				D65DC8D91ED825500030636D /* RemoteView.m in Sources */,
 				D609C29F1EE0F8EE00A09C19 /* ZYBannerCell.m in Sources */,
 				D3E5436C1EDE546E00D8898C /* OBannerView.m in Sources */,
@@ -900,6 +938,7 @@
 				D65DC8D81ED825500030636D /* RemoteViewController.m in Sources */,
 				D33820A21EE1133900D5B99C /* OSearchContentViewModel.m in Sources */,
 				D3E5435E1ED9505900D8898C /* VerticalVideoCollectionCell.m in Sources */,
+				D609C3001EE16C6600A09C19 /* TVChannelViewController.m in Sources */,
 				D609C2A01EE0F8EE00A09C19 /* ZYBannerFooter.m in Sources */,
 				D65DC8D51ED825500030636D /* TYTabButtonPagerController.m in Sources */,
 				D65DC8D41ED825500030636D /* TYPagerController.m in Sources */,
@@ -910,10 +949,13 @@
 				D65DC8D61ED825500030636D /* TYTabPagerController.m in Sources */,
 				D3E5436F1EDE615900D8898C /* OShowHud.m in Sources */,
 				D30CB1A51ED7F6DE000AC0BB /* AppDelegate.m in Sources */,
+				D609C2F41EE1685800A09C19 /* TeleplayViewController.m in Sources */,
 				D3207FDC1ED9497000240DD2 /* HotTableViewCell.m in Sources */,
 				D3E543791EDE698900D8898C /* UIControl+Interval.m in Sources */,
+				D609C3031EE16C7C00A09C19 /* CCTVChannelViewController.m in Sources */,
 				D65DC8CF1ED825500030636D /* HomeModel.m in Sources */,
 				D609C2881EDFA67900A09C19 /* IntroductionCell.m in Sources */,
+				D609C2FD1EE16AC000A09C19 /* TVViewController.m in Sources */,
 				D3E543881EDE95A200D8898C /* LocalChannelCell.m in Sources */,
 				D338209F1EE1089A00D5B99C /* OSearchContentView.m in Sources */,
 				D65DC8DC1ED83A490030636D /* OShowDetailsView.m in Sources */,

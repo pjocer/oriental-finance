@@ -9,6 +9,9 @@
 #import "ChannelTabViewModel.h"
 #import <UIColor+QMUI.h>
 #import "LocalChannelController.h"
+#import "TVChannelViewController.h"
+#import "CCTVChannelViewController.h"
+#import "HDChannelViewController.h"
 
 @interface ChannelTabViewModel ()
 @property (nonatomic, strong) NSArray *titles;
@@ -34,6 +37,15 @@
 - (UIViewController *)pagerController:(TYPagerController *)pagerController controllerForIndex:(NSInteger)index {
     if (index == 0) {
         LocalChannelController *vc = [[LocalChannelController alloc] initWithTitle:@"上海"];
+        return vc;
+    } else if (index == 1){
+        TVChannelViewController *vc = [[TVChannelViewController alloc] initWithTitle:@"卫视"];
+        return vc;
+    } else if (index == 2){
+        CCTVChannelViewController *vc = [[CCTVChannelViewController alloc] initWithTitle:@"央视"];
+        return vc;
+    } else if (index == 3){
+        HDChannelViewController *vc = [[HDChannelViewController alloc] initWithTitle:@"高清"];
         return vc;
     }
     UIViewController *vc = [UIViewController new];

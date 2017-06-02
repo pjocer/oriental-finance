@@ -1,26 +1,26 @@
 //
-//  LocalChannelController.m
+//  CCTVChannelViewController.m
 //  OFProjectTemplate
 //
-//  Created by 吉冠虎 on 2017/5/31.
+//  Created by wangdongwen on 2017/6/2.
 //  Copyright © 2017年 com.oriental-finance.ios. All rights reserved.
 //
 
-#import "LocalChannelController.h"
+#import "CCTVChannelViewController.h"
 #import "LocalChannelTableViewModel.h"
 #import <Masonry.h>
 #import "OFUIkitMacro.h"
 #import <ReactiveCocoa.h>
 #import "OShowHud.h"
-#import "OBannerView.h"
 
-@interface LocalChannelController ()
+@interface CCTVChannelViewController ()
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) LocalChannelTableViewModel *tableViewModel;
 
+
 @end
 
-@implementation LocalChannelController
+@implementation CCTVChannelViewController
 
 - (void)loadView {
     [super loadView];
@@ -56,10 +56,14 @@
 }
 
 
+/*
+#pragma mark - Navigation
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    [OBannerView clearDiskCache];
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
+*/
 
 @end
