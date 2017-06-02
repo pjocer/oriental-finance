@@ -24,6 +24,8 @@
 		D33820A21EE1133900D5B99C /* OSearchContentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D33820A11EE1133900D5B99C /* OSearchContentViewModel.m */; };
 		D33820A91EE116B400D5B99C /* MWBaseDBDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = D33820A81EE116B400D5B99C /* MWBaseDBDAO.m */; };
 		D33820AF1EE119AE00D5B99C /* SearchDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = D33820AE1EE119AE00D5B99C /* SearchDAO.m */; };
+		D33820B21EE15D6700D5B99C /* HomeChannelLiveCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D33820B11EE15D6600D5B99C /* HomeChannelLiveCell.m */; };
+		D33820B51EE15EFD00D5B99C /* HoritalVideoCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D33820B41EE15EFD00D5B99C /* HoritalVideoCollectionCell.m */; };
 		D3E5435E1ED9505900D8898C /* VerticalVideoCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E5435D1ED9505900D8898C /* VerticalVideoCollectionCell.m */; };
 		D3E543681ED959EF00D8898C /* UITableView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E543671ED959EF00D8898C /* UITableView+Extension.m */; };
 		D3E5436C1EDE546E00D8898C /* OBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E5436B1EDE546D00D8898C /* OBannerView.m */; };
@@ -111,6 +113,10 @@
 		D33820A81EE116B400D5B99C /* MWBaseDBDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWBaseDBDAO.m; sourceTree = "<group>"; };
 		D33820AD1EE119AE00D5B99C /* SearchDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchDAO.h; sourceTree = "<group>"; };
 		D33820AE1EE119AE00D5B99C /* SearchDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchDAO.m; sourceTree = "<group>"; };
+		D33820B01EE15D6600D5B99C /* HomeChannelLiveCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeChannelLiveCell.h; sourceTree = "<group>"; };
+		D33820B11EE15D6600D5B99C /* HomeChannelLiveCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeChannelLiveCell.m; sourceTree = "<group>"; };
+		D33820B31EE15EFD00D5B99C /* HoritalVideoCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoritalVideoCollectionCell.h; sourceTree = "<group>"; };
+		D33820B41EE15EFD00D5B99C /* HoritalVideoCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoritalVideoCollectionCell.m; sourceTree = "<group>"; };
 		D3C29BC61ED7FF300030D262 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D3C29BC81ED7FF410030D262 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		D3C29BCA1ED7FF530030D262 /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
@@ -564,8 +570,12 @@
 				D3207FD51ED92E1A00240DD2 /* OSearchView.m */,
 				D3207FDA1ED9497000240DD2 /* HotTableViewCell.h */,
 				D3207FDB1ED9497000240DD2 /* HotTableViewCell.m */,
+				D33820B01EE15D6600D5B99C /* HomeChannelLiveCell.h */,
+				D33820B11EE15D6600D5B99C /* HomeChannelLiveCell.m */,
 				D3E5435C1ED9505900D8898C /* VerticalVideoCollectionCell.h */,
 				D3E5435D1ED9505900D8898C /* VerticalVideoCollectionCell.m */,
+				D33820B31EE15EFD00D5B99C /* HoritalVideoCollectionCell.h */,
+				D33820B41EE15EFD00D5B99C /* HoritalVideoCollectionCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -873,6 +883,7 @@
 				D65DC8CD1ED825500030636D /* DetailsViewController.m in Sources */,
 				D3E543681ED959EF00D8898C /* UITableView+Extension.m in Sources */,
 				D3E543731EDE68B800D8898C /* UIImageView+FadeForSDWebImage.m in Sources */,
+				D33820B51EE15EFD00D5B99C /* HoritalVideoCollectionCell.m in Sources */,
 				D65DC8CB1ED825500030636D /* OFBaseViewController.m in Sources */,
 				D3E543761EDE691000D8898C /* UIButton+FadeForSDWebImage.m in Sources */,
 				D609C2EB1EE1338600A09C19 /* ODQTool.m in Sources */,
@@ -880,6 +891,7 @@
 				D3207FDF1ED94C5F00240DD2 /* HotTableViewCellViewModel.m in Sources */,
 				D65DC8D31ED825500030636D /* MyView.m in Sources */,
 				D3207FCD1ED910A500240DD2 /* HomeTabContainerViewModel.m in Sources */,
+				D33820B21EE15D6700D5B99C /* HomeChannelLiveCell.m in Sources */,
 				D33820A91EE116B400D5B99C /* MWBaseDBDAO.m in Sources */,
 				D3E543951EDFF66D00D8898C /* OSearchController.m in Sources */,
 				D3E543851EDE94E100D8898C /* LocalChannelTableViewModel.m in Sources */,

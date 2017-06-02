@@ -9,6 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+typedef NS_OPTIONS(NSInteger, TableViewCellType) {
+    TableViewCellTypeHot,
+    TableViewCellTypeLiving,
+    TableViewCellTypeUnknow,
+} ;
+
 @interface HotTableViewCellViewModel : NSObject <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
+
+- (instancetype)initWithCellType:(TableViewCellType)type;
 
 @end

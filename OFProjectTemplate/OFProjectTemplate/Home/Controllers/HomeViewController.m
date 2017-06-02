@@ -72,11 +72,11 @@
         _pagerController.dataSource = self.viewModel;
         _pagerController.barStyle = TYPagerBarStyleProgressElasticView;
         _pagerController.cellSpacing = 0;
-        _pagerController.progressColor = [UIColor orangeColor];
-        _pagerController.normalTextColor = HexColor(0x969696);
-        _pagerController.selectedTextColor = [UIColor orangeColor];
-        _pagerController.normalTextFont = OFFont(15);
-        _pagerController.selectedTextFont = OFFont(17);
+        _pagerController.progressColor = DEFAULT_TEXT_COLOR_SELECTED;
+        _pagerController.normalTextColor = DEFAULT_TEXT_COLOR;
+        _pagerController.selectedTextColor = DEFAULT_TEXT_COLOR_SELECTED;
+        _pagerController.normalTextFont = UIFontMake(15);
+        _pagerController.selectedTextFont = UIFontMake(17);
         _pagerController.cellWidth = SCREEN_WIDTH/5.f;
     }
     return _pagerController;

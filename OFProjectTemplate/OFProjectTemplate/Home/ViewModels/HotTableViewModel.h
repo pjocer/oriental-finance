@@ -12,7 +12,7 @@
 typedef NS_OPTIONS(NSInteger, HotTableViewSelectType) {
     HotTableViewSelectTypeHot,
     HotTableViewSelectTypeUnknow,
-} ;
+};
 
 @interface HotTableViewModel : NSObject <UITableViewDelegate, UITableViewDataSource>
 

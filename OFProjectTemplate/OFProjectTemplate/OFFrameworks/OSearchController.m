@@ -99,7 +99,7 @@
         if ([subView isKindOfClass:[UIButton class]]) {
             UIButton *cancelBtn = subView;
             [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
-            [cancelBtn setTintColor:HexColor(0x969696)];
+            [cancelBtn setTintColor:DEFAULT_TEXT_COLOR];
         }
     }
     return YES;

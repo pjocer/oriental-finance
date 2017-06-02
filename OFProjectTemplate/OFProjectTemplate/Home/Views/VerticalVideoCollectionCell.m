@@ -87,7 +87,7 @@
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
-        _titleLabel.font = OFFont(14);
+        _titleLabel.font = UIFontMake(14);
         _titleLabel.text = @"热播热播热播";
         _titleLabel.textColor = [UIColor blackColor];
     }
@@ -97,7 +97,7 @@
 - (UILabel *)detailLabel {
     if (!_detailLabel) {
         _detailLabel = [[UILabel alloc] init];
-        _detailLabel.font = OFFont(11);
+        _detailLabel.font = UIFontMake(11);
         _detailLabel.text = @"嗯嗯嗯嗯嗯";
         _detailLabel.textColor = [UIColor grayColor
                                   ];

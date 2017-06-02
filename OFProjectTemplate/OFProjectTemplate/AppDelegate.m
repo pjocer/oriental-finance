@@ -60,10 +60,11 @@
         
         [_rootController.tabBar.items enumerateObjectsUsingBlock:^(UITabBarItem * _Nonnull item, NSUInteger idx, BOOL * _Nonnull stop) {
             item.title = titles[idx];
-            [item setTitleTextAttributes:@{ NSForegroundColorAttributeName : HexColor(0x969696),
-                                            NSFontAttributeName : OFFont(10.0) } forState:UIControlStateNormal];
-            [item setTitleTextAttributes:@{ NSForegroundColorAttributeName : [UIColor colorWithRed:237/255.0 green:73/255.0 blue:25/255.0 alpha:1],
-                                            NSFontAttributeName : OFFont(10.0) } forState:UIControlStateSelected];
+            
+            [item setTitleTextAttributes:@{ NSForegroundColorAttributeName : DEFAULT_TEXT_COLOR,
+                                            NSFontAttributeName : UIFontMake(10.0) } forState:UIControlStateNormal];
+            [item setTitleTextAttributes:@{ NSForegroundColorAttributeName : DEFAULT_TEXT_COLOR_SELECTED,
+                                            NSFontAttributeName : UIFontMake(10.0) } forState:UIControlStateSelected];
             
             UIImage *normalImage = [[UIImage imageNamed:normalImages[idx]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
             

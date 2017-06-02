@@ -12,16 +12,12 @@
 #import <RACEXTScope.h>
 #import <QMUIKit.h>
 
-#define HexColor(rgbValue) [UIColor colorWithRed:((float) ((rgbValue & 0xFF0000) >> 16)) / 255.0 green:((float) ((rgbValue & 0xFF00) >> 8)) / 255.0 blue:((float) (rgbValue & 0xFF)) / 255.0 alpha:1.0]
-#define OFFont(x) [UIFont systemFontOfSize:(x)]
-
 #define ImageNamed(name) [UIImage imageNamed:(name)]
 
-#define NAV_HEIGHT 64.0
-#define SCREEN_SCALE (1.0/[UIScreen mainScreen].scale)
-
-#define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
-#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+#define DEFAULT_BG_COLOR UIColorMake(236, 236, 236)
+#define DEFAULT_TEXT_COLOR UIColorMake(51, 51, 51)
+#define DEFAULT_TEXT_COLOR_SELECTED UIColorMake(229, 75, 20)
+#define DEFAULT_TEXT_COLOR_GRAY UIColorMake(102, 102, 102)
 
 #ifdef DEBUG
     #define LogRed(frmt, ...) NSLog((XCODE_COLORS_ESCAPE @"fg255,0,0;" frmt XCODE_COLORS_RESET), ##__VA_ARGS__)

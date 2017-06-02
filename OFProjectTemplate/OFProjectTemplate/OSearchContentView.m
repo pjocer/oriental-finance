@@ -57,7 +57,7 @@
 }
 
 - (instancetype)commitSubviews {
-    self.searchHistory = [[QMUILabel alloc] initWithFont:OFFont(15) textColor:UIColorBlack];
+    self.searchHistory = [[QMUILabel alloc] initWithFont:UIFontMake(15) textColor:UIColorBlack];
     self.searchHistory.text = @"搜索历史";
     [self addSubview:self.searchHistory];
     
@@ -69,7 +69,7 @@
     self.floatLayoutView.minimumItemSize = CGSizeMake(69, 29);// 以2个字的按钮作为最小宽度
     [self addSubview:self.floatLayoutView];
     
-    self.hotSearch = [[QMUILabel alloc] initWithFont:OFFont(15) textColor:UIColorBlack];
+    self.hotSearch = [[QMUILabel alloc] initWithFont:UIFontMake(15) textColor:UIColorBlack];
     self.hotSearch.text = @"大家都在搜";
     [self addSubview:self.hotSearch];
     

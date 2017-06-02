@@ -25,7 +25,9 @@
     [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
     [UINavigationBar appearance].shadowImage = [[UIImage alloc] init];
     
-    [[UINavigationBar appearance] setTitleTextAttributes:@{ NSFontAttributeName : OFFont(17.0), NSForegroundColorAttributeName : [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1] }];
+    
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:@{ NSFontAttributeName : UIFontMake(17), NSForegroundColorAttributeName : UIColorMake(51, 51, 51) }];
     
     [[UIBarButtonItem appearanceWhenContainedIn:[UISearchBar class], nil] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor]} forState:UIControlStateNormal];
     [[UIBarButtonItem appearanceWhenContainedIn:[UISearchBar class], nil] setTitle:@"取消"];

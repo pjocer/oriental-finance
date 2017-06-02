@@ -1,28 +1,24 @@
 //
-//  HotTableViewCell.m
+//  HomeChannelLiveCell.m
 //  OFProjectTemplate
 //
-//  Created by 吉冠虎 on 2017/5/27.
+//  Created by 吉冠虎 on 2017/6/2.
 //  Copyright © 2017年 com.oriental-finance.ios. All rights reserved.
 //
 
-#import "HotTableViewCell.h"
+#import "HomeChannelLiveCell.h"
 #import "OFUIkitMacro.h"
-#import "HotTableViewCellViewModel.h"
-#import "VerticalVideoCollectionCell.h"
+#import "HoritalVideoCollectionCell.h"
 #import <Masonry.h>
-#import <ReactiveCocoa.h>
 
-@interface HotTableViewCell () 
+@interface HomeChannelLiveCell ()
 @property (nonatomic, strong) UIImageView *titleIcon;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *gapLabel;
 @property (nonatomic, strong) UICollectionView *gridView;
-@property (nonatomic, strong) HotTableViewCellViewModel *viewModel;
-@property (nonatomic, copy) dispatch_block_t block;
 @end
 
-@implementation HotTableViewCell
+@implementation HomeChannelLiveCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
@@ -40,40 +36,29 @@
 }
 
 - (instancetype)subscribe {
-    [[self.viewModel rac_signalForSelector:@selector(collectionView:didSelectItemAtIndexPath:) fromProtocol:@protocol(UICollectionViewDelegate)] subscribeNext:^(RACTuple *x) {
-        NSIndexPath *indexPath = x.second;
-        NSLog(@"%ld",indexPath.item);
-        NSLog(@"%@ --- %@ --- %s",self,self.viewModel, __func__);
-        if (_block) _block();
-    }];
+
     return self;
 }
 
 - (instancetype)makeConstraints {
     [self.gapLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.right.equalTo(self.contentView);
+        make.top.left.right.equalTo(self.contentView);
         make.height.mas_equalTo(10);
     }];
     [self.titleIcon mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.gapLabel.mas_bottom).offset(8);
-        make.leading.mas_equalTo(13);
-        make.width.height.mas_equalTo(30);
+        make.centerY.equalTo(self.titleLabel);
+        make.leading.mas_equalTo(12.5);
     }];
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.titleIcon.mas_right).offset(8);
-        make.centerY.equalTo(self.titleIcon);
+        make.left.equalTo(self.titleIcon.mas_right).offset(13);
+        make.top.equalTo(self.gapLabel.mas_bottom).offset(10);
+        make.height.mas_equalTo(22.5);
     }];
     [self.gridView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.titleIcon.mas_bottom).offset(8);
-        make.leading.mas_equalTo(0);
-        make.trailing.mas_equalTo(0);
-        make.bottom.mas_equalTo(-8);
+        make.top.equalTo(self.titleLabel.mas_bottom).offset(11);
+        make.left.right.bottom.equalTo(self.contentView);
     }];
     return self;
-}
-
-- (void)setDidSelectedBlock:(void (^)())block {
-    _block = block;
 }
 
 - (UILabel *)gapLabel {
@@ -107,19 +92,11 @@
     if (!_gridView) {
         _gridView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:[[UICollectionViewFlowLayout alloc] init]];
         _gridView.backgroundColor = [UIColor clearColor];
-        _gridView.delegate = self.viewModel;
-        _gridView.dataSource = self.viewModel;
         _gridView.scrollEnabled = NO;
-        [_gridView registerClass:[VerticalVideoCollectionCell class] forCellWithReuseIdentifier:VerticalVideoCollectionCellIdentifier];
+        [_gridView registerClass:[HoritalVideoCollectionCell class] forCellWithReuseIdentifier:HoritalVideoCollectionCellIdentifier];
     }
     return _gridView;
 }
 
-- (HotTableViewCellViewModel *)viewModel {
-    if (!_viewModel) {
-        _viewModel = [[HotTableViewCellViewModel alloc] initWithCellType:TableViewCellTypeHot];
-    }
-    return _viewModel;
-}
 
 @end

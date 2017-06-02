@@ -80,7 +80,7 @@
         _titleLabel.text = @"东方卫视";
         _titleLabel.textColor = [UIColor blackColor];
         _titleLabel.numberOfLines = 1;
-        _titleLabel.font = OFFont(18);
+        _titleLabel.font = UIFontMake(18);
     }
     return _titleLabel;
 }
@@ -91,7 +91,7 @@
         _detailLabel.text = @"欢乐颂 - 第54集";
         _detailLabel.textColor = [UIColor lightGrayColor];
         _detailLabel.numberOfLines = 1;
-        _detailLabel.font = OFFont(13);
+        _detailLabel.font = UIFontMake(13);
     }
     return _detailLabel;
 }
@@ -102,7 +102,7 @@
         _timeLabel.backgroundColor = [UIColor grayColor];
         _timeLabel.text = @" 08:15 ";
         _timeLabel.textColor = [UIColor blackColor];
-        _timeLabel.font = OFFont(13);
+        _timeLabel.font = UIFontMake(13);
         _timeLabel.layer.masksToBounds = YES;
         _timeLabel.layer.cornerRadius = 6.5f;
     }
