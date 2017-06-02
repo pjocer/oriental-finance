@@ -34,9 +34,9 @@
 		D3E543951EDFF66D00D8898C /* OSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E543941EDFF66D00D8898C /* OSearchController.m */; };
 		D609C2881EDFA67900A09C19 /* IntroductionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C2871EDFA67900A09C19 /* IntroductionCell.m */; };
 		D609C28B1EDFB76800A09C19 /* ChanneldetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C28A1EDFB76800A09C19 /* ChanneldetailsVC.m */; };
-		D609C2931EE00F5F00A09C19 /* ZYBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C28E1EE00F5F00A09C19 /* ZYBannerCell.m */; };
-		D609C2941EE00F5F00A09C19 /* ZYBannerFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C2901EE00F5F00A09C19 /* ZYBannerFooter.m */; };
-		D609C2951EE00F5F00A09C19 /* ZYBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C2921EE00F5F00A09C19 /* ZYBannerView.m */; };
+		D609C29F1EE0F8EE00A09C19 /* ZYBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C29A1EE0F8EE00A09C19 /* ZYBannerCell.m */; };
+		D609C2A01EE0F8EE00A09C19 /* ZYBannerFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C29C1EE0F8EE00A09C19 /* ZYBannerFooter.m */; };
+		D609C2A11EE0F8EE00A09C19 /* ZYBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C29E1EE0F8EE00A09C19 /* ZYBannerView.m */; };
 		D65DC8C71ED825500030636D /* ApplicationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8831ED825500030636D /* ApplicationDetailsViewController.m */; };
 		D65DC8C81ED825500030636D /* ApplicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8851ED825500030636D /* ApplicationViewController.m */; };
 		D65DC8C91ED825500030636D /* ApplicationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC88A1ED825500030636D /* ApplicationTableViewCell.m */; };
@@ -132,12 +132,12 @@
 		D609C2871EDFA67900A09C19 /* IntroductionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroductionCell.m; sourceTree = "<group>"; };
 		D609C2891EDFB76800A09C19 /* ChanneldetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChanneldetailsVC.h; sourceTree = "<group>"; };
 		D609C28A1EDFB76800A09C19 /* ChanneldetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChanneldetailsVC.m; sourceTree = "<group>"; };
-		D609C28D1EE00F5F00A09C19 /* ZYBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYBannerCell.h; sourceTree = "<group>"; };
-		D609C28E1EE00F5F00A09C19 /* ZYBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYBannerCell.m; sourceTree = "<group>"; };
-		D609C28F1EE00F5F00A09C19 /* ZYBannerFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYBannerFooter.h; sourceTree = "<group>"; };
-		D609C2901EE00F5F00A09C19 /* ZYBannerFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYBannerFooter.m; sourceTree = "<group>"; };
-		D609C2911EE00F5F00A09C19 /* ZYBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYBannerView.h; sourceTree = "<group>"; };
-		D609C2921EE00F5F00A09C19 /* ZYBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYBannerView.m; sourceTree = "<group>"; };
+		D609C2991EE0F8EE00A09C19 /* ZYBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYBannerCell.h; sourceTree = "<group>"; };
+		D609C29A1EE0F8EE00A09C19 /* ZYBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYBannerCell.m; sourceTree = "<group>"; };
+		D609C29B1EE0F8EE00A09C19 /* ZYBannerFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYBannerFooter.h; sourceTree = "<group>"; };
+		D609C29C1EE0F8EE00A09C19 /* ZYBannerFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYBannerFooter.m; sourceTree = "<group>"; };
+		D609C29D1EE0F8EE00A09C19 /* ZYBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYBannerView.h; sourceTree = "<group>"; };
+		D609C29E1EE0F8EE00A09C19 /* ZYBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYBannerView.m; sourceTree = "<group>"; };
 		D65DC8821ED825500030636D /* ApplicationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationDetailsViewController.h; sourceTree = "<group>"; };
 		D65DC8831ED825500030636D /* ApplicationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationDetailsViewController.m; sourceTree = "<group>"; };
 		D65DC8841ED825500030636D /* ApplicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationViewController.h; sourceTree = "<group>"; };
@@ -309,18 +309,6 @@
 			name = Components;
 			sourceTree = "<group>";
 		};
-		D609C28C1EE00F5F00A09C19 /* ZYBannerView */ = {
-			isa = PBXGroup;
-			children = (
-				D609C28D1EE00F5F00A09C19 /* ZYBannerCell.h */,
-				D609C28E1EE00F5F00A09C19 /* ZYBannerCell.m */,
-				D609C28F1EE00F5F00A09C19 /* ZYBannerFooter.h */,
-				D609C2901EE00F5F00A09C19 /* ZYBannerFooter.m */,
-				D609C2911EE00F5F00A09C19 /* ZYBannerView.h */,
-				D609C2921EE00F5F00A09C19 /* ZYBannerView.m */,
-			);
-			path = ZYBannerView;
-        };
 		D3E5438C1EDFEA9500D8898C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +317,20 @@
 			);
 			name = Modules;
 			path = OFFrameworks;
+			sourceTree = "<group>";
+		};
+		D609C2981EE0F8EE00A09C19 /* ZYBannerView */ = {
+			isa = PBXGroup;
+			children = (
+				D609C2991EE0F8EE00A09C19 /* ZYBannerCell.h */,
+				D609C29A1EE0F8EE00A09C19 /* ZYBannerCell.m */,
+				D609C29B1EE0F8EE00A09C19 /* ZYBannerFooter.h */,
+				D609C29C1EE0F8EE00A09C19 /* ZYBannerFooter.m */,
+				D609C29D1EE0F8EE00A09C19 /* ZYBannerView.h */,
+				D609C29E1EE0F8EE00A09C19 /* ZYBannerView.m */,
+			);
+			name = ZYBannerView;
+			path = TTYPageController/ZYBannerView;
 			sourceTree = "<group>";
 		};
 		D65DC8801ED825500030636D /* Application */ = {
@@ -564,7 +566,7 @@
 		D65DC8B31ED825500030636D /* OFFrameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D609C28C1EE00F5F00A09C19 /* ZYBannerView */,
+				D609C2981EE0F8EE00A09C19 /* ZYBannerView */,
 				D65DC8B41ED825500030636D /* TTYPageController */,
 			);
 			path = OFFrameworks;
@@ -799,6 +801,7 @@
 			files = (
 				D3207FD01ED91C8A00240DD2 /* HotPlayController.m in Sources */,
 				D65DC8D91ED825500030636D /* RemoteView.m in Sources */,
+				D609C29F1EE0F8EE00A09C19 /* ZYBannerCell.m in Sources */,
 				D3E5436C1EDE546E00D8898C /* OBannerView.m in Sources */,
 				D65DC8D71ED825500030636D /* TYTabTitleViewCell.m in Sources */,
 				D3E5437F1EDE8EA700D8898C /* ChannelTabViewModel.m in Sources */,
@@ -813,15 +816,14 @@
 				D3207FDF1ED94C5F00240DD2 /* HotTableViewCellViewModel.m in Sources */,
 				D65DC8D31ED825500030636D /* MyView.m in Sources */,
 				D3207FCD1ED910A500240DD2 /* HomeTabContainerViewModel.m in Sources */,
-				D609C2931EE00F5F00A09C19 /* ZYBannerCell.m in Sources */,
-				D609C2951EE00F5F00A09C19 /* ZYBannerView.m in Sources */,
 				D3E543951EDFF66D00D8898C /* OSearchController.m in Sources */,
 				D3E543851EDE94E100D8898C /* LocalChannelTableViewModel.m in Sources */,
+				D609C2A11EE0F8EE00A09C19 /* ZYBannerView.m in Sources */,
 				D65DC8D11ED825500030636D /* HomeTableViewCell.m in Sources */,
-				D609C2941EE00F5F00A09C19 /* ZYBannerFooter.m in Sources */,
 				D65DC8C81ED825500030636D /* ApplicationViewController.m in Sources */,
 				D65DC8D81ED825500030636D /* RemoteViewController.m in Sources */,
 				D3E5435E1ED9505900D8898C /* VerticalVideoCollectionCell.m in Sources */,
+				D609C2A01EE0F8EE00A09C19 /* ZYBannerFooter.m in Sources */,
 				D65DC8D51ED825500030636D /* TYTabButtonPagerController.m in Sources */,
 				D65DC8D41ED825500030636D /* TYPagerController.m in Sources */,
 				D65DC8CE1ED825500030636D /* HomeViewController.m in Sources */,
