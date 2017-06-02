@@ -15,6 +15,7 @@ def install_pods
     pod 'XRCarouselView', '~> 2.5.6'
     pod 'MBProgressHUD', '~> 1.0.0'
     pod 'UMengAnalytics-NO-IDFA', '~> 4.2.5'
+    pod 'FMDB', '~> 2.6.2'
 
 end
 
