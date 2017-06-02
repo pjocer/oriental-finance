@@ -20,6 +20,7 @@
 		D3207FD91ED9487200240DD2 /* HotTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FD81ED9487200240DD2 /* HotTableViewModel.m */; };
 		D3207FDC1ED9497000240DD2 /* HotTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FDB1ED9497000240DD2 /* HotTableViewCell.m */; };
 		D3207FDF1ED94C5F00240DD2 /* HotTableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FDE1ED94C5F00240DD2 /* HotTableViewCellViewModel.m */; };
+		D338209F1EE1089A00D5B99C /* OSearchContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D338209E1EE1089A00D5B99C /* OSearchContentView.m */; };
 		D3E5435E1ED9505900D8898C /* VerticalVideoCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E5435D1ED9505900D8898C /* VerticalVideoCollectionCell.m */; };
 		D3E543681ED959EF00D8898C /* UITableView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E543671ED959EF00D8898C /* UITableView+Extension.m */; };
 		D3E5436C1EDE546E00D8898C /* OBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E5436B1EDE546D00D8898C /* OBannerView.m */; };
@@ -98,6 +99,8 @@
 		D3207FDB1ED9497000240DD2 /* HotTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotTableViewCell.m; sourceTree = "<group>"; };
 		D3207FDD1ED94C5F00240DD2 /* HotTableViewCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotTableViewCellViewModel.h; sourceTree = "<group>"; };
 		D3207FDE1ED94C5F00240DD2 /* HotTableViewCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotTableViewCellViewModel.m; sourceTree = "<group>"; };
+		D338209D1EE1089A00D5B99C /* OSearchContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSearchContentView.h; sourceTree = "<group>"; };
+		D338209E1EE1089A00D5B99C /* OSearchContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSearchContentView.m; sourceTree = "<group>"; };
 		D3C29BC61ED7FF300030D262 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D3C29BC81ED7FF410030D262 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		D3C29BCA1ED7FF530030D262 /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
@@ -337,6 +340,8 @@
 		D3E543A21EE01ED600D8898C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D338209D1EE1089A00D5B99C /* OSearchContentView.h */,
+				D338209E1EE1089A00D5B99C /* OSearchContentView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -868,6 +873,7 @@
 				D65DC8CF1ED825500030636D /* HomeModel.m in Sources */,
 				D609C2881EDFA67900A09C19 /* IntroductionCell.m in Sources */,
 				D3E543881EDE95A200D8898C /* LocalChannelCell.m in Sources */,
+				D338209F1EE1089A00D5B99C /* OSearchContentView.m in Sources */,
 				D65DC8DC1ED83A490030636D /* OShowDetailsView.m in Sources */,
 				D65DC8C71ED825500030636D /* ApplicationDetailsViewController.m in Sources */,
 				D3E543821EDE940200D8898C /* LocalChannelController.m in Sources */,

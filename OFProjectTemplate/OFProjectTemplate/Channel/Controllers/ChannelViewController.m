@@ -41,8 +41,11 @@
 
 - (void)search {
     OSearchController *controller = [[OSearchController alloc] initWithTitle:@"搜索" navBarBtns:NavBarBtnNone];
-    controller.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:controller animated:YES];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:controller];
+    nav.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:nav animated:YES completion:^{
+        
+    }];
 }
 
 - (void)addTabContainerController {
