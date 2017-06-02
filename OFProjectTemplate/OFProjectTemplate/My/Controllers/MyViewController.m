@@ -8,6 +8,7 @@
 
 #import "MyViewController.h"
 #import "OFUIkitMacro.h"
+#import "LoginViewController.h"
 
 @interface MyViewController ()<myViewDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -41,9 +42,11 @@
         
         [self presentViewController:pickVC animated:YES completion:nil];
     } else {
-        OFBaseViewController *vc = [[OFBaseViewController alloc] initWithTitle:btn.titleLabel.text navBarBtns:NavBarBtnBack];
-        vc.view.backgroundColor = [UIColor qmui_randomColor];
-        [self.navigationController pushViewController:vc animated:YES];
+        LoginViewController *login = [[LoginViewController alloc]initWithTitle:@"登录" navBarBtns:NavBarBtnBack];
+        UINavigationController *navc = [[UINavigationController alloc]initWithRootViewController:login];
+        [self presentViewController:navc animated:YES completion:^{
+            
+        }];
     }
     
 
