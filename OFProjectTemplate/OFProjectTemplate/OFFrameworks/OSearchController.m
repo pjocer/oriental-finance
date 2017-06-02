@@ -26,6 +26,7 @@
     [self.searchContentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+    self.searchContentView.sources = @[@"东野圭吾", @"三体", @"爱", @"红楼梦", @"理智与情感", @"读书热榜", @"免费榜"];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -38,8 +39,6 @@
 - (OSearchContentView *)searchContentView {
     if (!_searchContentView) {
         _searchContentView = [[OSearchContentView alloc] init];
-        _searchContentView.sources = @[@"东野圭吾", @"三体", @"爱", @"红楼梦", @"理智与情感", @"读书热榜", @"免费榜"];
-
     }
     return _searchContentView;
 }

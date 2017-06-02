@@ -19,53 +19,56 @@
 
 @implementation OSearchContentView
 
-- (instancetype)initWithHotSearches:(NSMutableArray *)sources {
+- (instancetype)init {
     if (self = [super init]) {
-        self.sources = sources;
-        
-        self.searchHistory = [[QMUILabel alloc] initWithFont:OFFont(15) textColor:UIColorBlack];
-        self.searchHistory.text = @"搜索历史";
-        [self addSubview:self.searchHistory];
-        
-        self.clearBtn = [[QMUIButton alloc] initWithImage:ImageNamed(@"tab_home_selected") title:nil];
-        [self addSubview:self.clearBtn];
-        
-        self.floatLayoutView = [[QMUIFloatLayoutView alloc] init];
-        self.floatLayoutView.itemMargins = UIEdgeInsetsMake(0, 0, 10, 10);
-        self.floatLayoutView.minimumItemSize = CGSizeMake(69, 29);// 以2个字的按钮作为最小宽度
-        for (NSInteger i = 0; i < sources.count; i++) {
-            QMUIGhostButton *button = [[QMUIGhostButton alloc] initWithGhostType:QMUIGhostButtonColorGray];
-            [button setTitle:sources[i] forState:UIControlStateNormal];
-            button.titleLabel.font = UIFontMake(14);
-            button.contentEdgeInsets = UIEdgeInsetsMake(6, 20, 6, 20);
-            [self.floatLayoutView addSubview:button];
-        }
-        [self addSubview:self.floatLayoutView];
-        
-        self.hotSearch = [[QMUILabel alloc] initWithFont:OFFont(15) textColor:UIColorBlack];
-        self.hotSearch.text = @"大家都在搜";
-        [self addSubview:self.hotSearch];
-        
-        self.hFloatLayoutView = [[QMUIFloatLayoutView alloc] init];
-        self.hFloatLayoutView.itemMargins = UIEdgeInsetsMake(0, 0, 10, 10);
-        self.hFloatLayoutView.minimumItemSize = CGSizeMake(69, 29);// 以2个字的按钮作为最小宽度
-        for (NSInteger i = 0; i < sources.count-5; i++) {
-            QMUIGhostButton *button = [[QMUIGhostButton alloc] initWithGhostType:QMUIGhostButtonColorGray];
-            [button setTitle:sources[i] forState:UIControlStateNormal];
-            button.titleLabel.font = UIFontMake(14);
-            button.contentEdgeInsets = UIEdgeInsetsMake(6, 20, 6, 20);
-            [self.hFloatLayoutView addSubview:button];
-        }
-        [self addSubview:self.hFloatLayoutView];
+        [[self commitSubviews] subscribe].backgroundColor = [UIColor clearColor];
     }
     
     return self;
 }
 
 - (instancetype)subscribe {
-    [RACObserve(self, sources) subscribeNext:^(id x) {
-        
+    [RACObserve(self, sources) subscribeNext:^(NSArray *x) {
+        for (NSInteger i = 0; i < x.count; i++) {
+            QMUIGhostButton *button = [[QMUIGhostButton alloc] initWithGhostType:QMUIGhostButtonColorGray];
+            [button setTitle:x[i] forState:UIControlStateNormal];
+            button.titleLabel.font = UIFontMake(14);
+            button.contentEdgeInsets = UIEdgeInsetsMake(6, 20, 6, 20);
+            [self.hFloatLayoutView addSubview:button];
+        }
+        for (NSInteger i = 0; i < x.count; i++) {
+            QMUIGhostButton *button = [[QMUIGhostButton alloc] initWithGhostType:QMUIGhostButtonColorGray];
+            [button setTitle:x[i] forState:UIControlStateNormal];
+            button.titleLabel.font = UIFontMake(14);
+            button.contentEdgeInsets = UIEdgeInsetsMake(6, 20, 6, 20);
+            [self.floatLayoutView addSubview:button];
+        }
     }];
+    return self;
+}
+
+- (instancetype)commitSubviews {
+    self.searchHistory = [[QMUILabel alloc] initWithFont:OFFont(15) textColor:UIColorBlack];
+    self.searchHistory.text = @"搜索历史";
+    [self addSubview:self.searchHistory];
+    
+    self.clearBtn = [[QMUIButton alloc] initWithImage:ImageNamed(@"tab_home_selected") title:nil];
+    [self addSubview:self.clearBtn];
+    
+    self.floatLayoutView = [[QMUIFloatLayoutView alloc] init];
+    self.floatLayoutView.itemMargins = UIEdgeInsetsMake(0, 0, 10, 10);
+    self.floatLayoutView.minimumItemSize = CGSizeMake(69, 29);// 以2个字的按钮作为最小宽度
+    [self addSubview:self.floatLayoutView];
+    
+    self.hotSearch = [[QMUILabel alloc] initWithFont:OFFont(15) textColor:UIColorBlack];
+    self.hotSearch.text = @"大家都在搜";
+    [self addSubview:self.hotSearch];
+    
+    self.hFloatLayoutView = [[QMUIFloatLayoutView alloc] init];
+    self.hFloatLayoutView.itemMargins = UIEdgeInsetsMake(0, 0, 10, 10);
+    self.hFloatLayoutView.minimumItemSize = CGSizeMake(69, 29);// 以2个字的按钮作为最小宽度
+    
+    [self addSubview:self.hFloatLayoutView];
     return self;
 }
 
