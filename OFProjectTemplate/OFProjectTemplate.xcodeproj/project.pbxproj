@@ -126,8 +126,8 @@
 		D3E543841EDE94E100D8898C /* LocalChannelTableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalChannelTableViewModel.m; path = OFProjectTemplate/Channel/Controllers/LocalChannelTableViewModel.m; sourceTree = SOURCE_ROOT; };
 		D3E543861EDE95A200D8898C /* LocalChannelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalChannelCell.h; path = OFProjectTemplate/Channel/Controllers/LocalChannelCell.h; sourceTree = SOURCE_ROOT; };
 		D3E543871EDE95A200D8898C /* LocalChannelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalChannelCell.m; path = OFProjectTemplate/Channel/Controllers/LocalChannelCell.m; sourceTree = SOURCE_ROOT; };
-		D3E543931EDFF66D00D8898C /* OSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSearchController.h; sourceTree = "<group>"; };
-		D3E543941EDFF66D00D8898C /* OSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSearchController.m; sourceTree = "<group>"; };
+		D3E543931EDFF66D00D8898C /* OSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OSearchController.h; path = OFFrameworks/OSearchController.h; sourceTree = "<group>"; };
+		D3E543941EDFF66D00D8898C /* OSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OSearchController.m; path = OFFrameworks/OSearchController.m; sourceTree = "<group>"; };
 		D609C2861EDFA67900A09C19 /* IntroductionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroductionCell.h; sourceTree = "<group>"; };
 		D609C2871EDFA67900A09C19 /* IntroductionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroductionCell.m; sourceTree = "<group>"; };
 		D609C2891EDFB76800A09C19 /* ChanneldetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChanneldetailsVC.h; sourceTree = "<group>"; };
@@ -240,7 +240,6 @@
 				D30CB1A41ED7F6DE000AC0BB /* AppDelegate.m */,
 				D3207FCA1ED83BEF00240DD2 /* Sections */,
 				D65DC8A61ED825500030636D /* Macro */,
-				D3E5438C1EDFEA9500D8898C /* Modules */,
 				D65DC8B31ED825500030636D /* OFFrameworks */,
 				D30CB1A01ED7F6DE000AC0BB /* Supporting Files */,
 			);
@@ -271,6 +270,7 @@
 		D3207FCA1ED83BEF00240DD2 /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				D3E5439F1EE01EC800D8898C /* Search */,
 				D3E543691EDE543700D8898C /* Components */,
 				D3E5435F1ED9593E00D8898C /* Extensions */,
 				D65DC88D1ED825500030636D /* Base */,
@@ -309,14 +309,45 @@
 			name = Components;
 			sourceTree = "<group>";
 		};
-		D3E5438C1EDFEA9500D8898C /* Modules */ = {
+		D3E5439F1EE01EC800D8898C /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				D3E543A31EE01ED800D8898C /* Controllers */,
+				D3E543A21EE01ED600D8898C /* Views */,
+				D3E543A11EE01ED400D8898C /* ViewModels */,
+				D3E543A01EE01ED100D8898C /* Models */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		D3E543A01EE01ED100D8898C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		D3E543A11EE01ED400D8898C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		D3E543A21EE01ED600D8898C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		D3E543A31EE01ED800D8898C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				D3E543931EDFF66D00D8898C /* OSearchController.h */,
 				D3E543941EDFF66D00D8898C /* OSearchController.m */,
 			);
-			name = Modules;
-			path = OFFrameworks;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		D609C2981EE0F8EE00A09C19 /* ZYBannerView */ = {

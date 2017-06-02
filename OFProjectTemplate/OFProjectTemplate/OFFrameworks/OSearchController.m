@@ -15,6 +15,9 @@
 @interface OSearchContentView : UIView
 @property (nonatomic, strong) QMUIFloatLayoutView *floatLayoutView;
 @property (nonatomic, strong) QMUIFloatLayoutView *hFloatLayoutView;
+@property (nonatomic, strong) QMUILabel *hotSearch;
+@property (nonatomic, strong) QMUIButton *clearBtn;
+@property (nonatomic, strong) QMUILabel *searchHistory;
 @property (nonatomic, strong) NSMutableArray *sources;
 @end
 
@@ -24,36 +27,16 @@
     if (self = [super init]) {
         self.sources = sources;
         
-        QMUILabel *searchHistory = [[QMUILabel alloc] initWithFont:OFFont(15) textColor:UIColorBlack];
-        searchHistory.text = @"搜索历史";
-        [self addSubview:searchHistory];
+        self.searchHistory = [[QMUILabel alloc] initWithFont:OFFont(15) textColor:UIColorBlack];
+        self.searchHistory.text = @"搜索历史";
+        [self addSubview:self.searchHistory];
         
-        [searchHistory mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.top.mas_equalTo(10);
-        }];
-        
-        QMUIButton *clearBtn = [[QMUIButton alloc] initWithImage:ImageNamed(@"tab_home_selected") title:nil];
-        [self addSubview:clearBtn];
-        
-        [clearBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.trailing.mas_equalTo(-10);
-            make.centerY.equalTo(searchHistory);
-        }];
+        self.clearBtn = [[QMUIButton alloc] initWithImage:ImageNamed(@"tab_home_selected") title:nil];
+        [self addSubview:self.clearBtn];
         
         self.floatLayoutView = [[QMUIFloatLayoutView alloc] init];
-        self.floatLayoutView.padding = UIEdgeInsetsMake(12, 12, 12, 12);
         self.floatLayoutView.itemMargins = UIEdgeInsetsMake(0, 0, 10, 10);
         self.floatLayoutView.minimumItemSize = CGSizeMake(69, 29);// 以2个字的按钮作为最小宽度
-        self.floatLayoutView.layer.borderWidth = PixelOne;
-        self.floatLayoutView.layer.borderColor = UIColorSeparator.CGColor;
-        [self addSubview:self.floatLayoutView];
-        
-        [self.floatLayoutView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(searchHistory.mas_bottom).offset(10);
-            make.left.equalTo(searchHistory);
-            make.right.equalTo(clearBtn);
-        }];
-        
         for (NSInteger i = 0; i < sources.count; i++) {
             QMUIGhostButton *button = [[QMUIGhostButton alloc] initWithGhostType:QMUIGhostButtonColorGray];
             [button setTitle:sources[i] forState:UIControlStateNormal];
@@ -61,50 +44,46 @@
             button.contentEdgeInsets = UIEdgeInsetsMake(6, 20, 6, 20);
             [self.floatLayoutView addSubview:button];
         }
+        [self addSubview:self.floatLayoutView];
         
-        CGSize floatLayoutViewSize = [self.floatLayoutView sizeThatFits:CGSizeMake(SCREEN_WIDTH-20, CGFLOAT_MAX)];
-        CGRect floatLayoutViewFrame = self.floatLayoutView.frame;
-        floatLayoutViewFrame.size.height = floatLayoutViewSize.height;
-        self.floatLayoutView.frame = floatLayoutViewFrame;
-        
-        
-        
-        QMUILabel *hotSearch = [[QMUILabel alloc] initWithFont:OFFont(15) textColor:UIColorBlack];
-        hotSearch.text = @"大家都在搜";
-        [self addSubview:hotSearch];
-        
-        [hotSearch mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.floatLayoutView.mas_bottom).offset(10);
-            make.left.equalTo(searchHistory);
-        }];
-        
+        self.hotSearch = [[QMUILabel alloc] initWithFont:OFFont(15) textColor:UIColorBlack];
+        self.hotSearch.text = @"大家都在搜";
+        [self addSubview:self.hotSearch];
+
         self.hFloatLayoutView = [[QMUIFloatLayoutView alloc] init];
-        self.hFloatLayoutView.padding = UIEdgeInsetsMake(12, 12, 12, 12);
         self.hFloatLayoutView.itemMargins = UIEdgeInsetsMake(0, 0, 10, 10);
         self.hFloatLayoutView.minimumItemSize = CGSizeMake(69, 29);// 以2个字的按钮作为最小宽度
-        self.hFloatLayoutView.layer.borderWidth = PixelOne;
-        self.hFloatLayoutView.layer.borderColor = UIColorSeparator.CGColor;
-        [self addSubview:self.hFloatLayoutView];
-        
-        [self.hFloatLayoutView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(hotSearch).offset(10);
-            make.left.right.equalTo(self.floatLayoutView);
-            make.bottom.equalTo(self).offset(-10);
-        }];
-        
-        for (NSInteger i = 0; i < sources.count; i++) {
+        for (NSInteger i = 0; i < sources.count-5; i++) {
             QMUIGhostButton *button = [[QMUIGhostButton alloc] initWithGhostType:QMUIGhostButtonColorGray];
             [button setTitle:sources[i] forState:UIControlStateNormal];
             button.titleLabel.font = UIFontMake(14);
             button.contentEdgeInsets = UIEdgeInsetsMake(6, 20, 6, 20);
             [self.hFloatLayoutView addSubview:button];
         }
+        [self addSubview:self.hFloatLayoutView];
     }
     
     return self;
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    self.searchHistory.frame = CGRectMake(10, 10, 100, 15);
+    
+    [self.clearBtn sizeToFit];
+    self.clearBtn.center = CGPointMake(SCREEN_WIDTH-10-CGRectGetWidth(self.clearBtn.frame), self.searchHistory.center.y);
+    
+    CGSize fSize = [self.floatLayoutView sizeThatFits:CGSizeMake(SCREEN_WIDTH-20, CGFLOAT_MAX)];
+    self.floatLayoutView.frame = CGRectMake(10, CGRectGetMaxY(self.searchHistory.frame)+10, fSize.width, fSize.height);
 
+    self.hotSearch.frame = CGRectMake(10, CGRectGetMaxY(self.floatLayoutView.frame)+10, 100, 15);
+    
+    CGSize fhSize = [self.hFloatLayoutView sizeThatFits:CGSizeMake(SCREEN_WIDTH-20, CGFLOAT_MAX)];
+    self.hFloatLayoutView.frame = CGRectMake(10, CGRectGetMaxY(self.hotSearch.frame)+10, fhSize.width, fhSize.height);
+    
+    
+}
+    
 @end
 
 @interface OSearchController () <UISearchBarDelegate>
@@ -131,6 +110,20 @@
         [self.searchBar becomeFirstResponder];
     }
 }
+
+//- (void)viewDidLayoutSubviews {
+//    [super viewDidLayoutSubviews];
+//    CGSize floatLayoutViewSize = [self.searchContentView.floatLayoutView sizeThatFits:CGSizeMake(SCREEN_WIDTH-20, CGFLOAT_MAX)];
+//    CGRect floatLayoutViewFrame = self.searchContentView.floatLayoutView.frame;
+//    floatLayoutViewFrame.size.height = floatLayoutViewSize.height;
+//    self.searchContentView.floatLayoutView.frame = floatLayoutViewFrame;
+//    self.searchContentView.hotSearch.frame = CGRectMake(floatLayoutViewFrame.origin.x, CGRectGetMaxY(floatLayoutViewFrame)+10, 100, 15);
+//    CGSize hFloatLayoutViewSize = [self.searchContentView.hFloatLayoutView sizeThatFits:CGSizeMake(SCREEN_WIDTH-20, CGFLOAT_MAX)];
+//    CGRect hFloatLayoutViewFrame = self.searchContentView.hFloatLayoutView.frame;
+//    hFloatLayoutViewFrame.size.height = hFloatLayoutViewSize.height;
+//    self.searchContentView.hFloatLayoutView.frame = hFloatLayoutViewFrame;
+//    
+//}
 
 - (OSearchContentView *)searchContentView {
     if (!_searchContentView) {
