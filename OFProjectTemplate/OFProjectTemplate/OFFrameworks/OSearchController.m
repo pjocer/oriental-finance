@@ -38,7 +38,7 @@
 
 - (void)commitViews {
     self.navigationItem.titleView = self.searchBar;
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:[[UIView alloc]init]];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:[[UIView alloc] init]];
     [self.view addSubview:self.searchContentView];
     [self.searchContentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
@@ -46,9 +46,13 @@
 }
 
 - (void)subscribe {
+    WEAKSELF
     [self.searchContentView.clearBtnSignal subscribeNext:^(id x) {
+        STRONGSELF
         [self.viewModel deleteSearchHistory];
+        self.searchContentView.histories = [self.viewModel searhHistory];
     }];
+    RAC(self.searchBar, text) = RACObserve(self, searchContentView.selectedText);
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -110,6 +114,7 @@
         [OShowHud showErrorHudWith:@"请先输入搜索内容" animated:YES];
     }
     [self.viewModel saveSearchHistory:searchBar.text];
+    self.searchContentView.histories = [self.viewModel searhHistory];
 }
 
 @end

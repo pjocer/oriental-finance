@@ -11,6 +11,8 @@
 
 @interface OSearchContentView : UIView
 
+@property (nonatomic, copy) NSString *selectedText;
+
 @property (nonatomic, strong) NSArray *sources;
 
 @property (nonatomic, strong) NSArray *histories;

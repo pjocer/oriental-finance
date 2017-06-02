@@ -30,5 +30,12 @@
  *
  *  @return 数据库操作状态
  */
-+ (MWDBERROR)deleteSearchHistory;
++ (MWDBERROR)deleteAllSearchHistory;
+
+/**
+ *  删除单个搜索历史
+ *
+ *  @return 数据库操作状态
+ */
++ (MWDBERROR)deleteSearchHistory:(NSString *)searchStr;
 @end

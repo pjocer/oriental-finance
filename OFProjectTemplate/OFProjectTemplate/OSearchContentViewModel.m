@@ -11,6 +11,10 @@
 @implementation OSearchContentViewModel
 
 - (void)saveSearchHistory:(NSString *)text {
+    NSArray *searchHis = [self searhHistory];
+    if (searchHis.count>10) { // 历史记录默认只存10个
+        [SearchDAO deleteSearchHistory:[searchHis lastObject]];
+    }
     [SearchDAO saveSearchHistory:text];
 }
 
@@ -19,7 +23,7 @@
 }
 
 - (MWDBERROR)deleteSearchHistory {
-    return [SearchDAO deleteSearchHistory];
+    return [SearchDAO deleteAllSearchHistory];
 }
 
 - (void)fetchHotSearchWithCompeletion:(dispatch_block_t)compeletion {

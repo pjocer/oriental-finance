@@ -69,7 +69,7 @@
     return arr;
 }
 
-+ (MWDBERROR)deleteSearchHistory {
++ (MWDBERROR)deleteAllSearchHistory {
     FMDatabase *mydb = [FMDatabase databaseWithPath:SQLPath];
     if (![mydb open]) return MW_DB_OPEN_ERROR;
     
@@ -81,6 +81,26 @@
     }
     
     if (![mydb executeUpdate:@"delete from tb_search_1_0"]) {
+        [mydb close];
+        return MW_DB_DELETE_ERROR;
+    }
+    
+    [mydb close];
+    return MW_DB_SUCCESS;
+}
+
++ (MWDBERROR)deleteSearchHistory:(NSString *)searchStr {
+    FMDatabase *mydb = [FMDatabase databaseWithPath:SQLPath];
+    if (![mydb open]) return MW_DB_OPEN_ERROR;
+    
+    [mydb setShouldCacheStatements:YES];
+    
+    if (![mydb tableExists:TB_SEARCH]) {
+        [mydb close];
+        return MW_DB_TABEL_ERROR;
+    }
+    
+    if (![mydb executeUpdate:@"delete from tb_search_1_0 where searchStr = ?",searchStr]) {
         [mydb close];
         return MW_DB_DELETE_ERROR;
     }
