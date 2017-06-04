@@ -52,7 +52,7 @@
         make.width.mas_equalTo(300);
     }];
     [self.orderButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.searchBar.mas_right).offset(5);
+        make.left.equalTo(self.searchBar.textField.mas_right).offset(8);
         make.top.bottom.equalTo(self.searchBar.textField);
         make.right.equalTo(self).offset(-8);
     }];
@@ -82,11 +82,10 @@
         [_orderButton setTitle:@"预约" forState:UIControlStateNormal];
         [_orderButton setTitleColor:DEFAULT_TEXT_COLOR forState:UIControlStateNormal];
         [_orderButton setBackgroundColor:DEFAULT_BG_COLOR];
-        UIImage *image = ImageNamed(@"search_image");
+        UIImage *image = ImageNamed(@"erweim");
         [_orderButton setImage:image forState:UIControlStateNormal];
-        [_orderButton setTitleEdgeInsets:UIEdgeInsetsMake(0, -image.size.width, 0, image.size.width)];
-        [_orderButton sizeToFit];
-        [_orderButton setImageEdgeInsets:UIEdgeInsetsMake(0, CGRectGetWidth(_orderButton.titleLabel.bounds), 0, -CGRectGetWidth(_orderButton.titleLabel.bounds))];
+        [_orderButton setTitleEdgeInsets:UIEdgeInsetsMake(0, -35, 0, 0)];
+        [_orderButton setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, -60)];
     }
     return _orderButton;
 }
