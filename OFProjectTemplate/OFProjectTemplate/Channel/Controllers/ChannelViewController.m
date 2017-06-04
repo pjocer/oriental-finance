@@ -30,7 +30,7 @@
 
 - (void)customizeNavBarBtns {
     UIBarButtonItem *code = [QMUINavigationButton barButtonItemWithImage:ImageNamed(@"tab_my_normal") position:QMUINavigationButtonPositionLeft target:self action:@selector(code)];
-    UIBarButtonItem *search = [QMUINavigationButton barButtonItemWithImage:ImageNamed(@"tab_my_selected") position:QMUINavigationButtonPositionRight target:self action:@selector(search)];
+    UIBarButtonItem *search = [QMUINavigationButton barButtonItemWithImage:ImageNamed(@"search") position:QMUINavigationButtonPositionRight target:self action:@selector(search)];
     self.navigationItem.leftBarButtonItem = code;
     self.navigationItem.rightBarButtonItem = search;
 }

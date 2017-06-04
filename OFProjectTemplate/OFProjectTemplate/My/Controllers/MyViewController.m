@@ -7,6 +7,7 @@
 //
 
 #import "MyViewController.h"
+#import "OFUIkitMacro.h"
 
 @interface MyViewController ()<myViewDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -27,6 +28,7 @@
 
 - (void)myViewDelegateActionWithBtn:(UIButton *)btn{
     NSLog(@"%@",btn.titleLabel.text);
+    
     if (btn.tag == 1001) {
         UIImagePickerController *pickVC = [[UIImagePickerController alloc] init];
         
@@ -38,6 +40,10 @@
         
         
         [self presentViewController:pickVC animated:YES completion:nil];
+    } else {
+        OFBaseViewController *vc = [[OFBaseViewController alloc] initWithTitle:btn.titleLabel.text navBarBtns:NavBarBtnBack];
+        vc.view.backgroundColor = [UIColor qmui_randomColor];
+        [self.navigationController pushViewController:vc animated:YES];
     }
     
 
