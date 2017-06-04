@@ -10,4 +10,6 @@
 
 @interface OSearchView : UIView
 
+@property (nonatomic, copy) void(^didSelectedAction)(BOOL isSearchBar);
+
 @end

@@ -16,6 +16,7 @@
 #import "OBannerView.h"
 #import "OShowHud.h"
 #import "HomeChannelLiveCell.h"
+#import "OSearchController.h"
 
 @interface HotPlayController ()
 @property (nonatomic, strong) OSearchView *searchView;
@@ -49,9 +50,27 @@
     }];
 }
 
+- (void)gotoSearchController {
+    OSearchController *controller = [[OSearchController alloc] initWithTitle:@"搜索" navBarBtns:NavBarBtnNone];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:controller];
+    nav.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:nav animated:YES completion:^{
+        
+    }];
+}
+
 - (OSearchView *)searchView {
     if (!_searchView) {
         _searchView = [OSearchView new];
+        WEAKSELF
+        [_searchView setDidSelectedAction:^(BOOL isSearchBar){
+            STRONGSELF
+            if (isSearchBar) {
+                [self gotoSearchController];
+            } else {
+                
+            }
+        }];
     }
     return _searchView;
 }

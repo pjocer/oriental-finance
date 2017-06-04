@@ -79,14 +79,13 @@
 - (UISearchBar *)searchBar {
     if (!_searchBar) {
         _searchBar = [[UISearchBar alloc] initWithFrame:CGRectZero];
-        [_searchBar setSearchFieldBackgroundImage:ImageNamed(@"search_bg") forState:UIControlStateNormal];
-        [_searchBar setImage:ImageNamed(@"m_12") forSearchBarIcon:UISearchBarIconClear state:UIControlStateNormal];
-        _searchBar.searchFieldBackgroundPositionAdjustment = UIOffsetMake(0.5, 0);
-        _searchBar.placeholder = @"搜搜看你想要的视频吧";
         _searchBar.delegate = self;
-        _searchBar.barTintColor = [UIColor whiteColor];
-        _searchBar.layer.borderColor = [UIColor whiteColor].CGColor;
-        _searchBar.layer.borderWidth = 3;
+        [_searchBar setBarTintColor:[UIColor whiteColor]];
+        _searchBar.textField.backgroundColor = DEFAULT_BG_COLOR;
+        _searchBar.textField.layer.cornerRadius = 14;
+        _searchBar.textField.layer.masksToBounds = YES;
+        _searchBar.placeholder = @"欢乐颂";
+        _searchBar.searchBarStyle = UISearchBarStyleMinimal;
         _searchBar.showsCancelButton = YES;
         if (STRINGHASVALUE(self.searchWord)) _searchBar.text = self.searchWord;
     }

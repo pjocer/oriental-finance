@@ -11,7 +11,6 @@
 		D30CB1A21ED7F6DE000AC0BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D30CB1A11ED7F6DE000AC0BB /* main.m */; };
 		D30CB1A51ED7F6DE000AC0BB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D30CB1A41ED7F6DE000AC0BB /* AppDelegate.m */; };
 		D30CB1AB1ED7F6DE000AC0BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D30CB1A91ED7F6DE000AC0BB /* Main.storyboard */; };
-		D30CB1AD1ED7F6DE000AC0BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D30CB1AC1ED7F6DE000AC0BB /* Assets.xcassets */; };
 		D30CB1B01ED7F6DE000AC0BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D30CB1AE1ED7F6DE000AC0BB /* LaunchScreen.storyboard */; };
 		D30CB1BB1ED7F6DE000AC0BB /* OFProjectTemplateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D30CB1BA1ED7F6DE000AC0BB /* OFProjectTemplateTests.m */; };
 		D3207FCD1ED910A500240DD2 /* HomeTabContainerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FCC1ED910A500240DD2 /* HomeTabContainerViewModel.m */; };
@@ -27,6 +26,7 @@
 		D33820B21EE15D6700D5B99C /* HomeChannelLiveCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D33820B11EE15D6600D5B99C /* HomeChannelLiveCell.m */; };
 		D33820B51EE15EFD00D5B99C /* HoritalVideoCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D33820B41EE15EFD00D5B99C /* HoritalVideoCollectionCell.m */; };
 		D33820B81EE1714600D5B99C /* ChannelLiveHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D33820B71EE1714600D5B99C /* ChannelLiveHeaderView.m */; };
+		D33820BA1EE3ADE400D5B99C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33820B91EE3ADE400D5B99C /* Assets.xcassets */; };
 		D3E5435E1ED9505900D8898C /* VerticalVideoCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E5435D1ED9505900D8898C /* VerticalVideoCollectionCell.m */; };
 		D3E543681ED959EF00D8898C /* UITableView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E543671ED959EF00D8898C /* UITableView+Extension.m */; };
 		D3E5436C1EDE546E00D8898C /* OBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E5436B1EDE546D00D8898C /* OBannerView.m */; };
@@ -93,7 +93,6 @@
 		D30CB1A31ED7F6DE000AC0BB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D30CB1A41ED7F6DE000AC0BB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D30CB1AA1ED7F6DE000AC0BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D30CB1AC1ED7F6DE000AC0BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D30CB1AF1ED7F6DE000AC0BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D30CB1B11ED7F6DE000AC0BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D30CB1B61ED7F6DE000AC0BB /* OFProjectTemplateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OFProjectTemplateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +126,7 @@
 		D33820B41EE15EFD00D5B99C /* HoritalVideoCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoritalVideoCollectionCell.m; sourceTree = "<group>"; };
 		D33820B61EE1714600D5B99C /* ChannelLiveHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelLiveHeaderView.h; sourceTree = "<group>"; };
 		D33820B71EE1714600D5B99C /* ChannelLiveHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelLiveHeaderView.m; sourceTree = "<group>"; };
+		D33820B91EE3ADE400D5B99C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3C29BC61ED7FF300030D262 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D3C29BC81ED7FF410030D262 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		D3C29BCA1ED7FF530030D262 /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
@@ -295,8 +295,8 @@
 		D30CB1A01ED7F6DE000AC0BB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D33820B91EE3ADE400D5B99C /* Assets.xcassets */,
 				D30CB1A91ED7F6DE000AC0BB /* Main.storyboard */,
-				D30CB1AC1ED7F6DE000AC0BB /* Assets.xcassets */,
 				D30CB1AE1ED7F6DE000AC0BB /* LaunchScreen.storyboard */,
 				D30CB1B11ED7F6DE000AC0BB /* Info.plist */,
 				D30CB1A11ED7F6DE000AC0BB /* main.m */,
@@ -845,7 +845,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D30CB1B01ED7F6DE000AC0BB /* LaunchScreen.storyboard in Resources */,
-				D30CB1AD1ED7F6DE000AC0BB /* Assets.xcassets in Resources */,
+				D33820BA1EE3ADE400D5B99C /* Assets.xcassets in Resources */,
 				D30CB1AB1ED7F6DE000AC0BB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -35,12 +35,12 @@
     WEAKSELF
     [[self rac_signalForSelector:@selector(searchBarTextDidBeginEditing:) fromProtocol:@protocol(UISearchBarDelegate)] subscribeNext:^(id x) {
         STRONGSELF
-        NSLog(@"XXXXXXXXXXXXXXXXXX");
+        if (self.didSelectedAction) self.didSelectedAction(YES);
     }];
     
     [[self.orderButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
        STRONGSELF
-        NSLog(@"OOOOOOOOOOOOOOOOOO");
+        if (self.didSelectedAction) self.didSelectedAction(NO);
     }];
     
     return self;
@@ -53,7 +53,8 @@
     }];
     [self.orderButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.searchBar.mas_right).offset(5);
-        make.right.top.bottom.equalTo(self);
+        make.top.bottom.equalTo(self.searchBar.textField);
+        make.right.equalTo(self).offset(-8);
     }];
     return self;
 }
@@ -62,7 +63,12 @@
     if (!_searchBar) {
         _searchBar = [UISearchBar new];
         _searchBar.delegate = self;
-        _searchBar.searchBarStyle = UISearchBarStyleDefault;
+        [_searchBar setBarTintColor:[UIColor whiteColor]];
+        _searchBar.textField.backgroundColor = DEFAULT_BG_COLOR;
+        _searchBar.textField.layer.cornerRadius = 14;
+        _searchBar.textField.layer.masksToBounds = YES;
+        _searchBar.placeholder = @"欢乐颂";
+        _searchBar.searchBarStyle = UISearchBarStyleMinimal;
     }
     return _searchBar;
 }
@@ -70,7 +76,17 @@
 - (UIButton *)orderButton {
     if (!_orderButton) {
         _orderButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_orderButton setBackgroundImage:ImageNamed(@"shouye") forState:UIControlStateNormal];
+        _orderButton.layer.masksToBounds = YES;
+        _orderButton.layer.cornerRadius = 14;
+        _orderButton.titleLabel.font = UIFontMake(13);
+        [_orderButton setTitle:@"预约" forState:UIControlStateNormal];
+        [_orderButton setTitleColor:DEFAULT_TEXT_COLOR forState:UIControlStateNormal];
+        [_orderButton setBackgroundColor:DEFAULT_BG_COLOR];
+        UIImage *image = ImageNamed(@"search_image");
+        [_orderButton setImage:image forState:UIControlStateNormal];
+        [_orderButton setTitleEdgeInsets:UIEdgeInsetsMake(0, -image.size.width, 0, image.size.width)];
+        [_orderButton sizeToFit];
+        [_orderButton setImageEdgeInsets:UIEdgeInsetsMake(0, CGRectGetWidth(_orderButton.titleLabel.bounds), 0, -CGRectGetWidth(_orderButton.titleLabel.bounds))];
     }
     return _orderButton;
 }
