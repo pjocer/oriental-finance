@@ -46,15 +46,15 @@
     [self.iconView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.mas_equalTo(8);
         make.bottom.mas_equalTo(-10);
-        make.width.mas_equalTo(120);
+        make.width.mas_equalTo(110);
     }];
     [self.channelIconView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.iconView.mas_right).offset(10);
+        make.left.equalTo(self.iconView.mas_right).offset(18);
         make.centerY.equalTo(self.iconView.mas_centerY).offset(-15);
         make.width.height.mas_equalTo(30);
     }];
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.channelIconView.mas_right).offset(10);
+        make.left.equalTo(self.channelIconView.mas_right).offset(18);
         make.centerY.equalTo(self.channelIconView.mas_centerY);
     }];
     [self.timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -78,9 +78,9 @@
     if (!_titleLabel) {
         _titleLabel = [UILabel new];
         _titleLabel.text = @"东方卫视";
-        _titleLabel.textColor = [UIColor blackColor];
+        _titleLabel.textColor = DEFAULT_TEXT_COLOR;
         _titleLabel.numberOfLines = 1;
-        _titleLabel.font = UIFontMake(18);
+        _titleLabel.font = UIFontMake(16);
     }
     return _titleLabel;
 }
@@ -89,9 +89,9 @@
     if (!_detailLabel) {
         _detailLabel = [UILabel new];
         _detailLabel.text = @"欢乐颂 - 第54集";
-        _detailLabel.textColor = [UIColor lightGrayColor];
+        _detailLabel.textColor = DEFAULT_TEXT_COLOR_GRAY;
         _detailLabel.numberOfLines = 1;
-        _detailLabel.font = UIFontMake(13);
+        _detailLabel.font = UIFontMake(12);
     }
     return _detailLabel;
 }
@@ -99,12 +99,12 @@
 - (UILabel *)timeLabel {
     if (!_timeLabel) {
         _timeLabel = [UILabel new];
-        _timeLabel.backgroundColor = [UIColor grayColor];
+        _timeLabel.backgroundColor = UIColorMake(216, 216, 216);
         _timeLabel.text = @" 08:15 ";
-        _timeLabel.textColor = [UIColor blackColor];
-        _timeLabel.font = UIFontMake(13);
+        _timeLabel.textColor = DEFAULT_TEXT_COLOR_GRAY;
+        _timeLabel.font = UIFontMake(12);
         _timeLabel.layer.masksToBounds = YES;
-        _timeLabel.layer.cornerRadius = 6.5f;
+        _timeLabel.layer.cornerRadius = 5.5f;
     }
     return _timeLabel;
 }
