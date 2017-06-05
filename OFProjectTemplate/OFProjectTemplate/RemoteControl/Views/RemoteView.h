@@ -7,8 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol RemoteViewDelegate <NSObject>
+
+-(void)remoteViewDelegate:(UIButton *)btn;
+
+@end
 
 @interface RemoteView : UIView
+
+@property (nonatomic, weak) id <RemoteViewDelegate>delegate;
+
+@property (nonatomic, strong) UIButton *textWriteBtn;
+
+@property (nonatomic, strong) UIButton *TVPayBtn;
 
 @property (nonatomic, strong) UIButton *centerBtn;
 
@@ -24,7 +35,6 @@
 
 @property (nonatomic, strong) UIButton *soundLowBtn;
 
-@property (nonatomic, strong) UIButton *menuBtn;
 
 @property (nonatomic, strong) UIButton *backBtn;
 

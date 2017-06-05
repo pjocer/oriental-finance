@@ -103,6 +103,6 @@
 }
 
 - (void)clientAction: (UIButton *)btn {
-    [self.delegate applicationViewActionWithBtn:btn];
+//    [self.delegate applicationViewActionWithBtn:btn];
 }
 @end
