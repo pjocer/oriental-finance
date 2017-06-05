@@ -9,6 +9,7 @@
 #import "RemoteViewController.h"
 #import "RemoteView.h"
 #import <Masonry.h>
+#import "OFUIkitMacro.h"
 
 @interface RemoteViewController ()
 
@@ -20,11 +21,12 @@
     [super viewDidLoad];
     
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = UIColorMake(25, 24, 29);
     self.title = @"遥控器";
     
+    
     RemoteView *view = [[RemoteView alloc]initWithFrame:self.view.frame];
-    view.backgroundColor = [UIColor whiteColor];
+    view.backgroundColor = UIColorMake(25, 24, 29);
     [self.view addSubview:view];
     
 

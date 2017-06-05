@@ -28,11 +28,11 @@
 
 @property (nonatomic, strong) UIButton *backBtn;
 
-@property (nonatomic, strong) UIButton *btn1;
+@property (nonatomic, strong) UIButton *homeBtn;
 
-@property (nonatomic, strong) UIButton *btn2;
+@property (nonatomic, strong) UIButton *exitBtn;
 
-@property (nonatomic, strong) UIButton *btn3;
+
 
 
 

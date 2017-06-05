@@ -8,6 +8,7 @@
 
 #import "RemoteView.h"
 #import <Masonry.h>
+#import "OFUIkitMacro.h"
 
 @implementation RemoteView
 
@@ -20,10 +21,12 @@
     __weak RemoteView *weakSelf = self;
     UIView *backgroundView = [[UIView alloc]init];
     backgroundView.layer.masksToBounds = YES;
-    backgroundView.layer.cornerRadius = self.frame.size.width/4;
+    backgroundView.layer.cornerRadius = 10;
     backgroundView.layer.borderColor = [UIColor grayColor].CGColor;
     backgroundView.layer.borderWidth = 0.5;
+    backgroundView.transform = CGAffineTransformMakeRotation (M_PI_4);
     [self addSubview:backgroundView];
+    
     
     [backgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(weakSelf);
@@ -32,6 +35,13 @@
         make.height.equalTo(@(weakSelf.frame.size.width/2));
     }];
     
+    [backgroundView addSubview:self.centerBtn];
+    [backgroundView addSubview:self.topBtn];
+    [backgroundView addSubview:self.leftBtn];
+    [backgroundView addSubview:self.rightBtn];
+    [backgroundView addSubview:self.boomBtn];
+    
+    
     [self.centerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(backgroundView);
         make.width.equalTo(@(weakSelf.frame.size.width/4));
@@ -39,81 +49,61 @@
     }];
     
     [self.topBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(backgroundView);
-        make.bottom.equalTo(weakSelf.centerBtn.mas_top);
-        make.width.equalTo(@(weakSelf.frame.size.width/4));
-        make.height.equalTo(@(weakSelf.frame.size.width/8));
+        make.left.top.equalTo(backgroundView);
+        make.bottom.equalTo(backgroundView.mas_centerY);
+        make.right.equalTo(backgroundView.mas_centerX);
+//        make.width.equalTo(@(weakSelf.frame.size.width/4));
+//        make.height.equalTo(@(weakSelf.frame.size.width/8));
     }];
     
     [self.leftBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(backgroundView);
-        make.right.equalTo(weakSelf.centerBtn.mas_left);
-        make.width.equalTo(@(weakSelf.frame.size.width/8));
-        make.height.equalTo(@(weakSelf.frame.size.width/4));
+        make.left.bottom.equalTo(backgroundView);
+        make.top.equalTo(backgroundView.mas_centerY);
+        make.right.equalTo(backgroundView.mas_centerX);
     }];
     
     [self.boomBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(backgroundView);
-        make.top.equalTo(weakSelf.centerBtn.mas_bottom);
-        make.width.equalTo(@(weakSelf.frame.size.width/4));
-        make.height.equalTo(@(weakSelf.frame.size.width/8));
+        make.right.bottom.equalTo(backgroundView);
+        make.top.equalTo(backgroundView.mas_centerY);
+        make.left.equalTo(backgroundView.mas_centerX);
     }];
     
     [self.rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(backgroundView);
-        make.left.equalTo(weakSelf.centerBtn.mas_right);
-        make.width.equalTo(@(weakSelf.frame.size.width/8));
-        make.height.equalTo(@(weakSelf.frame.size.width/4));
+        make.right.top.equalTo(backgroundView);
+        make.bottom.equalTo(backgroundView.mas_centerY);
+        make.left.equalTo(backgroundView.mas_centerX);
     }];
-    
+
     [self.soundLowBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(weakSelf.mas_centerX).offset(-weakSelf.frame.size.width/16);
-        make.top.equalTo(weakSelf.mas_top).offset(40);
-        make.width.equalTo(@(weakSelf.frame.size.width/8));
-        make.height.equalTo(@(weakSelf.frame.size.width/8));
-    }];
-    
-    [self.backBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(weakSelf.soundLowBtn.mas_left).offset(-weakSelf.frame.size.width/8);
-        make.top.equalTo(weakSelf.mas_top).offset(40);
-        make.width.equalTo(@(weakSelf.frame.size.width/8));
-        make.height.equalTo(@(weakSelf.frame.size.width/8));
+        make.left.equalTo(weakSelf.mas_left).offset(25);
+        make.top.equalTo(weakSelf.boomBtn.mas_bottom).offset(77);
+        make.width.equalTo(@(40));
+        make.height.equalTo(@(40));
     }];
     
     [self.soundBigBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.mas_centerX).offset(weakSelf.frame.size.width/16);
-        make.top.equalTo(weakSelf.mas_top).offset(40);
-        make.width.equalTo(@(weakSelf.frame.size.width/8));
-        make.height.equalTo(@(weakSelf.frame.size.width/8));
+        make.right.equalTo(weakSelf.mas_right).offset(-25);
+        make.top.equalTo(weakSelf.boomBtn.mas_bottom).offset(77);
+        make.width.equalTo(@(40));
+        make.height.equalTo(@(40));
     }];
-    
-    [self.menuBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.soundBigBtn.mas_right).offset(weakSelf.frame.size.width/8);
-        make.top.equalTo(weakSelf.mas_top).offset(40);
-        make.width.equalTo(@(weakSelf.frame.size.width/8));
-        make.height.equalTo(@(weakSelf.frame.size.width/8));
-    }];
-    
-    [self.btn2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(backgroundView.mas_bottom).offset(80);
-        make.centerX.equalTo(weakSelf);
-        make.width.equalTo(@(weakSelf.frame.size.width/5));
-        make.height.equalTo(@(weakSelf.frame.size.width/9));
-    }];
-    
-    [self.btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(backgroundView.mas_bottom).offset(80);
-        make.right.equalTo(weakSelf.btn2.mas_left).offset(-weakSelf.frame.size.width/10);
-        make.width.equalTo(@(weakSelf.frame.size.width/5));
-        make.height.equalTo(@(weakSelf.frame.size.width/9));
-    }];
-    
-    [self.btn3 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(backgroundView.mas_bottom).offset(80);
-        make.left.equalTo(weakSelf.btn2.mas_right).offset(weakSelf.frame.size.width/10);
-        make.width.equalTo(@(weakSelf.frame.size.width/5));
-        make.height.equalTo(@(weakSelf.frame.size.width/9));
-    }];
+//
+//    [self.backBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.right.equalTo(weakSelf.soundLowBtn.mas_left).offset(-weakSelf.frame.size.width/8);
+//        make.top.equalTo(weakSelf.mas_top).offset(40);
+//        make.width.equalTo(@(weakSelf.frame.size.width/8));
+//        make.height.equalTo(@(weakSelf.frame.size.width/8));
+//    }];
+//    
+
+//    
+//    [self.menuBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(weakSelf.soundBigBtn.mas_right).offset(weakSelf.frame.size.width/8);
+//        make.top.equalTo(weakSelf.mas_top).offset(40);
+//        make.width.equalTo(@(weakSelf.frame.size.width/8));
+//        make.height.equalTo(@(weakSelf.frame.size.width/8));
+//    }];
+
     
     
     
@@ -127,7 +117,9 @@
         [_centerBtn setTitle:@"OK"forState:UIControlStateNormal];
         [_centerBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_centerBtn addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:_centerBtn];
+        _centerBtn.layer.masksToBounds = YES;
+        _centerBtn.layer.cornerRadius = SCREEN_WIDTH/8;
+//        [self addSubview:_centerBtn];
     }
     return _centerBtn;
 }
@@ -140,7 +132,7 @@
 //        [_topBtn setTitle:@"top"forState:UIControlStateNormal];
         [_topBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_topBtn addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:_topBtn];
+//        [self addSubview:_topBtn];
     }
     return _topBtn;
 }
@@ -154,7 +146,7 @@
 //        [_leftBtn setTitle:@"left"forState:UIControlStateNormal];
         [_leftBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_leftBtn addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:_leftBtn];
+//        [self addSubview:_leftBtn];
     }
     return _leftBtn;
 }
@@ -167,7 +159,7 @@
 //        [_rightBtn setTitle:@"right"forState:UIControlStateNormal];
         [_rightBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_rightBtn addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:_rightBtn];
+//        [self addSubview:_rightBtn];
     }
     return _rightBtn;
 }
@@ -180,7 +172,7 @@
 //        [_boomBtn setTitle:@"boom"forState:UIControlStateNormal];
         [_boomBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_boomBtn addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:_boomBtn];
+//        [self addSubview:_boomBtn];
     }
     return _boomBtn;
 }
@@ -252,53 +244,38 @@
     return _backBtn;
 }
 
-- (UIButton *)btn1 {
-    if (!_btn1) {
-        _btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
-        _btn1.tag = 121;
-        [_btn1 setTitle:@"xxx"forState:UIControlStateNormal];
-        [_btn1 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-        [_btn1 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
-        _btn1.layer.masksToBounds = YES;
-        _btn1.layer.cornerRadius = 3;
-        _btn1.layer.borderColor = [UIColor grayColor].CGColor;
-        _btn1.layer.borderWidth = 0.5;
-        [self addSubview:_btn1];
+- (UIButton *)homeBtn {
+    if (!_homeBtn) {
+        _homeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _homeBtn.tag = 121;
+        [_homeBtn setTitle:@"xxx"forState:UIControlStateNormal];
+        [_homeBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [_homeBtn addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
+        _homeBtn.layer.masksToBounds = YES;
+        _homeBtn.layer.cornerRadius = 3;
+        _homeBtn.layer.borderColor = [UIColor grayColor].CGColor;
+        _homeBtn.layer.borderWidth = 0.5;
+        [self addSubview:_homeBtn];
     }
-    return _btn1;
+    return _homeBtn;
 }
 
-- (UIButton *)btn2 {
-    if (!_btn2) {
-        _btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
-        _btn2.tag = 122;
-        [_btn2 setTitle:@"xxx"forState:UIControlStateNormal];
-        [_btn2 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-        [_btn2 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
-        _btn2.layer.masksToBounds = YES;
-        _btn2.layer.cornerRadius = 3;
-        _btn2.layer.borderColor = [UIColor grayColor].CGColor;
-        _btn2.layer.borderWidth = 0.5;
-        [self addSubview:_btn2];
+- (UIButton *)exitBtn {
+    if (!_exitBtn) {
+        _exitBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _exitBtn.tag = 122;
+        [_exitBtn setTitle:@"xxx"forState:UIControlStateNormal];
+        [_exitBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [_exitBtn addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
+        _exitBtn.layer.masksToBounds = YES;
+        _exitBtn.layer.cornerRadius = 3;
+        _exitBtn.layer.borderColor = [UIColor grayColor].CGColor;
+        _exitBtn.layer.borderWidth = 0.5;
+        [self addSubview:_exitBtn];
     }
-    return _btn2;
+    return _exitBtn;
 }
 
-- (UIButton *)btn3 {
-    if (!_btn3) {
-        _btn3 = [UIButton buttonWithType:UIButtonTypeCustom];
-        _btn3.tag = 123;
-        [_btn3 setTitle:@"xxx"forState:UIControlStateNormal];
-        [_btn3 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-        [_btn3 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
-        _btn3.layer.masksToBounds = YES;
-        _btn3.layer.cornerRadius = 3;
-        _btn3.layer.borderColor = [UIColor grayColor].CGColor;
-        _btn3.layer.borderWidth = 0.5;
-        [self addSubview:_btn3];
-    }
-    return _btn3;
-}
 
 
 - (void)clientAction: (UIButton *)btn {
