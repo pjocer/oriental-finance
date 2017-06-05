@@ -43,18 +43,28 @@
 //        [self presentViewController:pickVC animated:YES completion:nil];
 //    } else {
         LoginViewController *login = [[LoginViewController alloc]initWithTitle:@"登录" navBarBtns:NavBarBtnBack];
-        login.hidesBottomBarWhenPushed = YES;
         UINavigationController *navc = [[UINavigationController alloc]initWithRootViewController:login];
         [self presentViewController:navc animated:YES completion:^{
             
         }];
     }else if (btn.tag == 101) {
         SetUpViewController *setup = [[SetUpViewController alloc]initWithTitle:@"设置" navBarBtns:NavBarBtnBack];
+        setup.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:setup animated:YES];
 
 
+    }else{
+        UIViewController *vc = [[UIViewController alloc]init];
+        vc.title = btn.titleLabel.text;
+        vc.hidesBottomBarWhenPushed = YES;
+        int R = (arc4random() % 256) ;
+        int G = (arc4random() % 256) ;
+        int B = (arc4random() % 256) ;
+        vc.view.backgroundColor = [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:1];
+        [self.navigationController pushViewController:vc animated:YES];
+        
     }
-    self.hidesBottomBarWhenPushed=NO;
+   
 
 }
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {

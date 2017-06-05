@@ -17,9 +17,9 @@
 @end
 
 @implementation SetUpViewController
-- (void)viewWillDisappear:(BOOL)animated{
-    [self.navigationController.navigationBar setTranslucent:NO];
-}
+//- (void)viewWillDisappear:(BOOL)animated{
+//    [self.navigationController.navigationBar setTranslucent:NO];
+//}
 
 
 - (void)viewDidLoad {
