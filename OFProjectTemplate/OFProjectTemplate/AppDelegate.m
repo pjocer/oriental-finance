@@ -24,9 +24,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self initRootViewController];
+    [self socialConfiguration];
     return YES;
 }
 
+
+- (void)socialConfiguration {
+    
+}
 
 - (void)initRootViewController {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
