@@ -14,6 +14,8 @@
 #import "ChannelTabViewModel.h"
 #import <QMUIKit.h>
 #import "OSearchController.h"
+#import "OShowHud.h"
+#import "ODQTool.h"
 
 @interface ChannelViewController ()
 @property (nonatomic, strong) ChannelTabViewModel *viewModel;
@@ -36,7 +38,15 @@
 }
 
 - (void)code {
-    
+    if (IS_SIMULATOR) {
+        [OShowHud showErrorHudWith:@"模拟器不支持" animated:YES];
+    } else {
+        ODQTool *dq = [[ODQTool alloc]initWithTitle:@"二维码扫描" navBarBtns:NavBarBtnBack];
+        UINavigationController *navc = [[UINavigationController alloc]initWithRootViewController:dq];
+        [self presentViewController:navc animated:YES completion:^{
+            
+        }];
+    }
 }
 
 - (void)search {

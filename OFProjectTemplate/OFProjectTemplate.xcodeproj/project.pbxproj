@@ -26,7 +26,6 @@
 		D33820B21EE15D6700D5B99C /* HomeChannelLiveCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D33820B11EE15D6600D5B99C /* HomeChannelLiveCell.m */; };
 		D33820B51EE15EFD00D5B99C /* HoritalVideoCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D33820B41EE15EFD00D5B99C /* HoritalVideoCollectionCell.m */; };
 		D33820B81EE1714600D5B99C /* ChannelLiveHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D33820B71EE1714600D5B99C /* ChannelLiveHeaderView.m */; };
-		D33820BA1EE3ADE400D5B99C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33820B91EE3ADE400D5B99C /* Assets.xcassets */; };
 		D3E5435E1ED9505900D8898C /* VerticalVideoCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E5435D1ED9505900D8898C /* VerticalVideoCollectionCell.m */; };
 		D3E543681ED959EF00D8898C /* UITableView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E543671ED959EF00D8898C /* UITableView+Extension.m */; };
 		D3E5436C1EDE546E00D8898C /* OBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E5436B1EDE546D00D8898C /* OBannerView.m */; };
@@ -135,7 +134,6 @@
 		D33820B41EE15EFD00D5B99C /* HoritalVideoCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoritalVideoCollectionCell.m; sourceTree = "<group>"; };
 		D33820B61EE1714600D5B99C /* ChannelLiveHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelLiveHeaderView.h; sourceTree = "<group>"; };
 		D33820B71EE1714600D5B99C /* ChannelLiveHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelLiveHeaderView.m; sourceTree = "<group>"; };
-		D33820B91EE3ADE400D5B99C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3C29BC61ED7FF300030D262 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D3C29BC81ED7FF410030D262 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		D3C29BCA1ED7FF530030D262 /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
@@ -252,7 +250,6 @@
 		D65DC8DB1ED83A490030636D /* OShowDetailsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OShowDetailsView.m; sourceTree = "<group>"; };
 		D65DC8E01ED94B430030636D /* CommentsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsCell.h; sourceTree = "<group>"; };
 		D65DC8E11ED94B430030636D /* CommentsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsCell.m; sourceTree = "<group>"; };
-		F768E05650A828AB4D1F1B5D /* libPods-OFProjectTemplateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OFProjectTemplateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,7 +318,6 @@
 		D30CB1A01ED7F6DE000AC0BB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D33820B91EE3ADE400D5B99C /* Assets.xcassets */,
 				D609C3271EE1A9E300A09C19 /* Assets.xcassets */,
 				D30CB1A91ED7F6DE000AC0BB /* Main.storyboard */,
 				D30CB1AE1ED7F6DE000AC0BB /* LaunchScreen.storyboard */,
@@ -835,7 +831,6 @@
 				D3C29BCA1ED7FF530030D262 /* libz.1.tbd */,
 				D3C29BC81ED7FF410030D262 /* libc++.tbd */,
 				D3C29BC61ED7FF300030D262 /* libz.tbd */,
-				F768E05650A828AB4D1F1B5D /* libPods-OFProjectTemplateTests.a */,
 				C14FF01F146D2B30F592A263 /* libPods-OFProjectTemplate.a */,
 			);
 			name = Frameworks;
@@ -928,7 +923,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D30CB1B01ED7F6DE000AC0BB /* LaunchScreen.storyboard in Resources */,
-				D33820BA1EE3ADE400D5B99C /* Assets.xcassets in Resources */,
 				D609C3281EE1A9E300A09C19 /* Assets.xcassets in Resources */,
 				D30CB1AB1ED7F6DE000AC0BB /* Main.storyboard in Resources */,
 			);
