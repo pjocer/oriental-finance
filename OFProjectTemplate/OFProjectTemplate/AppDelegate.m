@@ -82,23 +82,18 @@
     return _rootController;
 }
 
-//- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
-//    if (tabBarController.selectedIndex == 2 ) {
-//        return NO;
-//    } else {
-//        return YES;
-//    }
-//}
-
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
-    if (tabBarController.selectedIndex == 2 ) {
-        RemoteViewController *vc = [[RemoteViewController alloc] init];
-//        vc.hidesBottomBarWhenPushed = YES;
-//        vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        [self.rootController presentViewController:vc animated:YES completion:^{
-            
-        }];
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    if ([viewController isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *navigation = (UINavigationController *)viewController;
+        if (navigation.viewControllers.count > 0 && [navigation.viewControllers.firstObject isKindOfClass:[RemoteViewController class]]) {
+            RemoteViewController *vc = [[RemoteViewController alloc] init];
+            vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.rootController presentViewController:vc animated:YES completion:nil];
+            return NO;
+        }
     }
+    return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
