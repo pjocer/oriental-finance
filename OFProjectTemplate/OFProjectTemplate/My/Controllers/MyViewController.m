@@ -54,13 +54,9 @@
 
 
     }else{
-        UIViewController *vc = [[UIViewController alloc]init];
-        vc.title = btn.titleLabel.text;
+        OFBaseViewController *vc = [[OFBaseViewController alloc] initWithTitle:btn.titleLabel.text navBarBtns:NavBarBtnBack];
+        vc.view.backgroundColor = [UIColor qmui_randomColor];
         vc.hidesBottomBarWhenPushed = YES;
-        int R = (arc4random() % 256) ;
-        int G = (arc4random() % 256) ;
-        int B = (arc4random() % 256) ;
-        vc.view.backgroundColor = [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:1];
         [self.navigationController pushViewController:vc animated:YES];
         
     }
