@@ -243,7 +243,7 @@
 - (NSArray *)dataArray
 {
     if (!_dataArray) {
-        _dataArray = @[@"1", @"2", @"1",@"2", @"1", @"2"];
+        _dataArray = @[@"9", @"10", @"6",@"asd", @"ppppp", @"6"];
     }
     return _dataArray;
 }
@@ -265,6 +265,7 @@
     if (indexPath.row == 0) {
         cell1 = [[IntroductionCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellid];
         cell1.delegate = self;
+        cell1.introductionLabel.text = @"《奇葩说》是一档由爱奇艺打造的说话达人秀。节目由马东主持，并邀请了蔡康永、金星、高晓松担任导师。旨在寻找华人华语世界中，观点独特、口才出众的“最会说话的人”。《奇葩说第三季》已于2016年3月4日起每周五、周六20:00在爱奇艺播出。先导节目《奇葩来了》已于2016年1月15日上线[1]  。2017年3月24日，《奇葩说第四季》举行发布会，并宣布导师由马东、蔡康永、罗振宇、张泉灵担任[2]  ，何炅担任节目主持人。《奇葩说第四季》已于2017年3月31日在爱奇艺独家上线！系列节目《奇葩大会》也已在2017年1月20日晚在爱奇艺独家上线。";
         return cell1;
     }else{
         if (!cell) {

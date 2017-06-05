@@ -9,6 +9,7 @@
 #import "MyViewController.h"
 #import "OFUIkitMacro.h"
 #import "LoginViewController.h"
+#import "SetUpViewController.h"
 
 @interface MyViewController ()<myViewDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -29,7 +30,6 @@
 
 - (void)myViewDelegateActionWithBtn:(UIButton *)btn{
     NSLog(@"%@",btn.titleLabel.text);
-    
     if (btn.tag == 1001) {
         UIImagePickerController *pickVC = [[UIImagePickerController alloc] init];
         
@@ -43,12 +43,18 @@
         [self presentViewController:pickVC animated:YES completion:nil];
     } else {
         LoginViewController *login = [[LoginViewController alloc]initWithTitle:@"登录" navBarBtns:NavBarBtnBack];
+        login.hidesBottomBarWhenPushed = YES;
         UINavigationController *navc = [[UINavigationController alloc]initWithRootViewController:login];
         [self presentViewController:navc animated:YES completion:^{
             
         }];
+    }else if (btn.tag == 101) {
+        SetUpViewController *setup = [[SetUpViewController alloc]initWithTitle:@"设置" navBarBtns:NavBarBtnBack];
+        [self.navigationController pushViewController:setup animated:YES];
+
+
     }
-    
+    self.hidesBottomBarWhenPushed=NO;
 
 }
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {

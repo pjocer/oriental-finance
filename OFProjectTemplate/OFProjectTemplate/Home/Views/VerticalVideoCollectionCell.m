@@ -78,7 +78,7 @@
 
 - (UIImageView *)imageView {
     if (!_imageView) {
-        _imageView = [[UIImageView alloc] initWithImage:ImageNamed(@"1")];
+        _imageView = [[UIImageView alloc] initWithImage:ImageNamed(@"hhhh")];
         _imageView.contentMode = UIViewContentModeScaleToFill;
     }
     return _imageView;
@@ -88,7 +88,7 @@
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
         _titleLabel.font = UIFontMake(14);
-        _titleLabel.text = @"热播热播热播";
+        _titleLabel.text = @"欢乐颂2";
         _titleLabel.textColor = [UIColor blackColor];
     }
     return _titleLabel;
@@ -98,7 +98,7 @@
     if (!_detailLabel) {
         _detailLabel = [[UILabel alloc] init];
         _detailLabel.font = UIFontMake(11);
-        _detailLabel.text = @"嗯嗯嗯嗯嗯";
+        _detailLabel.text = @"上演经典都市爱情";
         _detailLabel.textColor = [UIColor grayColor
                                   ];
     }

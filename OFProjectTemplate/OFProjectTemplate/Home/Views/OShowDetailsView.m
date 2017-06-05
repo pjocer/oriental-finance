@@ -19,7 +19,7 @@
 }
 
 - (void)addSubviews {
-    self.backgroundView.image = [UIImage imageNamed:@"1"];
+    self.backgroundView.image = [UIImage imageNamed:@"hhhh"];
     [self.backgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(self);
         make.height.equalTo(@([UIScreen mainScreen].bounds.size.width*0.58));
@@ -30,7 +30,7 @@
     [self.backgroundView addSubview:effectView];
     
     
-    self.coverImage.image = [UIImage imageNamed:@"1"];
+    self.coverImage.image = [UIImage imageNamed:@"hhhh"];
     [self.coverImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.bottom.equalTo(self.backgroundView).insets(UIEdgeInsetsMake(15, 20, 30, 0));
         make.width.equalTo(@(([UIScreen mainScreen].bounds.size.width*0.58 - 45)*3/4));
@@ -236,7 +236,7 @@
 - (UILabel *)introductionLabel {
     if (!_introductionLabel) {
         _introductionLabel = [[UILabel alloc] init];
-        _introductionLabel.text = @"爱上都爱;大买咯三德科技爱马仕大排档;啦没收到收到叫什么等级评定猫爬架安排圣诞节马上地破解啊安排搜大家按平时大家平时都将阿萨德阿萨德跑搜到骄傲拍摄大片时代就安排都是;哦啊接收到爱普生大家按平时大家按平时大家安排多久啊谁都怕圣诞节阿婆说大家安排上的啊";
+        _introductionLabel.text = @"《欢乐颂2》延续第一季剧情，继续讲述居住在欢乐颂小区22楼五个性格各异而又相亲相爱的女孩身上所发生的一连串有关友情、爱情、亲情、职场和理想的故事 。 新年已至，欢乐颂22楼每个人的新问题也接踵而来：安迪（刘涛饰）因包奕凡（杨烁饰）迎来情感的新可能，却也面临来自身世及包家内部带来的新困扰；樊胜美（蒋欣饰）尝试起步新生活，却仍难脱离家庭泥淖，对王柏川（张陆饰）处处依赖事事紧逼；曲筱绡（王子文饰）与赵医生（王凯饰）差距仍存，分和不断，曲家看似稳定的家庭关系实则危机四伏；邱莹莹（杨紫饰）对应勤（吴昊宸饰）一片痴情，情感经历却令应勤无法接受；关雎尔（乔欣饰）邂逅摇滚青年谢童（邓伦饰）坠入爱河，却遭到父母的激烈反对。 五个女生在磕碰中互相关怀前行，最终，安迪与包奕凡走到一起，共同面对和化解安迪身世及包家难题；樊胜美逐渐正视自我，家庭问题得以解决并决定与王柏川共担风雨；曲筱绡与赵医生学会和谐相处，并成功挽救濒临瓦解的家庭关系；邱莹莹用真情打动应勤，两人携手走进婚姻殿堂；关雎尔下定决心坚持自我，勇敢追求所爱。五个女生携手面对生活磨砺，进一步成长。";
         _introductionLabel.numberOfLines = 0;
         _introductionLabel.font = [UIFont systemFontOfSize:13];
         [self addSubview:_introductionLabel];

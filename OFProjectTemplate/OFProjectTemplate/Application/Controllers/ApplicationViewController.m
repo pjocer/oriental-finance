@@ -75,8 +75,7 @@
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    ChanneldetailsVC *vc = [[ChanneldetailsVC alloc] initWithTitle:@"xxx电视台" navBarBtns:NavBarBtnBack];
-    [self.navigationController pushViewController:vc animated:YES];
+
     
 }
 

@@ -58,6 +58,10 @@
 		D609C3141EE17E9A00A09C19 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C3131EE17E9A00A09C19 /* LoginView.m */; };
 		D609C3171EE1885400A09C19 /* RegisteredViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C3161EE1885400A09C19 /* RegisteredViewController.m */; };
 		D609C31A1EE1977A00A09C19 /* SetupPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C3191EE1977A00A09C19 /* SetupPasswordVC.m */; };
+		D609C3201EE1A38300A09C19 /* SetUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C31F1EE1A38300A09C19 /* SetUpViewController.m */; };
+		D609C3231EE1A4C700A09C19 /* SetUpTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C3221EE1A4C700A09C19 /* SetUpTableViewCell.m */; };
+		D609C3261EE1A87500A09C19 /* SetUpHeadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C3251EE1A87400A09C19 /* SetUpHeadTableViewCell.m */; };
+		D609C3281EE1A9E300A09C19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D609C3271EE1A9E300A09C19 /* Assets.xcassets */; };
 		D65DC8C71ED825500030636D /* ApplicationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8831ED825500030636D /* ApplicationDetailsViewController.m */; };
 		D65DC8C81ED825500030636D /* ApplicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8851ED825500030636D /* ApplicationViewController.m */; };
 		D65DC8C91ED825500030636D /* ApplicationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC88A1ED825500030636D /* ApplicationTableViewCell.m */; };
@@ -199,6 +203,13 @@
 		D609C3161EE1885400A09C19 /* RegisteredViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisteredViewController.m; sourceTree = "<group>"; };
 		D609C3181EE1977A00A09C19 /* SetupPasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupPasswordVC.h; sourceTree = "<group>"; };
 		D609C3191EE1977A00A09C19 /* SetupPasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupPasswordVC.m; sourceTree = "<group>"; };
+		D609C31E1EE1A38300A09C19 /* SetUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetUpViewController.h; sourceTree = "<group>"; };
+		D609C31F1EE1A38300A09C19 /* SetUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetUpViewController.m; sourceTree = "<group>"; };
+		D609C3211EE1A4C700A09C19 /* SetUpTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetUpTableViewCell.h; sourceTree = "<group>"; };
+		D609C3221EE1A4C700A09C19 /* SetUpTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetUpTableViewCell.m; sourceTree = "<group>"; };
+		D609C3241EE1A87400A09C19 /* SetUpHeadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetUpHeadTableViewCell.h; sourceTree = "<group>"; };
+		D609C3251EE1A87400A09C19 /* SetUpHeadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetUpHeadTableViewCell.m; sourceTree = "<group>"; };
+		D609C3271EE1A9E300A09C19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D65DC8821ED825500030636D /* ApplicationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationDetailsViewController.h; sourceTree = "<group>"; };
 		D65DC8831ED825500030636D /* ApplicationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationDetailsViewController.m; sourceTree = "<group>"; };
 		D65DC8841ED825500030636D /* ApplicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationViewController.h; sourceTree = "<group>"; };
@@ -311,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				D33820B91EE3ADE400D5B99C /* Assets.xcassets */,
+				D609C3271EE1A9E300A09C19 /* Assets.xcassets */,
 				D30CB1A91ED7F6DE000AC0BB /* Main.storyboard */,
 				D30CB1AE1ED7F6DE000AC0BB /* LaunchScreen.storyboard */,
 				D30CB1B11ED7F6DE000AC0BB /* Info.plist */,
@@ -712,6 +724,8 @@
 			children = (
 				D65DC8AC1ED825500030636D /* MyViewController.h */,
 				D65DC8AD1ED825500030636D /* MyViewController.m */,
+				D609C31E1EE1A38300A09C19 /* SetUpViewController.h */,
+				D609C31F1EE1A38300A09C19 /* SetUpViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -735,6 +749,10 @@
 			children = (
 				D65DC8B11ED825500030636D /* MyView.h */,
 				D65DC8B21ED825500030636D /* MyView.m */,
+				D609C3211EE1A4C700A09C19 /* SetUpTableViewCell.h */,
+				D609C3221EE1A4C700A09C19 /* SetUpTableViewCell.m */,
+				D609C3241EE1A87400A09C19 /* SetUpHeadTableViewCell.h */,
+				D609C3251EE1A87400A09C19 /* SetUpHeadTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -911,6 +929,7 @@
 			files = (
 				D30CB1B01ED7F6DE000AC0BB /* LaunchScreen.storyboard in Resources */,
 				D33820BA1EE3ADE400D5B99C /* Assets.xcassets in Resources */,
+				D609C3281EE1A9E300A09C19 /* Assets.xcassets in Resources */,
 				D30CB1AB1ED7F6DE000AC0BB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -989,6 +1008,7 @@
 				D65DC8CC1ED825500030636D /* ChannelViewController.m in Sources */,
 				D609C28B1EDFB76800A09C19 /* ChanneldetailsVC.m in Sources */,
 				D65DC8CD1ED825500030636D /* DetailsViewController.m in Sources */,
+				D609C3261EE1A87500A09C19 /* SetUpHeadTableViewCell.m in Sources */,
 				D3E543681ED959EF00D8898C /* UITableView+Extension.m in Sources */,
 				D3E543731EDE68B800D8898C /* UIImageView+FadeForSDWebImage.m in Sources */,
 				D33820B51EE15EFD00D5B99C /* HoritalVideoCollectionCell.m in Sources */,
@@ -1014,6 +1034,7 @@
 				D609C2A01EE0F8EE00A09C19 /* ZYBannerFooter.m in Sources */,
 				D65DC8D51ED825500030636D /* TYTabButtonPagerController.m in Sources */,
 				D65DC8D41ED825500030636D /* TYPagerController.m in Sources */,
+				D609C3231EE1A4C700A09C19 /* SetUpTableViewCell.m in Sources */,
 				D65DC8CE1ED825500030636D /* HomeViewController.m in Sources */,
 				D65DC8D21ED825500030636D /* MyViewController.m in Sources */,
 				D3207FD61ED92E1A00240DD2 /* OSearchView.m in Sources */,
@@ -1023,6 +1044,7 @@
 				D30CB1A51ED7F6DE000AC0BB /* AppDelegate.m in Sources */,
 				D609C31A1EE1977A00A09C19 /* SetupPasswordVC.m in Sources */,
 				D609C3171EE1885400A09C19 /* RegisteredViewController.m in Sources */,
+				D609C3201EE1A38300A09C19 /* SetUpViewController.m in Sources */,
 				D609C2F41EE1685800A09C19 /* TeleplayViewController.m in Sources */,
 				D3207FDC1ED9497000240DD2 /* HotTableViewCell.m in Sources */,
 				D3E543791EDE698900D8898C /* UIControl+Interval.m in Sources */,

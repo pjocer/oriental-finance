@@ -55,7 +55,7 @@
 
 - (UIImageView *)imageView {
     if (!_imageView) {
-        _imageView = [[UIImageView alloc] initWithImage:ImageNamed(@"2")];
+        _imageView = [[UIImageView alloc] initWithImage:ImageNamed(@"6")];
         _imageView.contentMode = UIViewContentModeScaleAspectFit;
     }
     return _imageView ;

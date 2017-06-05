@@ -73,6 +73,8 @@
 - (ChannelTabViewModel *)viewModel {
     if (!_viewModel) {
         _viewModel = [ChannelTabViewModel new];
+        
+        
     }
     return _viewModel;
 }

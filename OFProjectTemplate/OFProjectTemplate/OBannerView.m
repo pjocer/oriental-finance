@@ -25,7 +25,7 @@
 
 - (void)configuration {
     self.pagePosition = PositionBottomRight;
-    self.imageArray = @[ImageNamed(@"1"),ImageNamed(@"2"),ImageNamed(@"1")];
+    self.imageArray = @[ImageNamed(@"6"),ImageNamed(@"ppppp"),ImageNamed(@"asd")];
     self.placeholderImage = ImageNamed(@"2048");
     self.time = 2;
 }

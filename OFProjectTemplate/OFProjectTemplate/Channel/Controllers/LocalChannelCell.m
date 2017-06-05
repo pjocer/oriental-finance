@@ -113,7 +113,7 @@
     if (!_iconView) {
         _iconView = [[UIImageView alloc] init];
         _iconView.contentMode = UIViewContentModeScaleAspectFit;
-        _iconView.image = ImageNamed(@"1");
+        _iconView.image = ImageNamed(@"7");
     }
     return _iconView;
 }
@@ -131,7 +131,7 @@
     if (!_channelIconView) {
         _channelIconView = [UIImageView new];
         _channelIconView.contentMode = UIViewContentModeScaleAspectFit;
-        _channelIconView.image = ImageNamed(@"b1");
+        _channelIconView.image = ImageNamed(@"weishi");
     }
     return _channelIconView;
 }

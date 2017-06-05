@@ -12,6 +12,7 @@
 #import "OFUIkitMacro.h"
 #import <ReactiveCocoa.h>
 #import "OShowHud.h"
+#import "ChanneldetailsVC.h"
 
 @interface TVChannelViewController ()
 @property (nonatomic, strong) UITableView *tableView;
@@ -34,7 +35,10 @@
 
 - (void)subscribe {
     [[self.tableViewModel rac_signalForSelector:@selector(tableView:didSelectRowAtIndexPath:) fromProtocol:@protocol(UITableViewDelegate)] subscribeNext:^(id x) {
-        [OShowHud showErrorHudWith:@"123" animated:YES];
+//        [OShowHud showErrorHudWith:@"123" animated:YES];
+        ChanneldetailsVC *vc = [[ChanneldetailsVC alloc] initWithTitle:@"东方卫视" navBarBtns:NavBarBtnBack];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
     }];
 }
 

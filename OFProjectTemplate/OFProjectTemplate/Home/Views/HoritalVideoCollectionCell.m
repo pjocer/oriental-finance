@@ -67,7 +67,7 @@
 
 - (UIImageView *)imageView {
     if (!_imageView) {
-        _imageView = [[UIImageView alloc] initWithImage:ImageNamed(@"1")];
+        _imageView = [[UIImageView alloc] initWithImage:ImageNamed(@"8")];
         _imageView.contentMode = UIViewContentModeScaleToFill;
     }
     return _imageView;

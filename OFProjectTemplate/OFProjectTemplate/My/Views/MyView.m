@@ -9,6 +9,7 @@
 #import "MyView.h"
 #import <Masonry.h>
 
+
 @implementation MyView
 
 
@@ -142,6 +143,7 @@
 - (UIButton *)headerBtn {
     if (!_headerBtn) {
         _headerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_headerBtn setImage:[UIImage imageNamed:@"Oval"] forState:UIControlStateNormal];
         _headerBtn.tag = 1001;
         [_headerBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_headerBtn addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
