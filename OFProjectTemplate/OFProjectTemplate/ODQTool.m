@@ -9,6 +9,7 @@
 #import "ODQTool.h"
 #import <AVFoundation/AVFoundation.h>
 #import "Masonry.h"
+#import "ApplicationDetailsViewController.h"
 
 #define SCANVIEW_EdgeTop 100.0
 #define SCANVIEW_EdgeLeft 60.0
@@ -248,6 +249,10 @@
         [self stopTimer];
         [AVCapView removeFromSuperview];
         
+        ApplicationDetailsViewController *vc = [[ApplicationDetailsViewController alloc]init];
+        vc.weburl = metadataObject.stringValue;
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 

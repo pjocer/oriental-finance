@@ -18,17 +18,21 @@
     [self.navigationController.navigationBar setTranslucent:NO];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    UIWebView *webView = [[UIWebView alloc] initWithFrame:self.view.frame];
+    NSURLRequest *request =[NSURLRequest requestWithURL:[NSURL URLWithString:self.weburl]];
+    webView.scrollView.bounces = NO;
+    [self.view addSubview: webView];
+    [webView loadRequest:request];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"试玩 2048";
     
     
-    UIWebView *webView = [[UIWebView alloc] initWithFrame:self.view.frame];
-    NSURLRequest *request =[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://219.233.175.86/2048.html"]];
-    webView.scrollView.bounces = NO;
-    [self.view addSubview: webView];
-    [webView loadRequest:request];
+    
 }
 
 - (void)didReceiveMemoryWarning {

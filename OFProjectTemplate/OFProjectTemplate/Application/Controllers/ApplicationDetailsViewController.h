@@ -10,4 +10,6 @@
 
 @interface ApplicationDetailsViewController : OFBaseViewController
 
+@property (nonatomic, strong) NSString *weburl;
+
 @end

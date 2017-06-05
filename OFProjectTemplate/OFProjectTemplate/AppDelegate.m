@@ -60,7 +60,7 @@
         _rootController.viewControllers = @[ nav1, nav2, nav3, nav4, nav5 ];
         
         NSArray *titles = @[ @"推荐", @"频道", @"遥控器", @"应用", @"我的" ];
-        NSArray *normalImages = @[ @"tab_home_normal", @"tab_channel_normal", @"tab_remote_normal", @"tab_application_normal", @"tab_my_normal" ];
+        NSArray *normalImages = @[ @"tab_home_normal", @"tab_channel_normal", @"tab_remote_selected", @"tab_application_normal", @"tab_my_normal" ];
         NSArray *selectedImages = @[ @"tab_home_selected", @"tab_channel_selected", @"tab_remote_selected", @"tab_application_selected", @"tab_my_selected" ];
         
         [_rootController.tabBar.items enumerateObjectsUsingBlock:^(UITabBarItem * _Nonnull item, NSUInteger idx, BOOL * _Nonnull stop) {

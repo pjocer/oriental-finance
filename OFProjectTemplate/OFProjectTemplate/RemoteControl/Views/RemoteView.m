@@ -30,7 +30,7 @@
     
     [backgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(weakSelf);
-        make.centerY.equalTo(weakSelf.mas_centerY).offset(-80);
+        make.centerY.equalTo(weakSelf.mas_centerY).offset(-50);
         make.width.equalTo(@(weakSelf.frame.size.width/2));
         make.height.equalTo(@(weakSelf.frame.size.width/2));
     }];
@@ -111,15 +111,15 @@
     
     
     [self.textWriteBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.homeBtn.mas_centerX);
-        make.bottom.equalTo(backgroundView.mas_top).offset(-40);
+        make.left.equalTo(self.homeBtn.mas_centerX).offset(-10);
+        make.bottom.equalTo(backgroundView.mas_top).offset(-70);
         make.height.equalTo(@55);
         make.width.equalTo(@100);
     }];
     
     [self.TVPayBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.soundBigBtn.mas_centerX);
-        make.bottom.equalTo(backgroundView.mas_top).offset(-40);
+        make.right.equalTo(self.soundBigBtn.mas_centerX).offset(10);
+        make.bottom.equalTo(backgroundView.mas_top).offset(-70);
         make.height.equalTo(@55);
         make.width.equalTo(@100);
     }];
