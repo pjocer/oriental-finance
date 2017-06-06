@@ -75,7 +75,7 @@
 - (UIImageView *)bornView {
     if (!_bornView) {
         _bornView = [[UIImageView alloc] initWithImage:ImageNamed(@"home_ announcement")];
-        _bornView.contentMode = UIViewContentModeScaleAspectFit;
+        _bornView.contentMode = UIViewContentModeScaleAspectFill;
     }
     return _bornView;
 }
@@ -87,6 +87,7 @@
         _scrollView.showsVerticalScrollIndicator = NO;
         _scrollView.showsHorizontalScrollIndicator = NO;
         _scrollView.delegate = self;
+        _scrollView.scrollEnabled = NO;
     }
     return _scrollView;
 }

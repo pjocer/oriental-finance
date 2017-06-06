@@ -18,6 +18,8 @@ typedef NS_OPTIONS(NSInteger, HotTableViewSelectType) {
 
 @interface HotTableViewModel : NSObject <UITableViewDelegate, UITableViewDataSource>
 
+@property (nonatomic, assign) BOOL show;
+
 - (void)setDidSelectedBlock:(void(^)(HotTableViewSelectType type, id data))block;
 
 @end
