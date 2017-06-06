@@ -7,17 +7,18 @@
 //
 
 #import "TeleplayViewController.h"
-#import "LocalChannelTableViewModel.h"
+#import "HotTableViewModel.h"
 #import <Masonry.h>
 #import "OFUIkitMacro.h"
 #import <ReactiveCocoa.h>
 #import "OShowHud.h"
 #import "OBannerView.h"
+#import "HomeChannelLiveCell.h"
 
 @interface TeleplayViewController ()
 
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) LocalChannelTableViewModel *tableViewModel;
+@property (nonatomic, strong) HotTableViewModel *tableViewModel;
 @property (nonatomic, strong) OBannerView *banner;
 
 @end
@@ -45,15 +46,16 @@
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.delegate = self.tableViewModel;
         _tableView.dataSource = self.tableViewModel;
-        [_tableView registerClass:[LocalChannelCell class] forCellReuseIdentifier:LocalChannelCellIdentifier];
+        [_tableView registerClass:[HomeChannelLiveCell class] forCellReuseIdentifier:HomeChannelLiveCellIdentifier];
         _tableView.tableHeaderView = self.banner;
     }
     return _tableView;
 }
 
-- (LocalChannelTableViewModel *)tableViewModel {
+- (HotTableViewModel *)tableViewModel {
     if (!_tableViewModel) {
-        _tableViewModel = [[LocalChannelTableViewModel alloc] init];
+        _tableViewModel = [[HotTableViewModel alloc] init];
+        _tableViewModel.show = YES;
     }
     return _tableViewModel;
 }
