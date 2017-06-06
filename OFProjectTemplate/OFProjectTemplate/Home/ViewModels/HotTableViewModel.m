@@ -29,12 +29,19 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
         HotTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HotTableViewCellIdentifier forIndexPath:indexPath];
-        [cell setDidSelectedBlock:^{
-            if (self.block) self.block(HotTableViewSelectTypeHot, nil);
+        [cell setDidSelectedBlock:^(BOOL isCell) {
+            if (isCell) {
+                if (self.block) self.block(HotTableViewSelectTypeHot, nil);
+            } else {
+                if (self.block) self.block(HotTableViewSelectTypeRefresh, nil);
+            }
         }];
         return cell;
     } else {
         HomeChannelLiveCell *cell = [tableView dequeueReusableCellWithIdentifier:HomeChannelLiveCellIdentifier forIndexPath:indexPath];
+        [cell setDidSelectedBlock:^{
+            if (self.block) self.block(HotTableViewSelectTypeLiving, nil);
+        }];
         return cell;
     }
     

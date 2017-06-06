@@ -9,6 +9,7 @@
 #import "HomeChannelLiveCell.h"
 #import "OFUIkitMacro.h"
 #import "HoritalVideoCollectionCell.h"
+#import <ReactiveCocoa.h>
 #import <Masonry.h>
 #import "HotTableViewCellViewModel.h"
 #import "ChannelLiveHeaderView.h"
@@ -19,9 +20,14 @@
 @property (nonatomic, strong) UILabel *gapLabel;
 @property (nonatomic, strong) UICollectionView *gridView;
 @property (nonatomic, strong) HotTableViewCellViewModel *viewModel;
+@property (nonatomic, copy) dispatch_block_t block ;
 @end
 
 @implementation HomeChannelLiveCell
+
+- (void)setDidSelectedBlock:(dispatch_block_t)block {
+    _block = block;
+}
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
@@ -39,7 +45,9 @@
 }
 
 - (instancetype)subscribe {
-    
+    [[self.viewModel rac_signalForSelector:@selector(collectionView:didSelectItemAtIndexPath:) fromProtocol:@protocol(UICollectionViewDelegate)] subscribeNext:^(id x) {
+        if (self.block) self.block();
+    }];
     return self;
 }
 

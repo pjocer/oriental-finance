@@ -12,6 +12,6 @@ static NSString *HotTableViewCellIdentifier = @"HotTableViewCellIdentifier";
 
 @interface HotTableViewCell : UITableViewCell
 
-- (void)setDidSelectedBlock:(void(^)())block;
+- (void)setDidSelectedBlock:(void(^)(BOOL isCell))block;
 
 @end

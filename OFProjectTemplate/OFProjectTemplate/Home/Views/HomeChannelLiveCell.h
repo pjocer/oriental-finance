@@ -12,4 +12,6 @@ static NSString *HomeChannelLiveCellIdentifier = @"HomeChannelLiveCellIdentifier
 
 @interface HomeChannelLiveCell : UITableViewCell
 
+- (void)setDidSelectedBlock:(dispatch_block_t)block;
+
 @end

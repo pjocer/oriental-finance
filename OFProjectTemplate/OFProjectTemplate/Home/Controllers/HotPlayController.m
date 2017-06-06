@@ -17,11 +17,12 @@
 #import "OShowHud.h"
 #import "HomeChannelLiveCell.h"
 #import "OSearchController.h"
+#import "AderView.h"
 
 @interface HotPlayController ()
 @property (nonatomic, strong) OSearchView *searchView;
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) OBannerView *banner;
+@property (nonatomic, strong) UIView *banner;
 @property (nonatomic, strong) HotTableViewModel *tableViewModel;
 @end
 
@@ -98,24 +99,33 @@
                 DetailsViewController *vc = [[DetailsViewController alloc] initWithTitle:@"详情" navBarBtns:NavBarBtnBack];
                 vc.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:vc animated:YES];
-            } else if (type == HotTableViewSelectTypeUnknow) {
-                
+            } else if (type == HotTableViewSelectTypeRefresh) {
+                [OShowHud showErrorHudWith:@"刷新" animated:YES];
+            } else if (type == HotTableViewSelectTypeLiving) {
+                [OShowHud showErrorHudWith:@"正在直播" animated:YES];
             }
         }];
     }
     return _tableViewModel;
 }
 
-- (OBannerView *)banner {
+- (UIView *)banner {
     if (!_banner) {
-        _banner = [[OBannerView alloc] initWithChangeModel:ChangeModeFade];
-        _banner.frame = CGRectMake(0, 0, SCREEN_WIDTH, 200);
-        _banner.imageClickBlock = ^(NSInteger index) {
+        _banner = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 180)];
+        _banner.backgroundColor = UIColorWhite;
+        OBannerView *bannerView = [[OBannerView alloc] initWithChangeModel:ChangeModeFade];
+        bannerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 150);
+        bannerView.imageClickBlock = ^(NSInteger index) {
             [OShowHud showErrorHudWith:[NSString stringWithFormat:@"点击了第%ld张图片",index] animated:YES];
         };
+        [_banner addSubview:bannerView];
+        AderView *ader = [[AderView alloc] initWithFrame: CGRectMake(0, CGRectGetHeight(bannerView.frame), SCREEN_WIDTH, 30)];
+        [_banner addSubview:ader];
     }
     return _banner;
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

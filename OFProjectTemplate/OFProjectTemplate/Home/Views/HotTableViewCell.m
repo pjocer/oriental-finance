@@ -15,11 +15,12 @@
 
 @interface HotTableViewCell () 
 @property (nonatomic, strong) UIImageView *titleIcon;
+@property (nonatomic, strong) UIButton *refreshButton;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *gapLabel;
 @property (nonatomic, strong) UICollectionView *gridView;
 @property (nonatomic, strong) HotTableViewCellViewModel *viewModel;
-@property (nonatomic, copy) dispatch_block_t block;
+@property (nonatomic, copy) void (^block)(BOOL isCell);
 @end
 
 @implementation HotTableViewCell
@@ -34,6 +35,7 @@
 - (instancetype)commitSubviews {
     [self.contentView addSubview:self.gapLabel];
     [self.contentView addSubview:self.titleIcon];
+    [self.contentView addSubview:self.refreshButton];
     [self.contentView addSubview:self.titleLabel];
     [self.contentView addSubview:self.gridView];
     return self;
@@ -44,7 +46,10 @@
         NSIndexPath *indexPath = x.second;
         NSLog(@"%ld",indexPath.item);
         NSLog(@"%@ --- %@ --- %s",self,self.viewModel, __func__);
-        if (_block) _block();
+        if (_block) _block(YES);
+    }];
+    [[self.refreshButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        if (_block) _block(NO);
     }];
     return self;
 }
@@ -63,6 +68,11 @@
         make.left.equalTo(self.titleIcon.mas_right).offset(8);
         make.centerY.equalTo(self.titleIcon);
     }];
+    [self.refreshButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.titleIcon);
+        make.width.height.mas_equalTo(15);
+        make.right.equalTo(self.contentView).offset(-18);
+    }];
     [self.gridView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.titleIcon.mas_bottom).offset(8);
         make.leading.mas_equalTo(0);
@@ -72,7 +82,7 @@
     return self;
 }
 
-- (void)setDidSelectedBlock:(void (^)())block {
+- (void)setDidSelectedBlock:(void (^)(BOOL))block {
     _block = block;
 }
 
@@ -101,6 +111,14 @@
         _titleLabel.textColor = [UIColor blackColor];
     }
     return _titleLabel;
+}
+
+- (UIButton *)refreshButton {
+    if (!_refreshButton) {
+        _refreshButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_refreshButton setBackgroundImage:ImageNamed(@"refresh_icon") forState:UIControlStateNormal];
+    }
+    return _refreshButton;
 }
 
 - (UICollectionView *)gridView {
