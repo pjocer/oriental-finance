@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "OSocialCore.h"
 
-
+typedef NS_ENUM(NSUInteger, SocialPlatform) {
+    SocialPlatformWeChat,
+    SocialPlatformSina,
+    SocialPlatformQQ,
+};
 
 @class SocialRegisterItem;
 @interface SocialRegisterModel : NSObject

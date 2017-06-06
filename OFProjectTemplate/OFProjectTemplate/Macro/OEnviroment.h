@@ -10,8 +10,8 @@
 #define OEnviroment_h
 
 
-//#define OF_DEVELOP_ENVIRONMENT         // 开发环境
+#define OF_DEVELOP_ENVIRONMENT         // 开发环境
 
-#define OF_DISTRIBUTION_ENVIRONMENT    // 线上
+//#define OF_DISTRIBUTION_ENVIRONMENT    // 线上
 
 #endif /* OEnviroment_h */

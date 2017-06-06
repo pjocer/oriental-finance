@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "OSocialCore.h"
+#import "SocialAnalysisManager.h"
 
 @class UMSocialUserInfoResponse;
 

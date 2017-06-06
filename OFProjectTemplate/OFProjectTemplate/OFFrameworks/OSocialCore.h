@@ -9,11 +9,7 @@
 #ifndef OSocialCore_h
 #define OSocialCore_h
 
-typedef NS_ENUM(NSUInteger, SocialPlatform) {
-    SocialPlatformWeChat,
-    SocialPlatformSina,
-    SocialPlatformQQ,
-};
+
 
 //分享模块待开发
 

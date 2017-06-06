@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "OSocialCore.h"
 #import "SocialLoginResultModel.h"
 
 @interface SocialLoginManager : NSObject

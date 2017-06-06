@@ -13,13 +13,13 @@
 
 
 #ifdef OF_DEVELOP_ENVIRONMENT
-    #define UMengAnalyticsKey @""
+    #define UMengAnalyticsKey @"592e7e46c895761d34000e5a"
     #define UMengLogEnabled YES
     #define IsDevelopEnvironment YES
 #endif
 
 #ifdef OF_DISTRIBUTION_ENVIRONMENT
-    #define UMengAnalyticsKey @""
+    #define UMengAnalyticsKey @"592e7e46c895761d34000e5a"
     #define UMengLogEnabled NO
     #define IsDevelopEnvironment NO
 #endif
@@ -30,7 +30,7 @@
 #pragma mark - 微博开放平台
 #define WB_APP_KEY @""
 #define WB_APP_Secret @""
-#define wb_RedirectURL @""
+#define WB_RedirectURL @""
 
 #pragma mark - 微信开放平台
 #define WX_APP_ID @""

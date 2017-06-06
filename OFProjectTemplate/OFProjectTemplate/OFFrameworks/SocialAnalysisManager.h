@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "SocialRegisterModel.h"
 
+
+
 @interface SocialAnalysisManager : NSObject
 
 + (BOOL)checkPlatformAvialable:(SocialPlatform)platform;
