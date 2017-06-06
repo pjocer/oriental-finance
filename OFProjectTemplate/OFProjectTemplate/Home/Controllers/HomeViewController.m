@@ -47,8 +47,14 @@
     [btn setImage:[UIImage imageNamed:@"xiaoxi"] forState:UIControlStateNormal];
     UIBarButtonItem *buttonItem2 = [[UIBarButtonItem alloc] initWithCustomView:btn];
     UIBarButtonItem *negativeSeperator2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-    negativeSeperator2.width = -5;
-    self.navigationItem.rightBarButtonItems = @[negativeSeperator2, buttonItem2];
+    negativeSeperator2.width = -10;
+    UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn2.frame = CGRectMake(0, 0, 32, 32);
+    [btn2 setImage:[UIImage imageNamed:@"xiaoxi"] forState:UIControlStateNormal];
+    UIBarButtonItem *buttonItem3 = [[UIBarButtonItem alloc] initWithCustomView:btn2];
+    UIBarButtonItem *negativeSeperator3 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    negativeSeperator3.width = -20;
+    self.navigationItem.rightBarButtonItems = @[negativeSeperator2, buttonItem2, negativeSeperator3, buttonItem3];
 }
 - (void)setup {
     if (IS_SIMULATOR) {
