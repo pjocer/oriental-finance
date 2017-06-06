@@ -13,7 +13,8 @@
 #import "MyViewController.h"
 #import "ApplicationViewController.h"
 #import "ChannelViewController.h"
-
+#import "SocialAnalysisManager.h"
+#import "OVendorMacro.h"
 
 @interface AppDelegate () <UITabBarControllerDelegate>
 
@@ -24,13 +25,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self initRootViewController];
-    [self socialConfiguration];
+//    [self socialConfiguration];
     return YES;
 }
 
 
 - (void)socialConfiguration {
-    
+    SocialRegisterItem *wechat = [[SocialRegisterItem alloc] initWithPlatform:SocialPlatformSina appKey:WX_APP_ID appSecret:WX_APP_Secret redirectURL:nil];
+    SocialRegisterItem *sina = [[SocialRegisterItem alloc] initWithPlatform:SocialPlatformSina appKey:WB_APP_KEY appSecret:WB_APP_Secret redirectURL:WB_RedirectURL];
+    SocialRegisterItem *qq = [[SocialRegisterItem alloc] initWithPlatform:SocialPlatformSina appKey:QQ_PLATFORM appSecret:nil redirectURL:nil];
+    SocialRegisterModel *model = [[SocialRegisterModel alloc] init];
+    model.appKey = UMENG_APP_KEY;
+    model.platforms = @[wechat, sina, qq];
+    [SocialAnalysisManager registerWithModel:model];
+    [SocialAnalysisManager openLog:UMengLogEnabled];
 }
 
 - (void)initRootViewController {
