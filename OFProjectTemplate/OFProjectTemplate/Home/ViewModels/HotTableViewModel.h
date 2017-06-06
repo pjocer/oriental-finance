@@ -11,6 +11,8 @@
 
 typedef NS_OPTIONS(NSInteger, HotTableViewSelectType) {
     HotTableViewSelectTypeHot,
+    HotTableViewSelectTypeLiving,
+    HotTableViewSelectTypeRefresh,
     HotTableViewSelectTypeUnknow,
 };
 
