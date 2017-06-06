@@ -8,9 +8,13 @@
 
 #import "MyView.h"
 #import <Masonry.h>
+#import "OFUIkitMacro.h"
 
 
-@implementation MyView
+@implementation MyView{
+    UIScrollView *scrollView;
+}
+
 
 
 - (void)drawRect:(CGRect)rect {
@@ -19,9 +23,15 @@
 }
 
 - (void)addSubviews {
+    
+    scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, self.frame.size.height)];
+    scrollView.showsVerticalScrollIndicator = NO;
+    scrollView.contentSize = CGSizeMake(0, SCREEN_HEIGHT +SCREEN_WIDTH/3 + 49);
+    [self addSubview:scrollView];
+    
     __weak MyView *weakSelf = self;
     [self.headerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(weakSelf.mas_top).offset(30);
+        make.top.equalTo(scrollView.mas_top).offset(30);
         make.centerX.equalTo(weakSelf);
         make.width.equalTo(@(150));
         make.height.equalTo(@(150));
@@ -30,15 +40,11 @@
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.headerBtn.mas_bottom).offset(15);
         make.centerX.equalTo(weakSelf);
-//        make.width.equalTo(@(80));
-//        make.height.equalTo(@(80));
     }];
     
     [self.introductionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.nameLabel.mas_bottom).offset(5);
         make.centerX.equalTo(weakSelf);
-        //        make.width.equalTo(@(80));
-        //        make.height.equalTo(@(80));
     }];
     
     [self.btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -76,65 +82,79 @@
         make.height.equalTo(@10);
     }];
     
+
+    
+    
     [self.btn3 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.btn1.mas_bottom).offset(20);
         make.left.equalTo(weakSelf);
-        make.width.equalTo(@(weakSelf.frame.size.width/4));
-        make.height.equalTo(@(weakSelf.frame.size.width/4));
+        make.width.equalTo(@(weakSelf.frame.size.width/3));
+        make.height.equalTo(@(weakSelf.frame.size.width/3));
     }];
     [self initButton:_btn3];
     
     [self.btn4 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.btn1.mas_bottom).offset(20);
-        make.right.equalTo(weakSelf.mas_centerX).offset(0.25);
-        make.width.equalTo(@(weakSelf.frame.size.width/4+0.5));
-        make.height.equalTo(@(weakSelf.frame.size.width/4));
+        make.centerX.equalTo(weakSelf.mas_centerX).offset(0.25);
+        make.width.equalTo(@(weakSelf.frame.size.width/3));
+        make.height.equalTo(@(weakSelf.frame.size.width/3));
     }];
     [self initButton:_btn4];
 
     [self.btn5 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.btn1.mas_bottom).offset(20);
-        make.left.equalTo(weakSelf.mas_centerX).offset(-0.25);
-        make.width.equalTo(@(weakSelf.frame.size.width/4+0.5));
-        make.height.equalTo(@(weakSelf.frame.size.width/4));
+        make.right.equalTo(weakSelf.mas_right);
+        make.width.equalTo(@(weakSelf.frame.size.width/3));
+        make.height.equalTo(@(weakSelf.frame.size.width/3));
     }];
     [self initButton:_btn5];
 
+
     [self.btn6 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(weakSelf.btn1.mas_bottom).offset(20);
-        make.right.equalTo(weakSelf);
-        make.width.equalTo(@(weakSelf.frame.size.width/4+0.25));
-        make.height.equalTo(@(weakSelf.frame.size.width/4));
+        make.top.equalTo(weakSelf.btn3.mas_bottom).offset(-0.25);
+        make.centerX.equalTo(weakSelf.btn3);
+        make.size.equalTo(weakSelf.btn3);
     }];
     [self initButton:_btn6];
 
     [self.btn7 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(weakSelf.btn3.mas_bottom).offset(-0.25);
-        make.centerX.equalTo(weakSelf.btn3);
-        make.size.equalTo(weakSelf.btn3);
+        make.top.equalTo(weakSelf.btn6);
+        make.centerX.equalTo(weakSelf.btn4);
+        make.size.equalTo(weakSelf.btn4);
     }];
     [self initButton:_btn7];
 
     [self.btn8 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.btn7);
-        make.centerX.equalTo(weakSelf.btn4);
-        make.size.equalTo(weakSelf.btn4);
-    }];
-    [self initButton:_btn8];
-
-    [self.btn9 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(weakSelf.btn7);
         make.centerX.equalTo(weakSelf.btn5);
         make.size.equalTo(weakSelf.btn5);
     }];
+    [self initButton:_btn8];
+    
+    [self.btn9 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(weakSelf.btn6.mas_bottom).offset(-0.25);
+        make.centerX.equalTo(weakSelf.btn3);
+        make.size.equalTo(weakSelf.btn3);
+    }];
     [self initButton:_btn9];
-
+    
     [self.btn10 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(weakSelf.btn7);
-        make.centerX.equalTo(weakSelf.btn6);
-        make.size.equalTo(weakSelf.btn6);
+        make.top.equalTo(weakSelf.btn9);
+        make.centerX.equalTo(weakSelf.btn4);
+        make.size.equalTo(weakSelf.btn4);
     }];
     [self initButton:_btn10];
+    
+    [self.btn11 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(weakSelf.btn9);
+        make.centerX.equalTo(weakSelf.btn5);
+        make.size.equalTo(weakSelf.btn5);
+    }];
+    [self initButton:_btn11];
+    
+
+
+
     
     
     
@@ -151,7 +171,7 @@
         _headerBtn.layer.cornerRadius = 75;
         _headerBtn.layer.borderColor = [UIColor grayColor].CGColor;
         _headerBtn.layer.borderWidth = 0.5;
-        [self addSubview:_headerBtn];
+        [scrollView addSubview:_headerBtn];
     }
     return _headerBtn;
 }
@@ -161,7 +181,7 @@
         _nameLabel = [[UILabel alloc]init];
         _nameLabel.text = @"东方有线电视";
         _nameLabel.font = [UIFont systemFontOfSize:15];
-        [self addSubview:_nameLabel];
+        [scrollView addSubview:_nameLabel];
     }
     return _nameLabel;
 }
@@ -171,7 +191,7 @@
         _introductionLabel = [[UILabel alloc]init];
         _introductionLabel.text = @"东方有线电视欢迎您使用,好用得很!";
         _introductionLabel.font = [UIFont systemFontOfSize:13];
-        [self addSubview:_introductionLabel];
+        [scrollView addSubview:_introductionLabel];
     }
     return _introductionLabel;
 }
@@ -184,11 +204,8 @@
         [_btn1 setImage:[UIImage imageNamed:@"setup"] forState:UIControlStateNormal];
         [_btn1 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_btn1 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
-//        _btn1.layer.masksToBounds = YES;
-//        _btn1.layer.cornerRadius = 3;
-//        _btn1.layer.borderColor = [UIColor grayColor].CGColor;
-//        _btn1.layer.borderWidth = 0.5;
-        [self addSubview:_btn1];
+        _btn1.titleLabel.font = UIFontMake(13);
+        [scrollView addSubview:_btn1];
     }
     return _btn1;
 }
@@ -200,12 +217,9 @@
         [_btn2 setTitle:@"     家庭"forState:UIControlStateNormal];
         [_btn2 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_btn2 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
-        //        _btn1.layer.masksToBounds = YES;
-        //        _btn1.layer.cornerRadius = 3;
-        //        _btn1.layer.borderColor = [UIColor grayColor].CGColor;
-//        _btn2.layer.borderWidth = 0.5;
+        _btn2.titleLabel.font = UIFontMake(13);
         [_btn2 setImage:[UIImage imageNamed:@"homepage"] forState:UIControlStateNormal];
-        [self addSubview:_btn2];
+        [scrollView addSubview:_btn2];
     }
     return _btn2;
 }
@@ -214,15 +228,13 @@
     if (!_btn3) {
         _btn3 = [UIButton buttonWithType:UIButtonTypeCustom];
         _btn3.tag = 111;
-        [_btn3 setTitle:@"足迹"forState:UIControlStateNormal];
+        [_btn3 setTitle:@"观看历史"forState:UIControlStateNormal];
         [_btn3 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_btn3 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
-        //        _btn1.layer.masksToBounds = YES;
-        //        _btn1.layer.cornerRadius = 3;
-        //        _btn1.layer.borderColor = [UIColor grayColor].CGColor;
-//        _btn3.layer.borderWidth = 0.5;
+        _btn3.titleLabel.font = UIFontMake(13);
+        _btn3.imageView.contentMode = UIViewContentModeScaleAspectFit;
         [_btn3 setImage:[UIImage imageNamed:@"playon"] forState:UIControlStateNormal];
-        [self addSubview:_btn3];
+        [scrollView addSubview:_btn3];
     }
     return _btn3;
 }
@@ -231,15 +243,12 @@
     if (!_btn4) {
         _btn4 = [UIButton buttonWithType:UIButtonTypeCustom];
         _btn4.tag = 112;
-        [_btn4 setTitle:@"评论"forState:UIControlStateNormal];
+        [_btn4 setTitle:@"我的预约"forState:UIControlStateNormal];
         [_btn4 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_btn4 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
-        //        _btn1.layer.masksToBounds = YES;
-        //        _btn1.layer.cornerRadius = 3;
-        //        _btn1.layer.borderColor = [UIColor grayColor].CGColor;
-//        _btn4.layer.borderWidth = 0.5;
+        _btn4.titleLabel.font = UIFontMake(13);
         [_btn4 setImage:[UIImage imageNamed:@"message"] forState:UIControlStateNormal];
-        [self addSubview:_btn4];
+        [scrollView addSubview:_btn4];
     }
     return _btn4;
 }
@@ -249,15 +258,12 @@
     if (!_btn5) {
         _btn5 = [UIButton buttonWithType:UIButtonTypeCustom];
         _btn5.tag = 113;
-        [_btn5 setTitle:@"会员"forState:UIControlStateNormal];
+        [_btn5 setTitle:@"我的收藏"forState:UIControlStateNormal];
         [_btn5 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_btn5 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
-        //        _btn1.layer.masksToBounds = YES;
-        //        _btn1.layer.cornerRadius = 3;
-        //        _btn1.layer.borderColor = [UIColor grayColor].CGColor;
-//        _btn5.layer.borderWidth = 0.5;
+        _btn5.titleLabel.font = UIFontMake(13);
         [_btn5 setImage:[UIImage imageNamed:@"integral"] forState:UIControlStateNormal];
-        [self addSubview:_btn5];
+        [scrollView addSubview:_btn5];
     }
     return _btn5;
 }
@@ -266,14 +272,11 @@
     if (!_btn6) {
         _btn6 = [UIButton buttonWithType:UIButtonTypeCustom];
         _btn6.tag = 114;
-        [_btn6 setTitle:@"缴费"forState:UIControlStateNormal];
+        [_btn6 setTitle:@"我的地址"forState:UIControlStateNormal];
         [_btn6 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_btn6 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
-        //        _btn1.layer.masksToBounds = YES;
-        //        _btn1.layer.cornerRadius = 3;
-        //        _btn1.layer.borderColor = [UIColor grayColor].CGColor;
-//        _btn6.layer.borderWidth = 0.5;
-        [self addSubview:_btn6];
+        _btn6.titleLabel.font = UIFontMake(13);
+        [scrollView addSubview:_btn6];
         [_btn6 setImage:[UIImage imageNamed:@"prompt"] forState:UIControlStateNormal];
     }
     return _btn6;
@@ -283,15 +286,12 @@
     if (!_btn7) {
         _btn7 = [UIButton buttonWithType:UIButtonTypeCustom];
         _btn7.tag = 121;
-        [_btn7 setTitle:@"优惠"forState:UIControlStateNormal];
+        [_btn7 setTitle:@"我的订单"forState:UIControlStateNormal];
         [_btn7 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_btn7 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
-        //        _btn1.layer.masksToBounds = YES;
-        //        _btn1.layer.cornerRadius = 3;
-        //        _btn1.layer.borderColor = [UIColor grayColor].CGColor;
-//        _btn7.layer.borderWidth = 0.5;
+        _btn7.titleLabel.font = UIFontMake(13);
         [_btn7 setImage:[UIImage imageNamed:@"redpacket"] forState:UIControlStateNormal];
-        [self addSubview:_btn7];
+        [scrollView addSubview:_btn7];
     }
     return _btn7;
 }
@@ -300,14 +300,11 @@
     if (!_btn8) {
         _btn8 = [UIButton buttonWithType:UIButtonTypeCustom];
         _btn8.tag = 122;
-        [_btn8 setTitle:@"购物"forState:UIControlStateNormal];
+        [_btn8 setTitle:@"绑定银行卡"forState:UIControlStateNormal];
         [_btn8 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_btn8 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
-        //        _btn1.layer.masksToBounds = YES;
-        //        _btn1.layer.cornerRadius = 3;
-        //        _btn1.layer.borderColor = [UIColor grayColor].CGColor;
-//        _btn8.layer.borderWidth = 0.5;
-        [self addSubview:_btn8];
+        [scrollView addSubview:_btn8];
+        _btn8.titleLabel.font = UIFontMake(13);
         [_btn8 setImage:[UIImage imageNamed:@"service"] forState:UIControlStateNormal];
     }
     return _btn8;
@@ -317,15 +314,12 @@
     if (!_btn9) {
         _btn9 = [UIButton buttonWithType:UIButtonTypeCustom];
         _btn9.tag = 123;
-        [_btn9 setTitle:@"收录"forState:UIControlStateNormal];
+        [_btn9 setTitle:@"分享好友"forState:UIControlStateNormal];
         [_btn9 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_btn9 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
-        //        _btn1.layer.masksToBounds = YES;
-        //        _btn1.layer.cornerRadius = 3;
-        //        _btn1.layer.borderColor = [UIColor grayColor].CGColor;
-//        _btn9.layer.borderWidth = 0.5;
+        _btn9.titleLabel.font = UIFontMake(13);
         [_btn9 setImage:[UIImage imageNamed:@"time"] forState:UIControlStateNormal];
-        [self addSubview:_btn9];
+        [scrollView addSubview:_btn9];
     }
     return _btn9;
 }
@@ -333,17 +327,28 @@
     if (!_btn10) {
         _btn10 = [UIButton buttonWithType:UIButtonTypeCustom];
         _btn10.tag = 124;
-        [_btn10 setTitle:@"类目"forState:UIControlStateNormal];
+        [_btn10 setTitle:@"我的电视"forState:UIControlStateNormal];
         [_btn10 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_btn10 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
-        //        _btn1.layer.masksToBounds = YES;
-        //        _btn1.layer.cornerRadius = 3;
-        //        _btn1.layer.borderColor = [UIColor grayColor].CGColor;
-//        _btn10.layer.borderWidth = 0.5;
+        _btn10.titleLabel.font = UIFontMake(13);
         [_btn10 setImage:[UIImage imageNamed:@"stealth"] forState:UIControlStateNormal];
-        [self addSubview:_btn10];
+        [scrollView addSubview:_btn10];
     }
     return _btn10;
+}
+
+- (UIButton *)btn11 {
+    if (!_btn11) {
+        _btn11 = [UIButton buttonWithType:UIButtonTypeCustom];
+        _btn11.tag = 124;
+        [_btn11 setTitle:@"意见反馈"forState:UIControlStateNormal];
+        [_btn11 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [_btn11 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_btn11 setImage:[UIImage imageNamed:@"stealth"] forState:UIControlStateNormal];
+        _btn11.titleLabel.font = UIFontMake(13);
+        [scrollView addSubview:_btn11];
+    }
+    return _btn11;
 }
 
 

@@ -11,11 +11,16 @@
 #import <ReactiveCocoa.h>
 
 @interface AderView () <UIScrollViewDelegate>
+
 @property (nonatomic, strong) UIImageView *bornView;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UILabel *textLabel;
 @property (nonatomic, strong) UILabel *bottomLabel;
+
 @end
+
+
+
 
 @implementation AderView
 

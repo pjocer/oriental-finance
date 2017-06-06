@@ -11,8 +11,7 @@
 #import <ReactiveCocoa.h>
 #import <Masonry.h>
 
-@interface OSearchView () <UISearchBarDelegate>
-
+@interface OSearchView ()
 //@property (nonatomic, strong) UISearchBar *searchBar;
 
 @property (nonatomic, strong) UIButton *searchbarsss;
@@ -38,14 +37,9 @@
 
 - (instancetype)subscribe {
     WEAKSELF
-//    [[self rac_signalForSelector:@selector(searchBarTextDidBeginEditing:) fromProtocol:@protocol(UISearchBarDelegate)] subscribeNext:^(id x) {
-//        STRONGSELF
-//        if (self.didSelectedAction) self.didSelectedAction(YES);
-//    }];
-    
     [[self.searchbarsss rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         STRONGSELF
-        if (self.didSelectedAction) self.didSelectedAction(NO);
+        if (self.didSelectedAction) self.didSelectedAction(YES);
     }];
     
     [[self.orderButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
@@ -57,10 +51,6 @@
 }
 
 - (instancetype)makeConstraints {
-//    [self.searchBar mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.top.bottom.equalTo(self);
-//        make.width.mas_equalTo(300);
-//    }];
     
     [self.searchbarsss mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.bottom.equalTo(self).insets(UIEdgeInsetsMake(7.5, 7.5, 7.5, 7.5));
@@ -74,20 +64,6 @@
     }];
     return self;
 }
-
-//- (UISearchBar *)searchBar {
-//    if (!_searchBar) {
-//        _searchBar = [UISearchBar new];
-//        _searchBar.delegate = self;
-//        [_searchBar setBarTintColor:[UIColor whiteColor]];
-//        _searchBar.textField.backgroundColor = DEFAULT_BG_COLOR;
-//        _searchBar.textField.layer.cornerRadius = 14;
-//        _searchBar.textField.layer.masksToBounds = YES;
-//        _searchBar.placeholder = @"欢乐颂";
-//        _searchBar.searchBarStyle = UISearchBarStyleMinimal;
-//    }
-//    return _searchBar;
-//}
 
 - (UIButton *)searchbarsss{
     if (!_searchbarsss) {

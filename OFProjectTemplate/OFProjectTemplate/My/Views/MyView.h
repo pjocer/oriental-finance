@@ -33,6 +33,7 @@
 @property (nonatomic, strong) UIButton *btn8;
 @property (nonatomic, strong) UIButton *btn9;
 @property (nonatomic, strong) UIButton *btn10;
+@property (nonatomic, strong) UIButton *btn11;
 
 
 
