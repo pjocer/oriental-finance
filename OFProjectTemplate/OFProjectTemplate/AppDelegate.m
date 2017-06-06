@@ -90,19 +90,19 @@
     return _rootController;
 }
 
-- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
-    if ([viewController isKindOfClass:[UINavigationController class]]) {
-        UINavigationController *navigation = (UINavigationController *)viewController;
-        if (navigation.viewControllers.count > 0 && [navigation.viewControllers.firstObject isKindOfClass:[RemoteViewController class]]) {
-            RemoteViewController *vc = [[RemoteViewController alloc] init];
-            vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-            vc.hidesBottomBarWhenPushed = YES;
-            [self.rootController presentViewController:vc animated:YES completion:nil];
-            return NO;
-        }
-    }
-    return YES;
-}
+//- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+//    if ([viewController isKindOfClass:[UINavigationController class]]) {
+//        UINavigationController *navigation = (UINavigationController *)viewController;
+//        if (navigation.viewControllers.count > 0 && [navigation.viewControllers.firstObject isKindOfClass:[RemoteViewController class]]) {
+//            RemoteViewController *vc = [[RemoteViewController alloc] init];
+//            vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+//            vc.hidesBottomBarWhenPushed = YES;
+//            [self.rootController presentViewController:vc animated:YES completion:nil];
+//            return NO;
+//        }
+//    }
+//    return YES;
+//}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

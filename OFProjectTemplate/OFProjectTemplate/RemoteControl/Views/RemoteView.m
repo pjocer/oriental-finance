@@ -30,7 +30,7 @@
     
     [backgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(weakSelf);
-        make.centerY.equalTo(weakSelf.mas_centerY).offset(-50);
+        make.centerY.equalTo(weakSelf.mas_centerY).offset(-100);
         make.width.equalTo(@(weakSelf.frame.size.width/2));
         make.height.equalTo(@(weakSelf.frame.size.width/2));
     }];
@@ -75,14 +75,14 @@
 
     [self.soundLowBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf.mas_left).offset(35);
-        make.top.equalTo(weakSelf.boomBtn.mas_bottom).offset(77);
+        make.top.equalTo(weakSelf.boomBtn.mas_bottom).offset(60);
         make.width.equalTo(@(50));
         make.height.equalTo(@(50));
     }];
     
     [self.soundBigBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(weakSelf.mas_right).offset(-35);
-        make.top.equalTo(weakSelf.boomBtn.mas_bottom).offset(77);
+        make.top.equalTo(weakSelf.boomBtn.mas_bottom).offset(60);
         make.width.equalTo(@(50));
         make.height.equalTo(@(50));
     }];

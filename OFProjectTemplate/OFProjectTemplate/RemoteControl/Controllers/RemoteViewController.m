@@ -55,10 +55,10 @@
 
 -(void)remoteViewDelegate:(UIButton *)btn{
     if (btn.tag == 122) {
-        [self dismissViewControllerAnimated:YES completion:^{
+//        [self dismissViewControllerAnimated:YES completion:^{
 //            AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
 //            [delegate.rootController setSelectedIndex:0];
-        }];
+//        }];
     }
 
 }
