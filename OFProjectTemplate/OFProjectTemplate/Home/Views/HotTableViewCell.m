@@ -57,7 +57,7 @@
     [self.titleIcon mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.gapLabel.mas_bottom).offset(8);
         make.leading.mas_equalTo(13);
-        make.width.height.mas_equalTo(30);
+        make.width.height.mas_equalTo(17);
     }];
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.titleIcon.mas_right).offset(8);
@@ -87,7 +87,7 @@
 - (UIImageView *)titleIcon {
     if (!_titleIcon) {
         _titleIcon = [UIImageView new];
-        _titleIcon.image = ImageNamed(@"2048");
+        _titleIcon.image = ImageNamed(@"home_hotplay");
         _titleIcon.contentMode = UIViewContentModeScaleAspectFit;
     }
     return _titleIcon;

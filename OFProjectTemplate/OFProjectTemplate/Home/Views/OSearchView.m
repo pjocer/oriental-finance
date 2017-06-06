@@ -82,9 +82,10 @@
         [_orderButton setTitle:@"预约" forState:UIControlStateNormal];
         [_orderButton setTitleColor:DEFAULT_TEXT_COLOR forState:UIControlStateNormal];
         [_orderButton setBackgroundColor:DEFAULT_BG_COLOR];
-        UIImage *image = ImageNamed(@"erweim");
+        UIImage *image = ImageNamed(@"home_ appointment");
         [_orderButton setImage:image forState:UIControlStateNormal];
-        [_orderButton setTitleEdgeInsets:UIEdgeInsetsMake(0, -35, 0, 0)];
+        _orderButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        [_orderButton setTitleEdgeInsets:UIEdgeInsetsMake(0, -30, 0, 0)];
         [_orderButton setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, -60)];
     }
     return _orderButton;
