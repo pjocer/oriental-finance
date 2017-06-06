@@ -20,6 +20,7 @@
 @property (nonatomic, strong) UICollectionView *gridView;
 @property (nonatomic, strong) HotTableViewCellViewModel *viewModel;
 @property (nonatomic, copy) dispatch_block_t block;
+@property (nonatomic, strong) UIButton *refreshBtn;
 @end
 
 @implementation HotTableViewCell
@@ -35,6 +36,7 @@
     [self.contentView addSubview:self.gapLabel];
     [self.contentView addSubview:self.titleIcon];
     [self.contentView addSubview:self.titleLabel];
+    [self.contentView addSubview:self.refreshBtn];
     [self.contentView addSubview:self.gridView];
     return self;
 }
@@ -63,12 +65,20 @@
         make.left.equalTo(self.titleIcon.mas_right).offset(8);
         make.centerY.equalTo(self.titleIcon);
     }];
+    
+    [self.refreshBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.gapLabel.mas_bottom).offset(8);
+        make.right.equalTo(self.contentView).offset(-18);
+        make.width.height.mas_equalTo(17);
+    }];
+    
     [self.gridView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.titleIcon.mas_bottom).offset(8);
         make.leading.mas_equalTo(0);
         make.trailing.mas_equalTo(0);
         make.bottom.mas_equalTo(-8);
     }];
+    
     return self;
 }
 
@@ -101,6 +111,16 @@
         _titleLabel.textColor = [UIColor blackColor];
     }
     return _titleLabel;
+}
+
+- (UIButton *)refreshBtn {
+    if (!_refreshBtn) {
+        _refreshBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_refreshBtn setImage:[UIImage imageNamed:@"home_F5"] forState:UIControlStateNormal];
+        _refreshBtn.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        [self addSubview:_refreshBtn];
+    }
+    return _refreshBtn;
 }
 
 - (UICollectionView *)gridView {
