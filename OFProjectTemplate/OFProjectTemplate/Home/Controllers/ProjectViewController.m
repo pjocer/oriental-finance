@@ -18,7 +18,7 @@
 @interface ProjectViewController ()
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) HotTableViewModel *tableViewModel;
-@property (nonatomic, strong) OBannerView *banner;
+//@property (nonatomic, strong) OBannerView *banner;
 
 @end
 
@@ -46,7 +46,7 @@
         _tableView.delegate = self.tableViewModel;
         _tableView.dataSource = self.tableViewModel;
         [_tableView registerClass:[HomeChannelLiveCell class] forCellReuseIdentifier:HomeChannelLiveCellIdentifier];
-        _tableView.tableHeaderView = self.banner;
+//        _tableView.tableHeaderView = self.banner;
     }
     return _tableView;
 }
@@ -59,16 +59,16 @@
     return _tableViewModel;
 }
 
-- (OBannerView *)banner {
-    if (!_banner) {
-        _banner = [[OBannerView alloc] initWithChangeModel:ChangeModeFade];
-        _banner.frame = CGRectMake(0, 0, SCREEN_WIDTH, 200);
-        _banner.imageClickBlock = ^(NSInteger index) {
-            [OShowHud showErrorHudWith:[NSString stringWithFormat:@"点击了第%ld张图片",index] animated:YES];
-        };
-    }
-    return _banner;
-}
+//- (OBannerView *)banner {
+//    if (!_banner) {
+//        _banner = [[OBannerView alloc] initWithChangeModel:ChangeModeFade];
+//        _banner.frame = CGRectMake(0, 0, SCREEN_WIDTH, 200);
+//        _banner.imageClickBlock = ^(NSInteger index) {
+//            [OShowHud showErrorHudWith:[NSString stringWithFormat:@"点击了第%ld张图片",index] animated:YES];
+//        };
+//    }
+//    return _banner;
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

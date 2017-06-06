@@ -22,7 +22,7 @@
     [super viewDidLoad];
     self.title = @"详情";
     self.view.backgroundColor = [UIColor whiteColor];
-    
+    [self initNavigationBar];
 
     
     [self.view addSubview:self.listTableView];
@@ -52,6 +52,27 @@
 
 
     
+    
+}
+
+- (void)initNavigationBar {
+    
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(0, 0, 25, 25);
+    btn.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    [btn setImage:[UIImage imageNamed:@"home_share"] forState:UIControlStateNormal];
+    UIBarButtonItem *buttonItem2 = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    UIBarButtonItem *negativeSeperator2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    negativeSeperator2.width = -5;
+    UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn2.frame = CGRectMake(0, 0, 25, 25);
+    [btn2 setImage:[UIImage imageNamed:@"home_celloction"] forState:UIControlStateNormal];
+    btn2.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    UIBarButtonItem *buttonItem3 = [[UIBarButtonItem alloc] initWithCustomView:btn2];
+    UIBarButtonItem *negativeSeperator3 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    negativeSeperator3.width = -5;
+    self.navigationItem.rightBarButtonItems = @[negativeSeperator2, buttonItem2, negativeSeperator3, buttonItem3];
     
 }
 

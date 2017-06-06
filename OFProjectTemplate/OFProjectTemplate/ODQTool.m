@@ -142,10 +142,11 @@
         make.left.bottom.right.equalTo(self.view);
         make.top.equalTo(downView.mas_bottom);
     }];
+    
     UILabel *label = [[UILabel alloc]init];
     label.numberOfLines = 0;
     label.textAlignment = NSTextAlignmentCenter;
-    label.text = @"将二维码/条形码放入框内,即可自动扫描";
+    label.text = @"点击机顶盒遥控器的'服务'按键 \n扫一扫电视屏幕上的二维码即可绑定机顶盒";
     label.textColor = [UIColor lightGrayColor];
     label.font = [UIFont systemFontOfSize:13];
     [AVCapView addSubview:label];

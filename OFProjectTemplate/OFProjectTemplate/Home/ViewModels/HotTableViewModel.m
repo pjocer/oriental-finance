@@ -29,6 +29,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (_show) {
         HomeChannelLiveCell *cell = [tableView dequeueReusableCellWithIdentifier:HomeChannelLiveCellIdentifier forIndexPath:indexPath];
+        
         [cell setDidSelectedBlock:^{
             if (self.block) self.block(HotTableViewSelectTypeLiving, nil);
         }];
@@ -46,6 +47,7 @@
         return cell;
     } else {
         HomeChannelLiveCell *cell = [tableView dequeueReusableCellWithIdentifier:HomeChannelLiveCellIdentifier forIndexPath:indexPath];
+        
         [cell setDidSelectedBlock:^{
             if (self.block) self.block(HotTableViewSelectTypeLiving, nil);
         }];
