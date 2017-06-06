@@ -26,6 +26,10 @@
 		D33820B21EE15D6700D5B99C /* HomeChannelLiveCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D33820B11EE15D6600D5B99C /* HomeChannelLiveCell.m */; };
 		D33820B51EE15EFD00D5B99C /* HoritalVideoCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D33820B41EE15EFD00D5B99C /* HoritalVideoCollectionCell.m */; };
 		D33820B81EE1714600D5B99C /* ChannelLiveHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D33820B71EE1714600D5B99C /* ChannelLiveHeaderView.m */; };
+		D33821101EE6475300D5B99C /* SocialAnalysisManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D338210F1EE6475300D5B99C /* SocialAnalysisManager.m */; };
+		D33821131EE6476000D5B99C /* SocialRegisterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D33821121EE6476000D5B99C /* SocialRegisterModel.m */; };
+		D33821181EE653D400D5B99C /* SocialLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D33821171EE653D400D5B99C /* SocialLoginManager.m */; };
+		D338211B1EE6542000D5B99C /* SocialLoginResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D338211A1EE6542000D5B99C /* SocialLoginResultModel.m */; };
 		D3E5435E1ED9505900D8898C /* VerticalVideoCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E5435D1ED9505900D8898C /* VerticalVideoCollectionCell.m */; };
 		D3E543681ED959EF00D8898C /* UITableView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E543671ED959EF00D8898C /* UITableView+Extension.m */; };
 		D3E5436C1EDE546E00D8898C /* OBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E5436B1EDE546D00D8898C /* OBannerView.m */; };
@@ -134,6 +138,15 @@
 		D33820B41EE15EFD00D5B99C /* HoritalVideoCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoritalVideoCollectionCell.m; sourceTree = "<group>"; };
 		D33820B61EE1714600D5B99C /* ChannelLiveHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelLiveHeaderView.h; sourceTree = "<group>"; };
 		D33820B71EE1714600D5B99C /* ChannelLiveHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelLiveHeaderView.m; sourceTree = "<group>"; };
+		D338210E1EE6475300D5B99C /* SocialAnalysisManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialAnalysisManager.h; sourceTree = "<group>"; };
+		D338210F1EE6475300D5B99C /* SocialAnalysisManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialAnalysisManager.m; sourceTree = "<group>"; };
+		D33821111EE6476000D5B99C /* SocialRegisterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialRegisterModel.h; sourceTree = "<group>"; };
+		D33821121EE6476000D5B99C /* SocialRegisterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialRegisterModel.m; sourceTree = "<group>"; };
+		D33821141EE647AC00D5B99C /* OSocialCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSocialCore.h; sourceTree = "<group>"; };
+		D33821161EE653D400D5B99C /* SocialLoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialLoginManager.h; sourceTree = "<group>"; };
+		D33821171EE653D400D5B99C /* SocialLoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialLoginManager.m; sourceTree = "<group>"; };
+		D33821191EE6542000D5B99C /* SocialLoginResultModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialLoginResultModel.h; sourceTree = "<group>"; };
+		D338211A1EE6542000D5B99C /* SocialLoginResultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialLoginResultModel.m; sourceTree = "<group>"; };
 		D3C29BC61ED7FF300030D262 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D3C29BC81ED7FF410030D262 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		D3C29BCA1ED7FF530030D262 /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
@@ -361,6 +374,38 @@
 				D33820A81EE116B400D5B99C /* MWBaseDBDAO.m */,
 			);
 			name = OFDataBase;
+			sourceTree = "<group>";
+		};
+		D33821061EE6447800D5B99C /* OSocialComponents */ = {
+			isa = PBXGroup;
+			children = (
+				D33821141EE647AC00D5B99C /* OSocialCore.h */,
+				D338210D1EE646FC00D5B99C /* Core */,
+				D33821151EE6538800D5B99C /* Login */,
+			);
+			name = OSocialComponents;
+			sourceTree = "<group>";
+		};
+		D338210D1EE646FC00D5B99C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D338210E1EE6475300D5B99C /* SocialAnalysisManager.h */,
+				D338210F1EE6475300D5B99C /* SocialAnalysisManager.m */,
+				D33821111EE6476000D5B99C /* SocialRegisterModel.h */,
+				D33821121EE6476000D5B99C /* SocialRegisterModel.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		D33821151EE6538800D5B99C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D33821161EE653D400D5B99C /* SocialLoginManager.h */,
+				D33821171EE653D400D5B99C /* SocialLoginManager.m */,
+				D33821191EE6542000D5B99C /* SocialLoginResultModel.h */,
+				D338211A1EE6542000D5B99C /* SocialLoginResultModel.m */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 		D3E5435F1ED9593E00D8898C /* Extensions */ = {
@@ -756,6 +801,7 @@
 		D65DC8B31ED825500030636D /* OFFrameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D33821061EE6447800D5B99C /* OSocialComponents */,
 				D33820A31EE1155300D5B99C /* OFDataBase */,
 				D609C2981EE0F8EE00A09C19 /* ZYBannerView */,
 				D65DC8B41ED825500030636D /* TTYPageController */,
@@ -1014,6 +1060,7 @@
 				D3207FDF1ED94C5F00240DD2 /* HotTableViewCellViewModel.m in Sources */,
 				D65DC8D31ED825500030636D /* MyView.m in Sources */,
 				D3207FCD1ED910A500240DD2 /* HomeTabContainerViewModel.m in Sources */,
+				D33821101EE6475300D5B99C /* SocialAnalysisManager.m in Sources */,
 				D33820B21EE15D6700D5B99C /* HomeChannelLiveCell.m in Sources */,
 				D33820A91EE116B400D5B99C /* MWBaseDBDAO.m in Sources */,
 				D3E543951EDFF66D00D8898C /* OSearchController.m in Sources */,
@@ -1026,6 +1073,7 @@
 				D609C3001EE16C6600A09C19 /* TVChannelViewController.m in Sources */,
 				D609C3141EE17E9A00A09C19 /* LoginView.m in Sources */,
 				D609C2A01EE0F8EE00A09C19 /* ZYBannerFooter.m in Sources */,
+				D33821131EE6476000D5B99C /* SocialRegisterModel.m in Sources */,
 				D65DC8D51ED825500030636D /* TYTabButtonPagerController.m in Sources */,
 				D65DC8D41ED825500030636D /* TYPagerController.m in Sources */,
 				D609C3231EE1A4C700A09C19 /* SetUpTableViewCell.m in Sources */,
@@ -1036,6 +1084,8 @@
 				D65DC8D61ED825500030636D /* TYTabPagerController.m in Sources */,
 				D3E5436F1EDE615900D8898C /* OShowHud.m in Sources */,
 				D30CB1A51ED7F6DE000AC0BB /* AppDelegate.m in Sources */,
+				D33821181EE653D400D5B99C /* SocialLoginManager.m in Sources */,
+				D338211B1EE6542000D5B99C /* SocialLoginResultModel.m in Sources */,
 				D609C31A1EE1977A00A09C19 /* SetupPasswordVC.m in Sources */,
 				D609C3171EE1885400A09C19 /* RegisteredViewController.m in Sources */,
 				D609C3201EE1A38300A09C19 /* SetUpViewController.m in Sources */,

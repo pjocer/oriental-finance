@@ -13,7 +13,8 @@
 #import "MyViewController.h"
 #import "ApplicationViewController.h"
 #import "ChannelViewController.h"
-
+#import "SocialAnalysisManager.h"
+#import "OSocialCore.h"
 
 @interface AppDelegate () <UITabBarControllerDelegate>
 
@@ -30,7 +31,7 @@
 
 
 - (void)socialConfiguration {
-    
+//    SocialRegisterItem *wechat = [[SocialRegisterItem alloc] initWithPlatform:<#(SocialPlatform)#> appKey:<#(NSString *)#> appSecret:<#(NSString *)#> redirectURL:<#(NSString *)#>]
 }
 
 - (void)initRootViewController {
