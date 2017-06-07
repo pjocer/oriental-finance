@@ -152,6 +152,7 @@
     }];
     [self initButton:_btn11];
     
+    
 
 
 
@@ -200,7 +201,7 @@
     if (!_btn1) {
         _btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
         _btn1.tag = 101;
-        [_btn1 setTitle:@"     设置"forState:UIControlStateNormal];
+        [_btn1 setTitle:@"    家庭成员"forState:UIControlStateNormal];
         [_btn1 setImage:[UIImage imageNamed:@"setup"] forState:UIControlStateNormal];
         [_btn1 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_btn1 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -214,7 +215,7 @@
     if (!_btn2) {
         _btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
         _btn2.tag = 102;
-        [_btn2 setTitle:@"     家庭"forState:UIControlStateNormal];
+        [_btn2 setTitle:@"    我的订单"forState:UIControlStateNormal];
         [_btn2 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_btn2 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
         _btn2.titleLabel.font = UIFontMake(13);

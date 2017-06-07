@@ -59,6 +59,19 @@
     
     NSArray *timeARR = @[@"15:37", @"16:37", @"17:37", @"18:37", @"19:37", @"20:37"];
     
+    UIImageView *timeline = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"channel_timeLine"]];
+//    timeline.frame = CGRectMake(kScreenWidth/6, 7.5, kScreenWidth, 1);
+    [scrollView addSubview:timeline];
+    
+    [timeline mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(scrollView.mas_top).offset(9.5);
+        make.left.equalTo(headView).offset(7.5);
+        make.right.equalTo(headView).offset(-7.5);
+        make.height.equalTo(@1);
+    }];
+    
+    
+    
     for (NSInteger i = 0; i < self.dataArray.count; i++) {
         UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(kScreenWidth/3 + kScreenWidth/3*i, 20, kScreenWidth/3, 30)];
         
@@ -67,6 +80,13 @@
         label.font = [UIFont systemFontOfSize:12];
         label.textAlignment = NSTextAlignmentCenter;
         [scrollView addSubview:label];
+        
+        UILabel *roundLabel = [[UILabel alloc]initWithFrame:CGRectMake(kScreenWidth/6 + kScreenWidth/3 + kScreenWidth/3*i -2.5 , 7.5, 5, 5)];
+        roundLabel.layer.masksToBounds = YES;
+        roundLabel.layer.cornerRadius = 2.5;
+        roundLabel.backgroundColor = [UIColor lightGrayColor];
+        [scrollView addSubview:roundLabel];
+        
     }
     [self setupBannerwith:headView];
     
