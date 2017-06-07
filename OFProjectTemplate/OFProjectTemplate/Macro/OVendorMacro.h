@@ -28,8 +28,8 @@
 #define QQ_PLATFORM @""
 
 #pragma mark - 微博开放平台
-#define WB_APP_KEY @""
-#define WB_APP_Secret @""
+#define WB_APP_KEY @"3436841636"
+#define WB_APP_Secret @"979dd66ee7546c5e67fbbdbf24704803"
 #define WB_RedirectURL @""
 
 #pragma mark - 微信开放平台

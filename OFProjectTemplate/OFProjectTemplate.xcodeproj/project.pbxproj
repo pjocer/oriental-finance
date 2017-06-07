@@ -1296,7 +1296,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.oriental-finance.ios.OFProjectTemplate";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oriental-finance.ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/**";
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -1317,7 +1317,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/**",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.oriental-finance.ios.OFProjectTemplate";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oriental-finance.ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/**";
 				VALID_ARCHS = "armv7 armv7s arm64";
