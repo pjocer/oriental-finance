@@ -11,8 +11,10 @@
 #import "SetUpTableViewCell.h"
 #import "SetUpHeadTableViewCell.h"
 #import "OFUIkitMacro.h"
+#import "EditSetUpVC.h"
+#import "ZHPickView.h"
 
-@interface SetUpViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface SetUpViewController ()<UITableViewDelegate, UITableViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @end
 
@@ -101,11 +103,23 @@
             cell.titleLabel.text = @"出生日期";
             cell.textsLabel.text = @"1991.12.31";
         } else if (indexPath.row == 5) {
+            UILabel *line = [[UILabel alloc]initWithFrame:CGRectMake(0, 48.5, SCREEN_WIDTH, 10)];
+            line.backgroundColor = UIColorMake(236, 236, 236);
+            [cell.contentView addSubview:line];
             cell.titleLabel.text = @"绑定手机号";
             cell.textsLabel.text = @"17603607917";
+            [cell.titleLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.centerY.equalTo(cell.contentView).offset(-5);
+                make.left.equalTo(cell.contentView.mas_left).offset(22.5);
+            }];
+            cell.separatorInset = UIEdgeInsetsMake(0, SCREEN_WIDTH, 0, 0); // ViewWidth  [宏] 指的是手机屏幕的宽度
         } else if (indexPath.row == 6) {
+            [cell.newxtImage setHidden:YES];
             cell.titleLabel.text = @"消息推送";
             [cell.textsLabel setHidden:YES];
+            [cell.pushSwich setHidden:NO];
+            
+
         } else if (indexPath.row == 7) {
             cell.titleLabel.text = @"清除缓存";
             cell.textsLabel.text = @"25.87M";
@@ -119,8 +133,74 @@
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
+    SetUpTableViewCell *cell = [self.listTableView cellForRowAtIndexPath:indexPath];
     
+    if (indexPath.row == 0) {
+        UIImagePickerController *pickVC = [[UIImagePickerController alloc] init];
+        
+        //设置图片源类型
+        pickVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary; //取出所有图片资源的相簿
+        
+        //设置代理
+        pickVC.delegate = self;
+        
+        
+        [self presentViewController:pickVC animated:YES completion:nil];
+    }else if (indexPath.row == 1){
+        EditSetUpVC *vc = [[EditSetUpVC alloc]initWithTitle:@"真实姓名" navBarBtns:NavBarBtnBack];
+        vc.titlelabel = @"姓名";
+        vc.placorlabel = cell.textsLabel.text;
+        [self.navigationController pushViewController:vc animated:YES];
+        
+    }else if (indexPath.row == 2){
+        EditSetUpVC *vc = [[EditSetUpVC alloc]initWithTitle:@"修改昵称" navBarBtns:NavBarBtnBack];
+        vc.titlelabel = @"昵称";
+        vc.placorlabel = cell.textsLabel.text;
+        [self.navigationController pushViewController:vc animated:YES];
+        
+    }else if (indexPath.row == 3){
+        
+        ZHPickView *pickView = [[ZHPickView alloc] init];
+        [pickView setDataViewWithItem:@[@"男",@"女"] title:@"选择性别"];
+        [pickView showPickView:self];
+        pickView.block = ^(NSString *selectedStr)
+        {
+            cell.textsLabel.text = selectedStr;
+        };
+        
+    }else if (indexPath.row == 4){
+        ZHPickView *pickView = [[ZHPickView alloc] init];
+        [pickView setDateViewWithTitle:@"出生日期"];
+        [pickView showPickView:self];
+        pickView.block = ^(NSString *selectedStr)
+        {
+            cell.textsLabel.text = selectedStr;
+        };
+    }else if (indexPath.row == 5){
+        EditSetUpVC *vc = [[EditSetUpVC alloc]initWithTitle:@"修改手机号" navBarBtns:NavBarBtnBack];
+        vc.titlelabel = @"手机号";
+        vc.placorlabel = cell.textsLabel.text;
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.row == 6){
+        
+    }else if (indexPath.row == 7){
+        
+    }else if (indexPath.row == 8){
+        
+    }
+    
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    //dismiss
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    //取出选中的图片
+    NSIndexPath *index = [NSIndexPath indexPathForRow:0 inSection:0];
+    SetUpHeadTableViewCell *headcell = [self.listTableView cellForRowAtIndexPath:index];
+    
+    headcell.headImage.image = info[UIImagePickerControllerOriginalImage];
 }
 
 - (UITableView *)listTableView{

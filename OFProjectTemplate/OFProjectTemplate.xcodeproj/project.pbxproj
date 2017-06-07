@@ -76,6 +76,10 @@
 		D609C3231EE1A4C700A09C19 /* SetUpTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C3221EE1A4C700A09C19 /* SetUpTableViewCell.m */; };
 		D609C3261EE1A87500A09C19 /* SetUpHeadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C3251EE1A87400A09C19 /* SetUpHeadTableViewCell.m */; };
 		D609C3281EE1A9E300A09C19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D609C3271EE1A9E300A09C19 /* Assets.xcassets */; };
+		D64094E81EE7CBC800DD24FF /* SetupView.m in Sources */ = {isa = PBXBuildFile; fileRef = D64094E71EE7CBC800DD24FF /* SetupView.m */; };
+		D64094EB1EE7CCFA00DD24FF /* EditSetUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D64094EA1EE7CCFA00DD24FF /* EditSetUpVC.m */; };
+		D64094EE1EE7DD4000DD24FF /* ZHPickView.m in Sources */ = {isa = PBXBuildFile; fileRef = D64094ED1EE7DD4000DD24FF /* ZHPickView.m */; };
+		D64094F11EE802C400DD24FF /* ReplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D64094F01EE802C400DD24FF /* ReplyCell.m */; };
 		D65DC8C71ED825500030636D /* ApplicationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8831ED825500030636D /* ApplicationDetailsViewController.m */; };
 		D65DC8C81ED825500030636D /* ApplicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8851ED825500030636D /* ApplicationViewController.m */; };
 		D65DC8C91ED825500030636D /* ApplicationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC88A1ED825500030636D /* ApplicationTableViewCell.m */; };
@@ -251,6 +255,14 @@
 		D609C3241EE1A87400A09C19 /* SetUpHeadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetUpHeadTableViewCell.h; sourceTree = "<group>"; };
 		D609C3251EE1A87400A09C19 /* SetUpHeadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetUpHeadTableViewCell.m; sourceTree = "<group>"; };
 		D609C3271EE1A9E300A09C19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D64094E61EE7CBC800DD24FF /* SetupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupView.h; sourceTree = "<group>"; };
+		D64094E71EE7CBC800DD24FF /* SetupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupView.m; sourceTree = "<group>"; };
+		D64094E91EE7CCFA00DD24FF /* EditSetUpVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditSetUpVC.h; sourceTree = "<group>"; };
+		D64094EA1EE7CCFA00DD24FF /* EditSetUpVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditSetUpVC.m; sourceTree = "<group>"; };
+		D64094EC1EE7DD4000DD24FF /* ZHPickView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHPickView.h; sourceTree = "<group>"; };
+		D64094ED1EE7DD4000DD24FF /* ZHPickView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHPickView.m; sourceTree = "<group>"; };
+		D64094EF1EE802C400DD24FF /* ReplyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReplyCell.h; sourceTree = "<group>"; };
+		D64094F01EE802C400DD24FF /* ReplyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReplyCell.m; sourceTree = "<group>"; };
 		D65DC8821ED825500030636D /* ApplicationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationDetailsViewController.h; sourceTree = "<group>"; };
 		D65DC8831ED825500030636D /* ApplicationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationDetailsViewController.m; sourceTree = "<group>"; };
 		D65DC8841ED825500030636D /* ApplicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationViewController.h; sourceTree = "<group>"; };
@@ -475,6 +487,8 @@
 				D3E5436E1EDE615900D8898C /* OShowHud.m */,
 				D609C2E91EE1338600A09C19 /* ODQTool.h */,
 				D609C2EA1EE1338600A09C19 /* ODQTool.m */,
+				D64094EC1EE7DD4000DD24FF /* ZHPickView.h */,
+				D64094ED1EE7DD4000DD24FF /* ZHPickView.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -806,6 +820,8 @@
 				D3E5435D1ED9505900D8898C /* VerticalVideoCollectionCell.m */,
 				D33820B31EE15EFD00D5B99C /* HoritalVideoCollectionCell.h */,
 				D33820B41EE15EFD00D5B99C /* HoritalVideoCollectionCell.m */,
+				D64094EF1EE802C400DD24FF /* ReplyCell.h */,
+				D64094F01EE802C400DD24FF /* ReplyCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -839,6 +855,8 @@
 				D65DC8AD1ED825500030636D /* MyViewController.m */,
 				D609C31E1EE1A38300A09C19 /* SetUpViewController.h */,
 				D609C31F1EE1A38300A09C19 /* SetUpViewController.m */,
+				D64094E91EE7CCFA00DD24FF /* EditSetUpVC.h */,
+				D64094EA1EE7CCFA00DD24FF /* EditSetUpVC.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -866,6 +884,8 @@
 				D609C3221EE1A4C700A09C19 /* SetUpTableViewCell.m */,
 				D609C3241EE1A87400A09C19 /* SetUpHeadTableViewCell.h */,
 				D609C3251EE1A87400A09C19 /* SetUpHeadTableViewCell.m */,
+				D64094E61EE7CBC800DD24FF /* SetupView.h */,
+				D64094E71EE7CBC800DD24FF /* SetupView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1160,7 +1180,9 @@
 				D609C3231EE1A4C700A09C19 /* SetUpTableViewCell.m in Sources */,
 				D65DC8CE1ED825500030636D /* HomeViewController.m in Sources */,
 				D65DC8D21ED825500030636D /* MyViewController.m in Sources */,
+				D64094E81EE7CBC800DD24FF /* SetupView.m in Sources */,
 				D3207FD61ED92E1A00240DD2 /* OSearchView.m in Sources */,
+				D64094F11EE802C400DD24FF /* ReplyCell.m in Sources */,
 				D33820AF1EE119AE00D5B99C /* SearchDAO.m in Sources */,
 				D65DC8D61ED825500030636D /* TYTabPagerController.m in Sources */,
 				D3E5436F1EDE615900D8898C /* OShowHud.m in Sources */,
@@ -1175,6 +1197,7 @@
 				D3207FDC1ED9497000240DD2 /* HotTableViewCell.m in Sources */,
 				D3E543791EDE698900D8898C /* UIControl+Interval.m in Sources */,
 				D609C3031EE16C7C00A09C19 /* CCTVChannelViewController.m in Sources */,
+				D64094EE1EE7DD4000DD24FF /* ZHPickView.m in Sources */,
 				D65DC8CF1ED825500030636D /* HomeModel.m in Sources */,
 				D609C2881EDFA67900A09C19 /* IntroductionCell.m in Sources */,
 				D609C2FD1EE16AC000A09C19 /* TVViewController.m in Sources */,
@@ -1186,6 +1209,7 @@
 				D3E543821EDE940200D8898C /* LocalChannelController.m in Sources */,
 				D65DC8E21ED94B430030636D /* CommentsCell.m in Sources */,
 				D3EA47241EE79E3600ECD89C /* ShareMenuItemView.m in Sources */,
+				D64094EB1EE7CCFA00DD24FF /* EditSetUpVC.m in Sources */,
 				D65DC8C91ED825500030636D /* ApplicationTableViewCell.m in Sources */,
 				D3207FD91ED9487200240DD2 /* HotTableViewModel.m in Sources */,
 				D609C3111EE173E500A09C19 /* InformationInputView.m in Sources */,

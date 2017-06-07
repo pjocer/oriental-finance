@@ -11,7 +11,7 @@
 #import "LoginViewController.h"
 #import "SetUpViewController.h"
 
-@interface MyViewController ()<myViewDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface MyViewController ()<myViewDelegate>
 
 @end
 
@@ -31,17 +31,7 @@
 - (void)myViewDelegateActionWithBtn:(UIButton *)btn{
     NSLog(@"%@",btn.titleLabel.text);
     if (btn.tag == 1001) {
-//        UIImagePickerController *pickVC = [[UIImagePickerController alloc] init];
-//        
-//        //设置图片源类型
-//        pickVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary; //取出所有图片资源的相簿
-//        
-//        //设置代理
-//        pickVC.delegate = self;
-//        
-//        
-//        [self presentViewController:pickVC animated:YES completion:nil];
-//    } else {
+
         LoginViewController *login = [[LoginViewController alloc]initWithTitle:@"登录" navBarBtns:NavBarBtnBack];
         UINavigationController *navc = [[UINavigationController alloc]initWithRootViewController:login];
         [self presentViewController:navc animated:YES completion:^{
@@ -63,15 +53,7 @@
    
 
 }
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-    
-    //dismiss
-    [picker dismissViewControllerAnimated:YES completion:nil];
-    
-    //取出选中的图片
-    [self.myView.headerBtn setImage:info[UIImagePickerControllerOriginalImage] forState:UIControlStateNormal];
-    
-}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

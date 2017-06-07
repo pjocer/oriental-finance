@@ -29,20 +29,29 @@
     
     [self.contentView addSubview:self.textsLabel];
     [self.textsLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self.contentView);
+        make.centerY.equalTo(self.titleLabel);
         make.right.equalTo(self.contentView.mas_right).offset(-40.5);
     }];
     
-    UIImageView *newxtImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"next"]];
-    [self.contentView addSubview:newxtImage];
-    [newxtImage mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.newxtImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"next"]];
+    [self.contentView addSubview:self.newxtImage];
+    [self.newxtImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.contentView.mas_right).offset(-18.5);
-        make.centerY.equalTo(self.contentView);
+        make.centerY.equalTo(self.titleLabel);
         make.height.equalTo(@14);
         make.width.equalTo(@12);
     }];
     
+    self.pushSwich =[[UISwitch alloc]init];
+    [self.pushSwich setOn:YES animated:YES];
+    [self.pushSwich setHidden:YES];
+//    [self.pushSwich addTarget:self action:@selector(getValue1:) forControlEvents:UIControlEventValueChanged];
+    [self.contentView addSubview:self.pushSwich];
     
+    [self.pushSwich mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.newxtImage);
+        make.centerY.equalTo(self.contentView.mas_centerY);
+    }];
     
 }
 

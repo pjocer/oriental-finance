@@ -12,5 +12,8 @@
 
 @property (nonatomic, strong) UILabel *textsLabel;
 @property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UIImageView *newxtImage;
+
+@property (nonatomic, strong) UISwitch *pushSwich;;
 
 @end
