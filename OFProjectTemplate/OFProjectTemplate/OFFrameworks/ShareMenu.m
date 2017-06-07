@@ -11,6 +11,7 @@
 
 @interface ShareMenu () <QMUIMoreOperationDelegate>
 @property (nonatomic, copy) MoreOperationItemAction action;
+@property (nonatomic, copy) dispatch_block_t canceledAction;
 @property (nonatomic, assign) BOOL autoHidden;
 @end
 
@@ -23,8 +24,8 @@
 - (instancetype)subscribe {
     [[self rac_signalForSelector:@selector(moreOperationController:didSelectItemAtTag:) fromProtocol:@protocol(QMUIMoreOperationDelegate)] subscribeNext:^(RACTuple *x) {
         RACTupleUnpack(ShareMenu *menu, NSNumber *obj_tag) = x;
-        MoreOperationTag tag = [obj_tag unsignedIntegerValue];
-        ShareMenuItemView *itemView = (ShareMenuItemView *)[menu itemAtTag:tag];
+        MoreOperationType type = [obj_tag unsignedIntegerValue];
+        ShareMenuItemView *itemView = (ShareMenuItemView *)[menu itemAtTag:type];
         if (menu.action) {
             menu.action(itemView);
         }
@@ -32,41 +33,47 @@
             [menu hideToBottom];
         }
     }];
+    [[self rac_signalForSelector:NSSelectorFromString(@"hideToBottomCancelled:")] subscribeNext:^(RACTuple *x) {
+        if (self.canceledAction && [x.first boolValue]) self.canceledAction();
+    }];
     return self;
 }
 
-+ (void)showDefaultTagsWithStyle:(ShareMenuStyle)style compeletion:(MoreOperationItemAction)compeletion{
-    [self showWith:MoreOperationTagShareWechat|MoreOperationTagShareMoment|MoreOperationTagShareQzone|MoreOperationTagShareWeibo|MoreOperationTagShareMail|MoreOperationTagBookMark|MoreOperationTagSafari|MoreOperationTagReport style:ShareMenuStyleBorderCancel compeletion:compeletion autoHidden:YES];
++ (instancetype)showDefaultTypesWithStyle:(ShareMenuStyle)style compeletion:(MoreOperationItemAction)compeletion canceled:(dispatch_block_t)canceled{
+    
+    return [self showWith:MoreOperationTypeShareWechat|MoreOperationTypeShareMoment|MoreOperationTypeShareQzone|MoreOperationTypeShareWeibo|MoreOperationTypeShareMail|MoreOperationTypeBookMark|MoreOperationTypeSafari|MoreOperationTypeReport style:ShareMenuStyleBorderCancel compeletion:compeletion canceled:canceled autoHidden:YES];
 }
 
-+ (void)showWith:(MoreOperationTag)tags style:(ShareMenuStyle)style compeletion:(MoreOperationItemAction)compeletion autoHidden:(BOOL)hidden{
++ (instancetype)showWith:(MoreOperationType)type style:(ShareMenuStyle)style compeletion:(MoreOperationItemAction)compeletion canceled:(dispatch_block_t)canceled autoHidden:(BOOL)hidden{
+    NSAssert(type, @"MoreOperationType must not be MoreOperationNone");
     ShareMenu *menu = [ShareMenu new];
     [menu subscribe].delegate = menu;
     menu.autoHidden = hidden;
     menu.action = compeletion;
-    if (tags & MoreOperationTagShareWechat) {
-        [menu addItemWithTitle:@"微信好友" image:UIImageMake(@"wechat") type:QMUIMoreOperationItemTypeImportant tag:MoreOperationTagShareWechat];
+    menu.canceledAction = canceled;
+    if (type & MoreOperationTypeShareWechat) {
+        [menu addItemWithTitle:@"微信好友" image:UIImageMake(@"wechat") type:QMUIMoreOperationItemTypeImportant tag:MoreOperationTypeShareWechat];
     }
-    if (tags & MoreOperationTagShareMoment) {
-        [menu addItemWithTitle:@"朋友圈" image:UIImageMake(@"moment") type:QMUIMoreOperationItemTypeImportant tag:MoreOperationTagShareMoment];
+    if (type & MoreOperationTypeShareMoment) {
+        [menu addItemWithTitle:@"朋友圈" image:UIImageMake(@"moment") type:QMUIMoreOperationItemTypeImportant tag:MoreOperationTypeShareMoment];
     }
-    if (tags & MoreOperationTagShareQzone) {
-        [menu addItemWithTitle:@"QQ空间" image:UIImageMake(@"qq_zone") type:QMUIMoreOperationItemTypeImportant tag:MoreOperationTagShareQzone];
+    if (type & MoreOperationTypeShareQzone) {
+        [menu addItemWithTitle:@"QQ空间" image:UIImageMake(@"qq_zone") type:QMUIMoreOperationItemTypeImportant tag:MoreOperationTypeShareQzone];
     }
-    if (tags & MoreOperationTagShareWeibo) {
-        [menu addItemWithTitle:@"新浪微博" image:UIImageMake(@"sina_weibo") type:QMUIMoreOperationItemTypeImportant tag:MoreOperationTagShareWeibo];
+    if (type & MoreOperationTypeShareWeibo) {
+        [menu addItemWithTitle:@"新浪微博" image:UIImageMake(@"sina_weibo") type:QMUIMoreOperationItemTypeImportant tag:MoreOperationTypeShareWeibo];
     }
-    if (tags & MoreOperationTagShareMail) {
-        [menu addItemWithTitle:@"邮件" selectedTitle:nil image:UIImageMake(@"mail") selectedImage:nil type:QMUIMoreOperationItemTypeNormal tag:MoreOperationTagShareMail];
+    if (type & MoreOperationTypeShareMail) {
+        [menu addItemWithTitle:@"邮件" selectedTitle:nil image:UIImageMake(@"mail") selectedImage:nil type:QMUIMoreOperationItemTypeNormal tag:MoreOperationTypeShareMail];
     }
-    if (tags & MoreOperationTagBookMark) {
-        [menu addItemWithTitle:@"收藏" selectedTitle:@"取消收藏" image:UIImageMake(@"bookmark") selectedImage:UIImageMake(@"bookmark_selected") type:QMUIMoreOperationItemTypeNormal tag:MoreOperationTagBookMark];
+    if (type & MoreOperationTypeBookMark) {
+        [menu addItemWithTitle:@"收藏" selectedTitle:@"取消收藏" image:UIImageMake(@"bookmark") selectedImage:UIImageMake(@"bookmark_selected") type:QMUIMoreOperationItemTypeNormal tag:MoreOperationTypeBookMark];
     }
-    if (tags & MoreOperationTagSafari) {
-        [menu addItemWithTitle:@"浏览器打开" image:UIImageMake(@"safari") type:QMUIMoreOperationItemTypeNormal tag:MoreOperationTagSafari];
+    if (type & MoreOperationTypeSafari) {
+        [menu addItemWithTitle:@"浏览器打开" image:UIImageMake(@"safari") type:QMUIMoreOperationItemTypeNormal tag:MoreOperationTypeSafari];
     }
-    if (tags & MoreOperationTagReport) {
-        [menu addItemWithTitle:@"举报" image:UIImageMake(@"report") type:QMUIMoreOperationItemTypeNormal tag:MoreOperationTagReport];
+    if (type & MoreOperationTypeReport) {
+        [menu addItemWithTitle:@"举报" image:UIImageMake(@"report") type:QMUIMoreOperationItemTypeNormal tag:MoreOperationTypeReport];
     }
     
     if (style == ShareMenuStyleNormal) {
@@ -85,5 +92,6 @@
     }
     
     [menu showFromBottom];
+    return menu;
 }
 @end

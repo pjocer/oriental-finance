@@ -15,27 +15,18 @@ typedef NS_ENUM(NSUInteger, ShareMenuStyle) {
     ShareMenuStyleBorderCancel,
 };
 
-typedef NS_OPTIONS(NSUInteger, MoreOperationTag) {
-    MoreOperationTagShareWechat     = 1 << 0,
-    MoreOperationTagShareMoment     = 1 << 1,
-    MoreOperationTagShareQzone      = 1 << 2,
-    MoreOperationTagShareWeibo      = 1 << 3,
-    MoreOperationTagShareMail       = 1 << 4,
-    MoreOperationTagBookMark        = 1 << 5,
-    MoreOperationTagSafari          = 1 << 6,
-    MoreOperationTagReport          = 1 << 7,
-};
-
 typedef void(^MoreOperationItemAction)(ShareMenuItemView *item);
 
 @interface ShareMenu : QMUIMoreOperationController
 
-+ (void)showDefaultTagsWithStyle:(ShareMenuStyle)style
-                     compeletion:(MoreOperationItemAction)compeletion;
++ (instancetype)showDefaultTypesWithStyle:(ShareMenuStyle)style
+                              compeletion:(MoreOperationItemAction)compeletion
+                                 canceled:(dispatch_block_t)canceled;
 
-+ (void)showWith:(MoreOperationTag)tags
-           style:(ShareMenuStyle)style
-     compeletion:(MoreOperationItemAction)compeletion
-      autoHidden:(BOOL)hidden;
++ (instancetype)showWith:(MoreOperationType)type
+                   style:(ShareMenuStyle)style
+             compeletion:(MoreOperationItemAction)compeletion
+                canceled:(dispatch_block_t)canceled
+              autoHidden:(BOOL)hidden;
 
 @end

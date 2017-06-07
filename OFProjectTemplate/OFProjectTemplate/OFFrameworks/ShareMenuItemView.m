@@ -8,14 +8,14 @@
 
 #import "ShareMenuItemView.h"
 
-@implementation ShareMenuItemView
+@implementation QMUIMoreOperationItemView (Operation)
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (MoreOperationType)operationtype {
+    return (MoreOperationType)self.tag;
 }
-*/
+
+@end
+
+@implementation ShareMenuItemView
 
 @end

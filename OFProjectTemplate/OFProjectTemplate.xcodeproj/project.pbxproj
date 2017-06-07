@@ -45,6 +45,7 @@
 		D3E543951EDFF66D00D8898C /* OSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E543941EDFF66D00D8898C /* OSearchController.m */; };
 		D3EA47211EE7971500ECD89C /* ShareMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EA47201EE7971500ECD89C /* ShareMenu.m */; };
 		D3EA47241EE79E3600ECD89C /* ShareMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EA47231EE79E3600ECD89C /* ShareMenuItemView.m */; };
+		D3EA47271EE7BF8400ECD89C /* SocialShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EA47261EE7BF8400ECD89C /* SocialShareManager.m */; };
 		D609C2881EDFA67900A09C19 /* IntroductionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C2871EDFA67900A09C19 /* IntroductionCell.m */; };
 		D609C28B1EDFB76800A09C19 /* ChanneldetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C28A1EDFB76800A09C19 /* ChanneldetailsVC.m */; };
 		D609C29F1EE0F8EE00A09C19 /* ZYBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C29A1EE0F8EE00A09C19 /* ZYBannerCell.m */; };
@@ -186,6 +187,8 @@
 		D3EA47201EE7971500ECD89C /* ShareMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareMenu.m; sourceTree = "<group>"; };
 		D3EA47221EE79E3600ECD89C /* ShareMenuItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareMenuItemView.h; sourceTree = "<group>"; };
 		D3EA47231EE79E3600ECD89C /* ShareMenuItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareMenuItemView.m; sourceTree = "<group>"; };
+		D3EA47251EE7BF8400ECD89C /* SocialShareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialShareManager.h; sourceTree = "<group>"; };
+		D3EA47261EE7BF8400ECD89C /* SocialShareManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialShareManager.m; sourceTree = "<group>"; };
 		D609C2861EDFA67900A09C19 /* IntroductionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroductionCell.h; sourceTree = "<group>"; };
 		D609C2871EDFA67900A09C19 /* IntroductionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroductionCell.m; sourceTree = "<group>"; };
 		D609C2891EDFB76800A09C19 /* ChanneldetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChanneldetailsVC.h; sourceTree = "<group>"; };
@@ -508,6 +511,8 @@
 				D3EA47201EE7971500ECD89C /* ShareMenu.m */,
 				D3EA47221EE79E3600ECD89C /* ShareMenuItemView.h */,
 				D3EA47231EE79E3600ECD89C /* ShareMenuItemView.m */,
+				D3EA47251EE7BF8400ECD89C /* SocialShareManager.h */,
+				D3EA47261EE7BF8400ECD89C /* SocialShareManager.m */,
 			);
 			name = Share;
 			sourceTree = "<group>";
@@ -1105,6 +1110,7 @@
 				D609C3001EE16C6600A09C19 /* TVChannelViewController.m in Sources */,
 				D609C3141EE17E9A00A09C19 /* LoginView.m in Sources */,
 				D609C2A01EE0F8EE00A09C19 /* ZYBannerFooter.m in Sources */,
+				D3EA47271EE7BF8400ECD89C /* SocialShareManager.m in Sources */,
 				D33821131EE6476000D5B99C /* SocialRegisterModel.m in Sources */,
 				D65DC8D51ED825500030636D /* TYTabButtonPagerController.m in Sources */,
 				D65DC8D41ED825500030636D /* TYPagerController.m in Sources */,
