@@ -52,9 +52,31 @@
 
 - (instancetype)makeConstraints {
     
+    
+    
     [self.searchbarsss mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.bottom.equalTo(self).insets(UIEdgeInsetsMake(10, 7.5, 10, 7.5));
-        make.width.mas_equalTo(300);
+        make.left.top.bottom.right.equalTo(self).insets(UIEdgeInsetsMake(10, 7.5, 10, 93.5));
+//        make.width.mas_equalTo(270);
+    }];
+    
+    
+    UILabel *label = [[UILabel alloc]init];
+    label.text = @"观看欢乐颂";
+    label.textColor = UIColorMake(149, 151, 150);
+    label.font = UIFontMake(13);
+    label.textAlignment = NSTextAlignmentLeft;
+    [self.searchbarsss addSubview:label];
+    
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.bottom.equalTo(self.searchbarsss).insets(UIEdgeInsetsMake(0, 10, 0, 30));
+    }];
+    
+    UIImageView *images = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"home_search"]];
+    images.contentMode = UIViewContentModeScaleAspectFit;
+    [self.searchbarsss addSubview:images];
+    [images mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.right.bottom.equalTo(self.searchbarsss).insets(UIEdgeInsetsMake(7.5, 0, 7.5, 0));
+        make.left.equalTo(label.mas_right);
     }];
     
     [self.orderButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -68,18 +90,9 @@
 - (UIButton *)searchbarsss{
     if (!_searchbarsss) {
         _searchbarsss = [UIButton buttonWithType:UIButtonTypeCustom];
-        _searchbarsss.layer.cornerRadius  = 17.5;
+        _searchbarsss.layer.cornerRadius  = 15;
         _searchbarsss.backgroundColor = UIColorMake(236, 236, 236);
-        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(10, 0, 260, 35)];
-        label.text = @"观看欢乐颂";
-        label.textColor = UIColorMake(149, 151, 150);
-        label.font = UIFontMake(13);
-        label.textAlignment = NSTextAlignmentLeft;
-        [_searchbarsss addSubview:label];
-        
-        UIImageView *images = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"home_ appointment"]];
-        images.frame = CGRectMake(270, 7.5, 15, 15);
-        [_searchbarsss addSubview:images];
+       
         
         
     }

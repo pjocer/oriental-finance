@@ -68,8 +68,8 @@
     }];
     [self.playIconView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.iconView);
-        make.trailing.mas_equalTo(-10);
-        make.width.height.mas_equalTo(35);
+        make.trailing.mas_equalTo(-25);
+        make.width.height.mas_equalTo(25);
     }];
     return self;
 }
@@ -122,7 +122,7 @@
     if (!_playIconView) {
         _playIconView = [UIImageView new];
         _playIconView.contentMode = UIViewContentModeScaleAspectFit;
-        _playIconView.image = ImageNamed(@"playon");
+        _playIconView.image = ImageNamed(@"channel_play");
     }
     return _playIconView;
 }
@@ -131,7 +131,7 @@
     if (!_channelIconView) {
         _channelIconView = [UIImageView new];
         _channelIconView.contentMode = UIViewContentModeScaleAspectFit;
-        _channelIconView.image = ImageNamed(@"weishi");
+        _channelIconView.image = ImageNamed(@"channel_TV");
     }
     return _channelIconView;
 }
