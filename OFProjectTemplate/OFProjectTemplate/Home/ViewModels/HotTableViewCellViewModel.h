@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-typedef NS_OPTIONS(NSInteger, TableViewCellType) {
+typedef NS_ENUM(NSInteger, TableViewCellType) {
     TableViewCellTypeHot,
     TableViewCellTypeLiving,
     TableViewCellTypeUnknow,

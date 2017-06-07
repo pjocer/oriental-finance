@@ -18,6 +18,7 @@
 #import "HomeChannelLiveCell.h"
 #import "OSearchController.h"
 #import "AderView.h"
+#import "ShareMenu.h"
 
 @interface HotPlayController ()
 @property (nonatomic, strong) OSearchView *searchView;
@@ -102,7 +103,9 @@
             } else if (type == HotTableViewSelectTypeRefresh) {
                 [OShowHud showErrorHudWith:@"刷新" animated:YES];
             } else if (type == HotTableViewSelectTypeLiving) {
-                [OShowHud showErrorHudWith:@"正在直播" animated:YES];
+                [ShareMenu showDefaultTagsWithStyle:ShareMenuStyleBorderCancel compeletion:^(ShareMenuItemView *item) {
+                    [OShowHud showErrorHudWith:item.titleLabel.text animated:YES];
+                }];
             }
         }];
     }

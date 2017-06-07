@@ -43,6 +43,8 @@
 		D3E543851EDE94E100D8898C /* LocalChannelTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E543841EDE94E100D8898C /* LocalChannelTableViewModel.m */; };
 		D3E543881EDE95A200D8898C /* LocalChannelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E543871EDE95A200D8898C /* LocalChannelCell.m */; };
 		D3E543951EDFF66D00D8898C /* OSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E543941EDFF66D00D8898C /* OSearchController.m */; };
+		D3EA47211EE7971500ECD89C /* ShareMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EA47201EE7971500ECD89C /* ShareMenu.m */; };
+		D3EA47241EE79E3600ECD89C /* ShareMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EA47231EE79E3600ECD89C /* ShareMenuItemView.m */; };
 		D609C2881EDFA67900A09C19 /* IntroductionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C2871EDFA67900A09C19 /* IntroductionCell.m */; };
 		D609C28B1EDFB76800A09C19 /* ChanneldetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C28A1EDFB76800A09C19 /* ChanneldetailsVC.m */; };
 		D609C29F1EE0F8EE00A09C19 /* ZYBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C29A1EE0F8EE00A09C19 /* ZYBannerCell.m */; };
@@ -180,6 +182,10 @@
 		D3E543871EDE95A200D8898C /* LocalChannelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalChannelCell.m; path = OFProjectTemplate/Channel/Controllers/LocalChannelCell.m; sourceTree = SOURCE_ROOT; };
 		D3E543931EDFF66D00D8898C /* OSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OSearchController.h; path = OFFrameworks/OSearchController.h; sourceTree = "<group>"; };
 		D3E543941EDFF66D00D8898C /* OSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OSearchController.m; path = OFFrameworks/OSearchController.m; sourceTree = "<group>"; };
+		D3EA471F1EE7971500ECD89C /* ShareMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareMenu.h; sourceTree = "<group>"; };
+		D3EA47201EE7971500ECD89C /* ShareMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareMenu.m; sourceTree = "<group>"; };
+		D3EA47221EE79E3600ECD89C /* ShareMenuItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareMenuItemView.h; sourceTree = "<group>"; };
+		D3EA47231EE79E3600ECD89C /* ShareMenuItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareMenuItemView.m; sourceTree = "<group>"; };
 		D609C2861EDFA67900A09C19 /* IntroductionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroductionCell.h; sourceTree = "<group>"; };
 		D609C2871EDFA67900A09C19 /* IntroductionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroductionCell.m; sourceTree = "<group>"; };
 		D609C2891EDFB76800A09C19 /* ChanneldetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChanneldetailsVC.h; sourceTree = "<group>"; };
@@ -384,6 +390,7 @@
 			isa = PBXGroup;
 			children = (
 				D33821141EE647AC00D5B99C /* OSocialCore.h */,
+				D3EA471D1EE7930400ECD89C /* Share */,
 				D338210D1EE646FC00D5B99C /* Core */,
 				D33821151EE6538800D5B99C /* Login */,
 			);
@@ -492,6 +499,17 @@
 				D3E543941EDFF66D00D8898C /* OSearchController.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		D3EA471D1EE7930400ECD89C /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				D3EA471F1EE7971500ECD89C /* ShareMenu.h */,
+				D3EA47201EE7971500ECD89C /* ShareMenu.m */,
+				D3EA47221EE79E3600ECD89C /* ShareMenuItemView.h */,
+				D3EA47231EE79E3600ECD89C /* ShareMenuItemView.m */,
+			);
+			name = Share;
 			sourceTree = "<group>";
 		};
 		D609C2981EE0F8EE00A09C19 /* ZYBannerView */ = {
@@ -1101,6 +1119,7 @@
 				D33821181EE653D400D5B99C /* SocialLoginManager.m in Sources */,
 				D338211B1EE6542000D5B99C /* SocialLoginResultModel.m in Sources */,
 				D609C31A1EE1977A00A09C19 /* SetupPasswordVC.m in Sources */,
+				D3EA47211EE7971500ECD89C /* ShareMenu.m in Sources */,
 				D609C3171EE1885400A09C19 /* RegisteredViewController.m in Sources */,
 				D609C3201EE1A38300A09C19 /* SetUpViewController.m in Sources */,
 				D609C2F41EE1685800A09C19 /* TeleplayViewController.m in Sources */,
@@ -1116,6 +1135,7 @@
 				D65DC8C71ED825500030636D /* ApplicationDetailsViewController.m in Sources */,
 				D3E543821EDE940200D8898C /* LocalChannelController.m in Sources */,
 				D65DC8E21ED94B430030636D /* CommentsCell.m in Sources */,
+				D3EA47241EE79E3600ECD89C /* ShareMenuItemView.m in Sources */,
 				D65DC8C91ED825500030636D /* ApplicationTableViewCell.m in Sources */,
 				D3207FD91ED9487200240DD2 /* HotTableViewModel.m in Sources */,
 				D609C3111EE173E500A09C19 /* InformationInputView.m in Sources */,

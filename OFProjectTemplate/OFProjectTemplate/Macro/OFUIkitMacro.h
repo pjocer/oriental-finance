@@ -12,7 +12,7 @@
 #import <RACEXTScope.h>
 #import <QMUIKit.h>
 
-#define ImageNamed(name) [UIImage imageNamed:(name)]
+#define ImageNamed(name) UIImageMake(name)
 
 #define DEFAULT_BG_COLOR UIColorMake(236, 236, 236)
 #define DEFAULT_TEXT_COLOR UIColorMake(51, 51, 51)

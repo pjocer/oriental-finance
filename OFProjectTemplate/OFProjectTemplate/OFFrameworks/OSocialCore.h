@@ -9,7 +9,8 @@
 #ifndef OSocialCore_h
 #define OSocialCore_h
 
-
+#import "SocialAnalysisManager.h"
+#import "SocialLoginManager.h"
 
 //分享模块待开发
 
