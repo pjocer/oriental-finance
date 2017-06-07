@@ -67,6 +67,13 @@
     [[RACScheduler mainThreadScheduler] afterDelay:3 schedule:^{
         self.ads = @[@"鹿晗跑男2大秀舞步，秒杀邓超",@"拜托了冰箱，看何尔萌怼死大张伟",@"生化危机6 最终章，Alex拯救世界"];
     }];
+    self.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
+    [self addGestureRecognizer:tap];
+}
+
+- (void)tapAction {
+    if (self.didSelectedBlock) self.didSelectedBlock();
 }
 
 - (void)layoutSubviews {
