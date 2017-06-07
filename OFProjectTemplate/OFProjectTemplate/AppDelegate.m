@@ -14,6 +14,7 @@
 #import "ApplicationViewController.h"
 #import "ChannelViewController.h"
 #import "SocialAnalysisManager.h"
+#import "SocialShareManager.h"
 #import "OVendorMacro.h"
 
 @interface AppDelegate () <UITabBarControllerDelegate>
@@ -38,6 +39,10 @@
     model.appKey = UMENG_APP_KEY;
     model.platforms = @[wechat, sina, qq];
     [SocialAnalysisManager registerWithModel:model];
+    [SocialShareManager sharedInstance].defaultImage = ImageNamed(@"b1");
+    [SocialShareManager sharedInstance].defaultTitle = @"东方遥控宝";
+    [SocialShareManager sharedInstance].defaultContent = @"万能的遥控宝@3！！%#%￥##@";
+    [SocialShareManager sharedInstance].defaultLinkUrl = @"www.baidu.com";
     [SocialAnalysisManager openLog:UMengLogEnabled];
 }
 
