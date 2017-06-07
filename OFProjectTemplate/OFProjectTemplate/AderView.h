@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) NSArray *ads;
 
+@property (nonatomic, copy) dispatch_block_t didSelectedBlock;
+
 @end
