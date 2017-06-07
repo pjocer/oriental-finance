@@ -16,6 +16,8 @@
 #import "SocialAnalysisManager.h"
 #import "SocialShareManager.h"
 #import "OVendorMacro.h"
+#import "RSAEncryptor.h"
+#import "Godzippa.h"
 
 @interface AppDelegate () <UITabBarControllerDelegate>
 
@@ -27,9 +29,37 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self initRootViewController];
 //    [self socialConfiguration];
+//    [self encodeCompressedData];
     return YES;
 }
 
+- (void)encodeCompressedData {
+    
+    NSString *originalString = @"这是一段将要使用'.der'文件加密的字符串!";
+    NSData *dataStr = [originalString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *compressErr = nil;
+    NSData *gzipData = [dataStr dataByGZipCompressingWithError:&compressErr];
+    
+    NSData *encodedData = [gzipData base64EncodedDataWithOptions:0];
+    NSString *encodedStr = [[NSString alloc] initWithData:encodedData encoding:NSUTF8StringEncoding];
+    NSString *public_key_path = [[NSBundle mainBundle] pathForResource:@"public_key.der" ofType:nil];
+    NSString *encryptStr = [RSAEncryptor encryptString:encodedStr publicKeyWithContentsOfFile:public_key_path];
+    
+    
+    NSString *private_key_path = [[NSBundle mainBundle] pathForResource:@"private_key.p12" ofType:nil];
+    NSString *decryptStr = [RSAEncryptor decryptString:encryptStr privateKeyWithContentsOfFile:private_key_path password:@"oriental-finance"];
+    NSData *decodedData = [decryptStr dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *decodedZipData = [[NSData alloc] initWithBase64EncodedData:decodedData options:0];
+    NSError *decompressErr = nil;
+    NSData *unzipData = [decodedZipData dataByGZipDecompressingDataWithError:&decompressErr];
+    NSString *unzipStr = [[NSString alloc] initWithData:unzipData encoding:NSUTF8StringEncoding];
+    
+    
+    
+    NSLog(@"加密前:%@", originalString);
+    NSLog(@"加密后:%@", encryptStr);
+    NSLog(@"解密后:%@", unzipStr);
+}
 
 - (void)socialConfiguration {
     SocialRegisterItem *wechat = [[SocialRegisterItem alloc] initWithPlatform:SocialPlatformSina appKey:WX_APP_ID appSecret:WX_APP_Secret redirectURL:nil];

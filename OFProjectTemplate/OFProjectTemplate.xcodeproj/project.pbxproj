@@ -46,6 +46,13 @@
 		D3EA47211EE7971500ECD89C /* ShareMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EA47201EE7971500ECD89C /* ShareMenu.m */; };
 		D3EA47241EE79E3600ECD89C /* ShareMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EA47231EE79E3600ECD89C /* ShareMenuItemView.m */; };
 		D3EA47271EE7BF8400ECD89C /* SocialShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EA47261EE7BF8400ECD89C /* SocialShareManager.m */; };
+		D3EA47291EE7EA3300ECD89C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EA47281EE7EA3300ECD89C /* Security.framework */; };
+		D3EA472C1EE7EA9A00ECD89C /* public_key.der in Resources */ = {isa = PBXBuildFile; fileRef = D3EA472B1EE7EA9A00ECD89C /* public_key.der */; };
+		D3EA472E1EE7EAA200ECD89C /* private_key.p12 in Resources */ = {isa = PBXBuildFile; fileRef = D3EA472D1EE7EAA200ECD89C /* private_key.p12 */; };
+		D3EA47311EE7EABC00ECD89C /* RSAEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EA47301EE7EABC00ECD89C /* RSAEncryptor.m */; };
+		D3EA47361EE7EEB400ECD89C /* libbz2.1.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EA47351EE7EEB400ECD89C /* libbz2.1.0.tbd */; };
+		D3EA473C1EE7FE2200ECD89C /* NSData+Godzippa.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EA47391EE7FE2200ECD89C /* NSData+Godzippa.m */; };
+		D3EA473D1EE7FE2200ECD89C /* NSFileManager+Godzippa.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EA473B1EE7FE2200ECD89C /* NSFileManager+Godzippa.m */; };
 		D609C2881EDFA67900A09C19 /* IntroductionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C2871EDFA67900A09C19 /* IntroductionCell.m */; };
 		D609C28B1EDFB76800A09C19 /* ChanneldetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C28A1EDFB76800A09C19 /* ChanneldetailsVC.m */; };
 		D609C29F1EE0F8EE00A09C19 /* ZYBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C29A1EE0F8EE00A09C19 /* ZYBannerCell.m */; };
@@ -189,6 +196,17 @@
 		D3EA47231EE79E3600ECD89C /* ShareMenuItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareMenuItemView.m; sourceTree = "<group>"; };
 		D3EA47251EE7BF8400ECD89C /* SocialShareManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialShareManager.h; sourceTree = "<group>"; };
 		D3EA47261EE7BF8400ECD89C /* SocialShareManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialShareManager.m; sourceTree = "<group>"; };
+		D3EA47281EE7EA3300ECD89C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D3EA472B1EE7EA9A00ECD89C /* public_key.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = public_key.der; sourceTree = "<group>"; };
+		D3EA472D1EE7EAA200ECD89C /* private_key.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = private_key.p12; sourceTree = "<group>"; };
+		D3EA472F1EE7EABC00ECD89C /* RSAEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSAEncryptor.h; sourceTree = "<group>"; };
+		D3EA47301EE7EABC00ECD89C /* RSAEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSAEncryptor.m; sourceTree = "<group>"; };
+		D3EA47351EE7EEB400ECD89C /* libbz2.1.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.1.0.tbd; path = usr/lib/libbz2.1.0.tbd; sourceTree = SDKROOT; };
+		D3EA47371EE7FE2200ECD89C /* Godzippa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Godzippa.h; sourceTree = "<group>"; };
+		D3EA47381EE7FE2200ECD89C /* NSData+Godzippa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Godzippa.h"; sourceTree = "<group>"; };
+		D3EA47391EE7FE2200ECD89C /* NSData+Godzippa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Godzippa.m"; sourceTree = "<group>"; };
+		D3EA473A1EE7FE2200ECD89C /* NSFileManager+Godzippa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+Godzippa.h"; sourceTree = "<group>"; };
+		D3EA473B1EE7FE2200ECD89C /* NSFileManager+Godzippa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+Godzippa.m"; sourceTree = "<group>"; };
 		D609C2861EDFA67900A09C19 /* IntroductionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroductionCell.h; sourceTree = "<group>"; };
 		D609C2871EDFA67900A09C19 /* IntroductionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroductionCell.m; sourceTree = "<group>"; };
 		D609C2891EDFB76800A09C19 /* ChanneldetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChanneldetailsVC.h; sourceTree = "<group>"; };
@@ -282,6 +300,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3EA47361EE7EEB400ECD89C /* libbz2.1.0.tbd in Frameworks */,
+				D3EA47291EE7EA3300ECD89C /* Security.framework in Frameworks */,
 				D609C2E81EE1333300A09C19 /* AVFoundation.framework in Frameworks */,
 				655A82D5C59CEF78D5B9454D /* libPods-OFProjectTemplate.a in Frameworks */,
 			);
@@ -425,6 +445,8 @@
 		D338211C1EE6922F00D5B99C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				D3E5436A1EDE546D00D8898C /* OBannerView.h */,
+				D3E5436B1EDE546D00D8898C /* OBannerView.m */,
 				D338211D1EE6927100D5B99C /* AderView.h */,
 				D338211E1EE6927100D5B99C /* AderView.m */,
 			);
@@ -449,8 +471,6 @@
 		D3E543691EDE543700D8898C /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				D3E5436A1EDE546D00D8898C /* OBannerView.h */,
-				D3E5436B1EDE546D00D8898C /* OBannerView.m */,
 				D3E5436D1EDE615900D8898C /* OShowHud.h */,
 				D3E5436E1EDE615900D8898C /* OShowHud.m */,
 				D609C2E91EE1338600A09C19 /* ODQTool.h */,
@@ -515,6 +535,22 @@
 				D3EA47261EE7BF8400ECD89C /* SocialShareManager.m */,
 			);
 			name = Share;
+			sourceTree = "<group>";
+		};
+		D3EA472A1EE7EA5300ECD89C /* RSASecurity */ = {
+			isa = PBXGroup;
+			children = (
+				D3EA472B1EE7EA9A00ECD89C /* public_key.der */,
+				D3EA472D1EE7EAA200ECD89C /* private_key.p12 */,
+				D3EA472F1EE7EABC00ECD89C /* RSAEncryptor.h */,
+				D3EA47301EE7EABC00ECD89C /* RSAEncryptor.m */,
+				D3EA47371EE7FE2200ECD89C /* Godzippa.h */,
+				D3EA47381EE7FE2200ECD89C /* NSData+Godzippa.h */,
+				D3EA47391EE7FE2200ECD89C /* NSData+Godzippa.m */,
+				D3EA473A1EE7FE2200ECD89C /* NSFileManager+Godzippa.h */,
+				D3EA473B1EE7FE2200ECD89C /* NSFileManager+Godzippa.m */,
+			);
+			name = RSASecurity;
 			sourceTree = "<group>";
 		};
 		D609C2981EE0F8EE00A09C19 /* ZYBannerView */ = {
@@ -837,6 +873,7 @@
 		D65DC8B31ED825500030636D /* OFFrameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D3EA472A1EE7EA5300ECD89C /* RSASecurity */,
 				D33821061EE6447800D5B99C /* OSocialComponents */,
 				D33820A31EE1155300D5B99C /* OFDataBase */,
 				D609C2981EE0F8EE00A09C19 /* ZYBannerView */,
@@ -907,6 +944,8 @@
 		E2D9EF11CB7F47353EABA8EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D3EA47351EE7EEB400ECD89C /* libbz2.1.0.tbd */,
+				D3EA47281EE7EA3300ECD89C /* Security.framework */,
 				D609C2E71EE1333300A09C19 /* AVFoundation.framework */,
 				D3C29BCE1ED802CF0030D262 /* libPods-OFProjectTemplateTests.a */,
 				D3C29BCC1ED7FF660030D262 /* libsqlite3.tbd */,
@@ -1006,6 +1045,8 @@
 			files = (
 				D30CB1B01ED7F6DE000AC0BB /* LaunchScreen.storyboard in Resources */,
 				D609C3281EE1A9E300A09C19 /* Assets.xcassets in Resources */,
+				D3EA472C1EE7EA9A00ECD89C /* public_key.der in Resources */,
+				D3EA472E1EE7EAA200ECD89C /* private_key.p12 in Resources */,
 				D30CB1AB1ED7F6DE000AC0BB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1088,7 +1129,9 @@
 				D609C3261EE1A87500A09C19 /* SetUpHeadTableViewCell.m in Sources */,
 				D3E543681ED959EF00D8898C /* UITableView+Extension.m in Sources */,
 				D3E543731EDE68B800D8898C /* UIImageView+FadeForSDWebImage.m in Sources */,
+				D3EA473D1EE7FE2200ECD89C /* NSFileManager+Godzippa.m in Sources */,
 				D33820B51EE15EFD00D5B99C /* HoritalVideoCollectionCell.m in Sources */,
+				D3EA47311EE7EABC00ECD89C /* RSAEncryptor.m in Sources */,
 				D65DC8CB1ED825500030636D /* OFBaseViewController.m in Sources */,
 				D3E543761EDE691000D8898C /* UIButton+FadeForSDWebImage.m in Sources */,
 				D609C30A1EE1726A00A09C19 /* LoginViewController.m in Sources */,
@@ -1136,6 +1179,7 @@
 				D609C2881EDFA67900A09C19 /* IntroductionCell.m in Sources */,
 				D609C2FD1EE16AC000A09C19 /* TVViewController.m in Sources */,
 				D3E543881EDE95A200D8898C /* LocalChannelCell.m in Sources */,
+				D3EA473C1EE7FE2200ECD89C /* NSData+Godzippa.m in Sources */,
 				D338209F1EE1089A00D5B99C /* OSearchContentView.m in Sources */,
 				D65DC8DC1ED83A490030636D /* OShowDetailsView.m in Sources */,
 				D65DC8C71ED825500030636D /* ApplicationDetailsViewController.m in Sources */,
