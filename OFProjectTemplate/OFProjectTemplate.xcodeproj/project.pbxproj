@@ -59,8 +59,9 @@
 		D3EA479F1EE8F1E300ECD89C /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EA47971EE8F1E200ECD89C /* NSString+Base64.m */; };
 		D3EA47B61EE910E700ECD89C /* private_key.p12 in Resources */ = {isa = PBXBuildFile; fileRef = D3EA47B41EE90FC700ECD89C /* private_key.p12 */; };
 		D3EA47B71EE910F000ECD89C /* public_key.der in Resources */ = {isa = PBXBuildFile; fileRef = D3EA47B51EE90FD100ECD89C /* public_key.der */; };
-		D3EA47B91EE9143900ECD89C /* pkcs8_private_key.pem in Resources */ = {isa = PBXBuildFile; fileRef = D3EA47B81EE9143900ECD89C /* pkcs8_private_key.pem */; };
 		D3EA47BB1EE9153C00ECD89C /* private_key.pem in Resources */ = {isa = PBXBuildFile; fileRef = D3EA47BA1EE9153C00ECD89C /* private_key.pem */; };
+		D3EA47BF1EE94AAB00ECD89C /* OrientalHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EA47BE1EE94AAB00ECD89C /* OrientalHttpManager.m */; };
+		D3EA47C51EE9556700ECD89C /* OrientalUploadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EA47C41EE9556700ECD89C /* OrientalUploadModel.m */; };
 		D609C2881EDFA67900A09C19 /* IntroductionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C2871EDFA67900A09C19 /* IntroductionCell.m */; };
 		D609C28B1EDFB76800A09C19 /* ChanneldetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C28A1EDFB76800A09C19 /* ChanneldetailsVC.m */; };
 		D609C29F1EE0F8EE00A09C19 /* ZYBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C29A1EE0F8EE00A09C19 /* ZYBannerCell.m */; };
@@ -303,8 +304,13 @@
 		D3EA47971EE8F1E200ECD89C /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
 		D3EA47B41EE90FC700ECD89C /* private_key.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = private_key.p12; sourceTree = "<group>"; };
 		D3EA47B51EE90FD100ECD89C /* public_key.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = public_key.der; sourceTree = "<group>"; };
-		D3EA47B81EE9143900ECD89C /* pkcs8_private_key.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pkcs8_private_key.pem; sourceTree = "<group>"; };
 		D3EA47BA1EE9153C00ECD89C /* private_key.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = private_key.pem; sourceTree = "<group>"; };
+		D3EA47BD1EE94AAB00ECD89C /* OrientalHttpManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientalHttpManager.h; sourceTree = "<group>"; };
+		D3EA47BE1EE94AAB00ECD89C /* OrientalHttpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrientalHttpManager.m; sourceTree = "<group>"; };
+		D3EA47C11EE94AEA00ECD89C /* OriNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OriNetworking.h; sourceTree = "<group>"; };
+		D3EA47C21EE9523C00ECD89C /* OFHttpMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFHttpMacro.h; sourceTree = "<group>"; };
+		D3EA47C31EE9556700ECD89C /* OrientalUploadModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientalUploadModel.h; sourceTree = "<group>"; };
+		D3EA47C41EE9556700ECD89C /* OrientalUploadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrientalUploadModel.m; sourceTree = "<group>"; };
 		D609C2861EDFA67900A09C19 /* IntroductionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroductionCell.h; sourceTree = "<group>"; };
 		D609C2871EDFA67900A09C19 /* IntroductionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroductionCell.m; sourceTree = "<group>"; };
 		D609C2891EDFB76800A09C19 /* ChanneldetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChanneldetailsVC.h; sourceTree = "<group>"; };
@@ -655,7 +661,6 @@
 				D3EA47301EE7EABC00ECD89C /* RSAEncryptor.m */,
 				D3EA47B41EE90FC700ECD89C /* private_key.p12 */,
 				D3EA47B51EE90FD100ECD89C /* public_key.der */,
-				D3EA47B81EE9143900ECD89C /* pkcs8_private_key.pem */,
 				D3EA47BA1EE9153C00ECD89C /* private_key.pem */,
 				D3EA47371EE7FE2200ECD89C /* Godzippa.h */,
 				D3EA47381EE7FE2200ECD89C /* NSData+Godzippa.h */,
@@ -779,6 +784,18 @@
 				D3EA47931EE8F1E200ECD89C /* x509v3.h */,
 			);
 			path = openssl;
+			sourceTree = "<group>";
+		};
+		D3EA47BC1EE949BC00ECD89C /* OFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				D3EA47C11EE94AEA00ECD89C /* OriNetworking.h */,
+				D3EA47BD1EE94AAB00ECD89C /* OrientalHttpManager.h */,
+				D3EA47BE1EE94AAB00ECD89C /* OrientalHttpManager.m */,
+				D3EA47C31EE9556700ECD89C /* OrientalUploadModel.h */,
+				D3EA47C41EE9556700ECD89C /* OrientalUploadModel.m */,
+			);
+			name = OFNetworking;
 			sourceTree = "<group>";
 		};
 		D609C2981EE0F8EE00A09C19 /* ZYBannerView */ = {
@@ -1047,6 +1064,7 @@
 				D65DC8A91ED825500030636D /* OFUIkitMacro.h */,
 				D3207FC81ED82F5E00240DD2 /* OVendorMacro.h */,
 				D3207FC91ED82FDC00240DD2 /* OEnviroment.h */,
+				D3EA47C21EE9523C00ECD89C /* OFHttpMacro.h */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -1107,6 +1125,7 @@
 		D65DC8B31ED825500030636D /* OFFrameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D3EA47BC1EE949BC00ECD89C /* OFNetworking */,
 				D3EA472A1EE7EA5300ECD89C /* RSASecurity */,
 				D33821061EE6447800D5B99C /* OSocialComponents */,
 				D33820A31EE1155300D5B99C /* OFDataBase */,
@@ -1283,7 +1302,6 @@
 				D3EA479D1EE8F1E200ECD89C /* LICENSE in Resources */,
 				D30CB1B01ED7F6DE000AC0BB /* LaunchScreen.storyboard in Resources */,
 				D609C3281EE1A9E300A09C19 /* Assets.xcassets in Resources */,
-				D3EA47B91EE9143900ECD89C /* pkcs8_private_key.pem in Resources */,
 				D30CB1AB1ED7F6DE000AC0BB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1413,10 +1431,12 @@
 				D3EA47211EE7971500ECD89C /* ShareMenu.m in Sources */,
 				D609C3171EE1885400A09C19 /* RegisteredViewController.m in Sources */,
 				D609C3201EE1A38300A09C19 /* SetUpViewController.m in Sources */,
+				D3EA47C51EE9556700ECD89C /* OrientalUploadModel.m in Sources */,
 				D609C2F41EE1685800A09C19 /* TeleplayViewController.m in Sources */,
 				D3207FDC1ED9497000240DD2 /* HotTableViewCell.m in Sources */,
 				D3E543791EDE698900D8898C /* UIControl+Interval.m in Sources */,
 				D609C3031EE16C7C00A09C19 /* CCTVChannelViewController.m in Sources */,
+				D3EA47BF1EE94AAB00ECD89C /* OrientalHttpManager.m in Sources */,
 				D64094EE1EE7DD4000DD24FF /* ZHPickView.m in Sources */,
 				D65DC8CF1ED825500030636D /* HomeModel.m in Sources */,
 				D609C2881EDFA67900A09C19 /* IntroductionCell.m in Sources */,
