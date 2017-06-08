@@ -9,6 +9,7 @@
 #import "CommentsCell.h"
 #import "Masonry.h"
 #import "OFUIkitMacro.h"
+#import "ReplyCell.h"
 
 @interface CommentsCell ()<UITableViewDelegate,UITableViewDataSource>
 @end
@@ -44,7 +45,18 @@
         make.top.equalTo(self.timeLabel.mas_bottom).offset(3);
         make.left.equalTo(self.nameLabel);
         make.right.equalTo(self.contentView.mas_right).offset(-24);
-//        make.bottom.equalTo(self.contentView.mas_bottom).offset(-80);
+//        make.bottom.equalTo(self.contentView.mas_bottom).offset(-10);
+    }];
+    
+    UIView *view1 = [[UIView alloc]init];
+    view1.backgroundColor = [UIColor redColor];
+    [self.contentView addSubview:view1];
+    
+    [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.contentLabel.mas_bottom).offset(5);
+        make.left.right.equalTo(self.contentLabel);
+        make.height.equalTo(@250);
+        make.bottom.equalTo(self.contentView.mas_bottom).offset(-10);
     }];
     
     UITableView *replyTableview = [[UITableView alloc] init];
@@ -53,21 +65,24 @@
     replyTableview.separatorColor = [UIColor clearColor];
     replyTableview.estimatedRowHeight = 50;
     replyTableview.rowHeight = UITableViewAutomaticDimension;
-    [self.contentView addSubview:replyTableview];
+    [replyTableview setNeedsLayout];
+    [replyTableview layoutIfNeeded];
+    [view1 addSubview:replyTableview];
     
     [replyTableview mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentLabel.mas_bottom).offset(5);
-        make.left.right.equalTo(self.contentLabel);
-//        make.height.equalTo(@50);
-        make.bottom.equalTo(self.contentView.mas_bottom).offset(-10);
+        make.top.left.right.bottom.equalTo(view1).insets(UIEdgeInsetsMake(10, 10, 10, 10));
+        [view1 mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo(self.contentView.mas_bottom).offset(-10);
+        }];
     }];
+    
+    
+    
     
     
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 20;
-}
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
@@ -75,15 +90,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *cellid = [NSString stringWithFormat:@"aaaacellid%ld",indexPath.row];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellid];
+    NSString *cellid = [NSString stringWithFormat:@"replyCell%ld",indexPath.row];
+    ReplyCell *cell = [tableView dequeueReusableCellWithIdentifier:cellid];
     
         if (!cell) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellid];
+            cell = [[ReplyCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellid];
             cell.backgroundColor = UIColorMake(236, 236, 236);
-            cell.textLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row
-                                   ];
-            
+          
         }
     
     return cell;

@@ -808,6 +808,8 @@
 				D609C2871EDFA67900A09C19 /* IntroductionCell.m */,
 				D65DC8E01ED94B430030636D /* CommentsCell.h */,
 				D65DC8E11ED94B430030636D /* CommentsCell.m */,
+				D64094EF1EE802C400DD24FF /* ReplyCell.h */,
+				D64094F01EE802C400DD24FF /* ReplyCell.m */,
 				D3207FD41ED92E1A00240DD2 /* OSearchView.h */,
 				D3207FD51ED92E1A00240DD2 /* OSearchView.m */,
 				D33820B61EE1714600D5B99C /* ChannelLiveHeaderView.h */,
@@ -820,8 +822,6 @@
 				D3E5435D1ED9505900D8898C /* VerticalVideoCollectionCell.m */,
 				D33820B31EE15EFD00D5B99C /* HoritalVideoCollectionCell.h */,
 				D33820B41EE15EFD00D5B99C /* HoritalVideoCollectionCell.m */,
-				D64094EF1EE802C400DD24FF /* ReplyCell.h */,
-				D64094F01EE802C400DD24FF /* ReplyCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
