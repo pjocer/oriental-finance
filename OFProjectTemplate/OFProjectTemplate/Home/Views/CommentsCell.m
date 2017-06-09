@@ -56,7 +56,7 @@
         make.top.equalTo(self.contentLabel.mas_bottom).offset(5);
         make.left.right.equalTo(self.contentLabel);
         make.height.equalTo(@250);
-        make.bottom.equalTo(self.contentView.mas_bottom).offset(-10);
+//        make.bottom.equalTo(self.contentView.mas_bottom).offset(-10);
     }];
     
     UITableView *replyTableview = [[UITableView alloc] init];
@@ -71,13 +71,14 @@
     
     [replyTableview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.bottom.equalTo(view1).insets(UIEdgeInsetsMake(10, 10, 10, 10));
-        [view1 mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.bottom.equalTo(self.contentView.mas_bottom).offset(-10);
-        }];
     }];
     
+    [replyTableview reloadData];
     
-    
+//    
+    [view1 mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.contentView.mas_bottom).offset(-10);
+    }];
     
     
 }

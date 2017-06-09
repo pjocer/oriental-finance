@@ -10,6 +10,11 @@
 #import "OFUIkitMacro.h"
 #import "LoginViewController.h"
 #import "SetUpViewController.h"
+#import "MyTVViewController.h"
+#import "FamilyViewController.h"
+#import "MyCollectionVC.h"
+#import "PlayHistoryVC.h"
+#import "MessageViewController.h"
 
 @interface MyViewController ()<myViewDelegate>
 
@@ -21,6 +26,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"个人中心";
+    [self initNavigationBar];
     
     self.myView = [[MyView alloc]initWithFrame:self.view.frame];
     self.myView.backgroundColor = [UIColor whiteColor];
@@ -37,23 +43,79 @@
         [self presentViewController:navc animated:YES completion:^{
             
         }];
+        
     }else if (btn.tag == 101) {
+        FamilyViewController *vc = [[FamilyViewController alloc]initWithTitle:@"家庭成员" navBarBtns:NavBarBtnBack];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+
+
+    } else if (btn.tag == 102) {
         SetUpViewController *setup = [[SetUpViewController alloc]initWithTitle:@"设置" navBarBtns:NavBarBtnBack];
         setup.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:setup animated:YES];
 
-
-    }else{
-        OFBaseViewController *vc = [[OFBaseViewController alloc] initWithTitle:btn.titleLabel.text navBarBtns:NavBarBtnBack];
-        vc.view.backgroundColor = [UIColor qmui_randomColor];
+        
+    } else if (btn.tag == 111) {
+        PlayHistoryVC *vc = [[PlayHistoryVC alloc]initWithTitle:@"播放历史" navBarBtns:NavBarBtnBack];
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
         
+    } else if (btn.tag == 112) {
+        
+        
+    } else if (btn.tag == 113) {
+        MyCollectionVC *vc = [[MyCollectionVC alloc]initWithTitle:@"我的收藏" navBarBtns:NavBarBtnBack];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+        
+    } else if (btn.tag == 121) {
+        
+        
+    } else if (btn.tag == 122) {
+        
+        
+    } else if (btn.tag == 123) {
+        
+        
+    } else if (btn.tag == 131) {
+        
+        
+    } else if (btn.tag == 132) {
+        MyTVViewController *setup = [[MyTVViewController alloc]initWithTitle:@"我的电视" navBarBtns:NavBarBtnBack];
+        setup.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:setup animated:YES];
+    } else if (btn.tag == 133) {
+
+        
     }
+    
    
 
 }
 
+
+
+- (void)initNavigationBar {
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(0, 0, 25, 25);
+    btn.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    [btn setImage:[UIImage imageNamed:@"home_xiaoxi"] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(pushMessage) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *buttonItem2 = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    UIBarButtonItem *negativeSeperator2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    negativeSeperator2.width = -5;
+
+    self.navigationItem.rightBarButtonItems = @[negativeSeperator2, buttonItem2];
+    
+}
+
+- (void)pushMessage {
+    MessageViewController *setup = [[MessageViewController alloc]initWithTitle:@"消息" navBarBtns:NavBarBtnBack];
+    setup.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:setup animated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

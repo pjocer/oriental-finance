@@ -114,6 +114,7 @@
     return _tableViewModel;
 }
 
+
 - (UIView *)banner {
     if (!_banner) {
         _banner = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 180)];
