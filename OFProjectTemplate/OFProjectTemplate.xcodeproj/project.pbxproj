@@ -62,6 +62,7 @@
 		D3EA47BB1EE9153C00ECD89C /* private_key.pem in Resources */ = {isa = PBXBuildFile; fileRef = D3EA47BA1EE9153C00ECD89C /* private_key.pem */; };
 		D3EA47BF1EE94AAB00ECD89C /* OrientalHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EA47BE1EE94AAB00ECD89C /* OrientalHttpManager.m */; };
 		D3EA47C51EE9556700ECD89C /* OrientalUploadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EA47C41EE9556700ECD89C /* OrientalUploadModel.m */; };
+		D3EA47C81EEA486800ECD89C /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EA47C71EEA486800ECD89C /* BaseModel.m */; };
 		D609C2881EDFA67900A09C19 /* IntroductionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C2871EDFA67900A09C19 /* IntroductionCell.m */; };
 		D609C28B1EDFB76800A09C19 /* ChanneldetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C28A1EDFB76800A09C19 /* ChanneldetailsVC.m */; };
 		D609C29F1EE0F8EE00A09C19 /* ZYBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C29A1EE0F8EE00A09C19 /* ZYBannerCell.m */; };
@@ -322,6 +323,8 @@
 		D3EA47C21EE9523C00ECD89C /* OFHttpMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFHttpMacro.h; sourceTree = "<group>"; };
 		D3EA47C31EE9556700ECD89C /* OrientalUploadModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientalUploadModel.h; sourceTree = "<group>"; };
 		D3EA47C41EE9556700ECD89C /* OrientalUploadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrientalUploadModel.m; sourceTree = "<group>"; };
+		D3EA47C61EEA486800ECD89C /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		D3EA47C71EEA486800ECD89C /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		D609C2861EDFA67900A09C19 /* IntroductionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroductionCell.h; sourceTree = "<group>"; };
 		D609C2871EDFA67900A09C19 /* IntroductionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroductionCell.m; sourceTree = "<group>"; };
 		D609C2891EDFB76800A09C19 /* ChanneldetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChanneldetailsVC.h; sourceTree = "<group>"; };
@@ -948,6 +951,8 @@
 			children = (
 				D65DC88E1ED825500030636D /* OFBaseViewController.h */,
 				D65DC88F1ED825500030636D /* OFBaseViewController.m */,
+				D3EA47C61EEA486800ECD89C /* BaseModel.h */,
+				D3EA47C71EEA486800ECD89C /* BaseModel.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1486,6 +1491,7 @@
 				D640950D1EE92C3500DD24FF /* FamilyViewController.m in Sources */,
 				D30CB1A51ED7F6DE000AC0BB /* AppDelegate.m in Sources */,
 				D33821181EE653D400D5B99C /* SocialLoginManager.m in Sources */,
+				D3EA47C81EEA486800ECD89C /* BaseModel.m in Sources */,
 				D338211B1EE6542000D5B99C /* SocialLoginResultModel.m in Sources */,
 				D609C31A1EE1977A00A09C19 /* SetupPasswordVC.m in Sources */,
 				D3EA47211EE7971500ECD89C /* ShareMenu.m in Sources */,

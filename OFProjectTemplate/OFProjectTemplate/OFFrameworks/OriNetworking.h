@@ -16,6 +16,8 @@
 
 #define OriNetwork    [OrientalHttpManager sharedInstance]
 
-#define OriHost @""
+//#define OriHost @"http://192.168.1.142:8080"
+
+#define OriHost @"http://192.168.1.79:8080"
 
 #endif /* OriNetworking_h */
