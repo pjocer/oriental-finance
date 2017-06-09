@@ -49,6 +49,8 @@
     headView.frame = frame;
 
     self.listTableView.tableHeaderView = headView;
+    
+//    [self.listTableView reloadData];
 
 
     

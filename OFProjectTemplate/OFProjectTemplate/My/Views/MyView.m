@@ -272,8 +272,8 @@
 - (UIButton *)btn6 {
     if (!_btn6) {
         _btn6 = [UIButton buttonWithType:UIButtonTypeCustom];
-        _btn6.tag = 114;
-        [_btn6 setTitle:@"我的地址"forState:UIControlStateNormal];
+        _btn6.tag = 121;
+        [_btn6 setTitle:@"我的应用"forState:UIControlStateNormal];
         [_btn6 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_btn6 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
         _btn6.titleLabel.font = UIFontMake(13);
@@ -286,8 +286,8 @@
 - (UIButton *)btn7 {
     if (!_btn7) {
         _btn7 = [UIButton buttonWithType:UIButtonTypeCustom];
-        _btn7.tag = 121;
-        [_btn7 setTitle:@"我的订单"forState:UIControlStateNormal];
+        _btn7.tag = 122;
+        [_btn7 setTitle:@"我的地址"forState:UIControlStateNormal];
         [_btn7 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_btn7 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
         _btn7.titleLabel.font = UIFontMake(13);
@@ -300,7 +300,7 @@
 - (UIButton *)btn8 {
     if (!_btn8) {
         _btn8 = [UIButton buttonWithType:UIButtonTypeCustom];
-        _btn8.tag = 122;
+        _btn8.tag = 123;
         [_btn8 setTitle:@"绑定银行卡"forState:UIControlStateNormal];
         [_btn8 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_btn8 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -314,7 +314,7 @@
 - (UIButton *)btn9 {
     if (!_btn9) {
         _btn9 = [UIButton buttonWithType:UIButtonTypeCustom];
-        _btn9.tag = 123;
+        _btn9.tag = 131;
         [_btn9 setTitle:@"分享好友"forState:UIControlStateNormal];
         [_btn9 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_btn9 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -327,7 +327,7 @@
 - (UIButton *)btn10 {
     if (!_btn10) {
         _btn10 = [UIButton buttonWithType:UIButtonTypeCustom];
-        _btn10.tag = 124;
+        _btn10.tag = 132;
         [_btn10 setTitle:@"我的电视"forState:UIControlStateNormal];
         [_btn10 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_btn10 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -341,7 +341,7 @@
 - (UIButton *)btn11 {
     if (!_btn11) {
         _btn11 = [UIButton buttonWithType:UIButtonTypeCustom];
-        _btn11.tag = 124;
+        _btn11.tag = 133;
         [_btn11 setTitle:@"意见反馈"forState:UIControlStateNormal];
         [_btn11 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_btn11 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];

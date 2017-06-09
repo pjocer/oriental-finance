@@ -13,6 +13,8 @@
 #import "OFUIkitMacro.h"
 #import "ODQTool.h"
 #import "OShowHud.h"
+#import "MessageViewController.h"
+#import "PlayHistoryVC.h"
 
 @interface HomeViewController ()
 @property (nonatomic, strong)  HomeTabContainerViewModel* viewModel;
@@ -46,18 +48,32 @@
     btn.frame = CGRectMake(0, 0, 25, 25);
     btn.imageView.contentMode = UIViewContentModeScaleAspectFit;
     [btn setImage:[UIImage imageNamed:@"home_xiaoxi"] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(pushMessage) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *buttonItem2 = [[UIBarButtonItem alloc] initWithCustomView:btn];
     UIBarButtonItem *negativeSeperator2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     negativeSeperator2.width = -5;
     UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
     btn2.frame = CGRectMake(0, 0, 25, 25);
     [btn2 setImage:[UIImage imageNamed:@"home_history"] forState:UIControlStateNormal];
+    [btn2 addTarget:self action:@selector(pushHistory) forControlEvents:UIControlEventTouchUpInside];
     btn2.imageView.contentMode = UIViewContentModeScaleAspectFit;
     UIBarButtonItem *buttonItem3 = [[UIBarButtonItem alloc] initWithCustomView:btn2];
     UIBarButtonItem *negativeSeperator3 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     negativeSeperator3.width = -5;
     self.navigationItem.rightBarButtonItems = @[negativeSeperator2, buttonItem2, negativeSeperator3, buttonItem3];
     
+}
+
+- (void)pushMessage {
+    MessageViewController *setup = [[MessageViewController alloc]initWithTitle:@"消息" navBarBtns:NavBarBtnBack];
+    setup.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:setup animated:YES];
+}
+
+- (void)pushHistory {
+    PlayHistoryVC *setup = [[PlayHistoryVC alloc]initWithTitle:@"播放历史" navBarBtns:NavBarBtnBack];
+    setup.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:setup animated:YES];
 }
 - (void)setup {
     if (IS_SIMULATOR) {
