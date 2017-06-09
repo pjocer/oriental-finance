@@ -16,8 +16,8 @@
 #import "SocialAnalysisManager.h"
 #import "SocialShareManager.h"
 #import "OVendorMacro.h"
-#import "RSAEncryptor.h"
 #import "Godzippa.h"
+#import "HBRSAHandler.h"
 
 @interface AppDelegate () <UITabBarControllerDelegate>
 
@@ -29,36 +29,27 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self initRootViewController];
 //    [self socialConfiguration];
-//    [self encodeCompressedData];
     return YES;
 }
 
-- (void)encodeCompressedData {
-    
-    NSString *originalString = @"这是一段将要使用'.der'文件加密的字符串!";
+- (void)rsaSign {
+    /*
+     ApgTlVOuqKCt/DF0YD7Oijqd/Wwi+gNUNn4cYmexgi3ingK4gcnxbIaAUd0pqgM5l2T0xJ8CTZLoCWjpS8hZN18WRle1TCkhhL/OYjDq0X7wANob3p7jnH2Y2XNscNgTg7xefCl67t53AjX/E6xHlUbKk+AMJhix0f7VhDwUWf0=
+     */
+    NSString *originalString = @"qwe";
     NSData *dataStr = [originalString dataUsingEncoding:NSUTF8StringEncoding];
     NSError *compressErr = nil;
     NSData *gzipData = [dataStr dataByGZipCompressingWithError:&compressErr];
     
     NSData *encodedData = [gzipData base64EncodedDataWithOptions:0];
     NSString *encodedStr = [[NSString alloc] initWithData:encodedData encoding:NSUTF8StringEncoding];
-    NSString *public_key_path = [[NSBundle mainBundle] pathForResource:@"public_key.der" ofType:nil];
-    NSString *encryptStr = [RSAEncryptor encryptString:encodedStr publicKeyWithContentsOfFile:public_key_path];
-    
-    
-    NSString *private_key_path = [[NSBundle mainBundle] pathForResource:@"private_key.p12" ofType:nil];
-    NSString *decryptStr = [RSAEncryptor decryptString:encryptStr privateKeyWithContentsOfFile:private_key_path password:@"oriental-finance"];
-    NSData *decodedData = [decryptStr dataUsingEncoding:NSUTF8StringEncoding];
-    NSData *decodedZipData = [[NSData alloc] initWithBase64EncodedData:decodedData options:0];
-    NSError *decompressErr = nil;
-    NSData *unzipData = [decodedZipData dataByGZipDecompressingDataWithError:&decompressErr];
-    NSString *unzipStr = [[NSString alloc] initWithData:unzipData encoding:NSUTF8StringEncoding];
-    
-    
-    
-    NSLog(@"加密前:%@", originalString);
-    NSLog(@"加密后:%@", encryptStr);
-    NSLog(@"解密后:%@", unzipStr);
+    NSLog(@"%@",encodedStr);
+    NSString *private_key_path = [[NSBundle mainBundle] pathForResource:@"private_key" ofType:@"p12"];
+
+    HBRSAHandler *handler = [[HBRSAHandler alloc] init];
+    [handler importKeyWithType:KeyTypePrivate andPath:private_key_path];
+    NSString *signStr = [handler signString:encodedStr];
+    NSLog(@"%@",signStr);
 }
 
 - (void)socialConfiguration {

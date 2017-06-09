@@ -20,6 +20,7 @@ PODS:
   - FMDB/standard (2.6.2)
   - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
+  - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
   - QMUIKit (1.6.0)
   - ReactiveCocoa (2.5):
@@ -158,6 +159,7 @@ DEPENDENCIES:
   - FMDB (~> 2.6.2)
   - Masonry (~> 1.0.2)
   - MBProgressHUD (~> 1.0.0)
+  - MJExtension (~> 3.0.13)
   - MJRefresh (~> 3.1.12)
   - QMUIKit (~> 1.6.0)
   - ReactiveCocoa (~> 2.5)
@@ -172,6 +174,7 @@ SPEC CHECKSUMS:
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   QMUIKit: 10d62af5a36b0eb16499d3c6713b37e6d4731170
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
@@ -180,6 +183,6 @@ SPEC CHECKSUMS:
   UMengUShare: cd54ae52958426b79aa9193a7b02058d6a6d9aa0
   XRCarouselView: 52529f924d26ee4787f9bd958150800b73e60922
 
-PODFILE CHECKSUM: 0d976b028f8ed4429001e86568c21ca1d88369de
+PODFILE CHECKSUM: 4c394d665d861447f457a3b41a656fc9e0effe93
 
 COCOAPODS: 1.2.1

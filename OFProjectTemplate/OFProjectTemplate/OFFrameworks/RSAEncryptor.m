@@ -9,6 +9,9 @@
 
 #import "RSAEncryptor.h"
 #import <Security/Security.h>
+#include <CommonCrypto/CommonDigest.h>
+
+#define kRSA_KEY_SIZE 1024
 
 @implementation RSAEncryptor
 
@@ -21,6 +24,168 @@ static NSString *base64_encode_data(NSData *data){
 static NSData *base64_decode(NSString *str){
     NSData *data = [[NSData alloc] initWithBase64EncodedString:str options:NSDataBase64DecodingIgnoreUnknownCharacters];
     return data;
+}
+
++ (NSData *)hashData:(CCDIGESTAlgorithm)algorithm data:(NSData *)data {
+    NSData *retData = nil;
+    if (data.length <1) {
+        return nil;
+    }
+    
+    unsigned char *md;
+    
+    switch (algorithm) {
+        case CCDIGEST_MD2:
+        {
+            md = malloc(CC_MD2_DIGEST_LENGTH);
+            bzero(md, CC_MD2_DIGEST_LENGTH);
+            CC_MD2(data.bytes, (CC_LONG)data.length, md);
+            retData = [NSData dataWithBytes:md length:CC_MD2_DIGEST_LENGTH];
+        }
+            break;
+        case CCDIGEST_MD4:
+        {
+            md = malloc(CC_MD4_DIGEST_LENGTH);
+            bzero(md, CC_MD4_DIGEST_LENGTH);
+            CC_MD4(data.bytes, (CC_LONG)data.length, md);
+            retData = [NSData dataWithBytes:md length:CC_MD4_DIGEST_LENGTH];
+            
+        }
+            break;
+        case CCDIGEST_MD5:
+        {
+            md = malloc(CC_MD5_DIGEST_LENGTH);
+            bzero(md, CC_MD5_DIGEST_LENGTH);
+            CC_MD5(data.bytes, (CC_LONG)data.length, md);
+            retData = [NSData dataWithBytes:md length:CC_MD5_DIGEST_LENGTH];
+            
+        }
+            break;
+        case CCDIGEST_SHA1:
+        {
+            md = malloc(CC_SHA1_DIGEST_LENGTH);
+            bzero(md, CC_SHA1_DIGEST_LENGTH);
+            CC_SHA1(data.bytes, (CC_LONG)data.length, md);
+            retData = [NSData dataWithBytes:md length:CC_SHA1_DIGEST_LENGTH];
+            
+        }
+            break;
+        case CCDIGEST_SHA224:
+        {
+            md = malloc(CC_SHA224_DIGEST_LENGTH);
+            bzero(md, CC_SHA224_DIGEST_LENGTH);
+            CC_SHA224(data.bytes, (CC_LONG)data.length, md);
+            retData = [NSData dataWithBytes:md length:CC_SHA224_DIGEST_LENGTH];
+            
+        }
+            break;
+        case CCDIGEST_SHA256:
+        {
+            md = malloc(CC_SHA256_DIGEST_LENGTH);
+            bzero(md, CC_SHA256_DIGEST_LENGTH);
+            CC_SHA256(data.bytes, (CC_LONG)data.length, md);
+            retData = [NSData dataWithBytes:md length:CC_SHA256_DIGEST_LENGTH];
+            
+        }
+            break;
+        case CCDIGEST_SHA384:
+        {
+            md = malloc(CC_SHA384_DIGEST_LENGTH);
+            bzero(md, CC_SHA384_DIGEST_LENGTH);
+            CC_SHA384(data.bytes, (CC_LONG)data.length, md);
+            retData = [NSData dataWithBytes:md length:CC_SHA384_DIGEST_LENGTH];
+            
+        }
+            break;
+        case CCDIGEST_SHA512:
+        {
+            md = malloc(CC_SHA512_DIGEST_LENGTH);
+            bzero(md, CC_SHA512_DIGEST_LENGTH);
+            CC_SHA512(data.bytes, (CC_LONG)data.length, md);
+            retData = [NSData dataWithBytes:md length:CC_SHA512_DIGEST_LENGTH];
+            
+        }
+            break;
+            
+        default:
+            md = malloc(1);
+            break;
+    }
+    
+    free(md);
+    md = NULL;
+    
+    return retData;
+}
+
++ (NSString *)hexString:(NSData *)hashData {
+    NSMutableString *result = nil;
+    if (hashData.length < 1) {
+        return nil;
+    }
+    result = [[NSMutableString alloc] initWithCapacity:hashData.length*2];
+    for (size_t i = 0; i < hashData.length; i++) {
+        [result appendFormat:@"%02x",((const uint8_t *)hashData.bytes)[i]];
+    }
+    return result;
+}
+
++ (SecPadding)mappingWithCCDIGESTAlgorithm:(CCDIGESTAlgorithm)algorithm {
+    SecPadding padding;
+    switch (algorithm) {
+        case CCDIGEST_MD2:
+            padding = kSecPaddingPKCS1MD2;
+            break;
+        case CCDIGEST_MD5:
+            padding = kSecPaddingPKCS1MD5;
+            break;
+        case CCDIGEST_SHA1:
+            padding = kSecPaddingPKCS1SHA1;
+            break;
+        case CCDIGEST_SHA224:
+            padding = kSecPaddingPKCS1SHA224;
+            break;
+        case CCDIGEST_SHA256:
+            padding = kSecPaddingPKCS1SHA256;
+            break;
+        case CCDIGEST_SHA384:
+            padding = kSecPaddingPKCS1SHA384;
+            break;
+        case CCDIGEST_SHA512:
+            padding = kSecPaddingPKCS1SHA512;
+            break;    
+        default:
+            padding = kSecPaddingPKCS1SHA1;
+            break;
+    }
+    return padding;
+}
+
+#pragma mark - 使用p12签名
+
++ (NSString *)signString:(NSString *)str CCDIGESTAlgorithm:(CCDIGESTAlgorithm)algorithm privatePath:(NSString *)filePath password:(NSString *)password{
+    SecKeyRef privateKeyRef = [self getPrivateKeyRefWithContentsOfFile:filePath password:password];
+    NSData *hashData = [self hashData:algorithm data:[str dataUsingEncoding:NSUTF8StringEncoding]];
+    OSStatus ret;
+    size_t siglen = SecKeyGetBlockSize(privateKeyRef);
+    uint8_t *sig = malloc(siglen);
+    bzero(sig, siglen);
+    ret = SecKeyRawSign(privateKeyRef, [self mappingWithCCDIGESTAlgorithm:algorithm], hashData.bytes, hashData.length, sig, &siglen);
+    NSAssert(ret==errSecSuccess, @"签名失败");
+    
+    
+    SecKeyRef publicKeyRef = [self getPublicKeyRefWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"public_key" ofType:@"der"]];
+    
+    OSStatus rett = SecKeyRawVerify(publicKeyRef, kSecPaddingPKCS1SHA1, hashData.bytes, hashData.length,sig, siglen);
+    NSAssert(rett==errSecSuccess, @"验签失败");
+    
+    NSData *data = [NSData dataWithBytes:sig length:siglen];
+    
+    NSString *signStr = [self hexString:data];
+    NSLog(@"%@",signStr);
+    
+    
+    return signStr;
 }
 
 #pragma mark - 使用'.der'公钥文件加密
@@ -88,7 +253,9 @@ static NSData *base64_decode(NSString *str){
     }
     SecKeyRef privateKeyRef = NULL;
     NSMutableDictionary * options = [[NSMutableDictionary alloc] init];
-    [options setObject: password forKey:(__bridge id)kSecImportExportPassphrase];
+    [options setObject: password?:@"" forKey:(__bridge id)kSecImportExportPassphrase];
+    [options setObject:@(1024) forKey:(id)kSecAttrKeySizeInBits];
+    [options setObject:(id)kSecAttrKeyTypeRSA forKey:(id)kSecAttrKeyType];
     CFArrayRef items = CFArrayCreate(NULL, 0, 0, NULL);
     OSStatus securityError = SecPKCS12Import((__bridge CFDataRef) p12Data, (__bridge CFDictionaryRef)options, &items);
     if (securityError == noErr && CFArrayGetCount(items) > 0) {
@@ -100,7 +267,6 @@ static NSData *base64_decode(NSString *str){
         }
     }
     CFRelease(items);
-    
     return privateKeyRef;
 }
 

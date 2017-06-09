@@ -25,7 +25,7 @@
 #endif
 
 #pragma mark - QQ开放平台
-#define QQ_PLATFORM @""
+#define QQ_PLATFORM @"58wy1m0rMYvzPMtk"
 
 #pragma mark - 微博开放平台
 #define WB_APP_KEY @"3436841636"
@@ -38,6 +38,10 @@
 
 #pragma mark - 科大讯飞
 #define KDXF_ID @"5927fa81"
+
+#pragma mark - 极光推送
+#define JIG_APP_KEY @"403724dba51bd402c556dcff"
+#define JIG_APP_SECRET @"26908a16660347d1c1ffa5f7"
 
 #pragma mark - 友盟
 #define UMENG_APP_KEY @"592e7e46c895761d34000e5a"
