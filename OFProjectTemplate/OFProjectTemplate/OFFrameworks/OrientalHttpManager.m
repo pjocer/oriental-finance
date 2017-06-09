@@ -14,6 +14,9 @@
 #import <MJExtension.h>
 #import "OFUIkitMacro.h"
 
+#define DEFAULT_TIMEOUT 10.f
+#define DEFAULT_METHOD OrientalRequestMethodPost
+
 @implementation OrientalHttpManager
 
 + (instancetype)sharedInstance {
@@ -34,13 +37,17 @@
     return manager;
 }
 
+- (NSURLSessionDataTask *)requestWithTarget:(NSString *)targetUrl params:(NSDictionary *)params success:(void (^)(NSURLSessionDataTask *, id))success failure:(void (^)(NSURLSessionDataTask *, NSError *))failure {
+    return [self requestWithTarget:targetUrl params:params method:DEFAULT_METHOD success:success failure:failure];
+}
+
 - (NSURLSessionDataTask *)requestWithTarget:(NSString *)targetUrl params:(NSDictionary *)params method:(OrientalRequestMethod)method success:(void (^)(NSURLSessionDataTask *, id))success failure:(void (^)(NSURLSessionDataTask *, NSError *))failure {
     return [self requestWithTarget:targetUrl params:params method:method serviceType:OrientalServiceTypeNormal success:success failure:failure];
 }
 
 - (NSURLSessionDataTask *)requestWithTarget:(NSString *)targetUrl params:(NSDictionary *)params method:(OrientalRequestMethod)method serviceType:(OrientalServiceType)serviceType success:(void(^)(NSURLSessionDataTask *task,id responseObject))success failure:(void(^)(NSURLSessionDataTask *task,NSError *error))failure {
     NSURLRequestCachePolicy cachePolicy =  NSURLRequestReloadIgnoringLocalCacheData;
-    return [self requestWithTarget:targetUrl params:params method:method serviceType:serviceType cachePolicy:cachePolicy timeoutInterval:10.0f progress:nil success:success failure:failure];
+    return [self requestWithTarget:targetUrl params:params method:method serviceType:serviceType cachePolicy:cachePolicy timeoutInterval:DEFAULT_TIMEOUT progress:nil success:success failure:failure];
 }
 
 - (NSURLSessionDataTask *)requestWithTarget:(NSString *)targetUrl params:(NSDictionary *)params method:(OrientalRequestMethod)method serviceType:(OrientalServiceType)serviceType cachePolicy:(NSURLRequestCachePolicy)cachePolicy timeoutInterval:(NSTimeInterval)timeoutInterval progress:(void(^)(NSProgress *progress))progress success:(void(^)(NSURLSessionDataTask *task,id responseObject))success failure:(void(^)(NSURLSessionDataTask *task,NSError *error))failure{
@@ -65,27 +72,29 @@
     NSString *encrypt = [self encryptParamContent:compressed];
     NSDictionary *dict = @{@"s":compressed, @"sign":encrypt};
     NSURLSessionDataTask *task = nil;
+    
+    void (^successBlock)(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) = ^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSError *err = nil;
+        NSDictionary *responseDic = [self deCompressedDataWith:responseObject err:err];
+        if (DICTHASVALUE(responseDic) && !err) {
+            if (success) {
+                success (task,responseDic);
+            }
+        } else {
+            if (failure) {
+                failure(task,err);
+            }
+        }
+    };
+    void (^failureBlock)(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) = ^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (failure) {
+            failure(task,error);
+        }
+    };
+    
     switch (method) {
-        case OrientalRequestMethodPost:
-        {
-            [self POST:url parameters:dict progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                NSError *err = nil;
-                NSDictionary *responseDic = [self deCompressedDataWith:responseObject err:err];
-                if (DICTHASVALUE(responseDic) && !err) {
-                    if (success) {
-                        success (task,responseDic);
-                    }
-                } else {
-                    if (failure) {
-                        failure(task,err);
-                    }
-                }
-                
-            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                if (failure) {
-                    failure(task,error);
-                }
-            }];
+        case OrientalRequestMethodPost: {
+            task = [self POST:url parameters:dict progress:nil success:successBlock failure:failureBlock];
         }
             break;
             

@@ -27,6 +27,20 @@ typedef NS_ENUM(NSUInteger, OrientalRequestMethod) {
  *
  *  @param targetUrl 请求地址
  *  @param params    参数字典
+ *  @param success   网络成功回调（status == 200）
+ *  @param failure   网络失败回调（包含404等网络错误，不包含逻辑失败，逻辑失败在success中自行判断）
+ *
+ *  @return 各页面dealloc时记得cancel掉请求
+ */
+- (NSURLSessionDataTask *)requestWithTarget:(NSString *)targetUrl
+                                     params:(NSDictionary *)params
+                                    success:(void(^)(NSURLSessionDataTask *task,id responseObject))success
+                                    failure:(void(^)(NSURLSessionDataTask *task,NSError *error))failure;
+/**
+ *  自定义Request Method
+ *
+ *  @param targetUrl 请求地址
+ *  @param params    参数字典
  *  @param method    请求方法
  *  @param success   网络成功回调（status == 200）
  *  @param failure   网络失败回调（包含404等网络错误，不包含逻辑失败，逻辑失败在success中自行判断）
