@@ -16,8 +16,7 @@
 #import "SocialAnalysisManager.h"
 #import "SocialShareManager.h"
 #import "OVendorMacro.h"
-#import "Godzippa.h"
-#import "HBRSAHandler.h"
+#import "OriNetworking.h"
 
 @interface AppDelegate () <UITabBarControllerDelegate>
 
@@ -29,27 +28,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self initRootViewController];
 //    [self socialConfiguration];
+//    [self testHttp];
     return YES;
 }
 
-- (void)rsaSign {
-    /*
-     ApgTlVOuqKCt/DF0YD7Oijqd/Wwi+gNUNn4cYmexgi3ingK4gcnxbIaAUd0pqgM5l2T0xJ8CTZLoCWjpS8hZN18WRle1TCkhhL/OYjDq0X7wANob3p7jnH2Y2XNscNgTg7xefCl67t53AjX/E6xHlUbKk+AMJhix0f7VhDwUWf0=
-     */
-    NSString *originalString = @"qwe";
-    NSData *dataStr = [originalString dataUsingEncoding:NSUTF8StringEncoding];
-    NSError *compressErr = nil;
-    NSData *gzipData = [dataStr dataByGZipCompressingWithError:&compressErr];
-    
-    NSData *encodedData = [gzipData base64EncodedDataWithOptions:0];
-    NSString *encodedStr = [[NSString alloc] initWithData:encodedData encoding:NSUTF8StringEncoding];
-    NSLog(@"%@",encodedStr);
-    NSString *private_key_path = [[NSBundle mainBundle] pathForResource:@"private_key" ofType:@"p12"];
-
-    HBRSAHandler *handler = [[HBRSAHandler alloc] init];
-    [handler importKeyWithType:KeyTypePrivate andPath:private_key_path];
-    NSString *signStr = [handler signString:encodedStr];
-    NSLog(@"%@",signStr);
+- (void)testHttp {
+    [OriNetwork requestWithTarget:@"app/gateway" params:@{@"channel_id":@"亚洲新闻台"} method:OrientalRequestMethodPost success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"%@",responseObject);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"%@",error);
+    }];
 }
 
 - (void)socialConfiguration {
