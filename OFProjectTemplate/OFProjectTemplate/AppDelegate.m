@@ -28,16 +28,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self initRootViewController];
 //    [self socialConfiguration];
-//    [self testHttp];
     return YES;
-}
-
-- (void)testHttp {
-    [OriNetwork requestWithTarget:@"app/gateway" params:@{@"channel_id":@"亚洲新闻台"} method:OrientalRequestMethodPost success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSLog(@"%@",responseObject);
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        NSLog(@"%@",error);
-    }];
 }
 
 - (void)socialConfiguration {
