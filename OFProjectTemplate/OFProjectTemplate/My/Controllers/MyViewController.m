@@ -38,11 +38,16 @@
     NSLog(@"%@",btn.titleLabel.text);
     if (btn.tag == 1001) {
 
-        LoginViewController *login = [[LoginViewController alloc]initWithTitle:@"登录" navBarBtns:NavBarBtnBack];
-        UINavigationController *navc = [[UINavigationController alloc]initWithRootViewController:login];
-        [self presentViewController:navc animated:YES completion:^{
-            
-        }];
+//        LoginViewController *login = [[LoginViewController alloc]initWithTitle:@"登录" navBarBtns:NavBarBtnBack];
+//        UINavigationController *navc = [[UINavigationController alloc]initWithRootViewController:login];
+//        [self presentViewController:navc animated:YES completion:^{
+//            
+//        }];
+        
+        SetUpViewController *setup = [[SetUpViewController alloc]initWithTitle:@"设置" navBarBtns:NavBarBtnBack];
+        setup.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:setup animated:YES];
+
         
     }else if (btn.tag == 101) {
         FamilyViewController *vc = [[FamilyViewController alloc]initWithTitle:@"家庭成员" navBarBtns:NavBarBtnBack];
@@ -51,10 +56,7 @@
 
 
     } else if (btn.tag == 102) {
-        SetUpViewController *setup = [[SetUpViewController alloc]initWithTitle:@"设置" navBarBtns:NavBarBtnBack];
-        setup.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:setup animated:YES];
-
+        
         
     } else if (btn.tag == 111) {
         PlayHistoryVC *vc = [[PlayHistoryVC alloc]initWithTitle:@"播放历史" navBarBtns:NavBarBtnBack];

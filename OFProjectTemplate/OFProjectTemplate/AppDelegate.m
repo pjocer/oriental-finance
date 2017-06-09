@@ -18,6 +18,7 @@
 #import "OVendorMacro.h"
 #import "Godzippa.h"
 #import "HBRSAHandler.h"
+#import "LoginViewController.h"
 
 @interface AppDelegate () <UITabBarControllerDelegate>
 
@@ -28,7 +29,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self initRootViewController];
-//    [self socialConfiguration];
+    //    [self socialConfiguration];
     return YES;
 }
 
@@ -45,7 +46,7 @@
     NSString *encodedStr = [[NSString alloc] initWithData:encodedData encoding:NSUTF8StringEncoding];
     NSLog(@"%@",encodedStr);
     NSString *private_key_path = [[NSBundle mainBundle] pathForResource:@"private_key" ofType:@"p12"];
-
+    
     HBRSAHandler *handler = [[HBRSAHandler alloc] init];
     [handler importKeyWithType:KeyTypePrivate andPath:private_key_path];
     NSString *signStr = [handler signString:encodedStr];
@@ -116,19 +117,23 @@
     return _rootController;
 }
 
-//- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
-//    if ([viewController isKindOfClass:[UINavigationController class]]) {
-//        UINavigationController *navigation = (UINavigationController *)viewController;
-//        if (navigation.viewControllers.count > 0 && [navigation.viewControllers.firstObject isKindOfClass:[RemoteViewController class]]) {
-//            RemoteViewController *vc = [[RemoteViewController alloc] init];
-//            vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-//            vc.hidesBottomBarWhenPushed = YES;
-//            [self.rootController presentViewController:vc animated:YES completion:nil];
-//            return NO;
-//        }
-//    }
-//    return YES;
-//}
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    if ([viewController isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *navigation = (UINavigationController *)viewController;
+        if (navigation.viewControllers.count > 0 && [navigation.viewControllers.firstObject isKindOfClass:[MyViewController class]]) {
+            
+            LoginViewController *vc = [[LoginViewController alloc]initWithTitle:@"登录" navBarBtns:NavBarBtnBack];
+            UINavigationController *navc = [[UINavigationController alloc]initWithRootViewController:vc];
+            [self.rootController presentViewController:navc animated:YES completion:^{
+                AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+                [delegate.rootController setSelectedIndex:4];
+                
+            }];
+            return NO;
+        }
+    }
+    return YES;
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

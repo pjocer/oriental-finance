@@ -12,6 +12,7 @@
 #import "OFUIkitMacro.h"
 #import "LoginView.h"
 #import "RegisteredViewController.h"
+#import "AppDelegate.h"
 
 @interface LoginViewController ()<loginViewDelegate, InformationInputDelegate>
 
@@ -44,8 +45,18 @@
         make.left.right.bottom.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
     
-
+    
 }
+
+-(void)back{
+    [super back];
+    [self dismissViewControllerAnimated:YES completion:^{
+//        AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+//        [delegate.rootController setSelectedIndex:4];
+    }];
+}
+
+
 - (void)InformationInputDelegate:(UIButton *)btn {
     [self dismissViewControllerAnimated:YES completion:^{
         

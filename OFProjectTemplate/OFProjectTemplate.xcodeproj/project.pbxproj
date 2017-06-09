@@ -99,6 +99,7 @@
 		D640951C1EE9736A00DD24FF /* PlayHistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D640951B1EE9736A00DD24FF /* PlayHistoryVC.m */; };
 		D640951F1EE9878800DD24FF /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D640951E1EE9878800DD24FF /* MessageViewController.m */; };
 		D64095221EE987A000DD24FF /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D64095211EE987A000DD24FF /* MessageTableViewCell.m */; };
+		D64095251EEA368400DD24FF /* WBAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = D64095241EEA368400DD24FF /* WBAlertController.m */; };
 		D65DC8C71ED825500030636D /* ApplicationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8831ED825500030636D /* ApplicationDetailsViewController.m */; };
 		D65DC8C81ED825500030636D /* ApplicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8851ED825500030636D /* ApplicationViewController.m */; };
 		D65DC8C91ED825500030636D /* ApplicationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC88A1ED825500030636D /* ApplicationTableViewCell.m */; };
@@ -393,6 +394,8 @@
 		D640951E1EE9878800DD24FF /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		D64095201EE987A000DD24FF /* MessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewCell.h; sourceTree = "<group>"; };
 		D64095211EE987A000DD24FF /* MessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewCell.m; sourceTree = "<group>"; };
+		D64095231EEA368400DD24FF /* WBAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBAlertController.h; sourceTree = "<group>"; };
+		D64095241EEA368400DD24FF /* WBAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBAlertController.m; sourceTree = "<group>"; };
 		D65DC8821ED825500030636D /* ApplicationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationDetailsViewController.h; sourceTree = "<group>"; };
 		D65DC8831ED825500030636D /* ApplicationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationDetailsViewController.m; sourceTree = "<group>"; };
 		D65DC8841ED825500030636D /* ApplicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationViewController.h; sourceTree = "<group>"; };
@@ -608,6 +611,8 @@
 				D3E543751EDE691000D8898C /* UIButton+FadeForSDWebImage.m */,
 				D3E543771EDE698900D8898C /* UIControl+Interval.h */,
 				D3E543781EDE698900D8898C /* UIControl+Interval.m */,
+				D64095231EEA368400DD24FF /* WBAlertController.h */,
+				D64095241EEA368400DD24FF /* WBAlertController.m */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -1441,6 +1446,7 @@
 				D33820B51EE15EFD00D5B99C /* HoritalVideoCollectionCell.m in Sources */,
 				D3EA47311EE7EABC00ECD89C /* RSAEncryptor.m in Sources */,
 				D65DC8CB1ED825500030636D /* OFBaseViewController.m in Sources */,
+				D64095251EEA368400DD24FF /* WBAlertController.m in Sources */,
 				D3E543761EDE691000D8898C /* UIButton+FadeForSDWebImage.m in Sources */,
 				D609C30A1EE1726A00A09C19 /* LoginViewController.m in Sources */,
 				D609C2EB1EE1338600A09C19 /* ODQTool.m in Sources */,
