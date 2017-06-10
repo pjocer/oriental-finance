@@ -101,6 +101,10 @@
 		D640951F1EE9878800DD24FF /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D640951E1EE9878800DD24FF /* MessageViewController.m */; };
 		D64095221EE987A000DD24FF /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D64095211EE987A000DD24FF /* MessageTableViewCell.m */; };
 		D64095251EEA368400DD24FF /* WBAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = D64095241EEA368400DD24FF /* WBAlertController.m */; };
+		D64095281EEA9F6D00DD24FF /* ConnectionEquipmentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D64095271EEA9F6D00DD24FF /* ConnectionEquipmentVC.m */; };
+		D640952B1EEA9F9E00DD24FF /* ConnectionEquipmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D640952A1EEA9F9E00DD24FF /* ConnectionEquipmentView.m */; };
+		D640952E1EEBC8D500DD24FF /* AddFamilyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D640952D1EEBC8D500DD24FF /* AddFamilyVC.m */; };
+		D64095311EEBC90000DD24FF /* AddFamilyView.m in Sources */ = {isa = PBXBuildFile; fileRef = D64095301EEBC90000DD24FF /* AddFamilyView.m */; };
 		D65DC8C71ED825500030636D /* ApplicationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8831ED825500030636D /* ApplicationDetailsViewController.m */; };
 		D65DC8C81ED825500030636D /* ApplicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8851ED825500030636D /* ApplicationViewController.m */; };
 		D65DC8C91ED825500030636D /* ApplicationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC88A1ED825500030636D /* ApplicationTableViewCell.m */; };
@@ -399,6 +403,14 @@
 		D64095211EE987A000DD24FF /* MessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewCell.m; sourceTree = "<group>"; };
 		D64095231EEA368400DD24FF /* WBAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBAlertController.h; sourceTree = "<group>"; };
 		D64095241EEA368400DD24FF /* WBAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBAlertController.m; sourceTree = "<group>"; };
+		D64095261EEA9F6D00DD24FF /* ConnectionEquipmentVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionEquipmentVC.h; sourceTree = "<group>"; };
+		D64095271EEA9F6D00DD24FF /* ConnectionEquipmentVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionEquipmentVC.m; sourceTree = "<group>"; };
+		D64095291EEA9F9E00DD24FF /* ConnectionEquipmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionEquipmentView.h; sourceTree = "<group>"; };
+		D640952A1EEA9F9E00DD24FF /* ConnectionEquipmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionEquipmentView.m; sourceTree = "<group>"; };
+		D640952C1EEBC8D500DD24FF /* AddFamilyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFamilyVC.h; sourceTree = "<group>"; };
+		D640952D1EEBC8D500DD24FF /* AddFamilyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFamilyVC.m; sourceTree = "<group>"; };
+		D640952F1EEBC90000DD24FF /* AddFamilyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFamilyView.h; sourceTree = "<group>"; };
+		D64095301EEBC90000DD24FF /* AddFamilyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFamilyView.m; sourceTree = "<group>"; };
 		D65DC8821ED825500030636D /* ApplicationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationDetailsViewController.h; sourceTree = "<group>"; };
 		D65DC8831ED825500030636D /* ApplicationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationDetailsViewController.m; sourceTree = "<group>"; };
 		D65DC8841ED825500030636D /* ApplicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationViewController.h; sourceTree = "<group>"; };
@@ -1046,6 +1058,8 @@
 				D65DC89A1ED825500030636D /* DetailsViewController.m */,
 				D640951D1EE9878800DD24FF /* MessageViewController.h */,
 				D640951E1EE9878800DD24FF /* MessageViewController.m */,
+				D64095261EEA9F6D00DD24FF /* ConnectionEquipmentVC.h */,
+				D64095271EEA9F6D00DD24FF /* ConnectionEquipmentVC.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1097,6 +1111,8 @@
 				D33820B41EE15EFD00D5B99C /* HoritalVideoCollectionCell.m */,
 				D64095201EE987A000DD24FF /* MessageTableViewCell.h */,
 				D64095211EE987A000DD24FF /* MessageTableViewCell.m */,
+				D64095291EEA9F9E00DD24FF /* ConnectionEquipmentView.h */,
+				D640952A1EEA9F9E00DD24FF /* ConnectionEquipmentView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1141,6 +1157,8 @@
 				D64095121EE9474D00DD24FF /* MyCollectionVC.m */,
 				D640951A1EE9736A00DD24FF /* PlayHistoryVC.h */,
 				D640951B1EE9736A00DD24FF /* PlayHistoryVC.m */,
+				D640952C1EEBC8D500DD24FF /* AddFamilyVC.h */,
+				D640952D1EEBC8D500DD24FF /* AddFamilyVC.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1178,6 +1196,8 @@
 				D64095151EE947DD00DD24FF /* MyCollectionCell.m */,
 				D64095171EE9734200DD24FF /* PlayHistorycell.h */,
 				D64095181EE9734200DD24FF /* PlayHistorycell.m */,
+				D640952F1EEBC90000DD24FF /* AddFamilyView.h */,
+				D64095301EEBC90000DD24FF /* AddFamilyView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1431,6 +1451,7 @@
 				D609C3061EE16C9A00A09C19 /* HDChannelViewController.m in Sources */,
 				D3207FD01ED91C8A00240DD2 /* HotPlayController.m in Sources */,
 				D609C2FA1EE16A8B00A09C19 /* VarietyViewController.m in Sources */,
+				D64095281EEA9F6D00DD24FF /* ConnectionEquipmentVC.m in Sources */,
 				D609C2F71EE16A5100A09C19 /* ProjectViewController.m in Sources */,
 				D338211F1EE6927100D5B99C /* AderView.m in Sources */,
 				D65DC8D91ED825500030636D /* RemoteView.m in Sources */,
@@ -1445,6 +1466,7 @@
 				D609C3261EE1A87500A09C19 /* SetUpHeadTableViewCell.m in Sources */,
 				D3E543681ED959EF00D8898C /* UITableView+Extension.m in Sources */,
 				D3E543731EDE68B800D8898C /* UIImageView+FadeForSDWebImage.m in Sources */,
+				D64095311EEBC90000DD24FF /* AddFamilyView.m in Sources */,
 				D3EA479E1EE8F1E300ECD89C /* NSData+Base64.m in Sources */,
 				D3EA473D1EE7FE2200ECD89C /* NSFileManager+Godzippa.m in Sources */,
 				D640950A1EE91E6600DD24FF /* MyTVTableViewCell.m in Sources */,
@@ -1463,6 +1485,7 @@
 				D33820B21EE15D6700D5B99C /* HomeChannelLiveCell.m in Sources */,
 				D33820A91EE116B400D5B99C /* MWBaseDBDAO.m in Sources */,
 				D3E543951EDFF66D00D8898C /* OSearchController.m in Sources */,
+				D640952E1EEBC8D500DD24FF /* AddFamilyVC.m in Sources */,
 				D3E543851EDE94E100D8898C /* LocalChannelTableViewModel.m in Sources */,
 				D609C2A11EE0F8EE00A09C19 /* ZYBannerView.m in Sources */,
 				D65DC8C81ED825500030636D /* ApplicationViewController.m in Sources */,
@@ -1493,6 +1516,7 @@
 				D33821181EE653D400D5B99C /* SocialLoginManager.m in Sources */,
 				D3EA47C81EEA486800ECD89C /* BaseModel.m in Sources */,
 				D338211B1EE6542000D5B99C /* SocialLoginResultModel.m in Sources */,
+				D640952B1EEA9F9E00DD24FF /* ConnectionEquipmentView.m in Sources */,
 				D609C31A1EE1977A00A09C19 /* SetupPasswordVC.m in Sources */,
 				D3EA47211EE7971500ECD89C /* ShareMenu.m in Sources */,
 				D609C3171EE1885400A09C19 /* RegisteredViewController.m in Sources */,

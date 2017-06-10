@@ -15,6 +15,7 @@
 #import "OShowHud.h"
 #import "MessageViewController.h"
 #import "PlayHistoryVC.h"
+#import "ConnectionEquipmentVC.h"
 
 @interface HomeViewController ()
 @property (nonatomic, strong)  HomeTabContainerViewModel* viewModel;
@@ -76,15 +77,13 @@
     [self.navigationController pushViewController:setup animated:YES];
 }
 - (void)setup {
-    if (IS_SIMULATOR) {
-        [OShowHud showErrorHudWith:@"模拟器不支持" animated:YES];
-    } else {
-        ODQTool *dq = [[ODQTool alloc]initWithTitle:@"二维码扫描" navBarBtns:NavBarBtnBack];
-        UINavigationController *navc = [[UINavigationController alloc]initWithRootViewController:dq];
-        [self presentViewController:navc animated:YES completion:^{
-            
-        }];
-    }
+    
+    ConnectionEquipmentVC *vc= [[ConnectionEquipmentVC alloc]initWithTitle:@"未连接" navBarBtns:NavBarBtnBack];
+    UINavigationController *navc = [[UINavigationController alloc]initWithRootViewController:vc];
+    [self presentViewController:navc animated:YES completion:^{
+        
+    }];
+
 }
 
 - (UIButton *)backBtn {

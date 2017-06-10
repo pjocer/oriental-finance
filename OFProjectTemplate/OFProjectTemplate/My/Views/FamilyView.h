@@ -8,7 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol FamilyViewDelegate <NSObject>
+
+-(void)FamilyViewDelegateWithBtn:(UIButton *)btn;
+
+@end
+
 @interface FamilyView : UIView
+
+@property (nonatomic, weak) id <FamilyViewDelegate>delegate;
 
 - (instancetype)initWithDatalist:(NSArray *)arr;
 

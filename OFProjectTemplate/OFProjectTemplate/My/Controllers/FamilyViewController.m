@@ -10,8 +10,9 @@
 #import "FamilyView.h"
 #import "OFUIkitMacro.h"
 #import "Masonry.h"
+#import "AddFamilyVC.h"
 
-@interface FamilyViewController ()
+@interface FamilyViewController ()<FamilyViewDelegate>
 
 @end
 
@@ -19,13 +20,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSArray *arr = @[@"1",@"1",@"1",@"1",];
+    NSArray *arr = @[@"1",@"1",@"1"];
     FamilyView *familyView = [[FamilyView alloc]initWithDatalist:arr];
+    familyView.delegate = self;
     [self.view addSubview:familyView];
     
     [familyView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.bottom.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
+}
+
+-(void)FamilyViewDelegateWithBtn:(UIButton *)btn {
+    if (btn.tag == 100) {
+        AddFamilyVC *vc = [[AddFamilyVC alloc]initWithTitle:@"添加家庭成员" navBarBtns:NavBarBtnBack];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+        
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
