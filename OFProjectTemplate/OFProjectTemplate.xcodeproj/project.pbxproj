@@ -411,6 +411,7 @@
 		D640952D1EEBC8D500DD24FF /* AddFamilyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFamilyVC.m; sourceTree = "<group>"; };
 		D640952F1EEBC90000DD24FF /* AddFamilyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFamilyView.h; sourceTree = "<group>"; };
 		D64095301EEBC90000DD24FF /* AddFamilyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFamilyView.m; sourceTree = "<group>"; };
+		D64095321EEBD4D200DD24FF /* MacorLogin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacorLogin.h; sourceTree = "<group>"; };
 		D65DC8821ED825500030636D /* ApplicationDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationDetailsViewController.h; sourceTree = "<group>"; };
 		D65DC8831ED825500030636D /* ApplicationDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationDetailsViewController.m; sourceTree = "<group>"; };
 		D65DC8841ED825500030636D /* ApplicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationViewController.h; sourceTree = "<group>"; };
@@ -865,6 +866,7 @@
 		D609C3071EE1725C00A09C19 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				D64095321EEBD4D200DD24FF /* MacorLogin.h */,
 				D609C30B1EE173BA00A09C19 /* Controllers */,
 				D609C30C1EE173BA00A09C19 /* Modles */,
 				D609C30D1EE173BA00A09C19 /* ViewModles */,

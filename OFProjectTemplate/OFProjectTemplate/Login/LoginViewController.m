@@ -13,6 +13,9 @@
 #import "LoginView.h"
 #import "RegisteredViewController.h"
 #import "AppDelegate.h"
+#import "MacorLogin.h"
+#import "OriNetworking.h"
+
 
 @interface LoginViewController ()<loginViewDelegate, InformationInputDelegate>
 
@@ -43,6 +46,14 @@
     [footerview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(loginView.mas_bottom).offset(12);
         make.left.right.bottom.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+    }];
+    
+    NSDictionary *dic = @{@"asd": @""};
+    
+    [[OrientalHttpManager sharedInstance] requestWithTarget:Register params:dic success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+     
     }];
     
     
