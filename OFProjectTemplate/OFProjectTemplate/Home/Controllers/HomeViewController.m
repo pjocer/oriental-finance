@@ -27,42 +27,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initNavigationBar];
-    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
-        self.edgesForExtendedLayout = UIRectEdgeNone;
-    }
-    self.view.backgroundColor = [UIColor whiteColor];
+    [self addPagerController];
+}
+
+- (void)addPagerController {
     self.pagerController.view.frame = self.view.bounds;
+    self.pagerController.dataSource = self.viewModel;
     [self addChildViewController:self.pagerController];
     [self.view addSubview:self.pagerController.view];
 }
 
 - (void)initNavigationBar {
     self.view.backgroundColor = [UIColor whiteColor];
-    UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc] initWithCustomView:self.backBtn];
-    UIBarButtonItem *negativeSeperator = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-    negativeSeperator.width = -5;
-    self.navigationItem.leftBarButtonItems = @[negativeSeperator, buttonItem];
-    [self.backBtn setImage:[UIImage imageNamed:@"home_bindingDQ"] forState:UIControlStateNormal];
+    UIBarButtonItem *left = [QMUINavigationButton barButtonItemWithImage:OriImageNamed(@"home_bindingDQ") position:QMUINavigationButtonPositionLeft target:self action:@selector(pushConnectionController)];
+    self.navigationItem.leftBarButtonItem = left;
     
+    UIBarButtonItem *history = [QMUINavigationButton barButtonItemWithImage:OriImageNamed(@"home_history") position:QMUINavigationButtonPositionRight target:self action:@selector(pushHistory)];
+    UIBarButtonItem *message = [QMUINavigationButton barButtonItemWithImage:OriImageNamed(@"home_xiaoxi") position:QMUINavigationButtonPositionNone target:self action:@selector(pushMessage)];
+    history.imageInsets = UIEdgeInsetsMake(0, 10, 0, -10);
+    self.navigationItem.rightBarButtonItems = @[message, history];
     
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(0, 0, 25, 25);
-    btn.imageView.contentMode = UIViewContentModeScaleAspectFit;
-    [btn setImage:[UIImage imageNamed:@"home_xiaoxi"] forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(pushMessage) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *buttonItem2 = [[UIBarButtonItem alloc] initWithCustomView:btn];
-    UIBarButtonItem *negativeSeperator2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-    negativeSeperator2.width = -5;
-    UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn2.frame = CGRectMake(0, 0, 25, 25);
-    [btn2 setImage:[UIImage imageNamed:@"home_history"] forState:UIControlStateNormal];
-    [btn2 addTarget:self action:@selector(pushHistory) forControlEvents:UIControlEventTouchUpInside];
-    btn2.imageView.contentMode = UIViewContentModeScaleAspectFit;
-    UIBarButtonItem *buttonItem3 = [[UIBarButtonItem alloc] initWithCustomView:btn2];
-    UIBarButtonItem *negativeSeperator3 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-    negativeSeperator3.width = -5;
-    self.navigationItem.rightBarButtonItems = @[negativeSeperator2, buttonItem2, negativeSeperator3, buttonItem3];
-    
+}
+
+- (void)pushConnectionController {
+    ConnectionEquipmentVC *vc= [[ConnectionEquipmentVC alloc]initWithTitle:@"未连接" navBarBtns:NavBarBtnBack];
+    UINavigationController *navc = [[UINavigationController alloc]initWithRootViewController:vc];
+    [self presentViewController:navc animated:YES completion:^{
+        
+    }];
 }
 
 - (void)pushMessage {
@@ -75,25 +67,6 @@
     PlayHistoryVC *setup = [[PlayHistoryVC alloc]initWithTitle:@"播放历史" navBarBtns:NavBarBtnBack];
     setup.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:setup animated:YES];
-}
-- (void)setup {
-    
-    ConnectionEquipmentVC *vc= [[ConnectionEquipmentVC alloc]initWithTitle:@"未连接" navBarBtns:NavBarBtnBack];
-    UINavigationController *navc = [[UINavigationController alloc]initWithRootViewController:vc];
-    [self presentViewController:navc animated:YES completion:^{
-        
-    }];
-
-}
-
-- (UIButton *)backBtn {
-    if (!_backBtn) {
-        _backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        _backBtn.frame = CGRectMake(0, 0, 32, 32);
-        _backBtn.imageView.contentMode = UIViewContentModeScaleAspectFit;
-        [_backBtn addTarget:self action:@selector(setup) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _backBtn;
 }
 
 - (TYTabButtonPagerController *)pagerController {

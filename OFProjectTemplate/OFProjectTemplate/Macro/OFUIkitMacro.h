@@ -13,6 +13,7 @@
 #import <QMUIKit.h>
 
 #define ImageNamed(name) UIImageMake(name)
+#define OriImageNamed(name) [UIImageMake(name) imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
 
 #define DEFAULT_BG_COLOR UIColorMake(236, 236, 236)
 #define DEFAULT_TEXT_COLOR UIColorMake(51, 51, 51)

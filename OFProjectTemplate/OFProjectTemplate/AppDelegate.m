@@ -102,7 +102,6 @@
     if ([viewController isKindOfClass:[UINavigationController class]]) {
         UINavigationController *navigation = (UINavigationController *)viewController;
         if (navigation.viewControllers.count > 0 && [navigation.viewControllers.firstObject isKindOfClass:[MyViewController class]]) {
-            
             LoginViewController *vc = [[LoginViewController alloc]initWithTitle:@"登录" navBarBtns:NavBarBtnBack];
             UINavigationController *navc = [[UINavigationController alloc]initWithRootViewController:vc];
             [self.rootController presentViewController:navc animated:YES completion:^{

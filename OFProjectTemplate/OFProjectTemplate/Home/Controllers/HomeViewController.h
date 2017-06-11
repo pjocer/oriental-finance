@@ -10,6 +10,4 @@
 
 @interface HomeViewController : OFBaseViewController
 
-@property (nonatomic, strong) UIButton *backBtn;
-
 @end
