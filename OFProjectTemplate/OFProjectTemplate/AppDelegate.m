@@ -34,26 +34,6 @@
     return YES;
 }
 
-- (void)rsaSign {
-    /*
-     ApgTlVOuqKCt/DF0YD7Oijqd/Wwi+gNUNn4cYmexgi3ingK4gcnxbIaAUd0pqgM5l2T0xJ8CTZLoCWjpS8hZN18WRle1TCkhhL/OYjDq0X7wANob3p7jnH2Y2XNscNgTg7xefCl67t53AjX/E6xHlUbKk+AMJhix0f7VhDwUWf0=
-     */
-    NSString *originalString = @"qwe";
-    NSData *dataStr = [originalString dataUsingEncoding:NSUTF8StringEncoding];
-    NSError *compressErr = nil;
-    NSData *gzipData = [dataStr dataByGZipCompressingWithError:&compressErr];
-    
-    NSData *encodedData = [gzipData base64EncodedDataWithOptions:0];
-    NSString *encodedStr = [[NSString alloc] initWithData:encodedData encoding:NSUTF8StringEncoding];
-    NSLog(@"%@",encodedStr);
-    NSString *private_key_path = [[NSBundle mainBundle] pathForResource:@"private_key" ofType:@"p12"];
-    
-    HBRSAHandler *handler = [[HBRSAHandler alloc] init];
-    [handler importKeyWithType:KeyTypePrivate andPath:private_key_path];
-    NSString *signStr = [handler signString:encodedStr];
-    NSLog(@"%@",signStr);
-}
-
 - (void)socialConfiguration {
     SocialRegisterItem *wechat = [[SocialRegisterItem alloc] initWithPlatform:SocialPlatformSina appKey:WX_APP_ID appSecret:WX_APP_Secret redirectURL:nil];
     SocialRegisterItem *sina = [[SocialRegisterItem alloc] initWithPlatform:SocialPlatformSina appKey:WB_APP_KEY appSecret:WB_APP_Secret redirectURL:WB_RedirectURL];

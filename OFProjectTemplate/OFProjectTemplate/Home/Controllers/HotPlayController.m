@@ -61,6 +61,10 @@
     }];
 }
 
+- (void)gotoAppointmentController {
+    
+}
+
 - (OSearchView *)searchView {
     if (!_searchView) {
         _searchView = [OSearchView new];
@@ -70,7 +74,7 @@
             if (isSearchBar) {
                 [self gotoSearchController];
             } else {
-                
+                [self gotoAppointmentController];
             }
         }];
     }

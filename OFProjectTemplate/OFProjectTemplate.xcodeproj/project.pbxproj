@@ -63,6 +63,7 @@
 		D3EA47BF1EE94AAB00ECD89C /* OrientalHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EA47BE1EE94AAB00ECD89C /* OrientalHttpManager.m */; };
 		D3EA47C51EE9556700ECD89C /* OrientalUploadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EA47C41EE9556700ECD89C /* OrientalUploadModel.m */; };
 		D3EA47C81EEA486800ECD89C /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EA47C71EEA486800ECD89C /* BaseModel.m */; };
+		D3EA48171EED156D00ECD89C /* AppointmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EA48161EED156D00ECD89C /* AppointmentController.m */; };
 		D609C2881EDFA67900A09C19 /* IntroductionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C2871EDFA67900A09C19 /* IntroductionCell.m */; };
 		D609C28B1EDFB76800A09C19 /* ChanneldetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C28A1EDFB76800A09C19 /* ChanneldetailsVC.m */; };
 		D609C29F1EE0F8EE00A09C19 /* ZYBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D609C29A1EE0F8EE00A09C19 /* ZYBannerCell.m */; };
@@ -329,6 +330,8 @@
 		D3EA47C41EE9556700ECD89C /* OrientalUploadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrientalUploadModel.m; sourceTree = "<group>"; };
 		D3EA47C61EEA486800ECD89C /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		D3EA47C71EEA486800ECD89C /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
+		D3EA48151EED156D00ECD89C /* AppointmentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppointmentController.h; sourceTree = "<group>"; };
+		D3EA48161EED156D00ECD89C /* AppointmentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppointmentController.m; sourceTree = "<group>"; };
 		D609C2861EDFA67900A09C19 /* IntroductionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroductionCell.h; sourceTree = "<group>"; };
 		D609C2871EDFA67900A09C19 /* IntroductionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroductionCell.m; sourceTree = "<group>"; };
 		D609C2891EDFB76800A09C19 /* ChanneldetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChanneldetailsVC.h; sourceTree = "<group>"; };
@@ -343,7 +346,7 @@
 		D609C2E91EE1338600A09C19 /* ODQTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODQTool.h; sourceTree = "<group>"; };
 		D609C2EA1EE1338600A09C19 /* ODQTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODQTool.m; sourceTree = "<group>"; };
 		D609C2F21EE1685800A09C19 /* TeleplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeleplayViewController.h; sourceTree = "<group>"; };
-		D609C2F31EE1685800A09C19 /* TeleplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeleplayViewController.m; sourceTree = "<group>"; };
+		D609C2F31EE1685800A09C19 /* TeleplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TeleplayViewController.m; sourceTree = "<group>"; };
 		D609C2F51EE16A5100A09C19 /* ProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectViewController.h; sourceTree = "<group>"; };
 		D609C2F61EE16A5100A09C19 /* ProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectViewController.m; sourceTree = "<group>"; };
 		D609C2F81EE16A8B00A09C19 /* VarietyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VarietyViewController.h; sourceTree = "<group>"; };
@@ -1062,6 +1065,8 @@
 				D640951E1EE9878800DD24FF /* MessageViewController.m */,
 				D64095261EEA9F6D00DD24FF /* ConnectionEquipmentVC.h */,
 				D64095271EEA9F6D00DD24FF /* ConnectionEquipmentVC.m */,
+				D3EA48151EED156D00ECD89C /* AppointmentController.h */,
+				D3EA48161EED156D00ECD89C /* AppointmentController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1511,6 +1516,7 @@
 				D3207FD61ED92E1A00240DD2 /* OSearchView.m in Sources */,
 				D64094F11EE802C400DD24FF /* ReplyCell.m in Sources */,
 				D33820AF1EE119AE00D5B99C /* SearchDAO.m in Sources */,
+				D3EA48171EED156D00ECD89C /* AppointmentController.m in Sources */,
 				D65DC8D61ED825500030636D /* TYTabPagerController.m in Sources */,
 				D3E5436F1EDE615900D8898C /* OShowHud.m in Sources */,
 				D640950D1EE92C3500DD24FF /* FamilyViewController.m in Sources */,
