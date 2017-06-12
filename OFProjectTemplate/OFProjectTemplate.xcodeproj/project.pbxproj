@@ -17,7 +17,7 @@
 		D3207FD01ED91C8A00240DD2 /* HotPlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FCF1ED91C8A00240DD2 /* HotPlayController.m */; };
 		D3207FD61ED92E1A00240DD2 /* OSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FD51ED92E1A00240DD2 /* OSearchView.m */; };
 		D3207FD91ED9487200240DD2 /* HomeTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FD81ED9487200240DD2 /* HomeTableViewModel.m */; };
-		D3207FDC1ED9497000240DD2 /* HotTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FDB1ED9497000240DD2 /* HotTableViewCell.m */; };
+		D3207FDC1ED9497000240DD2 /* HomeVerticalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FDB1ED9497000240DD2 /* HomeVerticalTableViewCell.m */; };
 		D3207FDF1ED94C5F00240DD2 /* HotTableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FDE1ED94C5F00240DD2 /* HotTableViewCellViewModel.m */; };
 		D338209F1EE1089A00D5B99C /* OSearchContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D338209E1EE1089A00D5B99C /* OSearchContentView.m */; };
 		D33820A21EE1133900D5B99C /* OSearchContentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D33820A11EE1133900D5B99C /* OSearchContentViewModel.m */; };
@@ -161,8 +161,8 @@
 		D3207FD51ED92E1A00240DD2 /* OSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSearchView.m; sourceTree = "<group>"; };
 		D3207FD71ED9487200240DD2 /* HomeTableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewModel.h; sourceTree = "<group>"; };
 		D3207FD81ED9487200240DD2 /* HomeTableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewModel.m; sourceTree = "<group>"; };
-		D3207FDA1ED9497000240DD2 /* HotTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotTableViewCell.h; sourceTree = "<group>"; };
-		D3207FDB1ED9497000240DD2 /* HotTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotTableViewCell.m; sourceTree = "<group>"; };
+		D3207FDA1ED9497000240DD2 /* HomeVerticalTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeVerticalTableViewCell.h; sourceTree = "<group>"; };
+		D3207FDB1ED9497000240DD2 /* HomeVerticalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeVerticalTableViewCell.m; sourceTree = "<group>"; };
 		D3207FDD1ED94C5F00240DD2 /* HotTableViewCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotTableViewCellViewModel.h; sourceTree = "<group>"; };
 		D3207FDE1ED94C5F00240DD2 /* HotTableViewCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotTableViewCellViewModel.m; sourceTree = "<group>"; };
 		D338209D1EE1089A00D5B99C /* OSearchContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSearchContentView.h; sourceTree = "<group>"; };
@@ -1108,8 +1108,8 @@
 				D3207FD51ED92E1A00240DD2 /* OSearchView.m */,
 				D33820B61EE1714600D5B99C /* ChannelLiveHeaderView.h */,
 				D33820B71EE1714600D5B99C /* ChannelLiveHeaderView.m */,
-				D3207FDA1ED9497000240DD2 /* HotTableViewCell.h */,
-				D3207FDB1ED9497000240DD2 /* HotTableViewCell.m */,
+				D3207FDA1ED9497000240DD2 /* HomeVerticalTableViewCell.h */,
+				D3207FDB1ED9497000240DD2 /* HomeVerticalTableViewCell.m */,
 				D33820B01EE15D6600D5B99C /* HomeChannelLiveCell.h */,
 				D33820B11EE15D6600D5B99C /* HomeChannelLiveCell.m */,
 				D3E5435C1ED9505900D8898C /* VerticalVideoCollectionCell.h */,
@@ -1531,7 +1531,7 @@
 				D609C3201EE1A38300A09C19 /* SetUpViewController.m in Sources */,
 				D3EA47C51EE9556700ECD89C /* OrientalUploadModel.m in Sources */,
 				D609C2F41EE1685800A09C19 /* TeleplayViewController.m in Sources */,
-				D3207FDC1ED9497000240DD2 /* HotTableViewCell.m in Sources */,
+				D3207FDC1ED9497000240DD2 /* HomeVerticalTableViewCell.m in Sources */,
 				D3E543791EDE698900D8898C /* UIControl+Interval.m in Sources */,
 				D64095101EE92CA300DD24FF /* FamilyView.m in Sources */,
 				D609C3031EE16C7C00A09C19 /* CCTVChannelViewController.m in Sources */,

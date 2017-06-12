@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "HotTableViewCellViewModel.h"
-#import "HotTableViewCell.h"
+#import "HomeVerticalTableViewCell.h"
 
 typedef NS_ENUM(NSInteger, HomeControllerType) {
     HomeControllerTypeHot,          //当前热播

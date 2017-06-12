@@ -6,14 +6,14 @@
 //  Copyright © 2017年 com.oriental-finance.ios. All rights reserved.
 //
 
-#import "HotTableViewCell.h"
+#import "HomeVerticalTableViewCell.h"
 #import "OFUIkitMacro.h"
 #import "HotTableViewCellViewModel.h"
 #import "VerticalVideoCollectionCell.h"
 #import <Masonry.h>
 #import <ReactiveCocoa.h>
 
-@interface HotTableViewCell () 
+@interface HomeVerticalTableViewCell ()
 @property (nonatomic, strong) UIImageView *titleIcon;
 @property (nonatomic, strong) UIButton *refreshButton;
 @property (nonatomic, strong) UILabel *titleLabel;
@@ -22,7 +22,7 @@
 @property (nonatomic, strong) HotTableViewCellViewModel *viewModel;
 @end
 
-@implementation HotTableViewCell
+@implementation HomeVerticalTableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {

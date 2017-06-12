@@ -9,7 +9,7 @@
 #import "AppointmentController.h"
 #import "HomeTableViewModel.h"
 #import <Masonry.h>
-#import "HotTableViewCell.h"
+#import "HomeVerticalTableViewCell.h"
 #import "OFUIkitMacro.h"
 #import <ReactiveCocoa.h>
 #import "OShowHud.h"
@@ -44,7 +44,7 @@
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.delegate = self.tableViewModel;
         _tableView.dataSource = self.tableViewModel;
-        [_tableView registerClass:[HotTableViewCell class] forCellReuseIdentifier:HotTableViewCellIdentifier];
+        [_tableView registerClass:[HomeVerticalTableViewCell class] forCellReuseIdentifier:HomeVerticalTableViewCellIdentifier];
     }
     return _tableView;
 }

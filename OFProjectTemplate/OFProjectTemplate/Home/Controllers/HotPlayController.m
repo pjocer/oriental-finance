@@ -11,7 +11,7 @@
 #import "OFUIkitMacro.h"
 #import "OSearchView.h"
 #import "HomeTableViewModel.h"
-#import "HotTableViewCell.h"
+#import "HomeVerticalTableViewCell.h"
 #import "DetailsViewController.h"
 #import "OBannerView.h"
 #import "OShowHud.h"
@@ -91,7 +91,7 @@
         _tableView.delegate = self.tableViewModel;
         _tableView.dataSource = self.tableViewModel;
         _tableView.tableHeaderView = self.banner;
-        [_tableView registerClass:[HotTableViewCell class] forCellReuseIdentifier:HotTableViewCellIdentifier];
+        [_tableView registerClass:[HomeVerticalTableViewCell class] forCellReuseIdentifier:HomeVerticalTableViewCellIdentifier];
         [_tableView registerClass:[HomeChannelLiveCell class] forCellReuseIdentifier:HomeChannelLiveCellIdentifier];
     }
     return _tableView;

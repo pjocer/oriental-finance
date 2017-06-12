@@ -1,5 +1,5 @@
 //
-//  HotTableViewCell.h
+//  HomeVerticalTableViewCell.h
 //  OFProjectTemplate
 //
 //  Created by 吉冠虎 on 2017/5/27.
@@ -16,9 +16,9 @@ typedef NS_ENUM(NSInteger, TableViewSelectType) {
     TableViewSelectTypeUnknow,
 };
 
-static NSString *HotTableViewCellIdentifier = @"HotTableViewCellIdentifier";
+static NSString *HomeVerticalTableViewCellIdentifier = @"HomeVerticalTableViewCellIdentifier";
 
-@interface HotTableViewCell : UITableViewCell
+@interface HomeVerticalTableViewCell : UITableViewCell
 
 @property (nonatomic, copy) void (^block)(TableViewSelectType type, id data);
 

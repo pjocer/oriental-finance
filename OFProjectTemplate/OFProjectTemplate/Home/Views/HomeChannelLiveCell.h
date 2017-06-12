@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HotTableViewCell.h"
+#import "HomeVerticalTableViewCell.h"
 
 static NSString *HomeChannelLiveCellIdentifier = @"HomeChannelLiveCellIdentifier";
 

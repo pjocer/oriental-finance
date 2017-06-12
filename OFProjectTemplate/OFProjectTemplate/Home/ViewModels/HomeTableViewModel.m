@@ -7,7 +7,7 @@
 //
 
 #import "HomeTableViewModel.h"
-#import "HotTableViewCell.h"
+#import "HomeVerticalTableViewCell.h"
 #import "OFHomeMacro.h"
 #import "OFUIkitMacro.h"
 #import "HomeChannelLiveCell.h"
@@ -39,7 +39,7 @@
         case HomeControllerTypeHot:
         {
             if (indexPath.row == 0) {
-                HotTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HotTableViewCellIdentifier forIndexPath:indexPath];
+                HomeVerticalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HomeVerticalTableViewCellIdentifier forIndexPath:indexPath];
                 [cell setBlock:self.block];
                 return cell;
             } else {
@@ -60,7 +60,7 @@
         }
         case HomeControllerTypeAppointment:
         {
-            HotTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HotTableViewCellIdentifier forIndexPath:indexPath];
+            HomeVerticalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HomeVerticalTableViewCellIdentifier forIndexPath:indexPath];
             [cell setBlock:self.block];
             return cell;
         }
