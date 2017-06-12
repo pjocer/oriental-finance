@@ -1703,19 +1703,7 @@
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"${PODS_ROOT}/Headers/Public\"",
-					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
-					"\"${PODS_ROOT}/Headers/Public/FDFullscreenPopGesture\"",
-					"\"${PODS_ROOT}/Headers/Public/FMDB\"",
-					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
-					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
-					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
-					"\"${PODS_ROOT}/Headers/Public/QMUIKit\"",
-					"\"${PODS_ROOT}/Headers/Public/ReactiveCocoa\"",
-					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
-					"\"${PODS_ROOT}/Headers/Public/UMengAnalytics-NO-IDFA\"",
-					"\"${PODS_ROOT}/Headers/Public/UMengUShare\"",
-					"\"${PODS_ROOT}/Headers/Public/XRCarouselView\"",
+					"\"${PODS_ROOT}/Headers/Public\"/**",
 					"$(PROJECT_DIR)/OFProjectTemplate/OFFrameworks/HBRSAHandler/openssl/include",
 				);
 				INFOPLIST_FILE = OFProjectTemplate/Info.plist;
@@ -1742,19 +1730,7 @@
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"${PODS_ROOT}/Headers/Public\"",
-					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
-					"\"${PODS_ROOT}/Headers/Public/FDFullscreenPopGesture\"",
-					"\"${PODS_ROOT}/Headers/Public/FMDB\"",
-					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
-					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
-					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
-					"\"${PODS_ROOT}/Headers/Public/QMUIKit\"",
-					"\"${PODS_ROOT}/Headers/Public/ReactiveCocoa\"",
-					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
-					"\"${PODS_ROOT}/Headers/Public/UMengAnalytics-NO-IDFA\"",
-					"\"${PODS_ROOT}/Headers/Public/UMengUShare\"",
-					"\"${PODS_ROOT}/Headers/Public/XRCarouselView\"",
+					"\"${PODS_ROOT}/Headers/Public\"/**",
 					"$(PROJECT_DIR)/OFProjectTemplate/OFFrameworks/HBRSAHandler/openssl/include",
 				);
 				INFOPLIST_FILE = OFProjectTemplate/Info.plist;
