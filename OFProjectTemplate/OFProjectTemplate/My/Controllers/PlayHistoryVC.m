@@ -86,7 +86,7 @@
 }
 - (void)addFooterView{
     footerView =  [[UIView alloc]init];
-    footerView.backgroundColor = [UIColor yellowColor];
+//    footerView.backgroundColor = [UIColor yellowColor];
     [self.view addSubview:footerView];
     
     [footerView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -97,21 +97,25 @@
     UIButton *selectAllBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [footerView addSubview:selectAllBtn];
     [selectAllBtn setTitle:@"全选" forState:UIControlStateNormal];
-    [selectAllBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [selectAllBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     selectAllBtn.titleLabel.font = UIFontMake(18);
+    selectAllBtn.layer.borderColor = UIColorMake(151, 151, 151).CGColor;
+    selectAllBtn.layer.borderWidth = 0.5;
     [selectAllBtn addTarget:self action:@selector(selectleAllAction:) forControlEvents:UIControlEventTouchUpInside];
     [selectAllBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.bottom.equalTo(footerView).insets(UIEdgeInsetsMake(0, 30, 0, 0));
+        make.top.left.bottom.equalTo(footerView).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+        make.width.equalTo(@(self.view.frame.size.width/2));
     }];
     
     UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [footerView addSubview:cancelBtn];
     [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
-    [cancelBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     cancelBtn.titleLabel.font = UIFontMake(18);
+    cancelBtn.backgroundColor = UIColorMake(229, 75, 20);
     [cancelBtn addTarget:self action:@selector(cancelSelectleAction:) forControlEvents:UIControlEventTouchUpInside];
     [cancelBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.right.bottom.equalTo(footerView).insets(UIEdgeInsetsMake(0, 30, 0, 30));
+        make.top.right.bottom.equalTo(footerView).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+        make.width.equalTo(@(self.view.frame.size.width/2));
     }];
     
     
@@ -264,6 +268,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *cellid = [NSString stringWithFormat:@"cellid%ld",indexPath.row];
     PlayHistorycell *cell = [tableView dequeueReusableCellWithIdentifier:cellid];
+    cell.tintColor = [UIColor redColor];
     if (!cell) {
         cell = [[PlayHistorycell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellid];
     }
@@ -282,6 +287,7 @@
     
     return _listTableView;
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

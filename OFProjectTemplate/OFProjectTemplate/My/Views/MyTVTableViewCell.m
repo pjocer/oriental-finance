@@ -28,7 +28,7 @@
     
     [self.linkState mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.bottom.top.equalTo(self.contentView).insets(UIEdgeInsetsMake(14, 0, 14, 20));
-        make.left.equalTo(self.TVNameLabel.mas_right);
+        make.width.equalTo(@50);
     }];
     
     [self.TVNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -69,8 +69,10 @@
         _linkState = [[UILabel alloc]init];
         _linkState.font = UIFontMake(13);
         _linkState.textColor = UIColorMake(229, 75, 20);
-        _linkState.textAlignment = NSTextAlignmentRight;
-        _linkState.text = @"在线";
+        _linkState.textAlignment = NSTextAlignmentCenter;
+        _linkState.text = @" 连接 ";
+        _linkState.layer.borderWidth = 0.5;
+        _linkState.layer.borderColor = UIColorMake(229, 75, 20).CGColor;
         [self.contentView addSubview:_linkState];
     }
     return _linkState;
