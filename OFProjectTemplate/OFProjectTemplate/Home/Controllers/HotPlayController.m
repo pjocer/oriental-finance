@@ -19,6 +19,7 @@
 #import "OSearchController.h"
 #import "AderView.h"
 #import "SocialShareManager.h"
+#import "AppointmentController.h"
 
 @interface HotPlayController ()
 @property (nonatomic, strong) OSearchView *searchView;
@@ -62,7 +63,9 @@
 }
 
 - (void)gotoAppointmentController {
-    
+    AppointmentController *controller =[[AppointmentController alloc] initWithTitle:@"预约"];
+    controller.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (OSearchView *)searchView {
@@ -96,22 +99,16 @@
 
 - (HotTableViewModel *)tableViewModel {
     if (!_tableViewModel) {
-        _tableViewModel = [[HotTableViewModel alloc] init];
+        _tableViewModel = [[HotTableViewModel alloc] initWithType:HomeControllerTypeHot];
         WEAKSELF
-        [_tableViewModel setDidSelectedBlock:^(HotTableViewSelectType type, id data) {
+        [_tableViewModel setDidSelectedBlock:^(TableViewSelectType type, id data) {
             STRONGSELF
-            if (type == HotTableViewSelectTypeHot) {
+            if (type == TableViewSelectTypeHot) {
                 DetailsViewController *vc = [[DetailsViewController alloc] initWithTitle:@"详情" navBarBtns:NavBarBtnBack];
                 vc.hidesBottomBarWhenPushed = YES;
                 [self.navigationController pushViewController:vc animated:YES];
-            } else if (type == HotTableViewSelectTypeRefresh) {
+            } else if (type == TableViewSelectTypeRefresh) {
                 [OShowHud showErrorHudWith:@"刷新" animated:YES];
-            } else if (type == HotTableViewSelectTypeLiving) {
-                [ShareMenu showDefaultTypesWithStyle:ShareMenuStyleBorderCancel compeletion:^(ShareMenuItemView *item) {
-                    [OShowHud showErrorHudWith:item.titleLabel.text animated:YES];
-                } canceled:^{
-                    [OShowHud showErrorHudWith:@"取消分享" animated:YES];
-                }];
             }
         }];
     }

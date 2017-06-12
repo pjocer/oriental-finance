@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HotTableViewCell.h"
 
 static NSString *HomeChannelLiveCellIdentifier = @"HomeChannelLiveCellIdentifier";
 
 @interface HomeChannelLiveCell : UITableViewCell
 
-- (void)setDidSelectedBlock:(dispatch_block_t)block;
+@property (nonatomic, copy) void (^block)(TableViewSelectType type, id data);
 
 @end

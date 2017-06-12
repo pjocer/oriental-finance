@@ -20,7 +20,6 @@
 @property (nonatomic, strong) UILabel *gapLabel;
 @property (nonatomic, strong) UICollectionView *gridView;
 @property (nonatomic, strong) HotTableViewCellViewModel *viewModel;
-@property (nonatomic, copy) void (^block)(BOOL isCell);
 @end
 
 @implementation HotTableViewCell
@@ -43,13 +42,10 @@
 
 - (instancetype)subscribe {
     [[self.viewModel rac_signalForSelector:@selector(collectionView:didSelectItemAtIndexPath:) fromProtocol:@protocol(UICollectionViewDelegate)] subscribeNext:^(RACTuple *x) {
-        NSIndexPath *indexPath = x.second;
-        NSLog(@"%ld",indexPath.item);
-        NSLog(@"%@ --- %@ --- %s",self,self.viewModel, __func__);
-        if (_block) _block(YES);
+        if (_block) _block(TableViewSelectTypeHot, nil);
     }];
     [[self.refreshButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        if (_block) _block(NO);
+        if (_block) _block(TableViewSelectTypeRefresh, nil);
     }];
     return self;
 }
@@ -81,10 +77,6 @@
     }];
     
     return self;
-}
-
-- (void)setDidSelectedBlock:(void (^)(BOOL))block {
-    _block = block;
 }
 
 - (UILabel *)gapLabel {

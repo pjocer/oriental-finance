@@ -1059,14 +1059,14 @@
 				D609C2F91EE16A8B00A09C19 /* VarietyViewController.m */,
 				D609C2FB1EE16AC000A09C19 /* TVViewController.h */,
 				D609C2FC1EE16AC000A09C19 /* TVViewController.m */,
+				D3EA48151EED156D00ECD89C /* AppointmentController.h */,
+				D3EA48161EED156D00ECD89C /* AppointmentController.m */,
 				D65DC8991ED825500030636D /* DetailsViewController.h */,
 				D65DC89A1ED825500030636D /* DetailsViewController.m */,
 				D640951D1EE9878800DD24FF /* MessageViewController.h */,
 				D640951E1EE9878800DD24FF /* MessageViewController.m */,
 				D64095261EEA9F6D00DD24FF /* ConnectionEquipmentVC.h */,
 				D64095271EEA9F6D00DD24FF /* ConnectionEquipmentVC.m */,
-				D3EA48151EED156D00ECD89C /* AppointmentController.h */,
-				D3EA48161EED156D00ECD89C /* AppointmentController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

@@ -7,31 +7,60 @@
 //
 
 #import "AppointmentController.h"
+#import "HotTableViewModel.h"
+#import <Masonry.h>
+#import "HotTableViewCell.h"
+#import "OFUIkitMacro.h"
+#import <ReactiveCocoa.h>
+#import "OShowHud.h"
+
 
 @interface AppointmentController ()
-
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) HotTableViewModel *tableViewModel;
 @end
 
 @implementation AppointmentController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+- (void)loadView {
+    [super loadView];
+    [self.view addSubview:self.tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.bottom.right.equalTo(self.view);
+    }];
+    [self subscribe];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)subscribe {
+    [[self.tableViewModel rac_signalForSelector:@selector(tableView:didSelectRowAtIndexPath:) fromProtocol:@protocol(UITableViewDelegate)] subscribeNext:^(id x) {
+        [OShowHud showErrorHudWith:@"123" animated:YES];
+        
+    }];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.delegate = self.tableViewModel;
+        _tableView.dataSource = self.tableViewModel;
+        [_tableView registerClass:[HotTableViewCell class] forCellReuseIdentifier:HotTableViewCellIdentifier];
+    }
+    return _tableView;
 }
-*/
+
+- (HotTableViewModel *)tableViewModel {
+    if (!_tableViewModel) {
+        _tableViewModel = [[HotTableViewModel alloc] initWithType:HomeControllerTypeAppointment];
+        [_tableViewModel setDidSelectedBlock:^(TableViewSelectType type, id data) {
+            if (type == TableViewSelectTypeHot) {
+                [OShowHud showErrorHudWith:@"item" animated:YES];
+            } else if (type == TableViewSelectTypeRefresh) {
+                [OShowHud showErrorHudWith:@"refresh" animated:YES];
+            }
+        }];
+    }
+    return _tableViewModel;
+}
 
 @end

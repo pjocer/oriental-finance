@@ -64,6 +64,7 @@
     }
     if (self.type == TableViewCellTypeLiving) {
         ChannelLiveHeaderView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:ChannelLiveHeaderViewIdentifier forIndexPath:indexPath];
+        header.clickAction = self.headerClickAction;
         return header;
     }
     return nil;

@@ -11,5 +11,5 @@
 static NSString *ChannelLiveHeaderViewIdentifier = @"ChannelLiveHeaderViewIdentifier";
 
 @interface ChannelLiveHeaderView : UICollectionReusableView
-
+@property (nonatomic, copy) dispatch_block_t clickAction;
 @end

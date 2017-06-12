@@ -13,12 +13,20 @@
 #import "HomeChannelLiveCell.h"
 
 @interface HotTableViewModel ()
-@property (nonatomic, copy) void (^block)(HotTableViewSelectType, id) ;
+@property (nonatomic, copy) void (^block)(TableViewSelectType, id) ;
+@property (nonatomic, assign) HomeControllerType type;
 @end
 
 @implementation HotTableViewModel
 
-- (void)setDidSelectedBlock:(void (^)(HotTableViewSelectType, id))block {
+- (instancetype)initWithType:(HomeControllerType)type {
+    if (self = [super init]) {
+        self.type = type;
+    }
+    return self;
+}
+
+- (void)setDidSelectedBlock:(void (^)(TableViewSelectType, id))block {
     _block = block;
 }
 
@@ -27,40 +35,50 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (_show) {
-        HomeChannelLiveCell *cell = [tableView dequeueReusableCellWithIdentifier:HomeChannelLiveCellIdentifier forIndexPath:indexPath];
-        
-        [cell setDidSelectedBlock:^{
-            if (self.block) self.block(HotTableViewSelectTypeLiving, nil);
-        }];
-        return cell;
-    }
-    if (indexPath.row == 0) {
-        HotTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HotTableViewCellIdentifier forIndexPath:indexPath];
-        [cell setDidSelectedBlock:^(BOOL isCell) {
-            if (isCell) {
-                if (self.block) self.block(HotTableViewSelectTypeHot, nil);
+    switch (self.type) {
+        case HomeControllerTypeHot:
+        {
+            if (indexPath.row == 0) {
+                HotTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HotTableViewCellIdentifier forIndexPath:indexPath];
+                [cell setBlock:self.block];
+                return cell;
             } else {
-                if (self.block) self.block(HotTableViewSelectTypeRefresh, nil);
+                HomeChannelLiveCell *cell = [tableView dequeueReusableCellWithIdentifier:HomeChannelLiveCellIdentifier forIndexPath:indexPath];
+                cell.block = self.block;
+                return cell;
             }
-        }];
-        return cell;
-    } else {
-        HomeChannelLiveCell *cell = [tableView dequeueReusableCellWithIdentifier:HomeChannelLiveCellIdentifier forIndexPath:indexPath];
-        
-        [cell setDidSelectedBlock:^{
-            if (self.block) self.block(HotTableViewSelectTypeLiving, nil);
-        }];
-        return cell;
+        }
+            break;
+        case HomeControllerTypeTeleplay:
+        case HomeControllerTypeTopic:
+        case HomeControllerTypeVariety:
+        case HomeControllerTypeTelevision:
+        {
+            HomeChannelLiveCell *cell = [tableView dequeueReusableCellWithIdentifier:HomeChannelLiveCellIdentifier forIndexPath:indexPath];
+            cell.block = self.block;
+            return cell;
+        }
+        case HomeControllerTypeAppointment:
+        {
+            HotTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HotTableViewCellIdentifier forIndexPath:indexPath];
+            [cell setBlock:self.block];
+            return cell;
+        }
+            break;
+        default:
+            break;
     }
-    
+    return nil;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (_show) {
-        return 580;
-    }
-    if (indexPath.row == 0) {
+    if (self.type == HomeControllerTypeHot) {
+        if (indexPath.row == 0) {
+            return HotTableViewCellRowHeight;
+        } else {
+            return 580;
+        }
+    } else if (self.type == HomeControllerTypeAppointment) {
         return HotTableViewCellRowHeight;
     } else {
         return 580;

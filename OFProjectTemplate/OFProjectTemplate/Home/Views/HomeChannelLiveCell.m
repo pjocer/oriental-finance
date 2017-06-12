@@ -20,14 +20,9 @@
 @property (nonatomic, strong) UILabel *gapLabel;
 @property (nonatomic, strong) UICollectionView *gridView;
 @property (nonatomic, strong) HotTableViewCellViewModel *viewModel;
-@property (nonatomic, copy) dispatch_block_t block ;
 @end
 
 @implementation HomeChannelLiveCell
-
-- (void)setDidSelectedBlock:(dispatch_block_t)block {
-    _block = block;
-}
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
@@ -46,7 +41,7 @@
 
 - (instancetype)subscribe {
     [[self.viewModel rac_signalForSelector:@selector(collectionView:didSelectItemAtIndexPath:) fromProtocol:@protocol(UICollectionViewDelegate)] subscribeNext:^(id x) {
-        if (self.block) self.block();
+        if (self.block) self.block(TableViewSelectTypeLiving, nil);
     }];
     return self;
 }
@@ -116,6 +111,9 @@
 - (HotTableViewCellViewModel *)viewModel {
     if (!_viewModel) {
         _viewModel = [[HotTableViewCellViewModel alloc] initWithCellType:TableViewCellTypeLiving];
+        _viewModel.headerClickAction = ^{
+            self.block(TableViewSelectTypeLivingHeader, nil);
+        };
     }
     return _viewModel;
 }

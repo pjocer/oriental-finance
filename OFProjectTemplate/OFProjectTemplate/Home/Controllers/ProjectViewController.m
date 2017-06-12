@@ -13,12 +13,10 @@
 #import "OFUIkitMacro.h"
 #import <ReactiveCocoa.h>
 #import "OShowHud.h"
-#import "OBannerView.h"
 
 @interface ProjectViewController ()
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) HotTableViewModel *tableViewModel;
-//@property (nonatomic, strong) OBannerView *banner;
 
 @end
 
@@ -46,43 +44,22 @@
         _tableView.delegate = self.tableViewModel;
         _tableView.dataSource = self.tableViewModel;
         [_tableView registerClass:[HomeChannelLiveCell class] forCellReuseIdentifier:HomeChannelLiveCellIdentifier];
-//        _tableView.tableHeaderView = self.banner;
     }
     return _tableView;
 }
 
 - (HotTableViewModel *)tableViewModel {
     if (!_tableViewModel) {
-        _tableViewModel = [[HotTableViewModel alloc] init];
-        _tableViewModel.show = YES;
+        _tableViewModel = [[HotTableViewModel alloc] initWithType:HomeControllerTypeTopic];
+        [_tableViewModel setDidSelectedBlock:^(TableViewSelectType type, id data) {
+            if (type == TableViewSelectTypeLiving) {
+                [OShowHud showErrorHudWith:@"item" animated:YES];
+            } else if (type == TableViewSelectTypeLivingHeader) {
+                [OShowHud showErrorHudWith:@"header" animated:YES];
+            }
+        }];
     }
     return _tableViewModel;
 }
-
-//- (OBannerView *)banner {
-//    if (!_banner) {
-//        _banner = [[OBannerView alloc] initWithChangeModel:ChangeModeFade];
-//        _banner.frame = CGRectMake(0, 0, SCREEN_WIDTH, 200);
-//        _banner.imageClickBlock = ^(NSInteger index) {
-//            [OShowHud showErrorHudWith:[NSString stringWithFormat:@"点击了第%ld张图片",index] animated:YES];
-//        };
-//    }
-//    return _banner;
-//}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    [OBannerView clearDiskCache];
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -8,10 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, TableViewSelectType) {
+    TableViewSelectTypeHot,
+    TableViewSelectTypeLiving,
+    TableViewSelectTypeLivingHeader,
+    TableViewSelectTypeRefresh,
+    TableViewSelectTypeUnknow,
+};
+
 static NSString *HotTableViewCellIdentifier = @"HotTableViewCellIdentifier";
 
 @interface HotTableViewCell : UITableViewCell
 
-- (void)setDidSelectedBlock:(void(^)(BOOL isCell))block;
+@property (nonatomic, copy) void (^block)(TableViewSelectType type, id data);
 
 @end

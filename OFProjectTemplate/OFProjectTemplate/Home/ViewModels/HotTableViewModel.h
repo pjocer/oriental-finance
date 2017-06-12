@@ -8,18 +8,22 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "HotTableViewCellViewModel.h"
+#import "HotTableViewCell.h"
 
-typedef NS_OPTIONS(NSInteger, HotTableViewSelectType) {
-    HotTableViewSelectTypeHot,
-    HotTableViewSelectTypeLiving,
-    HotTableViewSelectTypeRefresh,
-    HotTableViewSelectTypeUnknow,
+typedef NS_ENUM(NSInteger, HomeControllerType) {
+    HomeControllerTypeHot,          //当前热播
+    HomeControllerTypeTeleplay,     //电视剧
+    HomeControllerTypeTopic,        //专题
+    HomeControllerTypeVariety,      //综艺
+    HomeControllerTypeTelevision,   //电视台
+    HomeControllerTypeAppointment,  //预约
 };
 
 @interface HotTableViewModel : NSObject <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, assign) BOOL show;
+- (instancetype)initWithType:(HomeControllerType)type;
 
-- (void)setDidSelectedBlock:(void(^)(HotTableViewSelectType type, id data))block;
+- (void)setDidSelectedBlock:(void(^)(TableViewSelectType type, id data))block;
 
 @end
