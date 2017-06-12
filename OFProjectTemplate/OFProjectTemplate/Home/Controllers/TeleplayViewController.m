@@ -7,7 +7,7 @@
 //
 
 #import "TeleplayViewController.h"
-#import "HotTableViewModel.h"
+#import "HomeTableViewModel.h"
 #import <Masonry.h>
 #import "OFUIkitMacro.h"
 #import <ReactiveCocoa.h>
@@ -17,7 +17,7 @@
 @interface TeleplayViewController ()
 
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) HotTableViewModel *tableViewModel;
+@property (nonatomic, strong) HomeTableViewModel *tableViewModel;;
 
 @end
 
@@ -49,9 +49,9 @@
     return _tableView;
 }
 
-- (HotTableViewModel *)tableViewModel {
+- (HomeTableViewModel  *)tableViewModel {
     if (!_tableViewModel) {
-        _tableViewModel = [[HotTableViewModel alloc] initWithType:HomeControllerTypeTeleplay];
+        _tableViewModel = [[HomeTableViewModel  alloc] initWithType:HomeControllerTypeTeleplay];
         [_tableViewModel setDidSelectedBlock:^(TableViewSelectType type, id data) {
             if (type == TableViewSelectTypeLiving) {
                 [OShowHud showErrorHudWith:@"item" animated:YES];

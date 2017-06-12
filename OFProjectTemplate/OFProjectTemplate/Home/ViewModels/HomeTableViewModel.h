@@ -1,5 +1,5 @@
 //
-//  HotTableViewModel.h
+//  HomeTableViewModel .h
 //  OFProjectTemplate
 //
 //  Created by 吉冠虎 on 2017/5/27.
@@ -20,7 +20,7 @@ typedef NS_ENUM(NSInteger, HomeControllerType) {
     HomeControllerTypeAppointment,  //预约
 };
 
-@interface HotTableViewModel : NSObject <UITableViewDelegate, UITableViewDataSource>
+@interface HomeTableViewModel : NSObject <UITableViewDelegate, UITableViewDataSource>
 
 - (instancetype)initWithType:(HomeControllerType)type;
 

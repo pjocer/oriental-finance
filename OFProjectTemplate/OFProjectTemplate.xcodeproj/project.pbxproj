@@ -16,7 +16,7 @@
 		D3207FCD1ED910A500240DD2 /* HomeTabContainerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FCC1ED910A500240DD2 /* HomeTabContainerViewModel.m */; };
 		D3207FD01ED91C8A00240DD2 /* HotPlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FCF1ED91C8A00240DD2 /* HotPlayController.m */; };
 		D3207FD61ED92E1A00240DD2 /* OSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FD51ED92E1A00240DD2 /* OSearchView.m */; };
-		D3207FD91ED9487200240DD2 /* HotTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FD81ED9487200240DD2 /* HotTableViewModel.m */; };
+		D3207FD91ED9487200240DD2 /* HomeTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FD81ED9487200240DD2 /* HomeTableViewModel.m */; };
 		D3207FDC1ED9497000240DD2 /* HotTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FDB1ED9497000240DD2 /* HotTableViewCell.m */; };
 		D3207FDF1ED94C5F00240DD2 /* HotTableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FDE1ED94C5F00240DD2 /* HotTableViewCellViewModel.m */; };
 		D338209F1EE1089A00D5B99C /* OSearchContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D338209E1EE1089A00D5B99C /* OSearchContentView.m */; };
@@ -159,8 +159,8 @@
 		D3207FCF1ED91C8A00240DD2 /* HotPlayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotPlayController.m; sourceTree = "<group>"; };
 		D3207FD41ED92E1A00240DD2 /* OSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSearchView.h; sourceTree = "<group>"; };
 		D3207FD51ED92E1A00240DD2 /* OSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSearchView.m; sourceTree = "<group>"; };
-		D3207FD71ED9487200240DD2 /* HotTableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotTableViewModel.h; sourceTree = "<group>"; };
-		D3207FD81ED9487200240DD2 /* HotTableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotTableViewModel.m; sourceTree = "<group>"; };
+		D3207FD71ED9487200240DD2 /* HomeTableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewModel.h; sourceTree = "<group>"; };
+		D3207FD81ED9487200240DD2 /* HomeTableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewModel.m; sourceTree = "<group>"; };
 		D3207FDA1ED9497000240DD2 /* HotTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotTableViewCell.h; sourceTree = "<group>"; };
 		D3207FDB1ED9497000240DD2 /* HotTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotTableViewCell.m; sourceTree = "<group>"; };
 		D3207FDD1ED94C5F00240DD2 /* HotTableViewCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotTableViewCellViewModel.h; sourceTree = "<group>"; };
@@ -1085,8 +1085,8 @@
 			children = (
 				D3207FCB1ED910A500240DD2 /* HomeTabContainerViewModel.h */,
 				D3207FCC1ED910A500240DD2 /* HomeTabContainerViewModel.m */,
-				D3207FD71ED9487200240DD2 /* HotTableViewModel.h */,
-				D3207FD81ED9487200240DD2 /* HotTableViewModel.m */,
+				D3207FD71ED9487200240DD2 /* HomeTableViewModel.h */,
+				D3207FD81ED9487200240DD2 /* HomeTableViewModel.m */,
 				D3207FDD1ED94C5F00240DD2 /* HotTableViewCellViewModel.h */,
 				D3207FDE1ED94C5F00240DD2 /* HotTableViewCellViewModel.m */,
 			);
@@ -1555,7 +1555,7 @@
 				D640951C1EE9736A00DD24FF /* PlayHistoryVC.m in Sources */,
 				D64094EB1EE7CCFA00DD24FF /* EditSetUpVC.m in Sources */,
 				D65DC8C91ED825500030636D /* ApplicationTableViewCell.m in Sources */,
-				D3207FD91ED9487200240DD2 /* HotTableViewModel.m in Sources */,
+				D3207FD91ED9487200240DD2 /* HomeTableViewModel.m in Sources */,
 				D609C3111EE173E500A09C19 /* InformationInputView.m in Sources */,
 				D30CB1A21ED7F6DE000AC0BB /* main.m in Sources */,
 				D33820B81EE1714600D5B99C /* ChannelLiveHeaderView.m in Sources */,

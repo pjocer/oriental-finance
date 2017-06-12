@@ -7,7 +7,7 @@
 //
 
 #import "TVViewController.h"
-#import "HotTableViewModel.h"
+#import "HomeTableViewModel.h"
 #import <Masonry.h>
 #import "HomeChannelLiveCell.h"
 #import "OFUIkitMacro.h"
@@ -17,7 +17,7 @@
 @interface TVViewController ()
 
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) HotTableViewModel *tableViewModel;
+@property (nonatomic, strong) HomeTableViewModel *tableViewModel;;
 
 @end
 
@@ -50,9 +50,9 @@
     return _tableView;
 }
 
-- (HotTableViewModel *)tableViewModel {
+- (HomeTableViewModel  *)tableViewModel {
     if (!_tableViewModel) {
-        _tableViewModel = [[HotTableViewModel alloc] initWithType:HomeControllerTypeTelevision];
+        _tableViewModel = [[HomeTableViewModel  alloc] initWithType:HomeControllerTypeTelevision];
         [_tableViewModel setDidSelectedBlock:^(TableViewSelectType type, id data) {
             if (type == TableViewSelectTypeLiving) {
                 [OShowHud showErrorHudWith:@"item" animated:YES];

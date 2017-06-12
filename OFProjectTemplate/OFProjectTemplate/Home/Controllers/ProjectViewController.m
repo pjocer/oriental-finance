@@ -7,7 +7,7 @@
 //
 
 #import "ProjectViewController.h"
-#import "HotTableViewModel.h"
+#import "HomeTableViewModel.h"
 #import "HomeChannelLiveCell.h"
 #import <Masonry.h>
 #import "OFUIkitMacro.h"
@@ -16,7 +16,7 @@
 
 @interface ProjectViewController ()
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) HotTableViewModel *tableViewModel;
+@property (nonatomic, strong) HomeTableViewModel *tableViewModel;;
 
 @end
 
@@ -48,9 +48,9 @@
     return _tableView;
 }
 
-- (HotTableViewModel *)tableViewModel {
+- (HomeTableViewModel  *)tableViewModel {
     if (!_tableViewModel) {
-        _tableViewModel = [[HotTableViewModel alloc] initWithType:HomeControllerTypeTopic];
+        _tableViewModel = [[HomeTableViewModel  alloc] initWithType:HomeControllerTypeTopic];
         [_tableViewModel setDidSelectedBlock:^(TableViewSelectType type, id data) {
             if (type == TableViewSelectTypeLiving) {
                 [OShowHud showErrorHudWith:@"item" animated:YES];

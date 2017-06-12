@@ -10,7 +10,7 @@
 #import <Masonry.h>
 #import "OFUIkitMacro.h"
 #import "OSearchView.h"
-#import "HotTableViewModel.h"
+#import "HomeTableViewModel.h"
 #import "HotTableViewCell.h"
 #import "DetailsViewController.h"
 #import "OBannerView.h"
@@ -25,7 +25,7 @@
 @property (nonatomic, strong) OSearchView *searchView;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UIView *banner;
-@property (nonatomic, strong) HotTableViewModel *tableViewModel;
+@property (nonatomic, strong) HomeTableViewModel *tableViewModel;
 @end
 
 @implementation HotPlayController
@@ -97,9 +97,9 @@
     return _tableView;
 }
 
-- (HotTableViewModel *)tableViewModel {
+- (HomeTableViewModel  *)tableViewModel {
     if (!_tableViewModel) {
-        _tableViewModel = [[HotTableViewModel alloc] initWithType:HomeControllerTypeHot];
+        _tableViewModel = [[HomeTableViewModel  alloc] initWithType:HomeControllerTypeHot];
         WEAKSELF
         [_tableViewModel setDidSelectedBlock:^(TableViewSelectType type, id data) {
             STRONGSELF
@@ -109,6 +109,10 @@
                 [self.navigationController pushViewController:vc animated:YES];
             } else if (type == TableViewSelectTypeRefresh) {
                 [OShowHud showErrorHudWith:@"刷新" animated:YES];
+            } else if (type == TableViewSelectTypeLivingHeader) {
+                [OShowHud showErrorHudWith:@"header" animated:YES];
+            } else if (type == TableViewSelectTypeLiving) {
+                [OShowHud showErrorHudWith:@"item" animated:YES];
             }
         }];
     }

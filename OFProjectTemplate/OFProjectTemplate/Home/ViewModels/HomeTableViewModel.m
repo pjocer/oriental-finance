@@ -1,23 +1,23 @@
 //
-//  HotTableViewModel.m
+//  HomeTableViewModel .m
 //  OFProjectTemplate
 //
 //  Created by 吉冠虎 on 2017/5/27.
 //  Copyright © 2017年 com.oriental-finance.ios. All rights reserved.
 //
 
-#import "HotTableViewModel.h"
+#import "HomeTableViewModel.h"
 #import "HotTableViewCell.h"
 #import "OFHomeMacro.h"
 #import "OFUIkitMacro.h"
 #import "HomeChannelLiveCell.h"
 
-@interface HotTableViewModel ()
+@interface HomeTableViewModel ()
 @property (nonatomic, copy) void (^block)(TableViewSelectType, id) ;
 @property (nonatomic, assign) HomeControllerType type;
 @end
 
-@implementation HotTableViewModel
+@implementation HomeTableViewModel
 
 - (instancetype)initWithType:(HomeControllerType)type {
     if (self = [super init]) {

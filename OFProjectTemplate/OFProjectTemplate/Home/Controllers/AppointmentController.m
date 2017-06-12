@@ -7,7 +7,7 @@
 //
 
 #import "AppointmentController.h"
-#import "HotTableViewModel.h"
+#import "HomeTableViewModel.h"
 #import <Masonry.h>
 #import "HotTableViewCell.h"
 #import "OFUIkitMacro.h"
@@ -17,7 +17,7 @@
 
 @interface AppointmentController ()
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) HotTableViewModel *tableViewModel;
+@property (nonatomic, strong) HomeTableViewModel *tableViewModel;;
 @end
 
 @implementation AppointmentController
@@ -49,9 +49,9 @@
     return _tableView;
 }
 
-- (HotTableViewModel *)tableViewModel {
+- (HomeTableViewModel  *)tableViewModel {
     if (!_tableViewModel) {
-        _tableViewModel = [[HotTableViewModel alloc] initWithType:HomeControllerTypeAppointment];
+        _tableViewModel = [[HomeTableViewModel  alloc] initWithType:HomeControllerTypeAppointment];
         [_tableViewModel setDidSelectedBlock:^(TableViewSelectType type, id data) {
             if (type == TableViewSelectTypeHot) {
                 [OShowHud showErrorHudWith:@"item" animated:YES];
