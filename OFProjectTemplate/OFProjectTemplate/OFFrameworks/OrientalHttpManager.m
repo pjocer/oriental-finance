@@ -58,13 +58,13 @@
     self.requestSerializer.cachePolicy = cachePolicy;
     
     //params
-    NSString *url = [OrientalHttpManager urlWithServiceType:serviceType targetUrl:targetUrl];
+    NSString *url = [OrientalHttpManager urlWithServiceType:serviceType];
     NSMutableDictionary *copyParams = [NSMutableDictionary dictionary];
     if (params) {
         [copyParams addEntriesFromDictionary:params];
     }
     NSMutableDictionary *orignalContent = [NSMutableDictionary dictionary];
-    [orignalContent setValue:@"401" forKey:@"itype"];
+    [orignalContent setValue:targetUrl forKey:@"itype"];
     [orignalContent setValue:@"xxxxx" forKey:@"deviceId"];
     [orignalContent setValue:copyParams forKey:@"data"];
     [orignalContent setValue:@"ccccccc" forKey:@"token"];
@@ -129,19 +129,19 @@
 }
 
 
-+ (NSString *)urlWithServiceType:(OrientalServiceType)serviceType targetUrl:(NSString *)targetUrl {
++ (NSString *)urlWithServiceType:(OrientalServiceType)serviceType{
     switch (serviceType) {
         case OrientalServiceTypeNormal:
-            return [NSString stringWithFormat:@"%@/%@",OriHost,targetUrl];
+            return [NSString stringWithFormat:@"%@",OriHost];
             break;
         case OrientalServiceTypeUnknow:
-            return [NSString stringWithFormat:@"%@/%@",OriHost,targetUrl];
+            return [NSString stringWithFormat:@"%@",OriHost];
             break;
             
         default:
             break;
     }
-    return [NSString stringWithFormat:@"%@/%@",OriHost,targetUrl];
+    return [NSString stringWithFormat:@"%@",OriHost];
 }
 
 @end

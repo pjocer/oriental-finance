@@ -1,12 +1,12 @@
 //
-//  HomeViewController.m
+//  HomeContainerController.m
 //  OFClient
 //
 //  Created by 吉冠虎 on 2017/5/24.
 //  Copyright © 2017年 com.oriental-finance. All rights reserved.
 //
 
-#import "HomeViewController.h"
+#import "HomeContainerController.h"
 #import <ReactiveCocoa.h>
 #import <Masonry.h>
 #import "HomeTabContainerViewModel.h"
@@ -17,12 +17,12 @@
 #import "PlayHistoryVC.h"
 #import "ConnectionEquipmentVC.h"
 
-@interface HomeViewController ()
+@interface HomeContainerController ()
 @property (nonatomic, strong)  HomeTabContainerViewModel* viewModel;
 @property (nonatomic, strong) TYTabButtonPagerController *pagerController;
 @end
 
-@implementation HomeViewController
+@implementation HomeContainerController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

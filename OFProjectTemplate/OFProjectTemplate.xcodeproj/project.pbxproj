@@ -16,8 +16,8 @@
 		D3207FCD1ED910A500240DD2 /* HomeTabContainerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FCC1ED910A500240DD2 /* HomeTabContainerViewModel.m */; };
 		D3207FD01ED91C8A00240DD2 /* HotPlayController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FCF1ED91C8A00240DD2 /* HotPlayController.m */; };
 		D3207FD61ED92E1A00240DD2 /* OSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FD51ED92E1A00240DD2 /* OSearchView.m */; };
-		D3207FD91ED9487200240DD2 /* HotTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FD81ED9487200240DD2 /* HotTableViewModel.m */; };
-		D3207FDC1ED9497000240DD2 /* HotTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FDB1ED9497000240DD2 /* HotTableViewCell.m */; };
+		D3207FD91ED9487200240DD2 /* HomeTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FD81ED9487200240DD2 /* HomeTableViewModel.m */; };
+		D3207FDC1ED9497000240DD2 /* HomeVerticalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FDB1ED9497000240DD2 /* HomeVerticalTableViewCell.m */; };
 		D3207FDF1ED94C5F00240DD2 /* HotTableViewCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3207FDE1ED94C5F00240DD2 /* HotTableViewCellViewModel.m */; };
 		D338209F1EE1089A00D5B99C /* OSearchContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D338209E1EE1089A00D5B99C /* OSearchContentView.m */; };
 		D33820A21EE1133900D5B99C /* OSearchContentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D33820A11EE1133900D5B99C /* OSearchContentViewModel.m */; };
@@ -113,7 +113,7 @@
 		D65DC8CB1ED825500030636D /* OFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC88F1ED825500030636D /* OFBaseViewController.m */; };
 		D65DC8CC1ED825500030636D /* ChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8931ED825500030636D /* ChannelViewController.m */; };
 		D65DC8CD1ED825500030636D /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC89A1ED825500030636D /* DetailsViewController.m */; };
-		D65DC8CE1ED825500030636D /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC89C1ED825500030636D /* HomeViewController.m */; };
+		D65DC8CE1ED825500030636D /* HomeContainerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC89C1ED825500030636D /* HomeContainerController.m */; };
 		D65DC8CF1ED825500030636D /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC89F1ED825500030636D /* HomeModel.m */; };
 		D65DC8D21ED825500030636D /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8AD1ED825500030636D /* MyViewController.m */; };
 		D65DC8D31ED825500030636D /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8B21ED825500030636D /* MyView.m */; };
@@ -159,10 +159,10 @@
 		D3207FCF1ED91C8A00240DD2 /* HotPlayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotPlayController.m; sourceTree = "<group>"; };
 		D3207FD41ED92E1A00240DD2 /* OSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSearchView.h; sourceTree = "<group>"; };
 		D3207FD51ED92E1A00240DD2 /* OSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSearchView.m; sourceTree = "<group>"; };
-		D3207FD71ED9487200240DD2 /* HotTableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotTableViewModel.h; sourceTree = "<group>"; };
-		D3207FD81ED9487200240DD2 /* HotTableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotTableViewModel.m; sourceTree = "<group>"; };
-		D3207FDA1ED9497000240DD2 /* HotTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotTableViewCell.h; sourceTree = "<group>"; };
-		D3207FDB1ED9497000240DD2 /* HotTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotTableViewCell.m; sourceTree = "<group>"; };
+		D3207FD71ED9487200240DD2 /* HomeTableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewModel.h; sourceTree = "<group>"; };
+		D3207FD81ED9487200240DD2 /* HomeTableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewModel.m; sourceTree = "<group>"; };
+		D3207FDA1ED9497000240DD2 /* HomeVerticalTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeVerticalTableViewCell.h; sourceTree = "<group>"; };
+		D3207FDB1ED9497000240DD2 /* HomeVerticalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeVerticalTableViewCell.m; sourceTree = "<group>"; };
 		D3207FDD1ED94C5F00240DD2 /* HotTableViewCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotTableViewCellViewModel.h; sourceTree = "<group>"; };
 		D3207FDE1ED94C5F00240DD2 /* HotTableViewCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotTableViewCellViewModel.m; sourceTree = "<group>"; };
 		D338209D1EE1089A00D5B99C /* OSearchContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSearchContentView.h; sourceTree = "<group>"; };
@@ -429,8 +429,8 @@
 		D65DC8931ED825500030636D /* ChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelViewController.m; sourceTree = "<group>"; };
 		D65DC8991ED825500030636D /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		D65DC89A1ED825500030636D /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
-		D65DC89B1ED825500030636D /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		D65DC89C1ED825500030636D /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		D65DC89B1ED825500030636D /* HomeContainerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeContainerController.h; sourceTree = "<group>"; };
+		D65DC89C1ED825500030636D /* HomeContainerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeContainerController.m; sourceTree = "<group>"; };
 		D65DC89E1ED825500030636D /* HomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeModel.h; sourceTree = "<group>"; };
 		D65DC89F1ED825500030636D /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
 		D65DC8A71ED825500030636D /* OFHomeMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OFHomeMacro.h; path = ../Macro/OFHomeMacro.h; sourceTree = "<group>"; };
@@ -1047,8 +1047,8 @@
 		D65DC8981ED825500030636D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D65DC89B1ED825500030636D /* HomeViewController.h */,
-				D65DC89C1ED825500030636D /* HomeViewController.m */,
+				D65DC89B1ED825500030636D /* HomeContainerController.h */,
+				D65DC89C1ED825500030636D /* HomeContainerController.m */,
 				D3207FCE1ED91C8A00240DD2 /* HotPlayController.h */,
 				D3207FCF1ED91C8A00240DD2 /* HotPlayController.m */,
 				D609C2F21EE1685800A09C19 /* TeleplayViewController.h */,
@@ -1059,14 +1059,14 @@
 				D609C2F91EE16A8B00A09C19 /* VarietyViewController.m */,
 				D609C2FB1EE16AC000A09C19 /* TVViewController.h */,
 				D609C2FC1EE16AC000A09C19 /* TVViewController.m */,
+				D3EA48151EED156D00ECD89C /* AppointmentController.h */,
+				D3EA48161EED156D00ECD89C /* AppointmentController.m */,
 				D65DC8991ED825500030636D /* DetailsViewController.h */,
 				D65DC89A1ED825500030636D /* DetailsViewController.m */,
 				D640951D1EE9878800DD24FF /* MessageViewController.h */,
 				D640951E1EE9878800DD24FF /* MessageViewController.m */,
 				D64095261EEA9F6D00DD24FF /* ConnectionEquipmentVC.h */,
 				D64095271EEA9F6D00DD24FF /* ConnectionEquipmentVC.m */,
-				D3EA48151EED156D00ECD89C /* AppointmentController.h */,
-				D3EA48161EED156D00ECD89C /* AppointmentController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1085,8 +1085,8 @@
 			children = (
 				D3207FCB1ED910A500240DD2 /* HomeTabContainerViewModel.h */,
 				D3207FCC1ED910A500240DD2 /* HomeTabContainerViewModel.m */,
-				D3207FD71ED9487200240DD2 /* HotTableViewModel.h */,
-				D3207FD81ED9487200240DD2 /* HotTableViewModel.m */,
+				D3207FD71ED9487200240DD2 /* HomeTableViewModel.h */,
+				D3207FD81ED9487200240DD2 /* HomeTableViewModel.m */,
 				D3207FDD1ED94C5F00240DD2 /* HotTableViewCellViewModel.h */,
 				D3207FDE1ED94C5F00240DD2 /* HotTableViewCellViewModel.m */,
 			);
@@ -1108,8 +1108,8 @@
 				D3207FD51ED92E1A00240DD2 /* OSearchView.m */,
 				D33820B61EE1714600D5B99C /* ChannelLiveHeaderView.h */,
 				D33820B71EE1714600D5B99C /* ChannelLiveHeaderView.m */,
-				D3207FDA1ED9497000240DD2 /* HotTableViewCell.h */,
-				D3207FDB1ED9497000240DD2 /* HotTableViewCell.m */,
+				D3207FDA1ED9497000240DD2 /* HomeVerticalTableViewCell.h */,
+				D3207FDB1ED9497000240DD2 /* HomeVerticalTableViewCell.m */,
 				D33820B01EE15D6600D5B99C /* HomeChannelLiveCell.h */,
 				D33820B11EE15D6600D5B99C /* HomeChannelLiveCell.m */,
 				D3E5435C1ED9505900D8898C /* VerticalVideoCollectionCell.h */,
@@ -1510,7 +1510,7 @@
 				D65DC8D51ED825500030636D /* TYTabButtonPagerController.m in Sources */,
 				D65DC8D41ED825500030636D /* TYPagerController.m in Sources */,
 				D609C3231EE1A4C700A09C19 /* SetUpTableViewCell.m in Sources */,
-				D65DC8CE1ED825500030636D /* HomeViewController.m in Sources */,
+				D65DC8CE1ED825500030636D /* HomeContainerController.m in Sources */,
 				D65DC8D21ED825500030636D /* MyViewController.m in Sources */,
 				D64094E81EE7CBC800DD24FF /* SetupView.m in Sources */,
 				D3207FD61ED92E1A00240DD2 /* OSearchView.m in Sources */,
@@ -1531,7 +1531,7 @@
 				D609C3201EE1A38300A09C19 /* SetUpViewController.m in Sources */,
 				D3EA47C51EE9556700ECD89C /* OrientalUploadModel.m in Sources */,
 				D609C2F41EE1685800A09C19 /* TeleplayViewController.m in Sources */,
-				D3207FDC1ED9497000240DD2 /* HotTableViewCell.m in Sources */,
+				D3207FDC1ED9497000240DD2 /* HomeVerticalTableViewCell.m in Sources */,
 				D3E543791EDE698900D8898C /* UIControl+Interval.m in Sources */,
 				D64095101EE92CA300DD24FF /* FamilyView.m in Sources */,
 				D609C3031EE16C7C00A09C19 /* CCTVChannelViewController.m in Sources */,
@@ -1555,7 +1555,7 @@
 				D640951C1EE9736A00DD24FF /* PlayHistoryVC.m in Sources */,
 				D64094EB1EE7CCFA00DD24FF /* EditSetUpVC.m in Sources */,
 				D65DC8C91ED825500030636D /* ApplicationTableViewCell.m in Sources */,
-				D3207FD91ED9487200240DD2 /* HotTableViewModel.m in Sources */,
+				D3207FD91ED9487200240DD2 /* HomeTableViewModel.m in Sources */,
 				D609C3111EE173E500A09C19 /* InformationInputView.m in Sources */,
 				D30CB1A21ED7F6DE000AC0BB /* main.m in Sources */,
 				D33820B81EE1714600D5B99C /* ChannelLiveHeaderView.m in Sources */,
@@ -1703,19 +1703,7 @@
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"${PODS_ROOT}/Headers/Public\"",
-					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
-					"\"${PODS_ROOT}/Headers/Public/FDFullscreenPopGesture\"",
-					"\"${PODS_ROOT}/Headers/Public/FMDB\"",
-					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
-					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
-					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
-					"\"${PODS_ROOT}/Headers/Public/QMUIKit\"",
-					"\"${PODS_ROOT}/Headers/Public/ReactiveCocoa\"",
-					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
-					"\"${PODS_ROOT}/Headers/Public/UMengAnalytics-NO-IDFA\"",
-					"\"${PODS_ROOT}/Headers/Public/UMengUShare\"",
-					"\"${PODS_ROOT}/Headers/Public/XRCarouselView\"",
+					"\"${PODS_ROOT}/Headers/Public\"/**",
 					"$(PROJECT_DIR)/OFProjectTemplate/OFFrameworks/HBRSAHandler/openssl/include",
 				);
 				INFOPLIST_FILE = OFProjectTemplate/Info.plist;
@@ -1742,19 +1730,7 @@
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"${PODS_ROOT}/Headers/Public\"",
-					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
-					"\"${PODS_ROOT}/Headers/Public/FDFullscreenPopGesture\"",
-					"\"${PODS_ROOT}/Headers/Public/FMDB\"",
-					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
-					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
-					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
-					"\"${PODS_ROOT}/Headers/Public/QMUIKit\"",
-					"\"${PODS_ROOT}/Headers/Public/ReactiveCocoa\"",
-					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
-					"\"${PODS_ROOT}/Headers/Public/UMengAnalytics-NO-IDFA\"",
-					"\"${PODS_ROOT}/Headers/Public/UMengUShare\"",
-					"\"${PODS_ROOT}/Headers/Public/XRCarouselView\"",
+					"\"${PODS_ROOT}/Headers/Public\"/**",
 					"$(PROJECT_DIR)/OFProjectTemplate/OFFrameworks/HBRSAHandler/openssl/include",
 				);
 				INFOPLIST_FILE = OFProjectTemplate/Info.plist;

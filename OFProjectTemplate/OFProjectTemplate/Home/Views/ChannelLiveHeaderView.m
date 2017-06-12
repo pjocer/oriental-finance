@@ -50,7 +50,14 @@
 }
 
 - (instancetype)subscribe {
+    self.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction)];
+    [self addGestureRecognizer:tap];
     return self;
+}
+
+- (void)tapAction {
+    if (self.clickAction) self.clickAction();
 }
 
 - (UIImageView *)imageView {

@@ -77,8 +77,8 @@
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
         _titleLabel.font = UIFontMake(14);
-        _titleLabel.text = @"泰国恶作剧之吻";
         _titleLabel.textColor = DEFAULT_TEXT_COLOR;
+        _titleLabel.text = @"泰国恶作剧之吻";   
     }
     return _titleLabel;
 }

@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "OFUIkitMacro.h"
-#import "HomeViewController.h"
+#import "HomeContainerController.h"
 #import "RemoteViewController.h"
 #import "MyViewController.h"
 #import "ApplicationViewController.h"
@@ -61,7 +61,7 @@
         _rootController = [[UITabBarController alloc] init];
         _rootController.delegate = self;
         _rootController.tabBar.barTintColor = [UIColor whiteColor];
-        HomeViewController *home = [[HomeViewController alloc] initWithTitle:@"东方遥控宝" navBarBtns:NavBarBtnNone];
+        HomeContainerController *home = [[HomeContainerController alloc] initWithTitle:@"东方遥控宝" navBarBtns:NavBarBtnNone];
         ChannelViewController *channel = [[ChannelViewController alloc] initWithTitle:@"频道" navBarBtns:NavBarBtnNone];
         RemoteViewController *vc3 = [[RemoteViewController alloc] initWithTitle:@"遥控器" navBarBtns:NavBarBtnNone];
         ApplicationViewController *vc4 = [[ApplicationViewController alloc] initWithTitle:@"应用" navBarBtns:NavBarBtnNone];

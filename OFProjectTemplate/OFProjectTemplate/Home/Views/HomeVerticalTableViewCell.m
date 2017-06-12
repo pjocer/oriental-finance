@@ -6,24 +6,23 @@
 //  Copyright © 2017年 com.oriental-finance.ios. All rights reserved.
 //
 
-#import "HotTableViewCell.h"
+#import "HomeVerticalTableViewCell.h"
 #import "OFUIkitMacro.h"
 #import "HotTableViewCellViewModel.h"
 #import "VerticalVideoCollectionCell.h"
 #import <Masonry.h>
 #import <ReactiveCocoa.h>
 
-@interface HotTableViewCell () 
+@interface HomeVerticalTableViewCell ()
 @property (nonatomic, strong) UIImageView *titleIcon;
 @property (nonatomic, strong) UIButton *refreshButton;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *gapLabel;
 @property (nonatomic, strong) UICollectionView *gridView;
 @property (nonatomic, strong) HotTableViewCellViewModel *viewModel;
-@property (nonatomic, copy) void (^block)(BOOL isCell);
 @end
 
-@implementation HotTableViewCell
+@implementation HomeVerticalTableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
@@ -43,13 +42,10 @@
 
 - (instancetype)subscribe {
     [[self.viewModel rac_signalForSelector:@selector(collectionView:didSelectItemAtIndexPath:) fromProtocol:@protocol(UICollectionViewDelegate)] subscribeNext:^(RACTuple *x) {
-        NSIndexPath *indexPath = x.second;
-        NSLog(@"%ld",indexPath.item);
-        NSLog(@"%@ --- %@ --- %s",self,self.viewModel, __func__);
-        if (_block) _block(YES);
+        if (_block) _block(TableViewSelectTypeHot, nil);
     }];
     [[self.refreshButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        if (_block) _block(NO);
+        if (_block) _block(TableViewSelectTypeRefresh, nil);
     }];
     return self;
 }
@@ -81,10 +77,6 @@
     }];
     
     return self;
-}
-
-- (void)setDidSelectedBlock:(void (^)(BOOL))block {
-    _block = block;
 }
 
 - (UILabel *)gapLabel {
