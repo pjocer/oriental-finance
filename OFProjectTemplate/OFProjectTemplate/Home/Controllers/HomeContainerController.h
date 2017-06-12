@@ -1,5 +1,5 @@
 //
-//  HomeViewController.h
+//  HomeContainerController.h
 //  OFClient
 //
 //  Created by 吉冠虎 on 2017/5/24.
@@ -8,6 +8,6 @@
 
 #import "OFBaseViewController.h"
 
-@interface HomeViewController : OFBaseViewController
+@interface HomeContainerController : OFBaseViewController
 
 @end

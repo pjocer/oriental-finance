@@ -113,7 +113,7 @@
 		D65DC8CB1ED825500030636D /* OFBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC88F1ED825500030636D /* OFBaseViewController.m */; };
 		D65DC8CC1ED825500030636D /* ChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8931ED825500030636D /* ChannelViewController.m */; };
 		D65DC8CD1ED825500030636D /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC89A1ED825500030636D /* DetailsViewController.m */; };
-		D65DC8CE1ED825500030636D /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC89C1ED825500030636D /* HomeViewController.m */; };
+		D65DC8CE1ED825500030636D /* HomeContainerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC89C1ED825500030636D /* HomeContainerController.m */; };
 		D65DC8CF1ED825500030636D /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC89F1ED825500030636D /* HomeModel.m */; };
 		D65DC8D21ED825500030636D /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8AD1ED825500030636D /* MyViewController.m */; };
 		D65DC8D31ED825500030636D /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8B21ED825500030636D /* MyView.m */; };
@@ -429,8 +429,8 @@
 		D65DC8931ED825500030636D /* ChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelViewController.m; sourceTree = "<group>"; };
 		D65DC8991ED825500030636D /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		D65DC89A1ED825500030636D /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
-		D65DC89B1ED825500030636D /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		D65DC89C1ED825500030636D /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		D65DC89B1ED825500030636D /* HomeContainerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeContainerController.h; sourceTree = "<group>"; };
+		D65DC89C1ED825500030636D /* HomeContainerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeContainerController.m; sourceTree = "<group>"; };
 		D65DC89E1ED825500030636D /* HomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeModel.h; sourceTree = "<group>"; };
 		D65DC89F1ED825500030636D /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
 		D65DC8A71ED825500030636D /* OFHomeMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OFHomeMacro.h; path = ../Macro/OFHomeMacro.h; sourceTree = "<group>"; };
@@ -1047,8 +1047,8 @@
 		D65DC8981ED825500030636D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D65DC89B1ED825500030636D /* HomeViewController.h */,
-				D65DC89C1ED825500030636D /* HomeViewController.m */,
+				D65DC89B1ED825500030636D /* HomeContainerController.h */,
+				D65DC89C1ED825500030636D /* HomeContainerController.m */,
 				D3207FCE1ED91C8A00240DD2 /* HotPlayController.h */,
 				D3207FCF1ED91C8A00240DD2 /* HotPlayController.m */,
 				D609C2F21EE1685800A09C19 /* TeleplayViewController.h */,
@@ -1510,7 +1510,7 @@
 				D65DC8D51ED825500030636D /* TYTabButtonPagerController.m in Sources */,
 				D65DC8D41ED825500030636D /* TYPagerController.m in Sources */,
 				D609C3231EE1A4C700A09C19 /* SetUpTableViewCell.m in Sources */,
-				D65DC8CE1ED825500030636D /* HomeViewController.m in Sources */,
+				D65DC8CE1ED825500030636D /* HomeContainerController.m in Sources */,
 				D65DC8D21ED825500030636D /* MyViewController.m in Sources */,
 				D64094E81EE7CBC800DD24FF /* SetupView.m in Sources */,
 				D3207FD61ED92E1A00240DD2 /* OSearchView.m in Sources */,
