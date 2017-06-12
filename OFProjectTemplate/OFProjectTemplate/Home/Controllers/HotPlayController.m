@@ -131,6 +131,11 @@
         };
         [_banner addSubview:bannerView];
         AderView *ader = [[AderView alloc] initWithFrame: CGRectMake(0, CGRectGetHeight(bannerView.frame), SCREEN_WIDTH, 30)];
+        WEAKSELF
+        [ader setDidSelectedBlock:^{
+            STRONGSELF
+            [self gotoAppointmentController];
+        }];
         [_banner addSubview:ader];
     }
     return _banner;
