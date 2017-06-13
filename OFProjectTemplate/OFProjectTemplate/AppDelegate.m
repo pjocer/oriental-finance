@@ -45,7 +45,7 @@
     [SocialShareManager sharedInstance].defaultImage = ImageNamed(@"b1");
     [SocialShareManager sharedInstance].defaultTitle = @"东方遥控宝";
     [SocialShareManager sharedInstance].defaultContent = @"万能的遥控宝@3！！%#%￥##@";
-    [SocialShareManager sharedInstance].defaultLinkUrl = @"www.baidu.com";
+    [SocialShareManager sharedInstance].defaultLinkUrl = @"www.oriental-finance.com";
     [SocialAnalysisManager openLog:UMengLogEnabled];
 }
 

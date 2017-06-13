@@ -45,13 +45,13 @@
 //            
 //        }];
         
-        SetUpViewController *setup = [[SetUpViewController alloc]initWithTitle:@"设置" navBarBtns:NavBarBtnBack];
+        SetUpViewController *setup = [[SetUpViewController alloc] initWithTitle:@"设置" navBarBtns:NavBarBtnBack];
         setup.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:setup animated:YES];
 
         
     }else if (btn.tag == 101) {
-        FamilyViewController *vc = [[FamilyViewController alloc]initWithTitle:@"家庭成员" navBarBtns:NavBarBtnBack];
+        FamilyViewController *vc = [[FamilyViewController alloc] initWithTitle:@"家庭成员" navBarBtns:NavBarBtnBack];
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
 
