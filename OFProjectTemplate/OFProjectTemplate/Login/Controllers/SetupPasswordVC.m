@@ -10,8 +10,12 @@
 #import "InformationInputView.h"
 #import "Masonry.h"
 #import "OFUIkitMacro.h"
+#import "MacorLogin.h"
+#import "OriNetworking.h"
 
-@interface SetupPasswordVC ()<InformationInputDelegate>
+@interface SetupPasswordVC ()<InformationInputDelegate>{
+    InformationInputView *setPasswordView;
+}
 
 @end
 
@@ -26,7 +30,7 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    InformationInputView *setPasswordView = [[InformationInputView alloc]initWithType:@"" num:1];
+    setPasswordView = [[InformationInputView alloc]initWithType:@"" num:1];
     setPasswordView.titleLabel.text = @"设置您的密码";
     setPasswordView.textField.placeholder = @"6-20位字母、数字组合";
     if ([self.typeStr isEqualToString:@"Forgot"]) {
@@ -51,9 +55,19 @@
 //}
 
 - (void)InformationInputDelegate:(UIButton *)btn {
-    [self dismissViewControllerAnimated:YES completion:^{
+    
+    if (setPasswordView.textField.text.length != 0 && setPasswordView.textField2.text.length !=0) {
+        NSDictionary *dic = @{@"phone": setPasswordView.textField.text,@"pwd":setPasswordView.textField2.text};
         
-    }];
+        [[OrientalHttpManager sharedInstance] requestWithTarget:Login params:dic success:^(NSURLSessionDataTask *task, id responseObject) {
+            [self dismissViewControllerAnimated:YES completion:^{
+                
+            }];
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            
+        }];
+    }
+
 }
 
 - (void)didReceiveMemoryWarning {

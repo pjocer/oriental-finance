@@ -9,10 +9,13 @@
 #ifndef MacorLogin_h
 #define MacorLogin_h
 
-#define Register @"registerUser"  //注册
-#define SendCode @"codeSend" //发送验证码
-#define VailadCode @"vailadCode" //验证验证码
-#define Login @"userLogin" //登录
+#define Register @"301"  //注册
+#define SendCode @"302" //发送验证码
+#define VailadCode @"303" //验证验证码
+#define Login @"304" //登录
+#define ForgetPwd @"305" //忘记密码
+#define ChangePwd @"350" //忘记密码
+#define EditMemberInfo @"352" //忘记密码
 
 
 

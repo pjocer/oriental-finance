@@ -15,9 +15,12 @@
 #import "AppDelegate.h"
 #import "MacorLogin.h"
 #import "OriNetworking.h"
+#import "WBAlertController.h"
 
 
-@interface LoginViewController ()<loginViewDelegate, InformationInputDelegate>
+@interface LoginViewController ()<loginViewDelegate, InformationInputDelegate>{
+    InformationInputView *loginView;
+}
 
 @end
 
@@ -26,7 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    InformationInputView *loginView = [[InformationInputView alloc]initWithType:@"" num:2];
+    loginView = [[InformationInputView alloc]initWithType:@"" num:2];
     loginView.titleLabel.text = @"昵称";
     loginView.textField.placeholder = @"用户名 / 手机号码";
     loginView.titleLabel2.text = @"密码";
@@ -48,13 +51,6 @@
         make.left.right.bottom.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
     
-    NSDictionary *dic = @{@"asd": @""};
-    
-    [[OrientalHttpManager sharedInstance] requestWithTarget:Register params:dic success:^(NSURLSessionDataTask *task, id responseObject) {
-        
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-     
-    }];
     
     
 }
@@ -69,9 +65,24 @@
 
 
 - (void)InformationInputDelegate:(UIButton *)btn {
-    [self dismissViewControllerAnimated:YES completion:^{
+    if (loginView.textField.text.length != 0 && loginView.textField2.text.length !=0) {
+        NSDictionary *dic = @{@"phone": loginView.textField.text,@"pwd":loginView.textField2.text};
         
-    }];
+        [[OrientalHttpManager sharedInstance] requestWithTarget:Login params:dic success:^(NSURLSessionDataTask *task, id responseObject) {
+            [self dismissViewControllerAnimated:YES completion:^{
+                
+            }];
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            
+        }];
+    }else{
+        
+        
+    }
+    
+    
+    
+    
 }
 
 -(void)loginViewDelegate:(UIButton *)btn {

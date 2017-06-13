@@ -54,10 +54,10 @@
         make.right.equalTo(weakSelf.mas_centerX).offset(0.25);
         make.height.equalTo(@80);
     }];
-    
+
     UILabel *line1 = [[UILabel alloc] init];
     line1.backgroundColor = [UIColor lightGrayColor];
-    [self addSubview:line1];
+    [scrollView addSubview:line1];
     
     [line1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.btn1.mas_top).offset(30);
@@ -75,7 +75,7 @@
     
     UILabel *line2 = [[UILabel alloc] init];
     line2.backgroundColor = [UIColor colorWithRed:233/255.0 green:233/255.0 blue:233/255.0 alpha:1.0];
-    [self addSubview:line2];
+    [scrollView addSubview:line2];
     
     [line2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.btn1.mas_bottom);

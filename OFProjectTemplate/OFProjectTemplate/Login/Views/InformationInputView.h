@@ -10,6 +10,7 @@
 @protocol InformationInputDelegate <NSObject>
 
 -(void)InformationInputDelegate:(UIButton *)btn;
+-(void)vailadCodeDelegate:(UIButton *)btn;
 
 @end
 

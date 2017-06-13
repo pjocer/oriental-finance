@@ -11,8 +11,13 @@
 #import "Masonry.h"
 #import "OFUIkitMacro.h"
 #import "SetupPasswordVC.h"
+#import "MacorLogin.h"
+#import "OriNetworking.h"
+#import "WBAlertController.h"
 
-@interface RegisteredViewController ()<InformationInputDelegate>
+@interface RegisteredViewController ()<InformationInputDelegate>{
+    InformationInputView *loginView;
+}
 
 @end
 
@@ -20,7 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    InformationInputView *loginView = [[InformationInputView alloc]initWithType:@"show" num:2];
+    loginView = [[InformationInputView alloc]initWithType:@"show" num:2];
     loginView.titleLabel.text = @"您的手机号码";
     loginView.textField.placeholder = @"输入手机号码";
     loginView.titleLabel2.text = @"验证码";
@@ -41,10 +46,48 @@
 - (void)viewDidAppear:(BOOL)animated {
     
 }
+
+- (void)vailadCodeDelegate:(UIButton *)btn {
+    if (loginView.textField.text.length != 0 && loginView.textField.text.length == 11) {
+        NSDictionary *dic = @{@"phone": loginView.textField.text};
+        
+        [[OrientalHttpManager sharedInstance] requestWithTarget:SendCode params:dic success:^(NSURLSessionDataTask *task, id responseObject) {
+            
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            
+        }];
+    }else{
+        WBAlertController *alert = [WBAlertController initWBAlerControllerWithTitle:@"提示" message:@"请输入正确的手机号码" style:@"1" titleArr:[NSMutableArray arrayWithObjects:@"确定", nil] alerAction:^(NSInteger index) {
+            
+            
+            
+        }];
+        [self presentViewController:alert animated:YES completion:^{
+            
+        }];
+    }
+}
+
+
 - (void)InformationInputDelegate:(UIButton *)btn {
-    SetupPasswordVC *vc = [[SetupPasswordVC alloc]initWithTitle:@"设置密码" navBarBtns:NavBarBtnBack];
-    vc.typeStr = self.typeStr;
-    [self.navigationController pushViewController:vc animated:YES];
+    if (loginView.textField.text.length != 0 && loginView.textField2.text.length !=0) {
+        NSDictionary *dic = @{@"phone": loginView.textField.text,@"code":loginView.textField2.text};
+        
+        [[OrientalHttpManager sharedInstance] requestWithTarget:VailadCode params:dic success:^(NSURLSessionDataTask *task, id responseObject) {
+            SetupPasswordVC *vc = [[SetupPasswordVC alloc]initWithTitle:@"设置密码" navBarBtns:NavBarBtnBack];
+            vc.typeStr = self.typeStr;
+            [self.navigationController pushViewController:vc animated:YES];
+        } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            
+        }];
+    }else{
+        WBAlertController *alert = [WBAlertController initWBAlerControllerWithTitle:@"提示" message:@"请输入正确的手机号码" style:@"1" titleArr:[NSMutableArray arrayWithObjects:@"确定", nil] alerAction:^(NSInteger index) {
+            
+        }];
+        [self presentViewController:alert animated:YES completion:^{
+            
+        }];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

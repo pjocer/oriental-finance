@@ -106,11 +106,17 @@
     [self.delegate InformationInputDelegate:btn];
 }
 
+- (void)vailadAction:(UIButton *)btn{
+    [self.delegate vailadCodeDelegate:btn];
+}
+
+
 - (UIButton *)validationBtn {
     if (!_validationBtn) {
         _validationBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_validationBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
         _validationBtn.titleLabel.font = UIFontMake(16);
+        [_validationBtn addTarget:self action:@selector(vailadAction:) forControlEvents:UIControlEventTouchUpInside];
         [_validationBtn setTitleColor:UIColorMake(229, 75, 20) forState:UIControlStateNormal];
     }
     return _validationBtn;
