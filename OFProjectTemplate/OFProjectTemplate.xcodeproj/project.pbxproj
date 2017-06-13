@@ -697,12 +697,12 @@
 		D3EA471D1EE7930400ECD89C /* Share */ = {
 			isa = PBXGroup;
 			children = (
+				D3EA47251EE7BF8400ECD89C /* SocialShareManager.h */,
+				D3EA47261EE7BF8400ECD89C /* SocialShareManager.m */,
 				D3EA471F1EE7971500ECD89C /* ShareMenu.h */,
 				D3EA47201EE7971500ECD89C /* ShareMenu.m */,
 				D3EA47221EE79E3600ECD89C /* ShareMenuItemView.h */,
 				D3EA47231EE79E3600ECD89C /* ShareMenuItemView.m */,
-				D3EA47251EE7BF8400ECD89C /* SocialShareManager.h */,
-				D3EA47261EE7BF8400ECD89C /* SocialShareManager.m */,
 			);
 			name = Share;
 			sourceTree = "<group>";

@@ -36,7 +36,7 @@
         UMShareWebpageObject *webPage = [UMShareWebpageObject shareObjectWithTitle:title descr:content thumImage:image];
         webPage.webpageUrl = url;
         [self shareWithType:item.operationtype UMShareObject:webPage success:success failure:failure];
-    } canceled:canceled autoHidden:YES];
+    } canceled:canceled];
 }
 
 - (void)shareWithPlatforms:(MoreOperationType)platforms title:(NSString *)title content:(NSString *)content imageUrl:(NSURL *)imageUrl linkUrl:(NSString *)url downloadImageCompletion:(void (^)(UIImage *, NSError *))downloadCompletion success:(void (^)(MoreOperationType))success failure:(void (^)(NSError *))failure canceled:(void (^)())canceled {
