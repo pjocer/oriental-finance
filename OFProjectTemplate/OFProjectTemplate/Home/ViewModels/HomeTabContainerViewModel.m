@@ -32,7 +32,6 @@
     return self.titles.count;
 }
 
-
 - (NSString *)pagerController:(TYPagerController *)pagerController titleForIndex:(NSInteger)index {
     return self.titles[index];
 }

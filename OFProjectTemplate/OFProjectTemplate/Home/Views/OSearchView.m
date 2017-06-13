@@ -15,7 +15,7 @@
 //@property (nonatomic, strong) UISearchBar *searchBar;
 
 @property (nonatomic, strong) UIButton *searchbarsss;
-@property (nonatomic, strong) UIButton *orderButton;
+@property (nonatomic, strong) QMUIButton *orderButton;
 
 @end
 
@@ -101,20 +101,16 @@
 
 
 
-- (UIButton *)orderButton {
+- (QMUIButton *)orderButton {
     if (!_orderButton) {
-        _orderButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _orderButton = [[QMUIButton alloc] initWithImage:ImageNamed(@"home_ appointment") title:@"预约"];
         _orderButton.layer.masksToBounds = YES;
         _orderButton.layer.cornerRadius = 14;
         _orderButton.titleLabel.font = UIFontMake(13);
-        [_orderButton setTitle:@"预约" forState:UIControlStateNormal];
         [_orderButton setTitleColor:DEFAULT_TEXT_COLOR forState:UIControlStateNormal];
         [_orderButton setBackgroundColor:DEFAULT_BG_COLOR];
-        UIImage *image = ImageNamed(@"home_ appointment");
-        [_orderButton setImage:image forState:UIControlStateNormal];
-        _orderButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
-        [_orderButton setTitleEdgeInsets:UIEdgeInsetsMake(0, -30, 0, 0)];
-        [_orderButton setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, -60)];
+        _orderButton.spacingBetweenImageAndTitle = 3;
+        _orderButton.imagePosition = QMUIButtonImagePositionRight;
     }
     return _orderButton;
 }

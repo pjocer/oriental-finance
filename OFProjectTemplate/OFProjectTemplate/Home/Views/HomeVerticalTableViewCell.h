@@ -20,6 +20,8 @@ static NSString *HomeVerticalTableViewCellIdentifier = @"HomeVerticalTableViewCe
 
 @interface HomeVerticalTableViewCell : UITableViewCell
 
+@property (nonatomic, assign) BOOL shouldShowAppointBtn;
+
 @property (nonatomic, copy) void (^block)(TableViewSelectType type, id data);
 
 @end

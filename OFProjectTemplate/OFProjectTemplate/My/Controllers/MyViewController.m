@@ -15,6 +15,7 @@
 #import "MyCollectionVC.h"
 #import "PlayHistoryVC.h"
 #import "MessageViewController.h"
+#import "ShareMenu.h"
 
 @interface MyViewController ()<myViewDelegate>
 
@@ -81,7 +82,11 @@
         
         
     } else if (btn.tag == 131) {
-        
+        [ShareMenu showDefaultTypesWithStyle:ShareMenuStyleBorderCancel compeletion:^(ShareMenuItemView *item) {
+            
+        } canceled:^{
+            
+        }];
         
     } else if (btn.tag == 132) {
         MyTVViewController *setup = [[MyTVViewController alloc]initWithTitle:@"我的电视" navBarBtns:NavBarBtnBack];

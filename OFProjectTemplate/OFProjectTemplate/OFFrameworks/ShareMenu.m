@@ -12,7 +12,6 @@
 @interface ShareMenu () <QMUIMoreOperationDelegate>
 @property (nonatomic, copy) MoreOperationItemAction action;
 @property (nonatomic, copy) dispatch_block_t canceledAction;
-@property (nonatomic, assign) BOOL autoHidden;
 @end
 
 @implementation ShareMenu
@@ -29,9 +28,7 @@
         if (menu.action) {
             menu.action(itemView);
         }
-        if (menu.autoHidden) {
-            [menu hideToBottom];
-        }
+        [menu hideToBottom];
     }];
     [[self rac_signalForSelector:NSSelectorFromString(@"hideToBottomCancelled:")] subscribeNext:^(RACTuple *x) {
         if (self.canceledAction && [x.first boolValue]) self.canceledAction();
@@ -41,14 +38,13 @@
 
 + (instancetype)showDefaultTypesWithStyle:(ShareMenuStyle)style compeletion:(MoreOperationItemAction)compeletion canceled:(dispatch_block_t)canceled{
     
-    return [self showWith:MoreOperationTypeShareWechat|MoreOperationTypeShareMoment|MoreOperationTypeShareQzone|MoreOperationTypeShareWeibo|MoreOperationTypeShareMail|MoreOperationTypeBookMark|MoreOperationTypeSafari|MoreOperationTypeReport style:ShareMenuStyleBorderCancel compeletion:compeletion canceled:canceled autoHidden:YES];
+    return [self showWith:MoreOperationTypeShareWechat|MoreOperationTypeShareMoment|MoreOperationTypeShareQzone|MoreOperationTypeShareWeibo|MoreOperationTypeShareMail|MoreOperationTypeBookMark|MoreOperationTypeSafari|MoreOperationTypeReport style:ShareMenuStyleBorderCancel compeletion:compeletion canceled:canceled];
 }
 
-+ (instancetype)showWith:(MoreOperationType)type style:(ShareMenuStyle)style compeletion:(MoreOperationItemAction)compeletion canceled:(dispatch_block_t)canceled autoHidden:(BOOL)hidden{
++ (instancetype)showWith:(MoreOperationType)type style:(ShareMenuStyle)style compeletion:(MoreOperationItemAction)compeletion canceled:(dispatch_block_t)canceled{
     NSAssert(type, @"MoreOperationType must not be MoreOperationNone");
     ShareMenu *menu = [ShareMenu new];
     [menu subscribe].delegate = menu;
-    menu.autoHidden = hidden;
     menu.action = compeletion;
     menu.canceledAction = canceled;
     if (type & MoreOperationTypeShareWechat) {

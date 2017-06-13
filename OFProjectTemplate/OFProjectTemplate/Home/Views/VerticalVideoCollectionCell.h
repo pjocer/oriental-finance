@@ -12,4 +12,6 @@ static NSString *VerticalVideoCollectionCellIdentifier = @"VerticalVideoCollecti
 
 @interface VerticalVideoCollectionCell : UICollectionViewCell
 
+@property (nonatomic, assign) BOOL shouldShowAppointBtns;
+
 @end

@@ -62,6 +62,7 @@
         {
             HomeVerticalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HomeVerticalTableViewCellIdentifier forIndexPath:indexPath];
             [cell setBlock:self.block];
+            cell.shouldShowAppointBtn = YES;
             return cell;
         }
             break;

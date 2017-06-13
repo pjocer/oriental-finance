@@ -26,7 +26,6 @@ typedef void(^MoreOperationItemAction)(ShareMenuItemView *item);
 + (instancetype)showWith:(MoreOperationType)type
                    style:(ShareMenuStyle)style
              compeletion:(MoreOperationItemAction)compeletion
-                canceled:(dispatch_block_t)canceled
-              autoHidden:(BOOL)hidden;
+                canceled:(dispatch_block_t)canceled;
 
 @end
