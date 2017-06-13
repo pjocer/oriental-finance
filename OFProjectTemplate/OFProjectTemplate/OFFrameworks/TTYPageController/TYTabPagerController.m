@@ -355,6 +355,10 @@
             [self.delegate pagerController:self transitionFromeCell:fromCell toCell:toCell animated:animated];
         }
         
+        if ([self.delegate respondsToSelector:@selector(pagerController:transitionFromIndex:toIndex:animated:)]) {
+            [self.delegate pagerController:self transitionFromIndex:fromIndex toIndex:toIndex animated:animated];
+        }
+        
         [self setUnderLineFrameWithIndex:toIndex animated:fromCell && animated ? animated: NO];
     }
     
@@ -369,7 +373,9 @@
     if (_tabDelegateFlags.transitionFromeCellProgress) {
         [self.delegate pagerController:self transitionFromeCell:fromCell toCell:toCell progress:progress];
     }
-    
+    if ([self.delegate respondsToSelector:@selector(pagerController:transitionFromIndex:toIndex:progress:)]) {
+        [self.delegate pagerController:self transitionFromIndex:fromIndex toIndex:toIndex progress:progress];
+    }
     [self setUnderLineFrameWithfromIndex:fromIndex toIndex:toIndex progress:progress];
 }
 
