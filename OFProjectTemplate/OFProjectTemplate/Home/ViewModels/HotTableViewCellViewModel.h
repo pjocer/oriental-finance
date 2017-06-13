@@ -17,6 +17,8 @@ typedef NS_ENUM(NSInteger, TableViewCellType) {
 
 @interface HotTableViewCellViewModel : NSObject <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
 
+@property (nonatomic, assign) BOOL shouldShowAppointBtn;
+
 @property (nonatomic, copy) dispatch_block_t headerClickAction;
 
 - (instancetype)initWithCellType:(TableViewCellType)type;

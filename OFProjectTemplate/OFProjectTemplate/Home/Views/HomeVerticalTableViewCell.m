@@ -15,7 +15,7 @@
 
 @interface HomeVerticalTableViewCell ()
 @property (nonatomic, strong) UIImageView *titleIcon;
-@property (nonatomic, strong) UIButton *refreshButton;
+@property (nonatomic, strong) QMUIButton *refreshButton;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *gapLabel;
 @property (nonatomic, strong) UICollectionView *gridView;
@@ -66,8 +66,7 @@
     }];
     [self.refreshButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.titleIcon);
-        make.width.height.mas_equalTo(15);
-        make.right.equalTo(self.contentView).offset(-18);
+        make.right.equalTo(self.contentView).offset(-10);
     }];
     [self.gridView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.titleIcon.mas_bottom).offset(8);
@@ -77,6 +76,11 @@
     }];
     
     return self;
+}
+
+- (void)setShouldShowAppointBtn:(BOOL)shouldShowAppointBtn {
+    _shouldShowAppointBtn = shouldShowAppointBtn;
+    self.viewModel.shouldShowAppointBtn = self.shouldShowAppointBtn;
 }
 
 - (UILabel *)gapLabel {
@@ -106,10 +110,12 @@
     return _titleLabel;
 }
 
-- (UIButton *)refreshButton {
+- (QMUIButton *)refreshButton {
     if (!_refreshButton) {
-        _refreshButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_refreshButton setBackgroundImage:ImageNamed(@"home_F5") forState:UIControlStateNormal];
+        _refreshButton = [[QMUIButton alloc] initWithImage:[ImageNamed(@"home_F5") qmui_imageWithScaleToSize:CGSizeMake(11, 11)] title:@"换一批"];
+        _refreshButton.spacingBetweenImageAndTitle = 5;
+        [_refreshButton setTitleColor:DEFAULT_TEXT_COLOR_GRAY forState:UIControlStateNormal];
+        _refreshButton.titleLabel.font = UIFontMake(14);
     }
     return _refreshButton;
     

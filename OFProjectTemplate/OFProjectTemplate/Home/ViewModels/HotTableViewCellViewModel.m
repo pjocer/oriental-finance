@@ -47,7 +47,8 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = nil;
     if (self.type == TableViewCellTypeHot) {
-        cell = (VerticalVideoCollectionCell *)[collectionView dequeueReusableCellWithReuseIdentifier:VerticalVideoCollectionCellIdentifier forIndexPath:indexPath];
+        VerticalVideoCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:VerticalVideoCollectionCellIdentifier forIndexPath:indexPath];
+        cell.shouldShowAppointBtns = self.shouldShowAppointBtn;
         return cell;
     }
     if (self.type == TableViewCellTypeLiving) {
