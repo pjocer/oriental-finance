@@ -16,10 +16,14 @@
 #import "PlayHistoryVC.h"
 #import "MessageViewController.h"
 #import "ShareMenu.h"
+<<<<<<< HEAD
 #import "MyApplicationVC.h"
 #import "MyAddressVC.h"
 #import "MyBankCardVC.h"
 
+=======
+#import "MyOrderContainer.h"
+>>>>>>> 13e5c1b6f98432b16ba7e9cf3a234bea6b7fa253
 
 @interface MyViewController ()<myViewDelegate>
 
@@ -49,20 +53,21 @@
 //            
 //        }];
         
-        SetUpViewController *setup = [[SetUpViewController alloc]initWithTitle:@"设置" navBarBtns:NavBarBtnBack];
+        SetUpViewController *setup = [[SetUpViewController alloc] initWithTitle:@"设置" navBarBtns:NavBarBtnBack];
         setup.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:setup animated:YES];
 
         
     }else if (btn.tag == 101) {
-        FamilyViewController *vc = [[FamilyViewController alloc]initWithTitle:@"家庭成员" navBarBtns:NavBarBtnBack];
+        FamilyViewController *vc = [[FamilyViewController alloc] initWithTitle:@"家庭成员" navBarBtns:NavBarBtnBack];
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
 
 
     } else if (btn.tag == 102) {
-        
-        
+        MyOrderContainer *vc = [[MyOrderContainer alloc] initWithTitle:@"我的订单" navBarBtns:NavBarBtnBack];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
     } else if (btn.tag == 111) {
         PlayHistoryVC *vc = [[PlayHistoryVC alloc]initWithTitle:@"我的预约" navBarBtns:NavBarBtnBack];
         vc.hidesBottomBarWhenPushed = YES;

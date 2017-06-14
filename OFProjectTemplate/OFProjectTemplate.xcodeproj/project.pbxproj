@@ -31,6 +31,10 @@
 		D33821181EE653D400D5B99C /* SocialLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D33821171EE653D400D5B99C /* SocialLoginManager.m */; };
 		D338211B1EE6542000D5B99C /* SocialLoginResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D338211A1EE6542000D5B99C /* SocialLoginResultModel.m */; };
 		D338211F1EE6927100D5B99C /* AderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D338211E1EE6927100D5B99C /* AderView.m */; };
+		D39EDAD31EF0C87B002C0D0B /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D39EDAD21EF0C87B002C0D0B /* AccountManager.m */; };
+		D39EDAD71EF0F280002C0D0B /* UIDevice+Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = D39EDAD61EF0F280002C0D0B /* UIDevice+Hardware.m */; };
+		D39EDADA1EF10969002C0D0B /* MyOrderContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = D39EDAD91EF10969002C0D0B /* MyOrderContainer.m */; };
+		D39EDADD1EF109AC002C0D0B /* MyOrderContainerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D39EDADC1EF109AC002C0D0B /* MyOrderContainerViewModel.m */; };
 		D3E5435E1ED9505900D8898C /* VerticalVideoCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E5435D1ED9505900D8898C /* VerticalVideoCollectionCell.m */; };
 		D3E543681ED959EF00D8898C /* UITableView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E543671ED959EF00D8898C /* UITableView+Extension.m */; };
 		D3E5436C1EDE546E00D8898C /* OBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E5436B1EDE546D00D8898C /* OBannerView.m */; };
@@ -201,6 +205,15 @@
 		D338211A1EE6542000D5B99C /* SocialLoginResultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialLoginResultModel.m; sourceTree = "<group>"; };
 		D338211D1EE6927100D5B99C /* AderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AderView.h; sourceTree = "<group>"; };
 		D338211E1EE6927100D5B99C /* AderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AderView.m; sourceTree = "<group>"; };
+		D39EDAD11EF0C87B002C0D0B /* AccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountManager.h; sourceTree = "<group>"; };
+		D39EDAD21EF0C87B002C0D0B /* AccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountManager.m; sourceTree = "<group>"; };
+		D39EDAD41EF0CD95002C0D0B /* UserCenterMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCenterMacros.h; sourceTree = "<group>"; };
+		D39EDAD51EF0F280002C0D0B /* UIDevice+Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIDevice+Hardware.h"; path = "Login/Controllers/UIDevice+Hardware.h"; sourceTree = "<group>"; };
+		D39EDAD61EF0F280002C0D0B /* UIDevice+Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+Hardware.m"; path = "Login/Controllers/UIDevice+Hardware.m"; sourceTree = "<group>"; };
+		D39EDAD81EF10969002C0D0B /* MyOrderContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderContainer.h; sourceTree = "<group>"; };
+		D39EDAD91EF10969002C0D0B /* MyOrderContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderContainer.m; sourceTree = "<group>"; };
+		D39EDADB1EF109AC002C0D0B /* MyOrderContainerViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyOrderContainerViewModel.h; path = OFProjectTemplate/My/Controllers/MyOrderContainerViewModel.h; sourceTree = SOURCE_ROOT; };
+		D39EDADC1EF109AC002C0D0B /* MyOrderContainerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyOrderContainerViewModel.m; path = OFProjectTemplate/My/Controllers/MyOrderContainerViewModel.m; sourceTree = SOURCE_ROOT; };
 		D3C29BC61ED7FF300030D262 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D3C29BC81ED7FF410030D262 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		D3C29BCA1ED7FF530030D262 /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
@@ -649,6 +662,10 @@
 				D3E5436B1EDE546D00D8898C /* OBannerView.m */,
 				D338211D1EE6927100D5B99C /* AderView.h */,
 				D338211E1EE6927100D5B99C /* AderView.m */,
+				D64094EC1EE7DD4000DD24FF /* ZHPickView.h */,
+				D64094ED1EE7DD4000DD24FF /* ZHPickView.m */,
+				D3E5436D1EDE615900D8898C /* OShowHud.h */,
+				D3E5436E1EDE615900D8898C /* OShowHud.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -656,6 +673,8 @@
 		D3E5435F1ED9593E00D8898C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D39EDAD51EF0F280002C0D0B /* UIDevice+Hardware.h */,
+				D39EDAD61EF0F280002C0D0B /* UIDevice+Hardware.m */,
 				D3E543661ED959EF00D8898C /* UITableView+Extension.h */,
 				D3E543671ED959EF00D8898C /* UITableView+Extension.m */,
 				D3E543711EDE68B800D8898C /* UIImageView+FadeForSDWebImage.h */,
@@ -673,12 +692,8 @@
 		D3E543691EDE543700D8898C /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				D3E5436D1EDE615900D8898C /* OShowHud.h */,
-				D3E5436E1EDE615900D8898C /* OShowHud.m */,
 				D609C2E91EE1338600A09C19 /* ODQTool.h */,
 				D609C2EA1EE1338600A09C19 /* ODQTool.m */,
-				D64094EC1EE7DD4000DD24FF /* ZHPickView.h */,
-				D64094ED1EE7DD4000DD24FF /* ZHPickView.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -1173,6 +1188,9 @@
 		D65DC8AA1ED825500030636D /* My */ = {
 			isa = PBXGroup;
 			children = (
+				D39EDAD41EF0CD95002C0D0B /* UserCenterMacros.h */,
+				D39EDAD11EF0C87B002C0D0B /* AccountManager.h */,
+				D39EDAD21EF0C87B002C0D0B /* AccountManager.m */,
 				D65DC8AB1ED825500030636D /* Controllers */,
 				D65DC8AF1ED825500030636D /* ViewModels */,
 				D6EAF23B1EEFE5A800F6E44C /* MacorMy.h */,
@@ -1213,6 +1231,8 @@
 				D6EAF24F1EF1280600F6E44C /* AddBanCardVC.m */,
 				D6EAF2511EF1319A00F6E44C /* SetUpPayPasswordVC.h */,
 				D6EAF2521EF1319A00F6E44C /* SetUpPayPasswordVC.m */,
+				D39EDAD81EF10969002C0D0B /* MyOrderContainer.h */,
+				D39EDAD91EF10969002C0D0B /* MyOrderContainer.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1227,6 +1247,8 @@
 		D65DC8AF1ED825500030636D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				D39EDADB1EF109AC002C0D0B /* MyOrderContainerViewModel.h */,
+				D39EDADC1EF109AC002C0D0B /* MyOrderContainerViewModel.m */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1530,6 +1552,7 @@
 				D3EA479A1EE8F1E200ECD89C /* HBRSAHandler.m in Sources */,
 				D6EAF2371EEFC76300F6E44C /* MyApplicationVC.m in Sources */,
 				D65DC8CD1ED825500030636D /* DetailsViewController.m in Sources */,
+				D39EDAD71EF0F280002C0D0B /* UIDevice+Hardware.m in Sources */,
 				D609C3261EE1A87500A09C19 /* SetUpHeadTableViewCell.m in Sources */,
 				D3E543681ED959EF00D8898C /* UITableView+Extension.m in Sources */,
 				D3E543731EDE68B800D8898C /* UIImageView+FadeForSDWebImage.m in Sources */,
@@ -1554,6 +1577,7 @@
 				D33820A91EE116B400D5B99C /* MWBaseDBDAO.m in Sources */,
 				D3E543951EDFF66D00D8898C /* OSearchController.m in Sources */,
 				D640952E1EEBC8D500DD24FF /* AddFamilyVC.m in Sources */,
+				D39EDADD1EF109AC002C0D0B /* MyOrderContainerViewModel.m in Sources */,
 				D3E543851EDE94E100D8898C /* LocalChannelTableViewModel.m in Sources */,
 				D609C2A11EE0F8EE00A09C19 /* ZYBannerView.m in Sources */,
 				D65DC8C81ED825500030636D /* ApplicationViewController.m in Sources */,
@@ -1610,6 +1634,7 @@
 				D6EAF23A1EEFC7F700F6E44C /* MyApplicationCell.m in Sources */,
 				D609C2881EDFA67900A09C19 /* IntroductionCell.m in Sources */,
 				D609C2FD1EE16AC000A09C19 /* TVViewController.m in Sources */,
+				D39EDADA1EF10969002C0D0B /* MyOrderContainer.m in Sources */,
 				D3E543881EDE95A200D8898C /* LocalChannelCell.m in Sources */,
 				D3EA473C1EE7FE2200ECD89C /* NSData+Godzippa.m in Sources */,
 				D338209F1EE1089A00D5B99C /* OSearchContentView.m in Sources */,
@@ -1624,6 +1649,7 @@
 				D64094EB1EE7CCFA00DD24FF /* EditSetUpVC.m in Sources */,
 				D65DC8C91ED825500030636D /* ApplicationTableViewCell.m in Sources */,
 				D3207FD91ED9487200240DD2 /* HomeTableViewModel.m in Sources */,
+				D39EDAD31EF0C87B002C0D0B /* AccountManager.m in Sources */,
 				D609C3111EE173E500A09C19 /* InformationInputView.m in Sources */,
 				D30CB1A21ED7F6DE000AC0BB /* main.m in Sources */,
 				D33820B81EE1714600D5B99C /* ChannelLiveHeaderView.m in Sources */,

@@ -88,7 +88,6 @@
 -(void)loginViewDelegate:(UIButton *)btn {
     if (btn.tag == 202) {
         RegisteredViewController *vc = [[RegisteredViewController alloc]initWithTitle:@"手机注册" navBarBtns:NavBarBtnBack];
-        
         [self.navigationController pushViewController:vc animated:YES];
     } else if (btn.tag == 201){
         RegisteredViewController *vc = [[RegisteredViewController alloc]initWithTitle:@"忘记密码" navBarBtns:NavBarBtnBack];

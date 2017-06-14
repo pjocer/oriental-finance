@@ -20,6 +20,7 @@
 #import "AderView.h"
 #import "SocialShareManager.h"
 #import "AppointmentController.h"
+#import <ReactiveCocoa.h>
 
 @interface HotPlayController ()
 @property (nonatomic, strong) OSearchView *searchView;
@@ -33,17 +34,12 @@
 - (void)loadView {
     [super loadView];
     [self startLoading];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    [[RACScheduler immediateScheduler] afterDelay:10 schedule:^{
         [self.view addSubview:self.searchView];
         [self.view addSubview:self.tableView];
         [self makeConstraints];
         [self stopLoading];
-    });
-}
-
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
+    }];
 }
 
 - (void)makeConstraints {

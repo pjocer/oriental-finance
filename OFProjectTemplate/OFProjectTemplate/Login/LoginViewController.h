@@ -7,7 +7,10 @@
 //
 
 #import "OFBaseViewController.h"
+#import "UserCenterMacros.h"
 
 @interface LoginViewController : OFBaseViewController
+
+@property (nonatomic, copy) void(^loginHandler)(ActionState state);
 
 @end

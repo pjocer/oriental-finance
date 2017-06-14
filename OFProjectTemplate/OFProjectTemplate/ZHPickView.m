@@ -196,8 +196,6 @@
 
 // pickerView 每列个数
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-
-    
     return [proTitleList count];
 }
 
