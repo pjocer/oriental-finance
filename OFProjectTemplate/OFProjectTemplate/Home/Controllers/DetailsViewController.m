@@ -10,6 +10,7 @@
 #import <Masonry.h>
 #import "CommentsCell.h"
 #import "IntroductionCell.h"
+#import "OFUIkitMacro.h"
 
 
 @interface DetailsViewController ()<UITableViewDelegate, UITableViewDataSource, IntroductionCellDelegate>
@@ -27,7 +28,7 @@
     
     [self.view addSubview:self.listTableView];
     [self.listTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.bottom.left.right.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+        make.top.bottom.left.right.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 49, 0));
     }];
     [self.listTableView setNeedsLayout];
     [self.listTableView layoutIfNeeded];
@@ -51,7 +52,37 @@
     self.listTableView.tableHeaderView = headView;
     
 //    [self.listTableView reloadData];
-
+    
+    UIView *footView = [[UIView alloc]init];
+    footView.backgroundColor = UIColorMake(236, 236, 236);
+    [self.view addSubview:footView];
+    
+    [footView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+        make.height.equalTo(@49);
+    }];
+    
+    UIImageView *headerImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Oval"]];
+    [footView addSubview:headerImage];
+    
+    [headerImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.bottom.equalTo(footView).insets(UIEdgeInsetsMake(9, 15, 9, 0));
+        make.width.height.equalTo(@30);
+    }];
+    
+    UIButton *replyBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    replyBtn.backgroundColor = [UIColor whiteColor];
+    [replyBtn setTitle:@"一秒登录,我来说几句..." forState:UIControlStateNormal];
+    [replyBtn setTitleColor:UIColorMake(153, 153, 153) forState:UIControlStateNormal];
+    replyBtn.titleLabel.font = UIFontMake(13);
+    [self.view addSubview:replyBtn];
+    
+    [replyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.right.bottom.equalTo(footView).insets(UIEdgeInsetsMake(9, 0, 9, 15));
+        make.left.equalTo(headerImage.mas_right).offset(15);
+    }];
+    
+    
 
     
     
@@ -98,7 +129,13 @@
         return cell1;
     }else{
         if (!cell) {
-            cell = [[CommentsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellid];
+            if (indexPath.row == 2) {
+                cell = [[CommentsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellid type:@"reply"];
+
+            }else{
+                cell = [[CommentsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellid type:@"123"];
+
+            }
             NSArray *arr = @[@"1",@"2",@"1",@"1",@"2",@"1",@"1",@"2",@"1",@"2"];
             cell.coverImage.backgroundColor = [UIColor redColor];
             cell.coverImage.image = [UIImage imageNamed:[arr objectAtIndex:indexPath.row]];

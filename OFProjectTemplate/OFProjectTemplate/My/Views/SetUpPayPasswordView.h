@@ -8,7 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+
+@protocol SetUpPayPasswordViewDelegate <NSObject>
+
+-(void)SetUpPayPasswordViewwithbtn:(NSString *)password;
+
+@end
+
 @interface SetUpPayPasswordView : UIView
+
+
+@property (nonatomic, weak) id <SetUpPayPasswordViewDelegate>delegate;
+
+@property (nonatomic, strong) UIButton *nextBtn;
 
 
 

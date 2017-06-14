@@ -1,22 +1,22 @@
 //
-//  SetUpPayPasswordVC.m
+//  SurePayPasswordVC.m
 //  OFProjectTemplate
 //
 //  Created by wangdongwen on 2017/6/14.
 //  Copyright © 2017年 com.oriental-finance.ios. All rights reserved.
 //
 
-#import "SetUpPayPasswordVC.h"
+#import "SurePayPasswordVC.h"
 #import "SetUpPayPasswordView.h"
 #import "Masonry.h"
-#import "OFUIkitMacro.h"
-#import "SurePayPasswordVC.h"
+#import "WBAlertController.h"
+#import "AddBankCardSuccess.h"
 
-@interface SetUpPayPasswordVC ()<SetUpPayPasswordViewDelegate>
+@interface SurePayPasswordVC ()<SetUpPayPasswordViewDelegate>
 
 @end
 
-@implementation SetUpPayPasswordVC
+@implementation SurePayPasswordVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,9 +31,18 @@
 }
 
 -(void)SetUpPayPasswordViewwithbtn:(NSString *)password{
-    SurePayPasswordVC *vc = [[SurePayPasswordVC alloc]initWithTitle:@"确认支付密码" navBarBtns:NavBarBtnBack];
-    vc.password = password;
-    [self.navigationController pushViewController:vc animated:YES];
+    if ([self.password isEqualToString:password]) {
+        AddBankCardSuccess *vc = [[AddBankCardSuccess alloc]initWithTitle:@"绑定成功" navBarBtns:NavBarBtnBack];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else{
+        
+        WBAlertController *alert = [WBAlertController initWBAlerControllerWithTitle:@"提示" message:@"两次密码输入不一致" style:@"1" titleArr:[NSMutableArray arrayWithObjects:@"确定", nil] alerAction:^(NSInteger index) {
+            
+        }];
+        [self presentViewController:alert animated:YES completion:^{
+            
+        }];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

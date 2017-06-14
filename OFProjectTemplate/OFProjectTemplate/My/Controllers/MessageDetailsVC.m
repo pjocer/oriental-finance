@@ -1,22 +1,23 @@
 //
-//  MessageViewController.m
+//  MessageDetailsVC.m
 //  OFProjectTemplate
 //
-//  Created by wangdongwen on 2017/6/8.
+//  Created by wangdongwen on 2017/6/14.
 //  Copyright © 2017年 com.oriental-finance.ios. All rights reserved.
 //
 
-#import "MessageViewController.h"
+#import "MessageDetailsVC.h"
+#import "MessageDetialsCell.h"
 #import "Masonry.h"
 #import "OFUIkitMacro.h"
-#import "MessageTableViewCell.h"
-#import "MessageDetailsVC.h"
 
-@interface MessageViewController ()<UITableViewDelegate, UITableViewDataSource>
+
+@interface MessageDetailsVC ()<UITableViewDelegate, UITableViewDataSource>
 
 @end
 
-@implementation MessageViewController
+@implementation MessageDetailsVC
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,7 +25,9 @@
     [self.listTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.bottom.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
-    
+    [self.listTableView beginUpdates];
+    [self.listTableView endUpdates];
+
     
     
 }
@@ -33,7 +36,11 @@
         _listTableView = [[UITableView alloc]init];
         _listTableView.delegate = self;
         _listTableView.dataSource = self;
-        _listTableView.separatorColor = [UIColor clearColor];
+        _listTableView.backgroundColor = UIColorMake(236, 236, 236);
+        _listTableView.separatorColor = UIColorMake(236, 236, 236);
+        _listTableView.estimatedRowHeight = 50;
+        _listTableView.rowHeight = UITableViewAutomaticDimension;
+        
     }
     
     return _listTableView;
@@ -41,7 +48,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 15;
+    return 5;
 }
 
 
@@ -51,19 +58,20 @@
 }
 
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 75;
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *cellid = [NSString stringWithFormat:@"cellid%ld",indexPath.row];
-    MessageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellid];
+    MessageDetialsCell *cell = [tableView dequeueReusableCellWithIdentifier:cellid];
     if (!cell) {
-        cell = [[MessageTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellid];
+        cell = [[MessageDetialsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellid];
     }
     
     
     return cell;
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 /*
