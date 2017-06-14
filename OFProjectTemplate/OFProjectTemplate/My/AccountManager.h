@@ -11,12 +11,16 @@
 
 @interface AccountManager : NSObject
 
-@property (nonatomic, assign) BOOL isLogin;
-
-@property (nonatomic, copy) NSString *token;
+@property (nonatomic, readonly, copy) NSString *token;
 
 + (instancetype)sharedManager;
 
++ (BOOL)isLogin;
+
 + (void)callLoginServiceWithHandler:(void(^)(ActionState state))handler;
+
++ (void)saveLocalAccountData:(NSDictionary *)data;
+
++ (void)clearLocalAccountData:(NSDictionary *)data;
 
 @end

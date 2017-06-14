@@ -80,17 +80,19 @@
         NSArray *selectedImages = @[ @"tab_home_selected", @"tab_channel_selected", @"tab_remote_selected", @"tab_application_selected", @"tab_my_selected" ];
         
         [_rootController.tabBar.items enumerateObjectsUsingBlock:^(UITabBarItem * _Nonnull item, NSUInteger idx, BOOL * _Nonnull stop) {
-            item.title = titles[idx];
+            if (idx != 2) {
+                item.title = titles[idx];
+                [item setTitleTextAttributes:@{ NSForegroundColorAttributeName : DEFAULT_TEXT_COLOR,
+                                                NSFontAttributeName : UIFontMake(10.0) } forState:UIControlStateNormal];
+                [item setTitleTextAttributes:@{ NSForegroundColorAttributeName : DEFAULT_TEXT_COLOR_SELECTED,
+                                                NSFontAttributeName : UIFontMake(10.0) } forState:UIControlStateSelected];
+            } else {
+                item.title = nil;
+                item.imageInsets = UIEdgeInsetsMake(-10, 0, 10, 0);
+            }
             
-            [item setTitleTextAttributes:@{ NSForegroundColorAttributeName : DEFAULT_TEXT_COLOR,
-                                            NSFontAttributeName : UIFontMake(10.0) } forState:UIControlStateNormal];
-            [item setTitleTextAttributes:@{ NSForegroundColorAttributeName : DEFAULT_TEXT_COLOR_SELECTED,
-                                            NSFontAttributeName : UIFontMake(10.0) } forState:UIControlStateSelected];
-            
-            UIImage *normalImage = [[UIImage imageNamed:normalImages[idx]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-            
-            UIImage *selectedImage = [[UIImage imageNamed:selectedImages[idx]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-            
+            UIImage *normalImage = OriImageNamed(normalImages[idx]);
+            UIImage *selectedImage = OriImageNamed(selectedImages[idx]);
             item.image = normalImage;
             item.selectedImage = selectedImage;
         }];
