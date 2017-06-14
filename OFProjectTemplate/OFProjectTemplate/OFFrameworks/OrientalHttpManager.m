@@ -13,6 +13,8 @@
 #import "HBRSAHandler.h"
 #import <MJExtension.h>
 #import "OFUIkitMacro.h"
+#import "UIDevice+Hardware.h"
+#import "AccountManager.h"
 
 #define DEFAULT_TIMEOUT 10.f
 #define DEFAULT_METHOD OrientalRequestMethodPost
@@ -65,9 +67,9 @@
     }
     NSMutableDictionary *orignalContent = [NSMutableDictionary dictionary];
     [orignalContent setValue:targetUrl forKey:@"itype"];
-    [orignalContent setValue:@"xxxxx" forKey:@"deviceId"];
+    [orignalContent setValue:[[UIDevice currentDevice] UUID] forKey:@"deviceId"];
     [orignalContent setValue:copyParams forKey:@"data"];
-    [orignalContent setValue:@"ccccccc" forKey:@"token"];
+    [orignalContent setValue:[[AccountManager sharedManager] token]?:@"xx" forKey:@"token"];
     NSString *compressed = [self compressedString:orignalContent];
     NSString *encrypt = [self encryptParamContent:compressed];
     NSDictionary *dict = @{@"s":compressed, @"sign":encrypt};

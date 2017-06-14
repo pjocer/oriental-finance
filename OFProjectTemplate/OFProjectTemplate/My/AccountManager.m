@@ -9,9 +9,10 @@
 #import "AccountManager.h"
 #import "LoginViewController.h"
 #import "AppDelegate.h"
+#import "OFUIkitMacro.h"
 
 @interface AccountManager ()
-
+@property (nonatomic, readwrite, copy) NSString *token;
 @end
 
 @implementation AccountManager
@@ -39,6 +40,18 @@
     vc.hidesBottomBarWhenPushed = YES;
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     [delegate.rootController presentViewController:nav animated:YES completion:nil];
+}
+
++ (void)saveLocalAccountData:(NSDictionary *)data {
+    
+}
+
++ (void)clearLocalAccountData:(NSDictionary *)data {
+    
+}
+
++ (BOOL)isLogin {
+    return STRINGHASVALUE([[self sharedManager] token]);
 }
 
 @end
