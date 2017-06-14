@@ -49,7 +49,7 @@
     }];
     
     UIView *view1 = [[UIView alloc]init];
-    view1.backgroundColor = [UIColor redColor];
+//    view1.backgroundColor = [UIColor redColor];
     [self.contentView addSubview:view1];
     
     [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -149,7 +149,7 @@
 - (UILabel *)contentLabel {
     if (!_contentLabel) {
         _contentLabel = [[UILabel alloc] init];
-        _contentLabel.text = @"kajsdo0aisdhnoasidhaosdihaoisdnaosdhaos后我啊谁都爱上的号盛大山东那收到货奥四大行都爱上奥斯达收到收到奥is回答iOS大火收到阿斯哦";
+        _contentLabel.text = @"东方云互动电视事业部";
         _contentLabel.textColor = [UIColor grayColor];
         _contentLabel.numberOfLines = 0;
         _contentLabel.font = [UIFont systemFontOfSize:13];

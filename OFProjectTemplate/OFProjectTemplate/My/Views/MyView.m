@@ -34,8 +34,8 @@
     [self.headerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(scrollView.mas_top).offset(30);
         make.centerX.equalTo(weakSelf);
-        make.width.equalTo(@(150));
-        make.height.equalTo(@(150));
+        make.width.equalTo(@(120));
+        make.height.equalTo(@(120));
     }];
     
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -170,7 +170,8 @@
         [_headerBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_headerBtn addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
         _headerBtn.layer.masksToBounds = YES;
-        _headerBtn.layer.cornerRadius = 75;
+        _headerBtn.layer.cornerRadius = 60
+        ;
         _headerBtn.layer.borderColor = [UIColor grayColor].CGColor;
         _headerBtn.layer.borderWidth = 0.5;
         [scrollView addSubview:_headerBtn];

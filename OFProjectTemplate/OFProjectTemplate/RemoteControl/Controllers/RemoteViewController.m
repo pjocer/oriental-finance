@@ -26,31 +26,33 @@
     self.title = @"遥控器";
     
     
-    RemoteView *view = [[RemoteView alloc]initWithFrame:self.view.frame];
-    view.backgroundColor = UIColorMake(25, 24, 29);
-    view.delegate = self;
-    [self.view addSubview:view];
-    
+//    RemoteView *view = [[RemoteView alloc]initWithFrame:self.view.frame];
+//    view.backgroundColor = UIColorMake(25, 24, 29);
+//    view.delegate = self;
+//    [self.view addSubview:view];
+//    
 
     
     
-//    UIImageView *image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"remote-1"]];
-//    image.userInteractionEnabled = YES;
-//    [self.view addSubview:image];
-//    
-//    [image mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.left.bottom.right.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
-//    }];
-//    
-//    UIButton *btn = [[UIButton alloc]init];
-//    [btn addTarget:self action:@selector(closes) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:btn];
-//    
-//    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.right.bottom.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
-//        make.width.equalTo(@90);
-//        make.height.equalTo(@120);
-//    }];
+    UIImageView *image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"jia_remote"]];
+    image.contentMode = UIViewContentModeScaleAspectFit;
+    image.backgroundColor = UIColorMake(236, 236, 236);
+    image.userInteractionEnabled = YES;
+    [self.view addSubview:image];
+    
+    [image mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.bottom.right.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+    }];
+    
+    UIButton *btn = [[UIButton alloc]init];
+    [btn addTarget:self action:@selector(closes) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
+    
+    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.bottom.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+        make.width.equalTo(@90);
+        make.height.equalTo(@120);
+    }];
 }
 
 -(void)remoteViewDelegate:(UIButton *)btn{

@@ -73,7 +73,7 @@
 - (UILabel *)contentLabel {
     if (!_contentLabel) {
         _contentLabel = [[UILabel alloc] init];
-        _contentLabel.text = @"后我啊谁都爱上后我啊谁都爱上后我啊谁都爱上后我啊谁都爱上后我啊谁都爱上";
+        _contentLabel.text = @"东方卫视东方卫视东方卫视东方卫视";
         _contentLabel.textColor = [UIColor grayColor];
         _contentLabel.numberOfLines = 0;
         _contentLabel.font = [UIFont systemFontOfSize:13];
@@ -85,7 +85,7 @@
 - (UIButton *)user1Btn {
     if (!_user1Btn) {
         _user1Btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_user1Btn setTitle:@"确定" forState:UIControlStateNormal];
+        [_user1Btn setTitle:@"CC:" forState:UIControlStateNormal];
         _user1Btn.layer.masksToBounds = YES;
         _user1Btn.titleLabel.font = UIFontMake(11);
         [_user1Btn setTitleColor:UIColorMake(74, 144, 226) forState:UIControlStateNormal];

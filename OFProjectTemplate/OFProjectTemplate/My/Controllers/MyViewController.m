@@ -16,14 +16,10 @@
 #import "PlayHistoryVC.h"
 #import "MessageViewController.h"
 #import "ShareMenu.h"
-<<<<<<< HEAD
 #import "MyApplicationVC.h"
 #import "MyAddressVC.h"
 #import "MyBankCardVC.h"
-
-=======
 #import "MyOrderContainer.h"
->>>>>>> 13e5c1b6f98432b16ba7e9cf3a234bea6b7fa253
 
 @interface MyViewController ()<myViewDelegate>
 
