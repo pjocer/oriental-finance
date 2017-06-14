@@ -45,7 +45,7 @@
     [SocialShareManager sharedInstance].defaultImage = ImageNamed(@"b1");
     [SocialShareManager sharedInstance].defaultTitle = @"东方遥控宝";
     [SocialShareManager sharedInstance].defaultContent = @"万能的遥控宝@3！！%#%￥##@";
-    [SocialShareManager sharedInstance].defaultLinkUrl = @"www.oriental-finance.com";
+    [SocialShareManager sharedInstance].defaultLinkUrl = @"www.baidu.com";
     [SocialAnalysisManager openLog:UMengLogEnabled];
 }
 
@@ -60,7 +60,7 @@
     if (!_rootController) {
         _rootController = [[UITabBarController alloc] init];
         _rootController.delegate = self;
-        _rootController.tabBar.barTintColor = [UIColor whiteColor];
+        _rootController.tabBar.barTintColor = [UIColor whiteColor];  
         HomeContainerController *home = [[HomeContainerController alloc] initWithTitle:@"东方遥控宝" navBarBtns:NavBarBtnNone];
         ChannelViewController *channel = [[ChannelViewController alloc] initWithTitle:@"频道" navBarBtns:NavBarBtnNone];
         RemoteViewController *vc3 = [[RemoteViewController alloc] initWithTitle:@"遥控器" navBarBtns:NavBarBtnNone];
