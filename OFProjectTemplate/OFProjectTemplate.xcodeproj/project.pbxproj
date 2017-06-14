@@ -133,6 +133,17 @@
 		D65DC8D91ED825500030636D /* RemoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8C61ED825500030636D /* RemoteView.m */; };
 		D65DC8DC1ED83A490030636D /* OShowDetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8DB1ED83A490030636D /* OShowDetailsView.m */; };
 		D65DC8E21ED94B430030636D /* CommentsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8E11ED94B430030636D /* CommentsCell.m */; };
+		D6EAF2371EEFC76300F6E44C /* MyApplicationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EAF2361EEFC76300F6E44C /* MyApplicationVC.m */; };
+		D6EAF23A1EEFC7F700F6E44C /* MyApplicationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EAF2391EEFC7F700F6E44C /* MyApplicationCell.m */; };
+		D6EAF23E1EF0DEC500F6E44C /* MyAddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EAF23D1EF0DEC500F6E44C /* MyAddressVC.m */; };
+		D6EAF2411EF0DF7800F6E44C /* MyAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EAF2401EF0DF7800F6E44C /* MyAddressCell.m */; };
+		D6EAF2441EF1055F00F6E44C /* EditAddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EAF2431EF1055F00F6E44C /* EditAddressVC.m */; };
+		D6EAF2471EF107C000F6E44C /* EditAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EAF2461EF107C000F6E44C /* EditAddressCell.m */; };
+		D6EAF24A1EF116C000F6E44C /* MyBankCardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EAF2491EF116C000F6E44C /* MyBankCardVC.m */; };
+		D6EAF24D1EF1171E00F6E44C /* MyBankCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EAF24C1EF1171E00F6E44C /* MyBankCardCell.m */; };
+		D6EAF2501EF1280600F6E44C /* AddBanCardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EAF24F1EF1280600F6E44C /* AddBanCardVC.m */; };
+		D6EAF2531EF1319A00F6E44C /* SetUpPayPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EAF2521EF1319A00F6E44C /* SetUpPayPasswordVC.m */; };
+		D6EAF2561EF1354A00F6E44C /* SetUpPayPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EAF2551EF1354A00F6E44C /* SetUpPayPasswordView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -482,6 +493,29 @@
 		D65DC8DB1ED83A490030636D /* OShowDetailsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OShowDetailsView.m; sourceTree = "<group>"; };
 		D65DC8E01ED94B430030636D /* CommentsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsCell.h; sourceTree = "<group>"; };
 		D65DC8E11ED94B430030636D /* CommentsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsCell.m; sourceTree = "<group>"; };
+		D6EAF2351EEFC76300F6E44C /* MyApplicationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyApplicationVC.h; sourceTree = "<group>"; };
+		D6EAF2361EEFC76300F6E44C /* MyApplicationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyApplicationVC.m; sourceTree = "<group>"; };
+		D6EAF2381EEFC7F700F6E44C /* MyApplicationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyApplicationCell.h; path = ../Controllers/MyApplicationCell.h; sourceTree = "<group>"; };
+		D6EAF2391EEFC7F700F6E44C /* MyApplicationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyApplicationCell.m; path = ../Controllers/MyApplicationCell.m; sourceTree = "<group>"; };
+		D6EAF23B1EEFE5A800F6E44C /* MacorMy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacorMy.h; sourceTree = "<group>"; };
+		D6EAF23C1EF0DEC500F6E44C /* MyAddressVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAddressVC.h; sourceTree = "<group>"; };
+		D6EAF23D1EF0DEC500F6E44C /* MyAddressVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAddressVC.m; sourceTree = "<group>"; };
+		D6EAF23F1EF0DF7800F6E44C /* MyAddressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAddressCell.h; sourceTree = "<group>"; };
+		D6EAF2401EF0DF7800F6E44C /* MyAddressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAddressCell.m; sourceTree = "<group>"; };
+		D6EAF2421EF1055F00F6E44C /* EditAddressVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAddressVC.h; sourceTree = "<group>"; };
+		D6EAF2431EF1055F00F6E44C /* EditAddressVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditAddressVC.m; sourceTree = "<group>"; };
+		D6EAF2451EF107C000F6E44C /* EditAddressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAddressCell.h; sourceTree = "<group>"; };
+		D6EAF2461EF107C000F6E44C /* EditAddressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditAddressCell.m; sourceTree = "<group>"; };
+		D6EAF2481EF116C000F6E44C /* MyBankCardVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBankCardVC.h; sourceTree = "<group>"; };
+		D6EAF2491EF116C000F6E44C /* MyBankCardVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBankCardVC.m; sourceTree = "<group>"; };
+		D6EAF24B1EF1171E00F6E44C /* MyBankCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBankCardCell.h; sourceTree = "<group>"; };
+		D6EAF24C1EF1171E00F6E44C /* MyBankCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBankCardCell.m; sourceTree = "<group>"; };
+		D6EAF24E1EF1280600F6E44C /* AddBanCardVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBanCardVC.h; sourceTree = "<group>"; };
+		D6EAF24F1EF1280600F6E44C /* AddBanCardVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBanCardVC.m; sourceTree = "<group>"; };
+		D6EAF2511EF1319A00F6E44C /* SetUpPayPasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetUpPayPasswordVC.h; sourceTree = "<group>"; };
+		D6EAF2521EF1319A00F6E44C /* SetUpPayPasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetUpPayPasswordVC.m; sourceTree = "<group>"; };
+		D6EAF2541EF1354A00F6E44C /* SetUpPayPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetUpPayPasswordView.h; sourceTree = "<group>"; };
+		D6EAF2551EF1354A00F6E44C /* SetUpPayPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetUpPayPasswordView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1209,8 +1243,9 @@
 				D39EDAD11EF0C87B002C0D0B /* AccountManager.h */,
 				D39EDAD21EF0C87B002C0D0B /* AccountManager.m */,
 				D65DC8AB1ED825500030636D /* Controllers */,
-				D65DC8AE1ED825500030636D /* Models */,
 				D65DC8AF1ED825500030636D /* ViewModels */,
+				D6EAF23B1EEFE5A800F6E44C /* MacorMy.h */,
+				D65DC8AE1ED825500030636D /* Models */,
 				D65DC8B01ED825500030636D /* Views */,
 			);
 			path = My;
@@ -1221,6 +1256,8 @@
 			children = (
 				D65DC8AC1ED825500030636D /* MyViewController.h */,
 				D65DC8AD1ED825500030636D /* MyViewController.m */,
+				D6EAF23C1EF0DEC500F6E44C /* MyAddressVC.h */,
+				D6EAF23D1EF0DEC500F6E44C /* MyAddressVC.m */,
 				D609C31E1EE1A38300A09C19 /* SetUpViewController.h */,
 				D609C31F1EE1A38300A09C19 /* SetUpViewController.m */,
 				D64094E91EE7CCFA00DD24FF /* EditSetUpVC.h */,
@@ -1235,6 +1272,16 @@
 				D640951B1EE9736A00DD24FF /* PlayHistoryVC.m */,
 				D640952C1EEBC8D500DD24FF /* AddFamilyVC.h */,
 				D640952D1EEBC8D500DD24FF /* AddFamilyVC.m */,
+				D6EAF2351EEFC76300F6E44C /* MyApplicationVC.h */,
+				D6EAF2361EEFC76300F6E44C /* MyApplicationVC.m */,
+				D6EAF2421EF1055F00F6E44C /* EditAddressVC.h */,
+				D6EAF2431EF1055F00F6E44C /* EditAddressVC.m */,
+				D6EAF2481EF116C000F6E44C /* MyBankCardVC.h */,
+				D6EAF2491EF116C000F6E44C /* MyBankCardVC.m */,
+				D6EAF24E1EF1280600F6E44C /* AddBanCardVC.h */,
+				D6EAF24F1EF1280600F6E44C /* AddBanCardVC.m */,
+				D6EAF2511EF1319A00F6E44C /* SetUpPayPasswordVC.h */,
+				D6EAF2521EF1319A00F6E44C /* SetUpPayPasswordVC.m */,
 				D39EDAD81EF10969002C0D0B /* MyOrderContainer.h */,
 				D39EDAD91EF10969002C0D0B /* MyOrderContainer.m */,
 			);
@@ -1260,6 +1307,8 @@
 		D65DC8B01ED825500030636D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D6EAF2381EEFC7F700F6E44C /* MyApplicationCell.h */,
+				D6EAF2391EEFC7F700F6E44C /* MyApplicationCell.m */,
 				D65DC8B11ED825500030636D /* MyView.h */,
 				D65DC8B21ED825500030636D /* MyView.m */,
 				D609C3211EE1A4C700A09C19 /* SetUpTableViewCell.h */,
@@ -1278,6 +1327,14 @@
 				D64095181EE9734200DD24FF /* PlayHistorycell.m */,
 				D640952F1EEBC90000DD24FF /* AddFamilyView.h */,
 				D64095301EEBC90000DD24FF /* AddFamilyView.m */,
+				D6EAF23F1EF0DF7800F6E44C /* MyAddressCell.h */,
+				D6EAF2401EF0DF7800F6E44C /* MyAddressCell.m */,
+				D6EAF2451EF107C000F6E44C /* EditAddressCell.h */,
+				D6EAF2461EF107C000F6E44C /* EditAddressCell.m */,
+				D6EAF24B1EF1171E00F6E44C /* MyBankCardCell.h */,
+				D6EAF24C1EF1171E00F6E44C /* MyBankCardCell.m */,
+				D6EAF2541EF1354A00F6E44C /* SetUpPayPasswordView.h */,
+				D6EAF2551EF1354A00F6E44C /* SetUpPayPasswordView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1533,9 +1590,11 @@
 				D609C3061EE16C9A00A09C19 /* HDChannelViewController.m in Sources */,
 				D3207FD01ED91C8A00240DD2 /* HotPlayController.m in Sources */,
 				D609C2FA1EE16A8B00A09C19 /* VarietyViewController.m in Sources */,
+				D6EAF24A1EF116C000F6E44C /* MyBankCardVC.m in Sources */,
 				D64095281EEA9F6D00DD24FF /* ConnectionEquipmentVC.m in Sources */,
 				D609C2F71EE16A5100A09C19 /* ProjectViewController.m in Sources */,
 				D338211F1EE6927100D5B99C /* AderView.m in Sources */,
+				D6EAF2411EF0DF7800F6E44C /* MyAddressCell.m in Sources */,
 				D65DC8D91ED825500030636D /* RemoteView.m in Sources */,
 				D609C29F1EE0F8EE00A09C19 /* ZYBannerCell.m in Sources */,
 				D39EDAEA1EF13D21002C0D0B /* OriWebViewController.m in Sources */,
@@ -1546,6 +1605,7 @@
 				D39EDAE61EF131A6002C0D0B /* OriWebView.m in Sources */,
 				D609C28B1EDFB76800A09C19 /* ChanneldetailsVC.m in Sources */,
 				D3EA479A1EE8F1E200ECD89C /* HBRSAHandler.m in Sources */,
+				D6EAF2371EEFC76300F6E44C /* MyApplicationVC.m in Sources */,
 				D65DC8CD1ED825500030636D /* DetailsViewController.m in Sources */,
 				D39EDAD71EF0F280002C0D0B /* UIDevice+Hardware.m in Sources */,
 				D609C3261EE1A87500A09C19 /* SetUpHeadTableViewCell.m in Sources */,
@@ -1556,6 +1616,7 @@
 				D3EA473D1EE7FE2200ECD89C /* NSFileManager+Godzippa.m in Sources */,
 				D640950A1EE91E6600DD24FF /* MyTVTableViewCell.m in Sources */,
 				D33820B51EE15EFD00D5B99C /* HoritalVideoCollectionCell.m in Sources */,
+				D6EAF23E1EF0DEC500F6E44C /* MyAddressVC.m in Sources */,
 				D3EA47311EE7EABC00ECD89C /* RSAEncryptor.m in Sources */,
 				D65DC8CB1ED825500030636D /* OFBaseViewController.m in Sources */,
 				D64095251EEA368400DD24FF /* WBAlertController.m in Sources */,
@@ -1579,6 +1640,7 @@
 				D65DC8D81ED825500030636D /* RemoteViewController.m in Sources */,
 				D33820A21EE1133900D5B99C /* OSearchContentViewModel.m in Sources */,
 				D3E5435E1ED9505900D8898C /* VerticalVideoCollectionCell.m in Sources */,
+				D6EAF2531EF1319A00F6E44C /* SetUpPayPasswordVC.m in Sources */,
 				D3EA479F1EE8F1E300ECD89C /* NSString+Base64.m in Sources */,
 				D609C3001EE16C6600A09C19 /* TVChannelViewController.m in Sources */,
 				D609C3141EE17E9A00A09C19 /* LoginView.m in Sources */,
@@ -1586,7 +1648,9 @@
 				D640951F1EE9878800DD24FF /* MessageViewController.m in Sources */,
 				D3EA47271EE7BF8400ECD89C /* SocialShareManager.m in Sources */,
 				D64095071EE91E5100DD24FF /* MyTVViewController.m in Sources */,
+				D6EAF24D1EF1171E00F6E44C /* MyBankCardCell.m in Sources */,
 				D33821131EE6476000D5B99C /* SocialRegisterModel.m in Sources */,
+				D6EAF2561EF1354A00F6E44C /* SetUpPayPasswordView.m in Sources */,
 				D65DC8D51ED825500030636D /* TYTabButtonPagerController.m in Sources */,
 				D65DC8D41ED825500030636D /* TYPagerController.m in Sources */,
 				D609C3231EE1A4C700A09C19 /* SetUpTableViewCell.m in Sources */,
@@ -1594,6 +1658,7 @@
 				D65DC8D21ED825500030636D /* MyViewController.m in Sources */,
 				D64094E81EE7CBC800DD24FF /* SetupView.m in Sources */,
 				D3207FD61ED92E1A00240DD2 /* OSearchView.m in Sources */,
+				D6EAF2471EF107C000F6E44C /* EditAddressCell.m in Sources */,
 				D64094F11EE802C400DD24FF /* ReplyCell.m in Sources */,
 				D33820AF1EE119AE00D5B99C /* SearchDAO.m in Sources */,
 				D3EA48171EED156D00ECD89C /* AppointmentController.m in Sources */,
@@ -1604,6 +1669,7 @@
 				D33821181EE653D400D5B99C /* SocialLoginManager.m in Sources */,
 				D3EA47C81EEA486800ECD89C /* BaseModel.m in Sources */,
 				D338211B1EE6542000D5B99C /* SocialLoginResultModel.m in Sources */,
+				D6EAF2441EF1055F00F6E44C /* EditAddressVC.m in Sources */,
 				D640952B1EEA9F9E00DD24FF /* ConnectionEquipmentView.m in Sources */,
 				D609C31A1EE1977A00A09C19 /* SetupPasswordVC.m in Sources */,
 				D3EA47211EE7971500ECD89C /* ShareMenu.m in Sources */,
@@ -1618,8 +1684,10 @@
 				D64095131EE9474D00DD24FF /* MyCollectionVC.m in Sources */,
 				D3EA47BF1EE94AAB00ECD89C /* OrientalHttpManager.m in Sources */,
 				D64094EE1EE7DD4000DD24FF /* ZHPickView.m in Sources */,
+				D6EAF2501EF1280600F6E44C /* AddBanCardVC.m in Sources */,
 				D65DC8CF1ED825500030636D /* HomeModel.m in Sources */,
 				D64095161EE947DD00DD24FF /* MyCollectionCell.m in Sources */,
+				D6EAF23A1EEFC7F700F6E44C /* MyApplicationCell.m in Sources */,
 				D609C2881EDFA67900A09C19 /* IntroductionCell.m in Sources */,
 				D609C2FD1EE16AC000A09C19 /* TVViewController.m in Sources */,
 				D39EDADA1EF10969002C0D0B /* MyOrderContainer.m in Sources */,

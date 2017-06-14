@@ -69,7 +69,12 @@
     [orignalContent setValue:targetUrl forKey:@"itype"];
     [orignalContent setValue:[[UIDevice currentDevice] UUID] forKey:@"deviceId"];
     [orignalContent setValue:copyParams forKey:@"data"];
+<<<<<<< HEAD
+    [orignalContent setValue:@"SDRzSUFBQUFBQUFBQUJXS093cUFNQkFGNzdLMWdiZlIvS3h0UEVZK1c2UVRVUW1JZHplWmFoam1wYnNXV21tQjlwNWpNam1rWUd3R0QwdU9EVFNBbVNZcTh0UXMrN2pib0NkcFJ6MWxpNWYwcU1GT3dTb085UDAveXhSQlZ3QUFBQT09" forKey:@"token"];
+    [orignalContent setValue:@"1.0" forKey:@"version"];
+=======
     [orignalContent setValue:[[AccountManager sharedManager] token]?:@"xx" forKey:@"token"];
+>>>>>>> 13e5c1b6f98432b16ba7e9cf3a234bea6b7fa253
     NSString *compressed = [self compressedString:orignalContent];
     NSString *encrypt = [self encryptParamContent:compressed];
     NSDictionary *dict = @{@"s":compressed, @"sign":encrypt};

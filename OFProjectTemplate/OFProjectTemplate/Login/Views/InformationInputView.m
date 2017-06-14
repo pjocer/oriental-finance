@@ -47,7 +47,7 @@
         
         [self addSubview:self.textField2];
         [self.textField2 mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.equalTo(self).insets(UIEdgeInsetsMake(0, 102.5, 0, 102.5));
+            make.left.right.equalTo(self).insets(UIEdgeInsetsMake(0, 122.5, 0, 122.5));
             make.top.equalTo(self.titleLabel2.mas_bottom).offset(9);
         }];
         

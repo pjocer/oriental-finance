@@ -56,17 +56,13 @@
 
 - (void)InformationInputDelegate:(UIButton *)btn {
     
-    if (setPasswordView.textField.text.length != 0 && setPasswordView.textField2.text.length !=0) {
-        NSDictionary *dic = @{@"phone": setPasswordView.textField.text,@"pwd":setPasswordView.textField2.text};
+        NSDictionary *dic = @{@"phone": @"17603607917",@"pwd":@"123456"};
         
-        [[OrientalHttpManager sharedInstance] requestWithTarget:Login params:dic success:^(NSURLSessionDataTask *task, id responseObject) {
-            [self dismissViewControllerAnimated:YES completion:^{
-                
-            }];
+        [[OrientalHttpManager sharedInstance] requestWithTarget:Register params:dic success:^(NSURLSessionDataTask *task, id responseObject) {
+
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             
         }];
-    }
 
 }
 
