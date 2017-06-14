@@ -20,7 +20,6 @@
 #import <netinet6/in6.h>
 #import <netdb.h>
 #import "UIDevice+Hardware.h"
-//#import "UIDevice+Extension.h"
 
 @implementation UIDevice (Hardware)
 

@@ -9,6 +9,7 @@
 #import "OFBaseViewController.h"
 #import "OFUIkitMacro.h"
 #import <UINavigationController+FDFullscreenPopGesture.h>
+#import <ReactiveCocoa.h>
 
 @interface OFBaseViewController ()
 @property (nonatomic, strong) CAShapeLayer *shapeLayer;
@@ -79,7 +80,7 @@
 }
 
 - (void)startLoading {
-    [[UIApplication sharedApplication].keyWindow.layer addSublayer:self.shapeLayer];
+    [self.view.layer addSublayer:self.shapeLayer];
     CABasicAnimation *startAnimation = [CABasicAnimation animationWithKeyPath:@"strokeStart"];
     startAnimation.fromValue = @(-0.5);
     startAnimation.toValue = @(1);

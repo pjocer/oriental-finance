@@ -26,15 +26,14 @@
 - (void)loadView {
     [super loadView];
     [self startLoading];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    [[RACScheduler mainThreadScheduler] afterDelay:10 schedule:^{
         [self.view addSubview:self.tableView];
         [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.left.bottom.right.equalTo(self.view);
         }];
         [self stopLoading];
         [self subscribe];
-    });
-    
+    }];
 }
 
 - (void)subscribe {
