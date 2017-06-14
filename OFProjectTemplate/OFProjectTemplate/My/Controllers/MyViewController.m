@@ -16,6 +16,10 @@
 #import "PlayHistoryVC.h"
 #import "MessageViewController.h"
 #import "ShareMenu.h"
+#import "MyApplicationVC.h"
+#import "MyAddressVC.h"
+#import "MyBankCardVC.h"
+
 
 @interface MyViewController ()<myViewDelegate>
 
@@ -60,12 +64,14 @@
         
         
     } else if (btn.tag == 111) {
-        PlayHistoryVC *vc = [[PlayHistoryVC alloc]initWithTitle:@"播放历史" navBarBtns:NavBarBtnBack];
+        PlayHistoryVC *vc = [[PlayHistoryVC alloc]initWithTitle:@"我的预约" navBarBtns:NavBarBtnBack];
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
         
     } else if (btn.tag == 112) {
-        
+        PlayHistoryVC *vc = [[PlayHistoryVC alloc]initWithTitle:@"播放历史" navBarBtns:NavBarBtnBack];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
         
     } else if (btn.tag == 113) {
         MyCollectionVC *vc = [[MyCollectionVC alloc]initWithTitle:@"我的收藏" navBarBtns:NavBarBtnBack];
@@ -73,13 +79,19 @@
         [self.navigationController pushViewController:vc animated:YES];
         
     } else if (btn.tag == 121) {
-        
+        MyApplicationVC *vc = [[MyApplicationVC alloc]initWithTitle:@"我的应用" navBarBtns:NavBarBtnBack];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
         
     } else if (btn.tag == 122) {
-        
+        MyAddressVC *vc = [[MyAddressVC alloc]initWithTitle:@"我的地址" navBarBtns:NavBarBtnBack];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
         
     } else if (btn.tag == 123) {
-        
+        MyBankCardVC *vc = [[MyBankCardVC alloc]initWithTitle:@"我的银行卡" navBarBtns:NavBarBtnBack];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
         
     } else if (btn.tag == 131) {
         [ShareMenu showDefaultTypesWithStyle:ShareMenuStyleBorderCancel compeletion:^(ShareMenuItemView *item) {

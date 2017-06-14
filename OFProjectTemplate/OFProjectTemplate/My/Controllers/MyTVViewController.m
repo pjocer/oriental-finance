@@ -10,6 +10,9 @@
 #import "MyTVTableViewCell.h"
 #import "Masonry.h"
 #import "OFUIkitMacro.h"
+#import "MacorMy.h"
+#import "OriNetworking.h"
+#import "WBAlertController.h"
 
 @interface MyTVViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -20,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    [self getData];
     
     
     
@@ -32,6 +35,27 @@
 
 
 }
+
+- (void)getData{
+    NSDictionary *dic = @{@"start": @"0",@"length":@"10"};
+    
+    [[OrientalHttpManager sharedInstance] requestWithTarget:ShowTvBoxList params:dic success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+        
+        
+        if ([[responseObject objectForKey:@"code"] integerValue]>0) {
+            NSLog(@"成功");
+        }else{
+            NSLog(@"失败");
+        }
+        
+        
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+    }];
+}
+
 - (UITableView *)listTableView{
     if (!_listTableView) {
         _listTableView = [[UITableView alloc]init];
