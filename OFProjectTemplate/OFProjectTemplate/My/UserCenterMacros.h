@@ -27,4 +27,12 @@ typedef enum : NSUInteger {
     ActionStateUserCancel,
 } ActionState;
 
+typedef NS_ENUM(NSInteger,OrderListType) {
+    OrderListTypeAllOrder,      //全部订单
+    OrderListTypePending,       //待支付订单
+    OrderListTypeShipment,      //待发货订单
+    OrderListTypeCompleted,     //待收货订单
+    OrderListTypeEvaluated,     //待评价订单
+};
+
 #endif /* UserCenterMacros_h */

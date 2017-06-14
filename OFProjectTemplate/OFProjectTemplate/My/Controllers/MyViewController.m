@@ -16,6 +16,7 @@
 #import "PlayHistoryVC.h"
 #import "MessageViewController.h"
 #import "ShareMenu.h"
+#import "MyOrderContainer.h"
 
 @interface MyViewController ()<myViewDelegate>
 
@@ -57,8 +58,9 @@
 
 
     } else if (btn.tag == 102) {
-        
-        
+        MyOrderContainer *vc = [[MyOrderContainer alloc] initWithTitle:@"我的订单" navBarBtns:NavBarBtnBack];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
     } else if (btn.tag == 111) {
         PlayHistoryVC *vc = [[PlayHistoryVC alloc]initWithTitle:@"播放历史" navBarBtns:NavBarBtnBack];
         vc.hidesBottomBarWhenPushed = YES;
