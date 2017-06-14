@@ -31,10 +31,14 @@
 		D33821181EE653D400D5B99C /* SocialLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D33821171EE653D400D5B99C /* SocialLoginManager.m */; };
 		D338211B1EE6542000D5B99C /* SocialLoginResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D338211A1EE6542000D5B99C /* SocialLoginResultModel.m */; };
 		D338211F1EE6927100D5B99C /* AderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D338211E1EE6927100D5B99C /* AderView.m */; };
+		D372FD381EF1429600F64916 /* WebViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D372FD371EF1429600F64916 /* WebViewManager.m */; };
+		D372FD3C1EF1436500F64916 /* OriRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = D372FD3B1EF1436500F64916 /* OriRoute.m */; };
 		D39EDAD31EF0C87B002C0D0B /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D39EDAD21EF0C87B002C0D0B /* AccountManager.m */; };
 		D39EDAD71EF0F280002C0D0B /* UIDevice+Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = D39EDAD61EF0F280002C0D0B /* UIDevice+Hardware.m */; };
 		D39EDADA1EF10969002C0D0B /* MyOrderContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = D39EDAD91EF10969002C0D0B /* MyOrderContainer.m */; };
 		D39EDADD1EF109AC002C0D0B /* MyOrderContainerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D39EDADC1EF109AC002C0D0B /* MyOrderContainerViewModel.m */; };
+		D39EDAE61EF131A6002C0D0B /* OriWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = D39EDAE51EF131A6002C0D0B /* OriWebView.m */; };
+		D39EDAEA1EF13D21002C0D0B /* OriWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D39EDAE91EF13D21002C0D0B /* OriWebViewController.m */; };
 		D3E5435E1ED9505900D8898C /* VerticalVideoCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E5435D1ED9505900D8898C /* VerticalVideoCollectionCell.m */; };
 		D3E543681ED959EF00D8898C /* UITableView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E543671ED959EF00D8898C /* UITableView+Extension.m */; };
 		D3E5436C1EDE546E00D8898C /* OBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E5436B1EDE546D00D8898C /* OBannerView.m */; };
@@ -205,6 +209,10 @@
 		D338211A1EE6542000D5B99C /* SocialLoginResultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialLoginResultModel.m; sourceTree = "<group>"; };
 		D338211D1EE6927100D5B99C /* AderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AderView.h; sourceTree = "<group>"; };
 		D338211E1EE6927100D5B99C /* AderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AderView.m; sourceTree = "<group>"; };
+		D372FD361EF1429600F64916 /* WebViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewManager.h; sourceTree = "<group>"; };
+		D372FD371EF1429600F64916 /* WebViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewManager.m; sourceTree = "<group>"; };
+		D372FD3A1EF1436500F64916 /* OriRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OriRoute.h; sourceTree = "<group>"; };
+		D372FD3B1EF1436500F64916 /* OriRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OriRoute.m; sourceTree = "<group>"; };
 		D39EDAD11EF0C87B002C0D0B /* AccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountManager.h; sourceTree = "<group>"; };
 		D39EDAD21EF0C87B002C0D0B /* AccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountManager.m; sourceTree = "<group>"; };
 		D39EDAD41EF0CD95002C0D0B /* UserCenterMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCenterMacros.h; sourceTree = "<group>"; };
@@ -214,6 +222,10 @@
 		D39EDAD91EF10969002C0D0B /* MyOrderContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderContainer.m; sourceTree = "<group>"; };
 		D39EDADB1EF109AC002C0D0B /* MyOrderContainerViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyOrderContainerViewModel.h; path = OFProjectTemplate/My/Controllers/MyOrderContainerViewModel.h; sourceTree = SOURCE_ROOT; };
 		D39EDADC1EF109AC002C0D0B /* MyOrderContainerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyOrderContainerViewModel.m; path = OFProjectTemplate/My/Controllers/MyOrderContainerViewModel.m; sourceTree = SOURCE_ROOT; };
+		D39EDAE41EF131A6002C0D0B /* OriWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OriWebView.h; sourceTree = "<group>"; };
+		D39EDAE51EF131A6002C0D0B /* OriWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OriWebView.m; sourceTree = "<group>"; };
+		D39EDAE81EF13D21002C0D0B /* OriWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OriWebViewController.h; sourceTree = "<group>"; };
+		D39EDAE91EF13D21002C0D0B /* OriWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OriWebViewController.m; sourceTree = "<group>"; };
 		D3C29BC61ED7FF300030D262 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D3C29BC81ED7FF410030D262 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		D3C29BCA1ED7FF530030D262 /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
@@ -668,6 +680,45 @@
 				D3E5436E1EDE615900D8898C /* OShowHud.m */,
 			);
 			name = Components;
+			sourceTree = "<group>";
+		};
+		D372FD391EF1435100F64916 /* Route */ = {
+			isa = PBXGroup;
+			children = (
+				D372FD3A1EF1436500F64916 /* OriRoute.h */,
+				D372FD3B1EF1436500F64916 /* OriRoute.m */,
+			);
+			name = Route;
+			sourceTree = "<group>";
+		};
+		D39EDADE1EF12F5A002C0D0B /* OriH5Components */ = {
+			isa = PBXGroup;
+			children = (
+				D372FD391EF1435100F64916 /* Route */,
+				D39EDAE71EF13CE1002C0D0B /* Controllers */,
+				D39EDAE01EF13161002C0D0B /* Views */,
+				D372FD361EF1429600F64916 /* WebViewManager.h */,
+				D372FD371EF1429600F64916 /* WebViewManager.m */,
+			);
+			name = OriH5Components;
+			sourceTree = "<group>";
+		};
+		D39EDAE01EF13161002C0D0B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D39EDAE41EF131A6002C0D0B /* OriWebView.h */,
+				D39EDAE51EF131A6002C0D0B /* OriWebView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		D39EDAE71EF13CE1002C0D0B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D39EDAE81EF13D21002C0D0B /* OriWebViewController.h */,
+				D39EDAE91EF13D21002C0D0B /* OriWebViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		D3E5435F1ED9593E00D8898C /* Extensions */ = {
@@ -1291,6 +1342,7 @@
 		D65DC8B31ED825500030636D /* OFFrameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D39EDADE1EF12F5A002C0D0B /* OriH5Components */,
 				D3EA47BC1EE949BC00ECD89C /* OFNetworking */,
 				D3EA472A1EE7EA5300ECD89C /* RSASecurity */,
 				D33821061EE6447800D5B99C /* OSocialComponents */,
@@ -1534,6 +1586,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D372FD381EF1429600F64916 /* WebViewManager.m in Sources */,
 				D609C3061EE16C9A00A09C19 /* HDChannelViewController.m in Sources */,
 				D3207FD01ED91C8A00240DD2 /* HotPlayController.m in Sources */,
 				D609C2FA1EE16A8B00A09C19 /* VarietyViewController.m in Sources */,
@@ -1544,10 +1597,12 @@
 				D6EAF2411EF0DF7800F6E44C /* MyAddressCell.m in Sources */,
 				D65DC8D91ED825500030636D /* RemoteView.m in Sources */,
 				D609C29F1EE0F8EE00A09C19 /* ZYBannerCell.m in Sources */,
+				D39EDAEA1EF13D21002C0D0B /* OriWebViewController.m in Sources */,
 				D3E5436C1EDE546E00D8898C /* OBannerView.m in Sources */,
 				D65DC8D71ED825500030636D /* TYTabTitleViewCell.m in Sources */,
 				D3E5437F1EDE8EA700D8898C /* ChannelTabViewModel.m in Sources */,
 				D65DC8CC1ED825500030636D /* ChannelViewController.m in Sources */,
+				D39EDAE61EF131A6002C0D0B /* OriWebView.m in Sources */,
 				D609C28B1EDFB76800A09C19 /* ChanneldetailsVC.m in Sources */,
 				D3EA479A1EE8F1E200ECD89C /* HBRSAHandler.m in Sources */,
 				D6EAF2371EEFC76300F6E44C /* MyApplicationVC.m in Sources */,
@@ -1581,6 +1636,7 @@
 				D3E543851EDE94E100D8898C /* LocalChannelTableViewModel.m in Sources */,
 				D609C2A11EE0F8EE00A09C19 /* ZYBannerView.m in Sources */,
 				D65DC8C81ED825500030636D /* ApplicationViewController.m in Sources */,
+				D372FD3C1EF1436500F64916 /* OriRoute.m in Sources */,
 				D65DC8D81ED825500030636D /* RemoteViewController.m in Sources */,
 				D33820A21EE1133900D5B99C /* OSearchContentViewModel.m in Sources */,
 				D3E5435E1ED9505900D8898C /* VerticalVideoCollectionCell.m in Sources */,
