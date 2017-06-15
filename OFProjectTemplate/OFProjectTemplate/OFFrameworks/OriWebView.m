@@ -11,17 +11,37 @@
 #import <Masonry.h>
 #import "OFUIkitMacro.h"
 #import "OriRoute.h"
+#import "H5LinkMacro.h"
 
-@interface OriWebView () <WKUIDelegate, WKNavigationDelegate>
+@interface OriWebViewDelegate : NSObject <WKScriptMessageHandler>
+@property (nonatomic, weak) id<WKScriptMessageHandler> scriptDelegate;
+@end
+
+@implementation OriWebViewDelegate
+#pragma mark - Navigation Delefate
+
+- (instancetype)initWithDelegate:(id<WKScriptMessageHandler>)scriptDelegate {
+    if (self = [super init]) {
+        _scriptDelegate = scriptDelegate;
+    }
+    return self;
+}
+
+- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
+    [self.scriptDelegate userContentController:userContentController didReceiveScriptMessage:message];
+}
+@end
+
+@interface OriWebView () <WKScriptMessageHandler, WKUIDelegate, WKNavigationDelegate>
 @property (nonatomic, strong) WKWebView         *wkWebView;
 @property (nonatomic, strong) UIProgressView    *progressView;
 @property (nonatomic, readwrite, copy) NSString *title;
-@property (nonatomic, readwrite, assign) CGFloat contentOffsetY;
-@property (nonatomic, readwrite, assign) CGSize contentSize;
 @property (nonatomic, copy) OriWebViewNormalBlock startBlock;
 @property (nonatomic, copy) OriWebViewNormalBlock finishBlock;
 @property (nonatomic, copy) OriWebViewFailedBlock failedBlock;
 @property (nonatomic, copy) OriWebViewHandlerBlock handlerBlock;
+@property (nonatomic, readwrite, assign) CGFloat contentOffsetY;
+@property (nonatomic, readwrite, assign) CGSize contentSize;
 @end
 
 @implementation OriWebView
@@ -32,7 +52,7 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        [[[self commitSubviews] makeConstaints] subscribe].backgroundColor = UIColorWhite;
+        [[[self commitSubviews] makeConstaints] subscribe].progressViewHeight = 1.f;
     }
     return self;
 }
@@ -40,6 +60,7 @@
 - (instancetype)commitSubviews {
     [self addSubview:self.wkWebView];
     [self addSubview:self.progressView];
+    [self configuration];
     return self;
 }
 
@@ -56,7 +77,6 @@
 }
 
 - (instancetype)subscribe {
-    self.progressViewHeight = 1.0;
     WEAKSELF
     [RACObserve(self.wkWebView.scrollView,contentOffset) subscribeNext:^(id x) {
         STRONGSELF
@@ -73,6 +93,46 @@
         STRONGSELF
         self.title = x ?: @"";
     }];
+    
+    [RACObserve(self.wkWebView, estimatedProgress) subscribeNext:^(id x) {
+        STRONGSELF
+        CGFloat progress = [x floatValue];
+        [self.progressView setProgress:progress animated:(progress > self.progressView.progress)];
+    }];
+    [[[self rac_signalForSelector:@selector(webView:didStartProvisionalNavigation:) fromProtocol:@protocol(WKNavigationDelegate)] takeUntil:[self rac_willDeallocSignal]] subscribeNext:^(RACTuple *x) {
+        STRONGSELF
+        self.progressView.hidden = !self.isShowProgress;
+        if (self.startBlock) {
+            self.startBlock(x.first);
+        }
+    }];
+    [[[self rac_signalForSelector:@selector(webView:didFinishNavigation:) fromProtocol:@protocol(WKNavigationDelegate)] takeUntil:[self rac_willDeallocSignal]] subscribeNext:^(RACTuple *x) {
+        STRONGSELF
+        self.progressView.hidden = YES;
+        if (self.finishBlock) {
+            self.finishBlock(x.first);
+        }
+    }];
+    [[[self rac_signalForSelector:@selector(webView:didFailProvisionalNavigation:withError:) fromProtocol:@protocol(WKNavigationDelegate)] takeUntil:[self rac_willDeallocSignal]] subscribeNext:^(RACTuple *x) {
+        STRONGSELF
+        self.progressView.hidden = YES;
+        if (self.failedBlock) {
+            self.failedBlock(x.first, x.third);
+        }
+    }];
+    [[[self rac_signalForSelector:@selector(webView:decidePolicyForNavigationAction:decisionHandler:) fromProtocol:@protocol(WKNavigationDelegate)] takeUntil:[self rac_willDeallocSignal]] subscribeNext:^(RACTuple *x) {
+        RACTupleUnpack(WKWebView *webView, WKNavigationAction *action, void (^decisionHandler)(WKNavigationActionPolicy)) = x;
+        STRONGSELF
+        if (self.handlerBlock) {
+            self.handlerBlock(action.request,decisionHandler);
+        }else{
+            decisionHandler(WKNavigationActionPolicyAllow);
+        }
+    }];
+    [[[self rac_signalForSelector:@selector(userContentController:didReceiveScriptMessage:) fromProtocol:@protocol(WKScriptMessageHandler)] takeUntil:[self rac_willDeallocSignal]] subscribeNext:^(RACTuple *x) {
+        WKScriptMessage *message = x.second;
+        [self handleJSCallBack:message.body];
+    }];
     return self;
 }
 
@@ -88,7 +148,8 @@
 
 - (void)loadURL:(NSString *)url {
     if (STRINGHASVALUE(url)) {
-        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.f];
+        NSString *encodedString=[[H5HOST stringByAppendingString:url] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:encodedString] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.f];
         NSDictionary * headers = [NSHTTPCookie requestHeaderFieldsWithCookies:[NSHTTPCookieStorage sharedHTTPCookieStorage].cookies];
         [request setAllHTTPHeaderFields:headers];
         [request addValue:@"iOS" forHTTPHeaderField:@"platform"];
@@ -100,6 +161,11 @@
     if (self.wkWebView.canGoBack) {
         [self.wkWebView goBack];
     }
+}
+
+- (void)dealloc {
+    [self.wkWebView.configuration.userContentController removeScriptMessageHandlerForName:@"AppCallBack"];
+    [self.wkWebView.configuration.userContentController removeAllUserScripts];
 }
 
 - (void)stopLoading {
@@ -141,16 +207,6 @@
             }
         }
             break;
-        case OriRouteHandlerTypeSetShareInfo:
-        {
-
-        }
-            break;
-        case OriRouteHandlerTypeSetTitle:
-        {
-
-        }
-            break;
         case OriRouteHandlerTypeNavBack:
         {
 
@@ -159,72 +215,34 @@
     }
 }
 
-- (id)getPrivateProperty:(NSString *)propertyName
-{
-    Ivar iVar = class_getInstanceVariable([self class], [propertyName UTF8String]);
-    
-    if (iVar == nil) {
-        iVar = class_getInstanceVariable([self class], [[NSString stringWithFormat:@"_%@",propertyName] UTF8String]);
-    }
-    
-    id propertyVal = object_getIvar(self, iVar);
-    return propertyVal;
-}
-#pragma mark - Navigation Delefate
+#pragma mark - Delgate
 
-/**
- *  页面开始加载时调用
- */
-- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
-    self.progressView.hidden = !self.isShowProgress;
-    if (self.startBlock) {
-        self.startBlock(webView);
-    }
-}
-
-
-/**
- *  页面加载完成之后调用
- */
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
-    self.progressView.hidden = YES;
-    if (self.finishBlock) {
-        self.finishBlock(webView);
-    }
+    
 }
 
-/**
- *  加载失败时调用
- */
-- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {
-    self.progressView.hidden = YES;
-    if (self.failedBlock) {
-        self.failedBlock(webView,error);
-    }
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
+    
 }
 
-
-/**
- *  在发送请求之前，决定是否跳转
- *  @param decisionHandler  是否调转block
- */
+- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
+    
+}
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     
-    if (self.handlerBlock) {
-        self.handlerBlock(navigationAction.request,decisionHandler);
-    }else{
-        decisionHandler(WKNavigationActionPolicyAllow);
-    }
 }
-
-
+- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
+    
+}
 - (WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures {
     if (!navigationAction.targetFrame.isMainFrame) {
         [webView loadRequest:navigationAction.request];
     }
     return nil;
 }
-
+- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler {
+    completionHandler();
+}
 #pragma mark - GETTER_SETTER
 - (BOOL)isLoading {
     return self.wkWebView.isLoading;
@@ -239,14 +257,33 @@
 - (NSURL *)URL {
     return self.wkWebView.URL;
 }
+- (void)setProgressTintColor:(UIColor *)progressTintColor {
+    _progressTintColor = progressTintColor;
+    _progressView.progressTintColor = progressTintColor;
+}
+
+- (void)setTrackTintColor:(UIColor *)trackTintColor {
+    _trackTintColor = trackTintColor;
+    _progressView.trackTintColor = trackTintColor;
+}
+
 - (void)setProgressViewHeight:(CGFloat)progressViewHeight {
     _progressViewHeight = MAX(0.5, progressViewHeight);
     _progressView.transform = CGAffineTransformMakeScale(1.0f,0.50f * self.progressViewHeight);
 }
 
+- (void)setShowsVerticalScrollIndicator:(BOOL)showsVerticalScrollIndicator {
+    _showsVerticalScrollIndicator = showsVerticalScrollIndicator;
+    self.wkWebView.scrollView.showsVerticalScrollIndicator = showsVerticalScrollIndicator;
+}
+
+- (void)setShowsHorizontalScrollIndicator:(BOOL)showsHorizontalScrollIndicator {
+    _showsHorizontalScrollIndicator = showsHorizontalScrollIndicator;
+    self.wkWebView.scrollView.showsHorizontalScrollIndicator = showsHorizontalScrollIndicator;
+}
+
 - (WKWebView *)wkWebView {
     if (_wkWebView == nil) {
-        //设置UA（ios8不支持customUA，统一使用这个办法)
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
             UIWebView *webView = [[UIWebView alloc] init];
@@ -255,27 +292,40 @@
             NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:newUserAgent, @"UserAgent", nil];
             [[NSUserDefaults standardUserDefaults] registerDefaults:dictionary];
         });
-        _wkWebView = [[WKWebView alloc] initWithFrame:self.bounds];
+        WKUserContentController *userContentController = [[WKUserContentController alloc] init];
+        [userContentController addScriptMessageHandler:[[OriWebViewDelegate alloc] initWithDelegate:self] name:@"AppCallBack"];
+        
+        WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
+        configuration.userContentController = userContentController;
+        _wkWebView = [[WKWebView alloc] initWithFrame:self.bounds configuration:configuration];
         _wkWebView.UIDelegate = self;
         _wkWebView.navigationDelegate = self;
         _wkWebView.allowsBackForwardNavigationGestures = YES;
         _wkWebView.scrollView.showsVerticalScrollIndicator = NO;
         _wkWebView.scrollView.showsHorizontalScrollIndicator = NO;
-        
-        WEAKSELF
-        [RACObserve(_wkWebView, estimatedProgress) subscribeNext:^(id x) {
-            STRONGSELF
-            CGFloat progress = [x floatValue];
-            [self.progressView setProgress:progress animated:(progress > self.progressView.progress)];
-        }];
-        
-        [RACObserve(_wkWebView, title) subscribeNext:^(id x) {
-            STRONGSELF
-            self.title = self.wkWebView.title;
-        }];
-        
     }
     return _wkWebView;
 }
-
+- (UIProgressView *)progressView {
+    if (_progressView == nil) {
+        _progressView = [[UIProgressView alloc] init];
+        _progressView.transform = CGAffineTransformMakeScale(1.0f,0.50f * self.progressViewHeight);
+        _progressView.progressTintColor = self.progressTintColor ?: [UIColor redColor];
+        _progressView.trackTintColor = self.trackTintColor ?: [UIColor clearColor];
+        _progressView.backgroundColor = [UIColor clearColor];
+        _progressView.hidden = YES;
+    }
+    return _progressView;
+}
+- (void)handleJSCallBack:(id)body {
+    if ([body isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *dict = (NSDictionary *)body;
+        NSString *jsStr = [NSString stringWithFormat:@"ocCallJS('%@')", [dict objectForKey:@"data"]];
+        [self.wkWebView evaluateJavaScript:jsStr completionHandler:^(id _Nullable data, NSError * _Nullable error) {
+            if (error) {
+                NSLog(@"错误:%@", error.localizedDescription);
+            }
+        }];
+    }
+}
 @end

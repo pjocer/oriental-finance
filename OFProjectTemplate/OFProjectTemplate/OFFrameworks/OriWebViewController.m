@@ -10,6 +10,7 @@
 #import "OFUIkitMacro.h"
 #import <Masonry.h>
 #import <ReactiveCocoa.h>
+#import <MJExtension.h>
 
 @interface OriWebViewController ()
 @property (nonatomic, strong) OriWebView *webView;
@@ -70,7 +71,7 @@
 }
 - (OriWebView *)webView {
     if (_webView == nil) {
-        _webView = [[OriWebView alloc] init];
+        _webView = [OriWebView webView];
         _webView.showProgress = YES;
         WEAKSELF
         [_webView configureWithStartBlock:^(WKWebView *webView) {
@@ -86,8 +87,6 @@
             [self stopLoading];
             self.webViewDidLoaded = YES;
         }];
-        
-        [_webView configuration];
     }
     return _webView;
 }

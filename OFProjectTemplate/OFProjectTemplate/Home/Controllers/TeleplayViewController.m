@@ -25,15 +25,11 @@
 
 - (void)loadView {
     [super loadView];
-    [self startLoading];
-    [[RACScheduler mainThreadScheduler] afterDelay:10 schedule:^{
-        [self.view addSubview:self.tableView];
-        [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.left.bottom.right.equalTo(self.view);
-        }];
-        [self stopLoading];
-        [self subscribe];
+    [self.view addSubview:self.tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.bottom.right.equalTo(self.view);
     }];
+    [self subscribe];
 }
 
 - (void)subscribe {
