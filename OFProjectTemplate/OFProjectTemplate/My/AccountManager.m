@@ -70,7 +70,7 @@
 
 + (void)saveLocalAccountData:(NSDictionary *)data {
     [[AccountManager sharedManager] setAccountProperties:data];
-    UserDefaultsSetObjectForKey(data, USER_ACCOUNT_DATA);
+//    UserDefaultsSetObjectForKey(user, USER_ACCOUNT_DATA);
 }
 
 + (void)clearLocalAccountData:(NSDictionary *)data {
