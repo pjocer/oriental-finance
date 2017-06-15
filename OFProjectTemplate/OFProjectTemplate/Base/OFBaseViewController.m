@@ -10,6 +10,7 @@
 #import "OFUIkitMacro.h"
 #import <UINavigationController+FDFullscreenPopGesture.h>
 #import <ReactiveCocoa.h>
+#import "OShowHud.h"
 
 @interface OFBaseViewController ()
 @property (nonatomic, strong) CAShapeLayer *shapeLayer;
@@ -80,23 +81,15 @@
 }
 
 - (void)startLoading {
-//    [self.view.layer addSublayer:self.shapeLayer];
-//    CABasicAnimation *startAnimation = [CABasicAnimation animationWithKeyPath:@"strokeStart"];
-//    startAnimation.fromValue = @(-0.5);
-//    startAnimation.toValue = @(1);
-//    CABasicAnimation *endAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-//    endAnimation.fromValue = @(0);
-//    endAnimation.toValue = @(1);
-//    CAAnimationGroup *groupAnimation = [CAAnimationGroup animation];
-//    groupAnimation.animations = @[startAnimation, endAnimation];
-//    groupAnimation.duration = 1.5;
-//    groupAnimation.repeatCount = INFINITY;
-//    [self.shapeLayer addAnimation:groupAnimation forKey:nil];
+    [OShowHud showHudAnimated:YES autoHiden:NO];
+}
+
+- (void)startLoading:(NSString *)tips {
+    [OShowHud showHudWith:tips animated:YES autoHiden:NO];
 }
 
 - (void)stopLoading {
-//    [self.shapeLayer removeAllAnimations];
-//    [self.shapeLayer removeFromSuperlayer];
+    [OShowHud hideHudAnimated:YES];
 }
 
 - (CAShapeLayer *)shapeLayer {

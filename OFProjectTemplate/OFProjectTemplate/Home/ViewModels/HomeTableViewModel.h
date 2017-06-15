@@ -27,3 +27,9 @@ typedef NS_ENUM(NSInteger, HomeControllerType) {
 - (void)setDidSelectedBlock:(void(^)(TableViewSelectType type, id data))block;
 
 @end
+
+@interface HomeTableViewModel (NetWorking)
+
+//- (void)fetchDataWith
+
+@end

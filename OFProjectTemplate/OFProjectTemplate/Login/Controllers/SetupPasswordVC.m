@@ -12,6 +12,7 @@
 #import "OFUIkitMacro.h"
 #import "MacorLogin.h"
 #import "OriNetworking.h"
+#import "OShowHud.h"
 
 @interface SetupPasswordVC ()<InformationInputDelegate>{
     InformationInputView *setPasswordView;
@@ -55,14 +56,19 @@
 //}
 
 - (void)InformationInputDelegate:(UIButton *)btn {
-    
-        NSDictionary *dic = @{@"phone": @"17603607917",@"pwd":@"123456"};
-        
-        [[OrientalHttpManager sharedInstance] requestWithTarget:Register params:dic success:^(NSURLSessionDataTask *task, id responseObject) {
-
-        } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            
-        }];
+    [self startLoading];
+    NSDictionary *dic = @{@"phone": self.params,@"pwd":setPasswordView.textField.text};
+    [[OrientalHttpManager sharedInstance] requestWithTarget:Register params:dic success:^(NSURLSessionDataTask *task, id responseObject) {
+        [self stopLoading];
+        [OShowHud showErrorHudWith:responseObject[@"msg"] animated:YES];
+        if ([responseObject[@"code"] integerValue] > 0) {
+            [self dismissViewControllerAnimated:YES completion:^{
+                
+            }];
+        }
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        [self stopLoading];
+    }];
 
 }
 

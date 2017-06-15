@@ -16,7 +16,7 @@
 #import "UIDevice+Hardware.h"
 #import "AccountManager.h"
 
-#define DEFAULT_TIMEOUT 10.f
+#define DEFAULT_TIMEOUT 30.f
 #define DEFAULT_METHOD OrientalRequestMethodPost
 
 @implementation OrientalHttpManager
@@ -79,14 +79,11 @@
         NSError *err = nil;
         NSDictionary *responseDic = [self deCompressedDataWith:responseObject err:err];
         if (DICTHASVALUE(responseDic) && !err) {
-            if (success) {
-                success (task,responseDic);
-            }
+            if (success) success (task,responseDic);
         } else {
-            if (failure) {
-                failure(task,err);
-            }
+            if (failure) failure(task, err);
         }
+
     };
     void (^failureBlock)(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) = ^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (failure) {

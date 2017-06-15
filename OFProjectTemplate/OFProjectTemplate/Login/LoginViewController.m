@@ -56,7 +56,6 @@
 }
 
 -(void)back{
-    [super back];
     [self dismissViewControllerAnimated:YES completion:^{
         self.loginHandler(ActionStateUserCancel);
     }];
@@ -68,9 +67,7 @@
         NSDictionary *dic = @{@"phone": loginView.textField.text,@"pwd":loginView.textField2.text};
         
         [[OrientalHttpManager sharedInstance] requestWithTarget:Login params:dic success:^(NSURLSessionDataTask *task, id responseObject) {
-            [self dismissViewControllerAnimated:YES completion:^{
-                
-            }];
+
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             
         }];

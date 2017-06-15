@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @protocol InformationInputDelegate <NSObject>
-
+@optional
 -(void)InformationInputDelegate:(UIButton *)btn;
 -(void)vailadCodeDelegate:(UIButton *)btn;
 

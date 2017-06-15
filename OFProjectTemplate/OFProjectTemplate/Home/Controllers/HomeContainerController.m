@@ -17,6 +17,8 @@
 #import "PlayHistoryVC.h"
 #import "ConnectionEquipmentVC.h"
 #import "OriWebViewController.h"
+#import "OriNetworking.h"
+#import "OFHomeMacro.h"
 
 @interface HomeContainerController ()
 @property (nonatomic, strong)  HomeTabContainerViewModel* viewModel;
@@ -51,14 +53,14 @@
 }
 
 - (void)pushConnectionController {
-//    ConnectionEquipmentVC *vc= [[ConnectionEquipmentVC alloc]initWithTitle:@"未连接" navBarBtns:NavBarBtnBack];
-//    UINavigationController *navc = [[UINavigationController alloc]initWithRootViewController:vc];
-//    [self presentViewController:navc animated:YES completion:^{
-//        
-//    }];
-    OriWebViewController *vc = [[OriWebViewController alloc] initWithTitle:@"Test Route" navBarBtns:NavBarBtnBack];
-    vc.url = @"index.html";
-    [self.navigationController pushViewController:vc animated:YES];
+    ConnectionEquipmentVC *vc= [[ConnectionEquipmentVC alloc]initWithTitle:@"未连接" navBarBtns:NavBarBtnBack];
+    UINavigationController *navc = [[UINavigationController alloc]initWithRootViewController:vc];
+    [self presentViewController:navc animated:YES completion:^{
+        
+    }];
+//    OriWebViewController *vc = [[OriWebViewController alloc] initWithTitle:@"Test Route" navBarBtns:NavBarBtnBack];
+//    vc.url = @"index.html";
+//    [self.navigationController pushViewController:vc animated:YES];
     
 }
 

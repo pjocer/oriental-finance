@@ -38,6 +38,7 @@ typedef NS_OPTIONS(NSUInteger, NavBarBtns) {
  *  Show Loading Toast
  */
 - (void)startLoading;
+- (void)startLoading:(NSString *)tips;
 
 /**
  *  Hidden Loading Toast

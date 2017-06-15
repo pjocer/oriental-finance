@@ -14,4 +14,6 @@
 #define HotTableViewCellRowHeight (SCREEN_WIDTH-10)/5.f*7-20
 #define VerticalVideoCellHeight (HotTableViewCellRowHeight-74)/2.f
 
+#define ShowCatelog @"501"
+
 #endif /* OFHomeMacro_h */

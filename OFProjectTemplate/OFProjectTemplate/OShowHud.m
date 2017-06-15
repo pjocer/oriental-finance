@@ -17,19 +17,10 @@
 + (void)showHudAnimated:(BOOL)animated autoHiden:(BOOL)autoHiden {
     [self hideHudAnimated:NO];
     
-    UIImage *image = ImageNamed(@"b2");
-    CGFloat width = 80.f;
-    UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, width, width)];
-    imgView.backgroundColor = [UIColor clearColor];
-    imgView.contentMode = UIViewContentModeScaleToFill;
-    imgView.image = image;
-    
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[OShowHud getTopWindow] animated:animated];
-    hud.customView = imgView;
     hud.bezelView.color = [UIColor clearColor];
-    hud.mode = MBProgressHUDModeCustomView;
+    hud.mode = MBProgressHUDModeIndeterminate;
     [hud setMinShowTime:0.2f];
-    hud.dimBackground = NO;
     hud.userInteractionEnabled = YES;
     if (autoHiden) {
         [hud hideAnimated:YES afterDelay:DEFAULT_HIDDEN_TIME];
@@ -64,7 +55,6 @@
         hud.detailsLabel.text = info;
     }
     [hud setMinShowTime:1.f];
-    hud.dimBackground = NO;
     if (autoHiden) {
         [hud hideAnimated:YES afterDelay:[self showTimeWithText:info]];
     }
@@ -83,7 +73,6 @@
         hud.detailsLabel.text = info;
     }
     [hud setMinShowTime:0.5f];
-    hud.dimBackground = NO;
     if (autoHiden) {
         [hud hideAnimated:YES afterDelay:[self showTimeWithText:info]];
     }

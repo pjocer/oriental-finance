@@ -18,9 +18,9 @@
 #import "HomeChannelLiveCell.h"
 #import "OSearchController.h"
 #import "AderView.h"
-#import "SocialShareManager.h"
 #import "AppointmentController.h"
 #import <ReactiveCocoa.h>
+#import <MJRefresh.h>
 
 @interface HotPlayController ()
 @property (nonatomic, strong) OSearchView *searchView;
@@ -87,6 +87,10 @@
         _tableView.delegate = self.tableViewModel;
         _tableView.dataSource = self.tableViewModel;
         _tableView.tableHeaderView = self.banner;
+        _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+//            [_tableViewModel r]
+            [self startLoading:@"AAA"];
+        }];
         [_tableView registerClass:[HomeVerticalTableViewCell class] forCellReuseIdentifier:HomeVerticalTableViewCellIdentifier];
         [_tableView registerClass:[HomeChannelLiveCell class] forCellReuseIdentifier:HomeChannelLiveCellIdentifier];
     }
