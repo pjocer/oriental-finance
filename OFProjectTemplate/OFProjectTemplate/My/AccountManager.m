@@ -50,13 +50,13 @@
 }
 
 - (void)setAccountProperties:(NSDictionary *)data {
-    self.token = data[@"token"];
-    self.id_card = data[@"id_card"];
-    self.msg_push = data[@"msg_push"];
-    self.name = data[@"name"];
-    self.nick_name = data[@"nick_name"];
-    self.phone = data[@"phone"];
-    self.sign_url = data[@"sign_url"];
+    self.token = [data valueForKey:@"token"];
+    self.id_card = [data valueForKey:@"id_card"];
+    self.msg_push = [data valueForKey:@"msg_push"];
+    self.name = [data valueForKey:@"name"];
+    self.nick_name = [data valueForKey:@"nick_name"];
+    self.phone = [data valueForKey:@"phone"];
+    self.sign_url = [data valueForKey:@"sign_url"];
 }
 
 + (void)callLoginServiceWithHandler:(void (^)(ActionState))handler {

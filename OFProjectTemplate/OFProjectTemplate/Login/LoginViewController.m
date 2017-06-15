@@ -57,7 +57,9 @@
 }
 
 -(void)back{
-    self.loginHandler(ActionStateUserCancel);
+    if (self.loginHandler) {
+        self.loginHandler(ActionStateUserCancel);
+    }
     [super back];
 }
 
@@ -71,7 +73,9 @@
             [OShowHud showErrorHudWith:responseObject[@"msg"] animated:YES];
             if ([responseObject[@"code"] integerValue]>0) {
                 [AccountManager saveLocalAccountData:responseObject[@"result"]];
-                self.loginHandler(ActionStateSuccess);
+                if (self.loginHandler) {
+                    self.loginHandler(ActionStateSuccess);
+                }
                 [super back];
             }
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
