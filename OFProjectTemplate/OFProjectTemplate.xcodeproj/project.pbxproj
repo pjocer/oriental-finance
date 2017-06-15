@@ -144,6 +144,10 @@
 		D6EAF2501EF1280600F6E44C /* AddBanCardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EAF24F1EF1280600F6E44C /* AddBanCardVC.m */; };
 		D6EAF2531EF1319A00F6E44C /* SetUpPayPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EAF2521EF1319A00F6E44C /* SetUpPayPasswordVC.m */; };
 		D6EAF2561EF1354A00F6E44C /* SetUpPayPasswordView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EAF2551EF1354A00F6E44C /* SetUpPayPasswordView.m */; };
+		D6EAF25F1EF15FBF00F6E44C /* SurePayPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EAF25E1EF15FBF00F6E44C /* SurePayPasswordVC.m */; };
+		D6EAF2621EF18B6200F6E44C /* MessageDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EAF2611EF18B6200F6E44C /* MessageDetailsVC.m */; };
+		D6EAF2651EF18E4700F6E44C /* MessageDetialsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EAF2641EF18E4700F6E44C /* MessageDetialsCell.m */; };
+		D6EAF2681EF19A3900F6E44C /* AddBankCardSuccess.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EAF2671EF19A3900F6E44C /* AddBankCardSuccess.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -517,6 +521,14 @@
 		D6EAF2521EF1319A00F6E44C /* SetUpPayPasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetUpPayPasswordVC.m; sourceTree = "<group>"; };
 		D6EAF2541EF1354A00F6E44C /* SetUpPayPasswordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetUpPayPasswordView.h; sourceTree = "<group>"; };
 		D6EAF2551EF1354A00F6E44C /* SetUpPayPasswordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetUpPayPasswordView.m; sourceTree = "<group>"; };
+		D6EAF25D1EF15FBF00F6E44C /* SurePayPasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurePayPasswordVC.h; sourceTree = "<group>"; };
+		D6EAF25E1EF15FBF00F6E44C /* SurePayPasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurePayPasswordVC.m; sourceTree = "<group>"; };
+		D6EAF2601EF18B6200F6E44C /* MessageDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageDetailsVC.h; path = ../../My/Controllers/MessageDetailsVC.h; sourceTree = "<group>"; };
+		D6EAF2611EF18B6200F6E44C /* MessageDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageDetailsVC.m; path = ../../My/Controllers/MessageDetailsVC.m; sourceTree = "<group>"; };
+		D6EAF2631EF18E4700F6E44C /* MessageDetialsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageDetialsCell.h; sourceTree = "<group>"; };
+		D6EAF2641EF18E4700F6E44C /* MessageDetialsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageDetialsCell.m; sourceTree = "<group>"; };
+		D6EAF2661EF19A3900F6E44C /* AddBankCardSuccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBankCardSuccess.h; sourceTree = "<group>"; };
+		D6EAF2671EF19A3900F6E44C /* AddBankCardSuccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBankCardSuccess.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1166,6 +1178,8 @@
 				D65DC89A1ED825500030636D /* DetailsViewController.m */,
 				D640951D1EE9878800DD24FF /* MessageViewController.h */,
 				D640951E1EE9878800DD24FF /* MessageViewController.m */,
+				D6EAF2601EF18B6200F6E44C /* MessageDetailsVC.h */,
+				D6EAF2611EF18B6200F6E44C /* MessageDetailsVC.m */,
 				D64095261EEA9F6D00DD24FF /* ConnectionEquipmentVC.h */,
 				D64095271EEA9F6D00DD24FF /* ConnectionEquipmentVC.m */,
 			);
@@ -1221,6 +1235,8 @@
 				D64095211EE987A000DD24FF /* MessageTableViewCell.m */,
 				D64095291EEA9F9E00DD24FF /* ConnectionEquipmentView.h */,
 				D640952A1EEA9F9E00DD24FF /* ConnectionEquipmentView.m */,
+				D6EAF2631EF18E4700F6E44C /* MessageDetialsCell.h */,
+				D6EAF2641EF18E4700F6E44C /* MessageDetialsCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1284,8 +1300,12 @@
 				D6EAF24F1EF1280600F6E44C /* AddBanCardVC.m */,
 				D6EAF2511EF1319A00F6E44C /* SetUpPayPasswordVC.h */,
 				D6EAF2521EF1319A00F6E44C /* SetUpPayPasswordVC.m */,
+				D6EAF25D1EF15FBF00F6E44C /* SurePayPasswordVC.h */,
+				D6EAF25E1EF15FBF00F6E44C /* SurePayPasswordVC.m */,
 				D39EDAD81EF10969002C0D0B /* MyOrderContainer.h */,
 				D39EDAD91EF10969002C0D0B /* MyOrderContainer.m */,
+				D6EAF2661EF19A3900F6E44C /* AddBankCardSuccess.h */,
+				D6EAF2671EF19A3900F6E44C /* AddBankCardSuccess.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1602,6 +1622,7 @@
 				D39EDAEA1EF13D21002C0D0B /* OriWebViewController.m in Sources */,
 				D3E5436C1EDE546E00D8898C /* OBannerView.m in Sources */,
 				D65DC8D71ED825500030636D /* TYTabTitleViewCell.m in Sources */,
+				D6EAF2651EF18E4700F6E44C /* MessageDetialsCell.m in Sources */,
 				D3E5437F1EDE8EA700D8898C /* ChannelTabViewModel.m in Sources */,
 				D65DC8CC1ED825500030636D /* ChannelViewController.m in Sources */,
 				D39EDAE61EF131A6002C0D0B /* OriWebView.m in Sources */,
@@ -1615,6 +1636,7 @@
 				D3E543731EDE68B800D8898C /* UIImageView+FadeForSDWebImage.m in Sources */,
 				D64095311EEBC90000DD24FF /* AddFamilyView.m in Sources */,
 				D3EA479E1EE8F1E300ECD89C /* NSData+Base64.m in Sources */,
+				D6EAF25F1EF15FBF00F6E44C /* SurePayPasswordVC.m in Sources */,
 				D3EA473D1EE7FE2200ECD89C /* NSFileManager+Godzippa.m in Sources */,
 				D640950A1EE91E6600DD24FF /* MyTVTableViewCell.m in Sources */,
 				D33820B51EE15EFD00D5B99C /* HoritalVideoCollectionCell.m in Sources */,
@@ -1676,6 +1698,7 @@
 				D609C31A1EE1977A00A09C19 /* SetupPasswordVC.m in Sources */,
 				D3EA47211EE7971500ECD89C /* ShareMenu.m in Sources */,
 				D609C3171EE1885400A09C19 /* RegisteredViewController.m in Sources */,
+				D6EAF2621EF18B6200F6E44C /* MessageDetailsVC.m in Sources */,
 				D609C3201EE1A38300A09C19 /* SetUpViewController.m in Sources */,
 				D3EA47C51EE9556700ECD89C /* OrientalUploadModel.m in Sources */,
 				D609C2F41EE1685800A09C19 /* TeleplayViewController.m in Sources */,
@@ -1686,6 +1709,7 @@
 				D64095131EE9474D00DD24FF /* MyCollectionVC.m in Sources */,
 				D3EA47BF1EE94AAB00ECD89C /* OrientalHttpManager.m in Sources */,
 				D64094EE1EE7DD4000DD24FF /* ZHPickView.m in Sources */,
+				D6EAF2681EF19A3900F6E44C /* AddBankCardSuccess.m in Sources */,
 				D6EAF2501EF1280600F6E44C /* AddBanCardVC.m in Sources */,
 				D65DC8CF1ED825500030636D /* HomeModel.m in Sources */,
 				D64095161EE947DD00DD24FF /* MyCollectionCell.m in Sources */,

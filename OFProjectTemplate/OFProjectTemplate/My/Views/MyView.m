@@ -13,7 +13,7 @@
 
 
 @implementation MyView{
-    UIScrollView *scrollView;
+//    UIScrollView *scrollView;
 }
 
 
@@ -25,14 +25,15 @@
 
 - (void)addSubviews {
     
-    scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, self.frame.size.height)];
-    scrollView.showsVerticalScrollIndicator = NO;
-    scrollView.contentSize = CGSizeMake(0, SCREEN_HEIGHT +SCREEN_WIDTH/3 + 49);
-    [self addSubview:scrollView];
+//    scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, self.frame.size.height)];
+//    scrollView.showsVerticalScrollIndicator = NO;
+////    scrollView.contentSize = CGSizeMake(0, SCREEN_HEIGHT +SCREEN_WIDTH/3 + 49);
+//    scrollView.scrollEnabled = NO;
+//    [self addSubview:scrollView];
     
     __weak MyView *weakSelf = self;
     [self.headerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(scrollView.mas_top).offset(30);
+        make.top.equalTo(self.mas_top).offset(30);
         make.centerX.equalTo(weakSelf);
         make.width.equalTo(@(120));
         make.height.equalTo(@(120));
@@ -49,7 +50,7 @@
     }];
     
     [self.btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(weakSelf.nameLabel.mas_bottom).offset(40);
+        make.top.equalTo(weakSelf.nameLabel.mas_bottom).offset(15);
         make.left.equalTo(weakSelf);
         make.right.equalTo(weakSelf.mas_centerX).offset(0.25);
         make.height.equalTo(@80);
@@ -57,7 +58,7 @@
 
     UILabel *line1 = [[UILabel alloc] init];
     line1.backgroundColor = [UIColor lightGrayColor];
-    [scrollView addSubview:line1];
+    [self addSubview:line1];
     
     [line1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.btn1.mas_top).offset(30);
@@ -67,7 +68,7 @@
     }];
     
     [self.btn2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(weakSelf.nameLabel.mas_bottom).offset(40);
+        make.top.equalTo(weakSelf.nameLabel.mas_bottom).offset(15);
         make.right.equalTo(weakSelf).offset(-0.25);
         make.left.equalTo(weakSelf.mas_centerX);
         make.height.equalTo(@80);
@@ -75,7 +76,7 @@
     
     UILabel *line2 = [[UILabel alloc] init];
     line2.backgroundColor = [UIColor colorWithRed:233/255.0 green:233/255.0 blue:233/255.0 alpha:1.0];
-    [scrollView addSubview:line2];
+    [self addSubview:line2];
     
     [line2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.btn1.mas_bottom);
@@ -90,7 +91,7 @@
         make.top.equalTo(weakSelf.btn1.mas_bottom).offset(20);
         make.left.equalTo(weakSelf);
         make.width.equalTo(@(weakSelf.frame.size.width/3));
-        make.height.equalTo(@(weakSelf.frame.size.width/3));
+        make.height.equalTo(@85);
     }];
     [self initButton:_btn3];
     
@@ -98,7 +99,7 @@
         make.top.equalTo(weakSelf.btn1.mas_bottom).offset(20);
         make.centerX.equalTo(weakSelf.mas_centerX).offset(0.25);
         make.width.equalTo(@(weakSelf.frame.size.width/3));
-        make.height.equalTo(@(weakSelf.frame.size.width/3));
+        make.height.equalTo(@85);
     }];
     [self initButton:_btn4];
 
@@ -106,7 +107,7 @@
         make.top.equalTo(weakSelf.btn1.mas_bottom).offset(20);
         make.right.equalTo(weakSelf.mas_right);
         make.width.equalTo(@(weakSelf.frame.size.width/3));
-        make.height.equalTo(@(weakSelf.frame.size.width/3));
+        make.height.equalTo(@85);
     }];
     [self initButton:_btn5];
 
@@ -174,7 +175,7 @@
         ;
         _headerBtn.layer.borderColor = [UIColor grayColor].CGColor;
         _headerBtn.layer.borderWidth = 0.5;
-        [scrollView addSubview:_headerBtn];
+        [self addSubview:_headerBtn];
     }
     return _headerBtn;
 }
@@ -184,7 +185,7 @@
         _nameLabel = [[UILabel alloc]init];
         _nameLabel.text = @"东方有线电视";
         _nameLabel.font = [UIFont systemFontOfSize:15];
-        [scrollView addSubview:_nameLabel];
+        [self addSubview:_nameLabel];
     }
     return _nameLabel;
 }
@@ -194,7 +195,7 @@
         _introductionLabel = [[UILabel alloc]init];
         _introductionLabel.text = @"东方有线电视欢迎您使用,好用得很!";
         _introductionLabel.font = [UIFont systemFontOfSize:13];
-        [scrollView addSubview:_introductionLabel];
+        [self addSubview:_introductionLabel];
     }
     return _introductionLabel;
 }
@@ -208,7 +209,7 @@
         [_btn1 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_btn1 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
         _btn1.titleLabel.font = UIFontMake(13);
-        [scrollView addSubview:_btn1];
+        [self addSubview:_btn1];
     }
     return _btn1;
 }
@@ -222,7 +223,7 @@
         [_btn2 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
         _btn2.titleLabel.font = UIFontMake(13);
         [_btn2 setImage:[UIImage imageNamed:@"homepage"] forState:UIControlStateNormal];
-        [scrollView addSubview:_btn2];
+        [self addSubview:_btn2];
     }
     return _btn2;
 }
@@ -237,7 +238,7 @@
         _btn3.titleLabel.font = UIFontMake(13);
         _btn3.imageView.contentMode = UIViewContentModeScaleAspectFit;
         [_btn3 setImage:[UIImage imageNamed:@"playon"] forState:UIControlStateNormal];
-        [scrollView addSubview:_btn3];
+        [self addSubview:_btn3];
     }
     return _btn3;
 }
@@ -251,7 +252,7 @@
         [_btn4 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
         _btn4.titleLabel.font = UIFontMake(13);
         [_btn4 setImage:[UIImage imageNamed:@"message"] forState:UIControlStateNormal];
-        [scrollView addSubview:_btn4];
+        [self addSubview:_btn4];
     }
     return _btn4;
 }
@@ -266,7 +267,7 @@
         [_btn5 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
         _btn5.titleLabel.font = UIFontMake(13);
         [_btn5 setImage:[UIImage imageNamed:@"integral"] forState:UIControlStateNormal];
-        [scrollView addSubview:_btn5];
+        [self addSubview:_btn5];
     }
     return _btn5;
 }
@@ -279,7 +280,7 @@
         [_btn6 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_btn6 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
         _btn6.titleLabel.font = UIFontMake(13);
-        [scrollView addSubview:_btn6];
+        [self addSubview:_btn6];
         [_btn6 setImage:[UIImage imageNamed:@"prompt"] forState:UIControlStateNormal];
     }
     return _btn6;
@@ -294,7 +295,7 @@
         [_btn7 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
         _btn7.titleLabel.font = UIFontMake(13);
         [_btn7 setImage:[UIImage imageNamed:@"redpacket"] forState:UIControlStateNormal];
-        [scrollView addSubview:_btn7];
+        [self addSubview:_btn7];
     }
     return _btn7;
 }
@@ -306,7 +307,7 @@
         [_btn8 setTitle:@"绑定银行卡"forState:UIControlStateNormal];
         [_btn8 setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [_btn8 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
-        [scrollView addSubview:_btn8];
+        [self addSubview:_btn8];
         _btn8.titleLabel.font = UIFontMake(13);
         [_btn8 setImage:[UIImage imageNamed:@"service"] forState:UIControlStateNormal];
     }
@@ -322,7 +323,7 @@
         [_btn9 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
         _btn9.titleLabel.font = UIFontMake(13);
         [_btn9 setImage:[UIImage imageNamed:@"time"] forState:UIControlStateNormal];
-        [scrollView addSubview:_btn9];
+        [self addSubview:_btn9];
     }
     return _btn9;
 }
@@ -335,7 +336,7 @@
         [_btn10 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
         _btn10.titleLabel.font = UIFontMake(13);
         [_btn10 setImage:[UIImage imageNamed:@"stealth"] forState:UIControlStateNormal];
-        [scrollView addSubview:_btn10];
+        [self addSubview:_btn10];
     }
     return _btn10;
 }
@@ -349,7 +350,7 @@
         [_btn11 addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
         [_btn11 setImage:[UIImage imageNamed:@"stealth"] forState:UIControlStateNormal];
         _btn11.titleLabel.font = UIFontMake(13);
-        [scrollView addSubview:_btn11];
+        [self addSubview:_btn11];
     }
     return _btn11;
 }
