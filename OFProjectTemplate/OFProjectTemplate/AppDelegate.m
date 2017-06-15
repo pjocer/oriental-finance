@@ -60,7 +60,8 @@
     if (!_rootController) {
         _rootController = [[UITabBarController alloc] init];
         _rootController.delegate = self;
-        _rootController.tabBar.barTintColor = [UIColor whiteColor];  
+        _rootController.tabBar.backgroundColor = UIColorWhite;
+        _rootController.tabBar.barTintColor = UIColorWhite;
         HomeContainerController *home = [[HomeContainerController alloc] initWithTitle:@"东方遥控宝" navBarBtns:NavBarBtnNone];
         ChannelViewController *channel = [[ChannelViewController alloc] initWithTitle:@"频道" navBarBtns:NavBarBtnNone];
         RemoteViewController *vc3 = [[RemoteViewController alloc] initWithTitle:@"遥控器" navBarBtns:NavBarBtnNone];
@@ -88,7 +89,7 @@
                                                 NSFontAttributeName : UIFontMake(10.0) } forState:UIControlStateSelected];
             } else {
                 item.title = nil;
-                item.imageInsets = UIEdgeInsetsMake(-10, 0, 10, 0);
+                item.imageInsets = UIEdgeInsetsMake(-5, 0, 5, 0);
             }
             
             UIImage *normalImage = OriImageNamed(normalImages[idx]);

@@ -11,8 +11,9 @@
 #import <Masonry.h>
 #import "OFUIkitMacro.h"
 #import "OriRoute.h"
+#import "H5LinkMacro.h"
 
-@interface OriWebView () <WKUIDelegate, WKNavigationDelegate>
+@interface OriWebView () <WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler>
 @property (nonatomic, strong) WKWebView         *wkWebView;
 @property (nonatomic, strong) UIProgressView    *progressView;
 @property (nonatomic, readwrite, copy) NSString *title;
@@ -32,7 +33,7 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        [[[self commitSubviews] makeConstaints] subscribe].backgroundColor = UIColorWhite;
+        [[[self commitSubviews] makeConstaints] subscribe].progressViewHeight = 1.f;
     }
     return self;
 }
@@ -56,7 +57,6 @@
 }
 
 - (instancetype)subscribe {
-    self.progressViewHeight = 1.0;
     WEAKSELF
     [RACObserve(self.wkWebView.scrollView,contentOffset) subscribeNext:^(id x) {
         STRONGSELF
@@ -73,6 +73,12 @@
         STRONGSELF
         self.title = x ?: @"";
     }];
+    
+    [RACObserve(self.wkWebView, estimatedProgress) subscribeNext:^(id x) {
+        STRONGSELF
+        CGFloat progress = [x floatValue];
+        [self.progressView setProgress:progress animated:(progress > self.progressView.progress)];
+    }];
     return self;
 }
 
@@ -88,7 +94,8 @@
 
 - (void)loadURL:(NSString *)url {
     if (STRINGHASVALUE(url)) {
-        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.f];
+        NSString *encodedString=[[H5HOST stringByAppendingString:url] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:encodedString] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.f];
         NSDictionary * headers = [NSHTTPCookie requestHeaderFieldsWithCookies:[NSHTTPCookieStorage sharedHTTPCookieStorage].cookies];
         [request setAllHTTPHeaderFields:headers];
         [request addValue:@"iOS" forHTTPHeaderField:@"platform"];
@@ -141,16 +148,6 @@
             }
         }
             break;
-        case OriRouteHandlerTypeSetShareInfo:
-        {
-
-        }
-            break;
-        case OriRouteHandlerTypeSetTitle:
-        {
-
-        }
-            break;
         case OriRouteHandlerTypeNavBack:
         {
 
@@ -159,17 +156,6 @@
     }
 }
 
-- (id)getPrivateProperty:(NSString *)propertyName
-{
-    Ivar iVar = class_getInstanceVariable([self class], [propertyName UTF8String]);
-    
-    if (iVar == nil) {
-        iVar = class_getInstanceVariable([self class], [[NSString stringWithFormat:@"_%@",propertyName] UTF8String]);
-    }
-    
-    id propertyVal = object_getIvar(self, iVar);
-    return propertyVal;
-}
 #pragma mark - Navigation Delefate
 
 /**
@@ -225,6 +211,20 @@
     return nil;
 }
 
+- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
+    NSLog(@"方法名:%@", message.name);
+    NSLog(@"参数:%@", message.body);
+    // 方法名
+    NSString *methods = [NSString stringWithFormat:@"%@:", message.name];
+    SEL selector = NSSelectorFromString(methods);
+    // 调用方法
+    if ([self respondsToSelector:selector]) {
+        [self performSelector:selector withObject:message.body];
+    } else {
+        NSLog(@"未实行方法：%@", methods);
+    }
+}
+
 #pragma mark - GETTER_SETTER
 - (BOOL)isLoading {
     return self.wkWebView.isLoading;
@@ -239,14 +239,33 @@
 - (NSURL *)URL {
     return self.wkWebView.URL;
 }
+- (void)setProgressTintColor:(UIColor *)progressTintColor {
+    _progressTintColor = progressTintColor;
+    _progressView.progressTintColor = progressTintColor;
+}
+
+- (void)setTrackTintColor:(UIColor *)trackTintColor {
+    _trackTintColor = trackTintColor;
+    _progressView.trackTintColor = trackTintColor;
+}
+
 - (void)setProgressViewHeight:(CGFloat)progressViewHeight {
     _progressViewHeight = MAX(0.5, progressViewHeight);
     _progressView.transform = CGAffineTransformMakeScale(1.0f,0.50f * self.progressViewHeight);
 }
 
+- (void)setShowsVerticalScrollIndicator:(BOOL)showsVerticalScrollIndicator {
+    _showsVerticalScrollIndicator = showsVerticalScrollIndicator;
+    self.wkWebView.scrollView.showsVerticalScrollIndicator = showsVerticalScrollIndicator;
+}
+
+- (void)setShowsHorizontalScrollIndicator:(BOOL)showsHorizontalScrollIndicator {
+    _showsHorizontalScrollIndicator = showsHorizontalScrollIndicator;
+    self.wkWebView.scrollView.showsHorizontalScrollIndicator = showsHorizontalScrollIndicator;
+}
+
 - (WKWebView *)wkWebView {
     if (_wkWebView == nil) {
-        //设置UA（ios8不支持customUA，统一使用这个办法)
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
             UIWebView *webView = [[UIWebView alloc] init];
@@ -255,27 +274,43 @@
             NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:newUserAgent, @"UserAgent", nil];
             [[NSUserDefaults standardUserDefaults] registerDefaults:dictionary];
         });
-        _wkWebView = [[WKWebView alloc] initWithFrame:self.bounds];
+        WKUserContentController *userContentController = [[WKUserContentController alloc] init];
+        [userContentController addScriptMessageHandler:self name:@"jsCallOC"];
+        NSString *javaScriptSource = @"alert(\"注入js\");";
+        WKUserScript *userScript = [[WKUserScript alloc] initWithSource:javaScriptSource injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
+        [userContentController addUserScript:userScript];
+        
+        WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
+        configuration.userContentController = userContentController;
+        _wkWebView = [[WKWebView alloc] initWithFrame:self.bounds configuration:configuration];
         _wkWebView.UIDelegate = self;
         _wkWebView.navigationDelegate = self;
         _wkWebView.allowsBackForwardNavigationGestures = YES;
         _wkWebView.scrollView.showsVerticalScrollIndicator = NO;
         _wkWebView.scrollView.showsHorizontalScrollIndicator = NO;
-        
-        WEAKSELF
-        [RACObserve(_wkWebView, estimatedProgress) subscribeNext:^(id x) {
-            STRONGSELF
-            CGFloat progress = [x floatValue];
-            [self.progressView setProgress:progress animated:(progress > self.progressView.progress)];
-        }];
-        
-        [RACObserve(_wkWebView, title) subscribeNext:^(id x) {
-            STRONGSELF
-            self.title = self.wkWebView.title;
-        }];
-        
     }
     return _wkWebView;
 }
-
+- (UIProgressView *)progressView {
+    if (_progressView == nil) {
+        _progressView = [[UIProgressView alloc] init];
+        _progressView.transform = CGAffineTransformMakeScale(1.0f,0.50f * self.progressViewHeight);
+        _progressView.progressTintColor = self.progressTintColor ?: [UIColor redColor];
+        _progressView.trackTintColor = self.trackTintColor ?: [UIColor clearColor];
+        _progressView.backgroundColor = [UIColor clearColor];
+        _progressView.hidden = YES;
+    }
+    return _progressView;
+}
+- (void)jsCallOC:(id)body {
+    if ([body isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *dict = (NSDictionary *)body;
+        NSString *jsStr = [NSString stringWithFormat:@"ocCallJS('%@')", [dict objectForKey:@"data"]];
+        [self.wkWebView evaluateJavaScript:jsStr completionHandler:^(id _Nullable data, NSError * _Nullable error) {
+            if (error) {
+                NSLog(@"错误:%@", error.localizedDescription);
+            }
+        }];
+    }
+}
 @end

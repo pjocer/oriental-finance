@@ -10,8 +10,6 @@
 
 typedef NS_ENUM(NSUInteger, OriRouteHandlerType) {
     OriRouteHandlerTypeJSCallBack,
-    OriRouteHandlerTypeSetShareInfo,
-    OriRouteHandlerTypeSetTitle,
     OriRouteHandlerTypeNavBack,
 };
 typedef void (^OriRouteResponse)(OriRouteHandlerType type, id response);

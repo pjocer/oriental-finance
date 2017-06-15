@@ -213,6 +213,7 @@
 		D372FD371EF1429600F64916 /* WebViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewManager.m; sourceTree = "<group>"; };
 		D372FD3A1EF1436500F64916 /* OriRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OriRoute.h; sourceTree = "<group>"; };
 		D372FD3B1EF1436500F64916 /* OriRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OriRoute.m; sourceTree = "<group>"; };
+		D372FD3D1EF1499200F64916 /* H5LinkMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H5LinkMacro.h; sourceTree = "<group>"; };
 		D39EDAD11EF0C87B002C0D0B /* AccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountManager.h; sourceTree = "<group>"; };
 		D39EDAD21EF0C87B002C0D0B /* AccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountManager.m; sourceTree = "<group>"; };
 		D39EDAD41EF0CD95002C0D0B /* UserCenterMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCenterMacros.h; sourceTree = "<group>"; };
@@ -1232,6 +1233,7 @@
 				D3207FC81ED82F5E00240DD2 /* OVendorMacro.h */,
 				D3207FC91ED82FDC00240DD2 /* OEnviroment.h */,
 				D3EA47C21EE9523C00ECD89C /* OFHttpMacro.h */,
+				D372FD3D1EF1499200F64916 /* H5LinkMacro.h */,
 			);
 			path = Macro;
 			sourceTree = "<group>";

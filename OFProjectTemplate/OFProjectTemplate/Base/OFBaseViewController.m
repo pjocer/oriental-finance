@@ -80,23 +80,23 @@
 }
 
 - (void)startLoading {
-    [self.view.layer addSublayer:self.shapeLayer];
-    CABasicAnimation *startAnimation = [CABasicAnimation animationWithKeyPath:@"strokeStart"];
-    startAnimation.fromValue = @(-0.5);
-    startAnimation.toValue = @(1);
-    CABasicAnimation *endAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-    endAnimation.fromValue = @(0);
-    endAnimation.toValue = @(1);
-    CAAnimationGroup *groupAnimation = [CAAnimationGroup animation];
-    groupAnimation.animations = @[startAnimation, endAnimation];
-    groupAnimation.duration = 1.5;
-    groupAnimation.repeatCount = INFINITY;
-    [self.shapeLayer addAnimation:groupAnimation forKey:nil];
+//    [self.view.layer addSublayer:self.shapeLayer];
+//    CABasicAnimation *startAnimation = [CABasicAnimation animationWithKeyPath:@"strokeStart"];
+//    startAnimation.fromValue = @(-0.5);
+//    startAnimation.toValue = @(1);
+//    CABasicAnimation *endAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+//    endAnimation.fromValue = @(0);
+//    endAnimation.toValue = @(1);
+//    CAAnimationGroup *groupAnimation = [CAAnimationGroup animation];
+//    groupAnimation.animations = @[startAnimation, endAnimation];
+//    groupAnimation.duration = 1.5;
+//    groupAnimation.repeatCount = INFINITY;
+//    [self.shapeLayer addAnimation:groupAnimation forKey:nil];
 }
 
 - (void)stopLoading {
-    [self.shapeLayer removeAllAnimations];
-    [self.shapeLayer removeFromSuperlayer];
+//    [self.shapeLayer removeAllAnimations];
+//    [self.shapeLayer removeFromSuperlayer];
 }
 
 - (CAShapeLayer *)shapeLayer {

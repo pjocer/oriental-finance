@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <WebKit/WebKit.h>
+#import <WebKit/WKError.h>
 
 typedef void(^OriWebViewNormalBlock)(WKWebView *webView);
 typedef void(^OriWebViewFailedBlock)(WKWebView *webView,NSError *error);
@@ -23,6 +24,10 @@ typedef void(^OriWebViewHandlerBlock)(NSURLRequest *request,OriWebViewDecisionHa
 @property (nonatomic, readonly) double  estimatedProgress;
 @property (nonatomic, readonly, strong) NSURL       *URL;
 @property (nonatomic, readonly) BOOL    canGoBack;
+@property (nonatomic, strong) UIColor *progressTintColor;
+@property (nonatomic, strong) UIColor *trackTintColor;
+@property (nonatomic, assign) BOOL showsVerticalScrollIndicator;    //defaule NO
+@property (nonatomic, assign) BOOL showsHorizontalScrollIndicator;  //defaule NO
 @property (nonatomic, assign, getter=isShowProgress) BOOL showProgress;// 是否显示加载进度条 默认不显示
 + (instancetype)webView;
 - (void)loadURL:(NSString *)url;

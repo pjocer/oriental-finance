@@ -33,13 +33,9 @@
 
 - (void)loadView {
     [super loadView];
-    [self startLoading];
-    [[RACScheduler mainThreadScheduler] afterDelay:10 schedule:^{
-        [self.view addSubview:self.searchView];
-        [self.view addSubview:self.tableView];
-        [self makeConstraints];
-        [self stopLoading];
-    }];
+    [self.view addSubview:self.searchView];
+    [self.view addSubview:self.tableView];
+    [self makeConstraints];
 }
 
 - (void)makeConstraints {

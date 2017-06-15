@@ -11,6 +11,4 @@
 
 #define BASE_TAG @"/app/gateway"
 
-#define BASE_URL @""
-
 #endif /* OFHttpMacro_h */
