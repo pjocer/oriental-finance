@@ -15,6 +15,7 @@
 #import "OFUIkitMacro.h"
 #import "UIDevice+Hardware.h"
 #import "AccountManager.h"
+#import "OShowHud.h"
 
 #define DEFAULT_TIMEOUT 30.f
 #define DEFAULT_METHOD OrientalRequestMethodPost
@@ -78,6 +79,7 @@
     void (^successBlock)(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) = ^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSError *err = nil;
         NSDictionary *responseDic = [self deCompressedDataWith:responseObject err:err];
+        SuccessLog(targetUrl, orignalContent, responseDic);
         if (DICTHASVALUE(responseDic) && !err) {
             if (success) success (task,responseDic);
         } else {
@@ -86,6 +88,8 @@
 
     };
     void (^failureBlock)(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) = ^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        FailureLog(targetUrl, orignalContent, error.localizedDescription);
+        [OShowHud showErrorHudWith:@"网络连接失败" animated:YES];
         if (failure) {
             failure(task,error);
         }

@@ -16,7 +16,8 @@
 #import "MacorLogin.h"
 #import "OriNetworking.h"
 #import "WBAlertController.h"
-
+#import "OShowHud.h"
+#import "AccountManager.h"
 
 @interface LoginViewController ()<loginViewDelegate, InformationInputDelegate>{
     InformationInputView *loginView;
@@ -56,20 +57,25 @@
 }
 
 -(void)back{
-    [self dismissViewControllerAnimated:YES completion:^{
-        self.loginHandler(ActionStateUserCancel);
-    }];
+    self.loginHandler(ActionStateUserCancel);
+    [super back];
 }
 
 
 - (void)InformationInputDelegate:(UIButton *)btn {
     if (loginView.textField.text.length != 0 && loginView.textField2.text.length !=0) {
         NSDictionary *dic = @{@"phone": loginView.textField.text,@"pwd":loginView.textField2.text};
-        
+        [self startLoading];
         [[OrientalHttpManager sharedInstance] requestWithTarget:Login params:dic success:^(NSURLSessionDataTask *task, id responseObject) {
-
+            [self stopLoading];
+            [OShowHud showErrorHudWith:responseObject[@"msg"] animated:YES];
+            if ([responseObject[@"code"] integerValue]>0) {
+                [AccountManager saveLocalAccountData:responseObject[@"result"]];
+                self.loginHandler(ActionStateSuccess);
+                [super back];
+            }
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
-            
+            [self stopLoading];
         }];
     }else{
         
@@ -88,6 +94,7 @@
         [self.navigationController pushViewController:vc animated:YES];
     } else if (btn.tag == 201){
         RegisteredViewController *vc = [[RegisteredViewController alloc]initWithTitle:@"忘记密码" navBarBtns:NavBarBtnBack];
+        vc.loginHandler = self.loginHandler;
         vc.typeStr = @"Forgot";
         [self.navigationController pushViewController:vc animated:YES];
     }

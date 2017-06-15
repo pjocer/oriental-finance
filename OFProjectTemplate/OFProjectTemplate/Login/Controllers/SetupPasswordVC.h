@@ -7,8 +7,10 @@
 //
 
 #import "OFBaseViewController.h"
+#import "UserCenterMacros.h"
 
 @interface SetupPasswordVC : OFBaseViewController
 @property (nonatomic, strong) NSString *typeStr;
 @property (nonatomic, copy) NSString *params;
+@property (nonatomic, copy) void(^loginHandler)(ActionState state);
 @end

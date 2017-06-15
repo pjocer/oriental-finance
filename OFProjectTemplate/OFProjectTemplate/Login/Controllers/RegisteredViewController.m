@@ -119,6 +119,7 @@
             [self stopLoading];
             if ([responseObject[@"code"] integerValue] > 0) {
                 SetupPasswordVC *vc = [[SetupPasswordVC alloc]initWithTitle:@"设置密码" navBarBtns:NavBarBtnBack];
+                vc.loginHandler = self.loginHandler;
                 vc.typeStr = self.typeStr;
                 vc.params = loginView.textField.text;
                 [self.navigationController pushViewController:vc animated:YES];
@@ -126,7 +127,6 @@
             [OShowHud showErrorHudWith:responseObject[@"msg"] animated:YES];
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             [self stopLoading];
-            [OShowHud showErrorHudWith:@"网络连接失败" animated:YES];
         }];
     }else{
         WBAlertController *alert = [WBAlertController initWBAlerControllerWithTitle:@"提示" message:@"请输入正确的手机号码" style:@"1" titleArr:[NSMutableArray arrayWithObjects:@"确定", nil] alerAction:^(NSInteger index) {

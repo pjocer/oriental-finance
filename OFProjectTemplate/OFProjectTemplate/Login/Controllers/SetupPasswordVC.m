@@ -13,6 +13,7 @@
 #import "MacorLogin.h"
 #import "OriNetworking.h"
 #import "OShowHud.h"
+#import "AccountManager.h"
 
 @interface SetupPasswordVC ()<InformationInputDelegate>{
     InformationInputView *setPasswordView;
@@ -49,11 +50,10 @@
     }];
 }
 
-//-(void)back {
-//    [self dismissViewControllerAnimated:YES completion:^{
-//        
-//    }];
-//}
+- (void)back {
+    self.loginHandler(ActionStateSuccess);
+    [super back];
+}
 
 - (void)InformationInputDelegate:(UIButton *)btn {
     [self startLoading];
@@ -62,9 +62,8 @@
         [self stopLoading];
         [OShowHud showErrorHudWith:responseObject[@"msg"] animated:YES];
         if ([responseObject[@"code"] integerValue] > 0) {
-            [self dismissViewControllerAnimated:YES completion:^{
-                
-            }];
+            [AccountManager saveLocalAccountData:responseObject[@"result"]];
+            [self back];
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         [self stopLoading];

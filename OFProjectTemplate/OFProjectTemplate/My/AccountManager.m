@@ -11,8 +11,24 @@
 #import "AppDelegate.h"
 #import "OFUIkitMacro.h"
 
+#define USER_ACCOUNT_DATA @"USER_ACCOUNT_DATA"
+
 @interface AccountManager ()
+
 @property (nonatomic, readwrite, copy) NSString *token;
+
+@property (nonatomic, readwrite, copy) NSString *id_card;
+
+@property (nonatomic, readwrite, copy) NSString *msg_push;
+
+@property (nonatomic, readwrite, copy) NSString *name;
+
+@property (nonatomic, readwrite, copy) NSString *nick_name;
+
+@property (nonatomic, readwrite, copy) NSString *phone;
+
+@property (nonatomic, readwrite, copy) NSString *sign_url;
+
 @end
 
 @implementation AccountManager
@@ -28,9 +44,19 @@
 
 - (instancetype)_init {
     if (self = [super init]) {
-        
+        [self setAccountProperties:UserDefaultsObjectForKey(USER_ACCOUNT_DATA)];
     }
     return self;
+}
+
+- (void)setAccountProperties:(NSDictionary *)data {
+    self.token = data[@"token"];
+    self.id_card = data[@"id_card"];
+    self.msg_push = data[@"msg_push"];
+    self.name = data[@"name"];
+    self.nick_name = data[@"nick_name"];
+    self.phone = data[@"phone"];
+    self.sign_url = data[@"sign_url"];
 }
 
 + (void)callLoginServiceWithHandler:(void (^)(ActionState))handler {
@@ -43,11 +69,12 @@
 }
 
 + (void)saveLocalAccountData:(NSDictionary *)data {
-    
+    [[AccountManager sharedManager] setAccountProperties:data];
+    UserDefaultsSetObjectForKey(data, USER_ACCOUNT_DATA);
 }
 
 + (void)clearLocalAccountData:(NSDictionary *)data {
-    
+    UserDefaultsSetObjectForKey(nil, USER_ACCOUNT_DATA);
 }
 
 + (BOOL)isLogin {

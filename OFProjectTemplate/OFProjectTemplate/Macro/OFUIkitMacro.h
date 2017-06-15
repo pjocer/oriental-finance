@@ -21,12 +21,23 @@
 #define DEFAULT_TEXT_COLOR_GRAY UIColorMake(102, 102, 102)
 
 #ifdef DEBUG
-    #define LogRed(frmt, ...) NSLog((XCODE_COLORS_ESCAPE @"fg255,0,0;" frmt XCODE_COLORS_RESET), ##__VA_ARGS__)
     #define NSLog(...) NSLog((@"%s [Line %d] %@"), __PRETTY_FUNCTION__, __LINE__, [NSString stringWithFormat:__VA_ARGS__])
+    #define SuccessLog(url, params, response) NSLog(@"\nurl = %@ \nparams = %@\nresponseObject = %@", url, params, response);
+    #define FailureLog(url, params, response) NSLog(@"\n❌❌❌❌❌❌❌❌❌❌\nurl = %@ \nparams = %@\nerror:%@ \n❌❌❌❌❌❌❌❌❌❌\n", url, params, response);
 #else
-    #define LogRed(...)
     #define NSlog(...)
+    #define SuccessLog(...)
+    #define FailureLog(...)
 #endif
+
+#define UserDefaultsSetObjectForKey(obj,key)\
+        [[NSUserDefaults standardUserDefaults] setObject:obj forKey:key];\
+        [[NSUserDefaults standardUserDefaults] synchronize]
+
+
+#define UserDefaultsObjectForKey(key)\
+        [[NSUserDefaults standardUserDefaults] objectForKey:key]
+
 
 #define ARRAYHASVALUE(array)    ((array) && ([(array) isKindOfClass:[NSArray class]]) && ([(array) count] > 0))
 #define DICTHASVALUE(dict)      ((dict) && [(dict) isKindOfClass:[NSDictionary class]] && [((NSDictionary *)dict) count] > 0)

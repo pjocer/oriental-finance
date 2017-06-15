@@ -13,6 +13,18 @@
 
 @property (nonatomic, readonly, copy) NSString *token;
 
+@property (nonatomic, readonly, copy) NSString *id_card;
+
+@property (nonatomic, readonly, copy) NSString *msg_push;
+
+@property (nonatomic, readonly, copy) NSString *name;
+
+@property (nonatomic, readonly, copy) NSString *nick_name;
+
+@property (nonatomic, readonly, copy) NSString *phone;
+
+@property (nonatomic, readonly, copy) NSString *sign_url;
+
 + (instancetype)sharedManager;
 
 + (BOOL)isLogin;
