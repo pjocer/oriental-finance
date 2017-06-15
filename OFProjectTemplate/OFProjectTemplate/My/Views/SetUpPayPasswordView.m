@@ -172,7 +172,7 @@
         label5.text = @"";
         label6.text = @"";
     }else if ([text.text length] == 1){
-        label1.text = @"●";
+        label1.text = @"*";
         label2.text = @"";
         label3.text = @"";
         label4.text = @"";
@@ -180,49 +180,50 @@
         label6.text = @"";
         
     }else if ([text.text length] == 2){
-        label1.text = @"●";
-        label2.text = @"●";
+        label1.text = @"*";
+        label2.text = @"*";
         label3.text = @"";
         label4.text = @"";
         label5.text = @"";
         label6.text = @"";
         
     }else if ([text.text length] == 3){
-        label1.text = @"●";
-        label2.text = @"●";
-        label3.text = @"●";
+        label1.text = @"*";
+        label2.text = @"*";
+        label3.text = @"*";
         label4.text = @"";
         label5.text = @"";
         label6.text = @"";
         
     }else if ([text.text length] == 4){
-        label1.text = @"●";
-        label2.text = @"●";
-        label3.text = @"●";
-        label4.text = @"●";
+        label1.text = @"*";
+        label2.text = @"*";
+        label3.text = @"*";
+        label4.text = @"*";
         label5.text = @"";
         label6.text = @"";
         
     }else if ([text.text length] == 5){
-        label1.text = @"●";
-        label2.text = @"●";
-        label3.text = @"●";
-        label4.text = @"●";
-        label5.text = @"●";
+        label1.text = @"*";
+        label2.text = @"*";
+        label3.text = @"*";
+        label4.text = @"*";
+        label5.text = @"*";
         label6.text = @"";
         
     }else if ([text.text length] == 6){
-        label1.text = @"●";
-        label2.text = @"●";
-        label3.text = @"●";
-        label4.text = @"●";
-        label5.text = @"●";
-        label6.text = @"●";
+        label1.text = @"*";
+        label2.text = @"*";
+        label3.text = @"*";
+        label4.text = @"*";
+        label5.text = @"*";
+        label6.text = @"*";
         
     }
     if ([text.text length] > 6) {
         text.text = [text.text substringToIndex:6];
     }
+    
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

@@ -11,8 +11,11 @@
 #import "Masonry.h"
 #import "OFUIkitMacro.h"
 #import "SetUpPayPasswordVC.h"
+#import "SetUpPayPasswordView.h"
+#import "AddBankCardSuccess.h"
+#import "WBAlertController.h"
 
-@interface AddBanCardVC ()<UITableViewDelegate, UITableViewDataSource>
+@interface AddBanCardVC ()<UITableViewDelegate, UITableViewDataSource, SetUpPayPasswordViewDelegate>
 
 @end
 
@@ -25,26 +28,47 @@
         make.top.left.right.bottom.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 330, 0));
     }];
     
-    UIButton *outLoginBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [outLoginBtn setTitle:@"下一步" forState:UIControlStateNormal];
-    outLoginBtn.titleLabel.font = UIFontMake(16);
-    outLoginBtn.backgroundColor = UIColorMake(229, 75, 20);
-    outLoginBtn.layer.cornerRadius = 3;
-    [outLoginBtn addTarget:self action:@selector(clientAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:outLoginBtn];
-    
-    [outLoginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+    SetUpPayPasswordView *view = [[SetUpPayPasswordView alloc]init];
+    view.delegate = self;
+    [self.view addSubview:view];
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.listTableView.mas_bottom);
-        make.left.right.equalTo(self.view).insets(UIEdgeInsetsMake(0, 12.5, 0, 12.5));
-        make.height.equalTo(@44);
+        make.bottom.left.right.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+    }];
+    
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChange:) name:UIKeyboardWillChangeFrameNotification object:nil];
+
+}
+-(void)SetUpPayPasswordViewwithbtn:(NSString *)password{
+    
+    if (password.length < 6) {
+        WBAlertController *alert = [WBAlertController initWBAlerControllerWithTitle:@"提示" message:@"请输入6位密码" style:@"1" titleArr:[NSMutableArray arrayWithObjects:@"确定", nil] alerAction:^(NSInteger index) {
+            
+        }];
+        [self presentViewController:alert animated:YES completion:^{
+            
+        }];
+        
+    }else{
+        AddBankCardSuccess *vc = [[AddBankCardSuccess alloc]initWithTitle:@"绑定成功" navBarBtns:NavBarBtnBack];
+        [self.navigationController pushViewController:vc animated:YES];
+
+    }
+}
+- (void)keyboardWillChange:(NSNotification *)note
+{
+    NSDictionary *userInfo = note.userInfo;
+    CGFloat duration = [userInfo[@"UIKeyboardAnimationDurationUserInfoKey"] doubleValue];
+    
+    CGRect keyFrame = [userInfo[@"UIKeyboardFrameEndUserInfoKey"] CGRectValue];
+    CGFloat moveY = keyFrame.origin.y - self.view.frame.size.height-64;    
+    [UIView animateWithDuration:duration animations:^{
+        self.view.transform = CGAffineTransformMakeTranslation(0, moveY);
     }];
 }
 
-- (void)clientAction {
-    SetUpPayPasswordVC *vc = [[SetUpPayPasswordVC alloc]initWithTitle:@"设置密码" navBarBtns:NavBarBtnBack];
-    vc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:vc animated:YES];
-}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

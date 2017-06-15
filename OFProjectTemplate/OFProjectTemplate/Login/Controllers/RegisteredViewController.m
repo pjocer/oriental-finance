@@ -104,7 +104,7 @@
         }];
     }
 }
-
+ 
 
 - (void)InformationInputDelegate:(UIButton *)btn {
     if (loginView.textField.text.length != 0 && loginView.textField2.text.length !=0) {

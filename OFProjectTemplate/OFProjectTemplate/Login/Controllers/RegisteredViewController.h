@@ -7,9 +7,12 @@
 //
 
 #import "OFBaseViewController.h"
+#import "UserCenterMacros.h"
 
 @interface RegisteredViewController : OFBaseViewController
 
 @property (nonatomic, strong) NSString *typeStr;
+
+@property (nonatomic, copy) void(^loginHandler)(ActionState state);
 
 @end
