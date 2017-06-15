@@ -13,16 +13,35 @@
 #import "OriRoute.h"
 #import "H5LinkMacro.h"
 
-@interface OriWebView () <WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler>
+@interface OriWebViewDelegate : NSObject <WKScriptMessageHandler>
+@property (nonatomic, weak) id<WKScriptMessageHandler> scriptDelegate;
+@end
+
+@implementation OriWebViewDelegate
+#pragma mark - Navigation Delefate
+
+- (instancetype)initWithDelegate:(id<WKScriptMessageHandler>)scriptDelegate {
+    if (self = [super init]) {
+        _scriptDelegate = scriptDelegate;
+    }
+    return self;
+}
+
+- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
+    [self.scriptDelegate userContentController:userContentController didReceiveScriptMessage:message];
+}
+@end
+
+@interface OriWebView () <WKScriptMessageHandler, WKUIDelegate, WKNavigationDelegate>
 @property (nonatomic, strong) WKWebView         *wkWebView;
 @property (nonatomic, strong) UIProgressView    *progressView;
 @property (nonatomic, readwrite, copy) NSString *title;
-@property (nonatomic, readwrite, assign) CGFloat contentOffsetY;
-@property (nonatomic, readwrite, assign) CGSize contentSize;
 @property (nonatomic, copy) OriWebViewNormalBlock startBlock;
 @property (nonatomic, copy) OriWebViewNormalBlock finishBlock;
 @property (nonatomic, copy) OriWebViewFailedBlock failedBlock;
 @property (nonatomic, copy) OriWebViewHandlerBlock handlerBlock;
+@property (nonatomic, readwrite, assign) CGFloat contentOffsetY;
+@property (nonatomic, readwrite, assign) CGSize contentSize;
 @end
 
 @implementation OriWebView
@@ -41,6 +60,7 @@
 - (instancetype)commitSubviews {
     [self addSubview:self.wkWebView];
     [self addSubview:self.progressView];
+    [self configuration];
     return self;
 }
 
@@ -79,6 +99,40 @@
         CGFloat progress = [x floatValue];
         [self.progressView setProgress:progress animated:(progress > self.progressView.progress)];
     }];
+    [[[self rac_signalForSelector:@selector(webView:didStartProvisionalNavigation:) fromProtocol:@protocol(WKNavigationDelegate)] takeUntil:[self rac_willDeallocSignal]] subscribeNext:^(RACTuple *x) {
+        STRONGSELF
+        self.progressView.hidden = !self.isShowProgress;
+        if (self.startBlock) {
+            self.startBlock(x.first);
+        }
+    }];
+    [[[self rac_signalForSelector:@selector(webView:didFinishNavigation:) fromProtocol:@protocol(WKNavigationDelegate)] takeUntil:[self rac_willDeallocSignal]] subscribeNext:^(RACTuple *x) {
+        STRONGSELF
+        self.progressView.hidden = YES;
+        if (self.finishBlock) {
+            self.finishBlock(x.first);
+        }
+    }];
+    [[[self rac_signalForSelector:@selector(webView:didFailProvisionalNavigation:withError:) fromProtocol:@protocol(WKNavigationDelegate)] takeUntil:[self rac_willDeallocSignal]] subscribeNext:^(RACTuple *x) {
+        STRONGSELF
+        self.progressView.hidden = YES;
+        if (self.failedBlock) {
+            self.failedBlock(x.first, x.third);
+        }
+    }];
+    [[[self rac_signalForSelector:@selector(webView:decidePolicyForNavigationAction:decisionHandler:) fromProtocol:@protocol(WKNavigationDelegate)] takeUntil:[self rac_willDeallocSignal]] subscribeNext:^(RACTuple *x) {
+        RACTupleUnpack(WKWebView *webView, WKNavigationAction *action, void (^decisionHandler)(WKNavigationActionPolicy)) = x;
+        STRONGSELF
+        if (self.handlerBlock) {
+            self.handlerBlock(action.request,decisionHandler);
+        }else{
+            decisionHandler(WKNavigationActionPolicyAllow);
+        }
+    }];
+    [[[self rac_signalForSelector:@selector(userContentController:didReceiveScriptMessage:) fromProtocol:@protocol(WKScriptMessageHandler)] takeUntil:[self rac_willDeallocSignal]] subscribeNext:^(RACTuple *x) {
+        WKScriptMessage *message = x.second;
+        [self handleJSCallBack:message.body];
+    }];
     return self;
 }
 
@@ -107,6 +161,11 @@
     if (self.wkWebView.canGoBack) {
         [self.wkWebView goBack];
     }
+}
+
+- (void)dealloc {
+    [self.wkWebView.configuration.userContentController removeScriptMessageHandlerForName:@"AppCallBack"];
+    [self.wkWebView.configuration.userContentController removeAllUserScripts];
 }
 
 - (void)stopLoading {
@@ -156,75 +215,34 @@
     }
 }
 
-#pragma mark - Navigation Delefate
+#pragma mark - Delgate
 
-/**
- *  页面开始加载时调用
- */
-- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
-    self.progressView.hidden = !self.isShowProgress;
-    if (self.startBlock) {
-        self.startBlock(webView);
-    }
-}
-
-
-/**
- *  页面加载完成之后调用
- */
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
-    self.progressView.hidden = YES;
-    if (self.finishBlock) {
-        self.finishBlock(webView);
-    }
+    
 }
 
-/**
- *  加载失败时调用
- */
-- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {
-    self.progressView.hidden = YES;
-    if (self.failedBlock) {
-        self.failedBlock(webView,error);
-    }
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
+    
 }
 
-
-/**
- *  在发送请求之前，决定是否跳转
- *  @param decisionHandler  是否调转block
- */
+- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
+    
+}
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     
-    if (self.handlerBlock) {
-        self.handlerBlock(navigationAction.request,decisionHandler);
-    }else{
-        decisionHandler(WKNavigationActionPolicyAllow);
-    }
 }
-
-
+- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
+    
+}
 - (WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures {
     if (!navigationAction.targetFrame.isMainFrame) {
         [webView loadRequest:navigationAction.request];
     }
     return nil;
 }
-
-- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
-    NSLog(@"方法名:%@", message.name);
-    NSLog(@"参数:%@", message.body);
-    // 方法名
-    NSString *methods = [NSString stringWithFormat:@"%@:", message.name];
-    SEL selector = NSSelectorFromString(methods);
-    // 调用方法
-    if ([self respondsToSelector:selector]) {
-        [self performSelector:selector withObject:message.body];
-    } else {
-        NSLog(@"未实行方法：%@", methods);
-    }
+- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler {
+    completionHandler();
 }
-
 #pragma mark - GETTER_SETTER
 - (BOOL)isLoading {
     return self.wkWebView.isLoading;
@@ -275,10 +293,7 @@
             [[NSUserDefaults standardUserDefaults] registerDefaults:dictionary];
         });
         WKUserContentController *userContentController = [[WKUserContentController alloc] init];
-        [userContentController addScriptMessageHandler:self name:@"jsCallOC"];
-        NSString *javaScriptSource = @"alert(\"注入js\");";
-        WKUserScript *userScript = [[WKUserScript alloc] initWithSource:javaScriptSource injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
-        [userContentController addUserScript:userScript];
+        [userContentController addScriptMessageHandler:[[OriWebViewDelegate alloc] initWithDelegate:self] name:@"AppCallBack"];
         
         WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
         configuration.userContentController = userContentController;
@@ -302,7 +317,7 @@
     }
     return _progressView;
 }
-- (void)jsCallOC:(id)body {
+- (void)handleJSCallBack:(id)body {
     if ([body isKindOfClass:[NSDictionary class]]) {
         NSDictionary *dict = (NSDictionary *)body;
         NSString *jsStr = [NSString stringWithFormat:@"ocCallJS('%@')", [dict objectForKey:@"data"]];

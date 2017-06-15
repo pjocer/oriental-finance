@@ -87,8 +87,6 @@
             [self stopLoading];
             self.webViewDidLoaded = YES;
         }];
-        
-        [_webView configuration];
     }
     return _webView;
 }
