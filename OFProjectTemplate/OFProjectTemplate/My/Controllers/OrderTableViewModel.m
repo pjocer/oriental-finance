@@ -7,7 +7,6 @@
 //
 
 #import "OrderTableViewModel.h"
-#import "OrderListCell.h"
 
 @interface OrderTableViewModel ()
 @property (nonatomic, assign) OrderListType type;
@@ -34,12 +33,12 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataSource.count;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     OrderListCell *cell = [tableView dequeueReusableCellWithIdentifier:OrderListCellIdentifier forIndexPath:indexPath];
-    
+    cell.type = self.type;
     return cell;
 }
 

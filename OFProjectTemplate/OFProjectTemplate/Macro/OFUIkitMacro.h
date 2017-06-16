@@ -19,6 +19,7 @@
 #define DEFAULT_TEXT_COLOR UIColorMake(51, 51, 51)
 #define DEFAULT_TEXT_COLOR_SELECTED UIColorMake(229, 75, 20)
 #define DEFAULT_TEXT_COLOR_GRAY UIColorMake(102, 102, 102)
+#define DEFAULT_BOTTOM_LINE_COLOR UIColorMake(151, 151, 151)
 
 #ifdef DEBUG
     #define NSLog(...) NSLog((@"%s [Line %d] %@"), __PRETTY_FUNCTION__, __LINE__, [NSString stringWithFormat:__VA_ARGS__])

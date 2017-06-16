@@ -7,7 +7,6 @@
 //
 
 #import "MyOrderContainerViewModel.h"
-#import <UIColor+QMUI.h>
 #import "OrderViewController.h"
 
 @interface MyOrderContainerViewModel ()
@@ -32,7 +31,6 @@
 
 - (UIViewController *)pagerController:(TYPagerController *)pagerController controllerForIndex:(NSInteger)index {
     OrderViewController *vc = [[OrderViewController alloc] initWithControllerType:index];
-    vc.view.backgroundColor = [UIColor qmui_randomColor];
     return vc;
 }
 @end

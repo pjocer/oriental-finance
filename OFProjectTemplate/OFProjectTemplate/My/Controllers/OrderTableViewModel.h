@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "UserCenterMacros.h"
-#import <UIKit/UIKit.h>
+#import "OFUIkitMacro.h"
+#import <ReactiveCocoa.h>
+#import "OrderListCell.h"
 
 @interface OrderTableViewModel : NSObject <UITableViewDelegate, UITableViewDataSource>
 

@@ -26,6 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = DEFAULT_BG_COLOR;
     self.pagerController.view.frame = self.view.bounds;
     self.pagerController.dataSource = self.viewModel;
     [self addChildViewController:self.pagerController];

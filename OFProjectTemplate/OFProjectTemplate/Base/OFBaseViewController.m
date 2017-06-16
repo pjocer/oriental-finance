@@ -13,7 +13,7 @@
 #import "OShowHud.h"
 
 @interface OFBaseViewController ()
-@property (nonatomic, strong) CAShapeLayer *shapeLayer;
+
 @end
 
 @implementation OFBaseViewController
@@ -90,22 +90,6 @@
 
 - (void)stopLoading {
     [OShowHud hideHudAnimated:YES];
-}
-
-- (CAShapeLayer *)shapeLayer {
-    if (!_shapeLayer) {
-        UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, 60, 60)];
-        _shapeLayer = [CAShapeLayer layer];
-        _shapeLayer.frame = CGRectMake(CGRectGetWidth(self.view.bounds)/2.f-30, CGRectGetHeight(self.view.bounds)/2.f-30, 60, 60);
-        _shapeLayer.strokeColor = UIColorMake(255, 207, 71).CGColor;
-        _shapeLayer.fillColor = UIColorClear.CGColor;
-        _shapeLayer.lineCap = kCALineCapRound;
-        _shapeLayer.strokeStart = -0.5;
-        _shapeLayer.strokeEnd = 0;
-        _shapeLayer.lineWidth = 6;
-        _shapeLayer.path = path.CGPath;
-    }
-    return _shapeLayer;
 }
 
 - (void)viewDidLoad {

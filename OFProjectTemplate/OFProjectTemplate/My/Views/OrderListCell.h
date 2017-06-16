@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UserCenterMacros.h"
 
 static NSString *OrderListCellIdentifier = @"OrderListCellIdentifier";
 
 @interface OrderListCell : UITableViewCell
+
+@property (nonatomic, assign) OrderListType type;
 
 @end
