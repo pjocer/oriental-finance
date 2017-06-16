@@ -20,6 +20,7 @@
 #import "HBRSAHandler.h"
 #import "LoginViewController.h"
 #import "OriNetworking.h"
+#import "AccountManager.h"
 
 @interface AppDelegate () <UITabBarControllerDelegate>
 

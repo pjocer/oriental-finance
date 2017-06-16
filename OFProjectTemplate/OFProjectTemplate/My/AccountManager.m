@@ -11,10 +11,9 @@
 #import "AppDelegate.h"
 #import <MJExtension.h>
 #import "OFUIkitMacro.h"
-
+#import "UIDevice+Hardware.h"
+#define UUID_KEY @"UUID_KEY"
 #define USER_ARCHIVE_PATH [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingString:@"/user"]
-
-
 
 @interface AccountManager ()
 
@@ -38,6 +37,12 @@
 - (instancetype)_init {
     if (self = [super init]) {
         _user = [NSKeyedUnarchiver unarchiveObjectWithFile:USER_ARCHIVE_PATH];
+        _UUID = UserDefaultsObjectForKey(UUID_KEY);
+        if (!_UUID) {
+            NSString *uuid = [[UIDevice currentDevice] UUID];
+            UserDefaultsSetObjectForKey(uuid, UUID_KEY);
+            _UUID = uuid;
+        }
     }
     return self;
 }

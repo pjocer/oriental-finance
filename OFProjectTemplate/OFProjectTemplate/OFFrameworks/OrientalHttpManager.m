@@ -13,7 +13,6 @@
 #import "HBRSAHandler.h"
 #import <MJExtension.h>
 #import "OFUIkitMacro.h"
-#import "UIDevice+Hardware.h"
 #import "AccountManager.h"
 #import "OShowHud.h"
 
@@ -68,7 +67,7 @@
     }
     NSMutableDictionary *orignalContent = [NSMutableDictionary dictionary];
     [orignalContent setValue:targetUrl forKey:@"itype"];
-    [orignalContent setValue:[[UIDevice currentDevice] UUID] forKey:@"deviceId"];
+    [orignalContent setValue:[AccountManager sharedManager].UUID forKey:@"deviceId"];
     [orignalContent setValue:copyParams forKey:@"data"];
     [orignalContent setValue:[[AccountManager sharedManager].user token]?:@"xx" forKey:@"token"];
     NSString *compressed = [self compressedString:orignalContent];

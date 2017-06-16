@@ -19,6 +19,7 @@
 @property (nonatomic, copy) NSString *nick_name;
 @property (nonatomic, copy) NSString *phone;
 @property (nonatomic, copy) NSString *sign_url;
+@property (nonatomic, copy) NSString *UUID;
 
 - (instancetype)init __deprecated_msg("use sharedManager insead");
 
