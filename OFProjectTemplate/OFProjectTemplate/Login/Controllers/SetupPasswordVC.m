@@ -53,10 +53,10 @@
 - (void)InformationInputDelegate:(UIButton *)btn {
     [self startLoading];
     NSDictionary *dic = @{@"phone": self.params,@"pwd":setPasswordView.textField.text};
-    [[OrientalHttpManager sharedInstance] requestWithTarget:Register params:dic success:^(NSURLSessionDataTask *task, id responseObject) {
+    [[OrientalHttpManager sharedInstance] requestWithTarget:Register params:dic success:^(NSURLSessionDataTask *task, id responseObject, BOOL success) {
         [self stopLoading];
         [OShowHud showErrorHudWith:responseObject[@"msg"] animated:YES];
-        if ([responseObject[@"code"] integerValue] > 0) {
+        if (success) {
             [AccountManager saveLocalAccountData:responseObject[@"result"]];
             [self dismissViewControllerAnimated:YES completion:^{
                 if (self.loginHandler) {

@@ -68,15 +68,16 @@
     if (loginView.textField.text.length != 0 && loginView.textField2.text.length !=0) {
         NSDictionary *dic = @{@"phone": loginView.textField.text,@"pwd":loginView.textField2.text};
         [self startLoading];
-        [[OrientalHttpManager sharedInstance] requestWithTarget:Login params:dic success:^(NSURLSessionDataTask *task, id responseObject) {
+        [[OrientalHttpManager sharedInstance] requestWithTarget:Login params:dic success:^(NSURLSessionDataTask *task, id responseObject, BOOL success) {
             [self stopLoading];
             [OShowHud showErrorHudWith:responseObject[@"msg"] animated:YES];
-            if ([responseObject[@"code"] integerValue]>0) {
+            if (success) {
                 [AccountManager saveLocalAccountData:responseObject[@"result"]];
-                if (self.loginHandler) {
-                    self.loginHandler(ActionStateSuccess);
-                }
-                [super back];
+                [self dismissViewControllerAnimated:YES completion:^{
+                    if (self.loginHandler) {
+                        self.loginHandler(ActionStateSuccess);
+                    }
+                }];
             }
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             [self stopLoading];

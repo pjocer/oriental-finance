@@ -38,17 +38,7 @@
 - (void)getData{
     NSDictionary *dic = @{@"start": @"0",@"length":@"10"};
     
-    [[OrientalHttpManager sharedInstance] requestWithTarget:showTvBoxList params:dic success:^(NSURLSessionDataTask *task, id responseObject) {
-        
-        
-        
-        if ([[responseObject objectForKey:@"code"] integerValue]>0) {
-            NSLog(@"成功");
-        }else{
-            NSLog(@"失败");
-        }
-        
-        
+    [[OrientalHttpManager sharedInstance] requestWithTarget:showTvBoxList params:dic success:^(NSURLSessionDataTask *task, id responseObject, BOOL success) {
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         

@@ -40,20 +40,20 @@
     return manager;
 }
 
-- (NSURLSessionDataTask *)requestWithTarget:(NSString *)targetUrl params:(NSDictionary *)params success:(void (^)(NSURLSessionDataTask *, id))success failure:(void (^)(NSURLSessionDataTask *, NSError *))failure {
+- (NSURLSessionDataTask *)requestWithTarget:(NSString *)targetUrl params:(NSDictionary *)params success:(SuccessBlock)success failure:(FailureBlock)failure {
     return [self requestWithTarget:targetUrl params:params method:DEFAULT_METHOD success:success failure:failure];
 }
 
-- (NSURLSessionDataTask *)requestWithTarget:(NSString *)targetUrl params:(NSDictionary *)params method:(OrientalRequestMethod)method success:(void (^)(NSURLSessionDataTask *, id))success failure:(void (^)(NSURLSessionDataTask *, NSError *))failure {
+- (NSURLSessionDataTask *)requestWithTarget:(NSString *)targetUrl params:(NSDictionary *)params method:(OrientalRequestMethod)method success:(SuccessBlock)success failure:(FailureBlock)failure {
     return [self requestWithTarget:targetUrl params:params method:method serviceType:OrientalServiceTypeNormal success:success failure:failure];
 }
 
-- (NSURLSessionDataTask *)requestWithTarget:(NSString *)targetUrl params:(NSDictionary *)params method:(OrientalRequestMethod)method serviceType:(OrientalServiceType)serviceType success:(void(^)(NSURLSessionDataTask *task,id responseObject))success failure:(void(^)(NSURLSessionDataTask *task,NSError *error))failure {
+- (NSURLSessionDataTask *)requestWithTarget:(NSString *)targetUrl params:(NSDictionary *)params method:(OrientalRequestMethod)method serviceType:(OrientalServiceType)serviceType success:(SuccessBlock)success failure:(FailureBlock)failure {
     NSURLRequestCachePolicy cachePolicy =  NSURLRequestReloadIgnoringLocalCacheData;
     return [self requestWithTarget:targetUrl params:params method:method serviceType:serviceType cachePolicy:cachePolicy timeoutInterval:DEFAULT_TIMEOUT progress:nil success:success failure:failure];
 }
 
-- (NSURLSessionDataTask *)requestWithTarget:(NSString *)targetUrl params:(NSDictionary *)params method:(OrientalRequestMethod)method serviceType:(OrientalServiceType)serviceType cachePolicy:(NSURLRequestCachePolicy)cachePolicy timeoutInterval:(NSTimeInterval)timeoutInterval progress:(void(^)(NSProgress *progress))progress success:(void(^)(NSURLSessionDataTask *task,id responseObject))success failure:(void(^)(NSURLSessionDataTask *task,NSError *error))failure{
+- (NSURLSessionDataTask *)requestWithTarget:(NSString *)targetUrl params:(NSDictionary *)params method:(OrientalRequestMethod)method serviceType:(OrientalServiceType)serviceType cachePolicy:(NSURLRequestCachePolicy)cachePolicy timeoutInterval:(NSTimeInterval)timeoutInterval progress:(void(^)(NSProgress *progress))progress success:(SuccessBlock)success failure:(FailureBlock)failure{
     if (!targetUrl) {
         return nil;
     }
@@ -81,7 +81,7 @@
         NSDictionary *responseDic = [self deCompressedDataWith:responseObject err:err];
         SuccessLog(targetUrl, orignalContent, responseDic);
         if (DICTHASVALUE(responseDic) && !err) {
-            if (success) success (task,responseDic);
+            if (success) success (task,responseDic,[responseDic[@"code"] integerValue]>0);
         } else {
             if (failure) failure(task, err);
         }

@@ -17,6 +17,9 @@ typedef NS_ENUM(NSUInteger, OrientalRequestMethod) {
     OrientalRequestMethodPost,
 };
 
+typedef void(^SuccessBlock)(NSURLSessionDataTask *task,id responseObject,BOOL success);
+typedef void(^FailureBlock)(NSURLSessionDataTask *task,NSError *error);
+
 @class OrientalUploadModel;
 @interface OrientalHttpManager : AFHTTPSessionManager
 
@@ -34,8 +37,8 @@ typedef NS_ENUM(NSUInteger, OrientalRequestMethod) {
  */
 - (NSURLSessionDataTask *)requestWithTarget:(NSString *)targetUrl
                                      params:(NSDictionary *)params
-                                    success:(void(^)(NSURLSessionDataTask *task,id responseObject))success
-                                    failure:(void(^)(NSURLSessionDataTask *task,NSError *error))failure;
+                                    success:(SuccessBlock)success
+                                    failure:(FailureBlock)failure;
 /**
  *  自定义Request Method
  *
@@ -50,8 +53,8 @@ typedef NS_ENUM(NSUInteger, OrientalRequestMethod) {
 - (NSURLSessionDataTask *)requestWithTarget:(NSString *)targetUrl
                                      params:(NSDictionary *)params
                                      method:(OrientalRequestMethod)method
-                                    success:(void(^)(NSURLSessionDataTask *task,id responseObject))success
-                                    failure:(void(^)(NSURLSessionDataTask *task,NSError *error))failure;
+                                    success:(SuccessBlock)success
+                                    failure:(FailureBlock)failure;
 /**
  *  自定义后台服务
  *
@@ -68,8 +71,8 @@ typedef NS_ENUM(NSUInteger, OrientalRequestMethod) {
                                      params:(NSDictionary *)params
                                      method:(OrientalRequestMethod)method
                                 serviceType:(OrientalServiceType)serviceType
-                                    success:(void(^)(NSURLSessionDataTask *task,id responseObject))success
-                                    failure:(void(^)(NSURLSessionDataTask *task,NSError *error))failure;
+                                    success:(SuccessBlock)success
+                                    failure:(FailureBlock)failure;
 /**
  *  更多自定义项的请求
  *
@@ -91,8 +94,8 @@ typedef NS_ENUM(NSUInteger, OrientalRequestMethod) {
                                 cachePolicy:(NSURLRequestCachePolicy)cachePolicy
                             timeoutInterval:(NSTimeInterval)timeoutInterval
                                    progress:(void(^)(NSProgress *progress))progress
-                                    success:(void(^)(NSURLSessionDataTask *task,id responseObject))success
-                                    failure:(void(^)(NSURLSessionDataTask *task,NSError *error))failure;
+                                    success:(SuccessBlock)success
+                                    failure:(FailureBlock)failure;
 
 
 
