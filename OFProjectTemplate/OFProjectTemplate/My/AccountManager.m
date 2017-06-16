@@ -69,8 +69,15 @@
 }
 
 + (void)saveLocalAccountData:(NSDictionary *)data {
-    [[AccountManager sharedManager] setAccountProperties:data];
-//    UserDefaultsSetObjectForKey(user, USER_ACCOUNT_DATA);
+    NSMutableDictionary *temp = [NSMutableDictionary dictionary];
+    for (NSString *key in data.allKeys) {
+        if (data[key] && ![data[key] isKindOfClass:[NSNull class]]) {
+            temp[key] = data[key];
+        }
+    }
+    NSDictionary *user = [NSDictionary dictionaryWithDictionary:temp];
+    [[AccountManager sharedManager] setAccountProperties:user];
+    UserDefaultsSetObjectForKey(user, USER_ACCOUNT_DATA);
 }
 
 + (void)clearLocalAccountData:(NSDictionary *)data {
