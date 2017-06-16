@@ -73,6 +73,26 @@
         make.left.equalTo(backgroundView.mas_centerX);
     }];
 
+    
+    [self addSubview: self.sweepBtn];
+    [self.sweepBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(backgroundView.mas_top);
+        make.right.equalTo(backgroundView.mas_left);
+        make.height.equalTo(@60);
+        make.width.equalTo(@100);
+    }];
+    self.sweepBtn.transform = CGAffineTransformMakeRotation (-M_PI_4);
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     [self.soundLowBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf.mas_left).offset(35);
         make.top.equalTo(weakSelf.boomBtn.mas_bottom).offset(60);
@@ -125,7 +145,45 @@
     }];
     
 
-
+    
+    //设置背景颜色
+    
+//    [[UIColor
+//      clearColor]set];
+//    
+//    UIRectFill([self
+//                
+//                bounds]);
+//    
+//    //拿到当前视图准备好的画板
+//    
+//    CGContextRef
+//    context = UIGraphicsGetCurrentContext();
+//    
+//    //利用path进行绘制三角形
+//    
+//    CGContextBeginPath(context);//标记
+//    
+//    CGContextMoveToPoint(context,
+//                         0, 0);//设置起点
+//    
+//    CGContextAddLineToPoint(context,
+//                            165, 0);
+//    
+//    CGContextAddLineToPoint(context,
+//                            165, 105);
+//    
+//    CGContextClosePath(context);//路径结束标志，不写默认封闭
+//    
+//    [[UIColor
+//      whiteColor] setFill]; //设置填充色
+//    
+//    [[UIColor
+//      whiteColor] setStroke]; //设置边框颜色
+//    
+//    CGContextDrawPath(context,
+//                      kCGPathFillStroke);//绘制路径path
+//
 
     
     
@@ -133,6 +191,23 @@
     
     
 }
+
+- (UIButton *)sweepBtn {
+    if (!_sweepBtn) {
+        _sweepBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _sweepBtn.tag = 101;
+        //        _centerBtn.backgroundColor = [UIColor blackColor];
+        [_sweepBtn setImage:[UIImage imageNamed:@"remote_round"] forState:UIControlStateNormal];
+        [_sweepBtn addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
+        _sweepBtn.layer.masksToBounds = YES;
+//        _sweepBtn.layer.cornerRadius = SCREEN_WIDTH/8 +3;
+        
+    }
+    return _sweepBtn;
+}
+
+
+
 - (UIButton *)centerBtn {
     if (!_centerBtn) {
         _centerBtn = [UIButton buttonWithType:UIButtonTypeCustom];

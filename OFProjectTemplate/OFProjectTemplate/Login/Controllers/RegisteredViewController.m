@@ -113,7 +113,7 @@
 
 - (void)InformationInputDelegate:(UIButton *)btn {
     if (loginView.textField.text.length != 0 && loginView.textField2.text.length !=0) {
-        NSDictionary *dic = @{@"phone": loginView.textField.text,@"code":loginView.textField2.text,@"msgId":_registerID};
+        NSDictionary *dic = @{@"phone": loginView.textField.text?:@"",@"code":loginView.textField2.text?:@"",@"msgId":_registerID?:@""};
         [self startLoading];
         [[OrientalHttpManager sharedInstance] requestWithTarget:VailadCode params:dic success:^(NSURLSessionDataTask *task, id responseObject) {
             [self stopLoading];

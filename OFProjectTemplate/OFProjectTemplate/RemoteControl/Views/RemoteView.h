@@ -43,7 +43,7 @@
 @property (nonatomic, strong) UIButton *exitBtn;
 
 
-
+@property (nonatomic, strong) UIButton *sweepBtn;
 
 
 @end

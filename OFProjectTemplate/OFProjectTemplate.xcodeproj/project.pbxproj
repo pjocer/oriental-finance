@@ -502,7 +502,6 @@
 		D6EAF2361EEFC76300F6E44C /* MyApplicationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyApplicationVC.m; sourceTree = "<group>"; };
 		D6EAF2381EEFC7F700F6E44C /* MyApplicationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyApplicationCell.h; path = ../Controllers/MyApplicationCell.h; sourceTree = "<group>"; };
 		D6EAF2391EEFC7F700F6E44C /* MyApplicationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyApplicationCell.m; path = ../Controllers/MyApplicationCell.m; sourceTree = "<group>"; };
-		D6EAF23B1EEFE5A800F6E44C /* MacorMy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacorMy.h; sourceTree = "<group>"; };
 		D6EAF23C1EF0DEC500F6E44C /* MyAddressVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAddressVC.h; sourceTree = "<group>"; };
 		D6EAF23D1EF0DEC500F6E44C /* MyAddressVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAddressVC.m; sourceTree = "<group>"; };
 		D6EAF23F1EF0DF7800F6E44C /* MyAddressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAddressCell.h; sourceTree = "<group>"; };
@@ -529,6 +528,7 @@
 		D6EAF2641EF18E4700F6E44C /* MessageDetialsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageDetialsCell.m; sourceTree = "<group>"; };
 		D6EAF2661EF19A3900F6E44C /* AddBankCardSuccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBankCardSuccess.h; sourceTree = "<group>"; };
 		D6EAF2671EF19A3900F6E44C /* AddBankCardSuccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBankCardSuccess.m; sourceTree = "<group>"; };
+		D6EAF2691EF2688100F6E44C /* MacroMy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacroMy.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1260,9 +1260,9 @@
 				D39EDAD41EF0CD95002C0D0B /* UserCenterMacros.h */,
 				D39EDAD11EF0C87B002C0D0B /* AccountManager.h */,
 				D39EDAD21EF0C87B002C0D0B /* AccountManager.m */,
+				D6EAF2691EF2688100F6E44C /* MacroMy.h */,
 				D65DC8AB1ED825500030636D /* Controllers */,
 				D65DC8AF1ED825500030636D /* ViewModels */,
-				D6EAF23B1EEFE5A800F6E44C /* MacorMy.h */,
 				D65DC8AE1ED825500030636D /* Models */,
 				D65DC8B01ED825500030636D /* Views */,
 			);

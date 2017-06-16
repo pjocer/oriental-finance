@@ -10,10 +10,9 @@
 #import "MyTVTableViewCell.h"
 #import "Masonry.h"
 #import "OFUIkitMacro.h"
-#import "MacorMy.h"
 #import "OriNetworking.h"
 #import "WBAlertController.h"
-
+#import "MacroMy.h"
 @interface MyTVViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @end
@@ -39,7 +38,7 @@
 - (void)getData{
     NSDictionary *dic = @{@"start": @"0",@"length":@"10"};
     
-    [[OrientalHttpManager sharedInstance] requestWithTarget:ShowTvBoxList params:dic success:^(NSURLSessionDataTask *task, id responseObject) {
+    [[OrientalHttpManager sharedInstance] requestWithTarget:showTvBoxList params:dic success:^(NSURLSessionDataTask *task, id responseObject) {
         
         
         
