@@ -14,34 +14,10 @@
 
 #define USER_ARCHIVE_PATH [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingString:@"/user"]
 
-@implementation User
-- (instancetype)initWithCoder:(NSCoder *)aDecoder {
-    if (self = [super init]) {
-        self.token = [aDecoder decodeObjectForKey:@"token"];
-        self.id_card = [aDecoder decodeObjectForKey:@"id_card"];
-        self.msg_push = [aDecoder decodeObjectForKey:@"msg_push"];
-        self.name = [aDecoder decodeObjectForKey:@"name"];
-        self.nick_name = [aDecoder decodeObjectForKey:@"nick_name"];
-        self.phone = [aDecoder decodeObjectForKey:@"phone"];
-        self.sign_url = [aDecoder decodeObjectForKey:@"sign_url"];
-    }
-    return self;
-}
 
-
-- (void)encodeWithCoder:(NSCoder *)aCoder {
-    [aCoder encodeObject:self.token forKey:@"token"];
-    [aCoder encodeObject:self.id_card forKey:@"id_card"];
-    [aCoder encodeObject:self.msg_push forKey:@"msg_push"];
-    [aCoder encodeObject:self.name forKey:@"name"];
-    [aCoder encodeObject:self.nick_name forKey:@"nick_name"];
-    [aCoder encodeObject:self.phone forKey:@"phone"];
-    [aCoder encodeObject:self.sign_url forKey:@"sign_url"];
-}
-@end
 
 @interface AccountManager ()
-@property (nonatomic, readwrite, strong) User *user;
+
 @end
 
 @implementation AccountManager
@@ -93,4 +69,66 @@
     return STRINGHASVALUE([[[AccountManager sharedManager] user] token]);
 }
 
+- (NSString *)token {
+    return self.user.token;
+}
+
+- (NSString *)id_card {
+    return self.user.id_card;
+}
+
+- (NSString *)phone {
+    return self.user.phone;
+}
+
+- (NSString *)sign_url {
+    return self.user.sign_url;
+}
+
+- (NSString *)msg_push {
+    return self.user.msg_push;
+}
+
+- (NSString *)name {
+    return self.user.name;
+}
+
+- (NSString *)nick_name {
+    return self.user.nick_name;
+}
+
+- (void)setToken:(NSString *)token {
+    self.user.token = token;
+    [NSKeyedArchiver archiveRootObject:self.user toFile:USER_ARCHIVE_PATH];
+}
+
+- (void)setId_card:(NSString *)id_card {
+    self.user.id_card = id_card;
+    [NSKeyedArchiver archiveRootObject:self.user toFile:USER_ARCHIVE_PATH];
+}
+
+- (void)setPhone:(NSString *)phone {
+    self.user.phone = phone;
+    [NSKeyedArchiver archiveRootObject:self.user toFile:USER_ARCHIVE_PATH];
+}
+
+- (void)setSign_url:(NSString *)sign_url {
+    self.user.sign_url = sign_url;
+    [NSKeyedArchiver archiveRootObject:self.user toFile:USER_ARCHIVE_PATH];
+}
+
+- (void)setMsg_push:(NSString *)msg_push {
+    self.user.msg_push = msg_push;
+    [NSKeyedArchiver archiveRootObject:self.user toFile:USER_ARCHIVE_PATH];
+}
+
+- (void)setName:(NSString *)name {
+    self.user.name = name;
+    [NSKeyedArchiver archiveRootObject:self.user toFile:USER_ARCHIVE_PATH];
+}
+
+- (void)setNick_name:(NSString *)nick_name {
+    self.user.nick_name = nick_name;
+    [NSKeyedArchiver archiveRootObject:self.user toFile:USER_ARCHIVE_PATH];
+}
 @end

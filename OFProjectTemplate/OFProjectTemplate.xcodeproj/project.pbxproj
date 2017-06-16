@@ -33,6 +33,7 @@
 		D338211F1EE6927100D5B99C /* AderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D338211E1EE6927100D5B99C /* AderView.m */; };
 		D372FD381EF1429600F64916 /* WebViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D372FD371EF1429600F64916 /* WebViewManager.m */; };
 		D372FD3C1EF1436500F64916 /* OriRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = D372FD3B1EF1436500F64916 /* OriRoute.m */; };
+		D381F6351EF3BEDC00B38782 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D381F6341EF3BEDC00B38782 /* User.m */; };
 		D39EDAD31EF0C87B002C0D0B /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D39EDAD21EF0C87B002C0D0B /* AccountManager.m */; };
 		D39EDAD71EF0F280002C0D0B /* UIDevice+Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = D39EDAD61EF0F280002C0D0B /* UIDevice+Hardware.m */; };
 		D39EDADA1EF10969002C0D0B /* MyOrderContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = D39EDAD91EF10969002C0D0B /* MyOrderContainer.m */; };
@@ -215,6 +216,8 @@
 		D372FD3A1EF1436500F64916 /* OriRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OriRoute.h; sourceTree = "<group>"; };
 		D372FD3B1EF1436500F64916 /* OriRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OriRoute.m; sourceTree = "<group>"; };
 		D372FD3D1EF1499200F64916 /* H5LinkMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H5LinkMacro.h; sourceTree = "<group>"; };
+		D381F6331EF3BEDC00B38782 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = OFProjectTemplate/Macro/User.h; sourceTree = SOURCE_ROOT; };
+		D381F6341EF3BEDC00B38782 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = OFProjectTemplate/Macro/User.m; sourceTree = SOURCE_ROOT; };
 		D39EDAD11EF0C87B002C0D0B /* AccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountManager.h; sourceTree = "<group>"; };
 		D39EDAD21EF0C87B002C0D0B /* AccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountManager.m; sourceTree = "<group>"; };
 		D39EDAD41EF0CD95002C0D0B /* UserCenterMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCenterMacros.h; sourceTree = "<group>"; };
@@ -1298,6 +1301,8 @@
 		D65DC8AE1ED825500030636D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D381F6331EF3BEDC00B38782 /* User.h */,
+				D381F6341EF3BEDC00B38782 /* User.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1693,6 +1698,7 @@
 				D64094EE1EE7DD4000DD24FF /* ZHPickView.m in Sources */,
 				D6EAF2681EF19A3900F6E44C /* AddBankCardSuccess.m in Sources */,
 				D6EAF2501EF1280600F6E44C /* AddBanCardVC.m in Sources */,
+				D381F6351EF3BEDC00B38782 /* User.m in Sources */,
 				D65DC8CF1ED825500030636D /* HomeModel.m in Sources */,
 				D64095161EE947DD00DD24FF /* MyCollectionCell.m in Sources */,
 				D6EAF23A1EEFC7F700F6E44C /* MyApplicationCell.m in Sources */,
