@@ -9,26 +9,39 @@
 #import "AccountManager.h"
 #import "LoginViewController.h"
 #import "AppDelegate.h"
+#import <MJExtension.h>
 #import "OFUIkitMacro.h"
 
-#define USER_ACCOUNT_DATA @"USER_ACCOUNT_DATA"
+#define USER_ARCHIVE_PATH [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingString:@"/user"]
+
+@implementation User
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super init]) {
+        self.token = [aDecoder decodeObjectForKey:@"token"];
+        self.id_card = [aDecoder decodeObjectForKey:@"id_card"];
+        self.msg_push = [aDecoder decodeObjectForKey:@"msg_push"];
+        self.name = [aDecoder decodeObjectForKey:@"name"];
+        self.nick_name = [aDecoder decodeObjectForKey:@"nick_name"];
+        self.phone = [aDecoder decodeObjectForKey:@"phone"];
+        self.sign_url = [aDecoder decodeObjectForKey:@"sign_url"];
+    }
+    return self;
+}
+
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:self.token forKey:@"token"];
+    [aCoder encodeObject:self.id_card forKey:@"id_card"];
+    [aCoder encodeObject:self.msg_push forKey:@"msg_push"];
+    [aCoder encodeObject:self.name forKey:@"name"];
+    [aCoder encodeObject:self.nick_name forKey:@"nick_name"];
+    [aCoder encodeObject:self.phone forKey:@"phone"];
+    [aCoder encodeObject:self.sign_url forKey:@"sign_url"];
+}
+@end
 
 @interface AccountManager ()
-
-@property (nonatomic, readwrite, copy) NSString *token;
-
-@property (nonatomic, readwrite, copy) NSString *id_card;
-
-@property (nonatomic, readwrite, copy) NSString *msg_push;
-
-@property (nonatomic, readwrite, copy) NSString *name;
-
-@property (nonatomic, readwrite, copy) NSString *nick_name;
-
-@property (nonatomic, readwrite, copy) NSString *phone;
-
-@property (nonatomic, readwrite, copy) NSString *sign_url;
-
+@property (nonatomic, readwrite, strong) User *user;
 @end
 
 @implementation AccountManager
@@ -42,21 +55,21 @@
     return manager;
 }
 
+- (instancetype)init {
+    return [self _init];
+}
+
 - (instancetype)_init {
     if (self = [super init]) {
-        [self setAccountProperties:UserDefaultsObjectForKey(USER_ACCOUNT_DATA)];
+        _user = [NSKeyedUnarchiver unarchiveObjectWithFile:USER_ARCHIVE_PATH];
     }
     return self;
 }
 
-- (void)setAccountProperties:(NSDictionary *)data {
-    self.token = [data valueForKey:@"token"];
-    self.id_card = [data valueForKey:@"id_card"];
-    self.msg_push = [data valueForKey:@"msg_push"];
-    self.name = [data valueForKey:@"name"];
-    self.nick_name = [data valueForKey:@"nick_name"];
-    self.phone = [data valueForKey:@"phone"];
-    self.sign_url = [data valueForKey:@"sign_url"];
+- (void)setUser:(User *)user {
+    _user = user;
+    [NSKeyedArchiver archiveRootObject:user toFile:USER_ARCHIVE_PATH];
+    
 }
 
 + (void)callLoginServiceWithHandler:(void (^)(ActionState))handler {
@@ -69,23 +82,15 @@
 }
 
 + (void)saveLocalAccountData:(NSDictionary *)data {
-    NSMutableDictionary *temp = [NSMutableDictionary dictionary];
-    for (NSString *key in data.allKeys) {
-        if (data[key] && ![data[key] isKindOfClass:[NSNull class]]) {
-            temp[key] = data[key];
-        }
-    }
-    NSDictionary *user = [NSDictionary dictionaryWithDictionary:temp];
-    [[AccountManager sharedManager] setAccountProperties:user];
-    UserDefaultsSetObjectForKey(user, USER_ACCOUNT_DATA);
+    [AccountManager sharedManager].user = [User mj_objectWithKeyValues:data];
 }
 
 + (void)clearLocalAccountData:(NSDictionary *)data {
-    UserDefaultsSetObjectForKey(nil, USER_ACCOUNT_DATA);
+    [AccountManager sharedManager].user = nil;
 }
 
 + (BOOL)isLogin {
-    return STRINGHASVALUE([[self sharedManager] token]);
+    return STRINGHASVALUE([[[AccountManager sharedManager] user] token]);
 }
 
 @end

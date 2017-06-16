@@ -50,13 +50,6 @@
     }];
 }
 
-- (void)back {
-    if (self.loginHandler) {
-        self.loginHandler(ActionStateUserCancel);
-    }
-    [super back];
-}
-
 - (void)InformationInputDelegate:(UIButton *)btn {
     [self startLoading];
     NSDictionary *dic = @{@"phone": self.params,@"pwd":setPasswordView.textField.text};
@@ -65,10 +58,11 @@
         [OShowHud showErrorHudWith:responseObject[@"msg"] animated:YES];
         if ([responseObject[@"code"] integerValue] > 0) {
             [AccountManager saveLocalAccountData:responseObject[@"result"]];
-            if (self.loginHandler) {
-                self.loginHandler(ActionStateSuccess);
-            }
-            [super back];
+            [self dismissViewControllerAnimated:YES completion:^{
+                if (self.loginHandler) {
+                    self.loginHandler(ActionStateSuccess);
+                }
+            }];
         }
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         [self stopLoading];

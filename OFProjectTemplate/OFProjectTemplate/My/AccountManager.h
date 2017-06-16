@@ -9,21 +9,21 @@
 #import <Foundation/Foundation.h>
 #import "UserCenterMacros.h"
 
+@interface User : NSObject <NSCoding>
+@property (nonatomic, copy) NSString *token;
+@property (nonatomic, copy) NSString *id_card;
+@property (nonatomic, copy) NSString *msg_push;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *nick_name;
+@property (nonatomic, copy) NSString *phone;
+@property (nonatomic, copy) NSString *sign_url;
+@end
+
 @interface AccountManager : NSObject
 
-@property (nonatomic, readonly, copy) NSString *token;
+@property (nonatomic, readonly, strong) User *user;
 
-@property (nonatomic, readonly, copy) NSString *id_card;
-
-@property (nonatomic, readonly, copy) NSString *msg_push;
-
-@property (nonatomic, readonly, copy) NSString *name;
-
-@property (nonatomic, readonly, copy) NSString *nick_name;
-
-@property (nonatomic, readonly, copy) NSString *phone;
-
-@property (nonatomic, readonly, copy) NSString *sign_url;
+- (instancetype)init __deprecated_msg("use sharedManager insead");
 
 + (instancetype)sharedManager;
 

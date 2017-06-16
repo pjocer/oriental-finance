@@ -70,7 +70,7 @@
     [orignalContent setValue:targetUrl forKey:@"itype"];
     [orignalContent setValue:[[UIDevice currentDevice] UUID] forKey:@"deviceId"];
     [orignalContent setValue:copyParams forKey:@"data"];
-    [orignalContent setValue:[[AccountManager sharedManager] token]?:@"xx" forKey:@"token"];
+    [orignalContent setValue:[[AccountManager sharedManager].user token]?:@"xx" forKey:@"token"];
     NSString *compressed = [self compressedString:orignalContent];
     NSString *encrypt = [self encryptParamContent:compressed];
     NSDictionary *dict = @{@"s":compressed, @"sign":encrypt};
