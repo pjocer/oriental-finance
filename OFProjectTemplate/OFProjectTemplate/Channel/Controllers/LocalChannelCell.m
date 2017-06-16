@@ -9,6 +9,7 @@
 #import "LocalChannelCell.h"
 #import "OFUIkitMacro.h"
 #import <Masonry.h>
+#import <ReactiveCocoa.h>
 
 @interface LocalChannelCell ()
 @property (nonatomic, strong) UIImageView *iconView;
@@ -16,7 +17,7 @@
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *detailLabel;
 @property (nonatomic, strong) UILabel *timeLabel;
-@property (nonatomic, strong) UIImageView *playIconView;
+@property (nonatomic, strong) QMUIButton *playIconView;
 @end
 
 @implementation LocalChannelCell
@@ -39,6 +40,9 @@
 }
 
 - (instancetype)subscribe {
+    [[self.playIconView rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        if (self.playAction) self.playAction();
+    }];
     return self;
 }
 
@@ -118,11 +122,9 @@
     return _iconView;
 }
 
-- (UIImageView *)playIconView {
+- (QMUIButton *)playIconView {
     if (!_playIconView) {
-        _playIconView = [UIImageView new];
-        _playIconView.contentMode = UIViewContentModeScaleAspectFit;
-        _playIconView.image = ImageNamed(@"channel_play");
+        _playIconView = [[QMUIButton alloc] initWithImage:ImageNamed(@"channel_play") title:nil];
     }
     return _playIconView;
 }

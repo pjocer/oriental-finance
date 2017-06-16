@@ -12,4 +12,6 @@ static NSString *LocalChannelCellIdentifier = @"LocalChannelCellIdentifier";
 
 @interface LocalChannelCell : UITableViewCell
 
+@property (nonatomic, copy) dispatch_block_t playAction;
+
 @end

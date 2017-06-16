@@ -45,6 +45,7 @@
         if (_block) _block(TableViewSelectTypeHot, nil);
     }];
     [[self.refreshButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        [self.gridView reloadData];
         if (_block) _block(TableViewSelectTypeRefresh, nil);
     }];
     return self;

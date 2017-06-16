@@ -58,6 +58,18 @@
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.type == TableViewCellTypeHot) {
+        cell.layer.opacity = 0;
+        cell.layer.transform = CATransform3DMakeRotation(M_PI, 0, 1, 0);
+        [UIView animateWithDuration:0.5 animations:^{
+            cell.layer.opacity = 1;
+            cell.layer.transform = CATransform3DIdentity;
+        } completion:^(BOOL finished) {
+        }];
+    }
+}
+
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     if (self.type == TableViewCellTypeHot) {
         UICollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"123" forIndexPath:indexPath];

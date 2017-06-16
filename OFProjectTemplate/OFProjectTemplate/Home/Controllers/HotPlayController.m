@@ -90,6 +90,9 @@
         _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
 //            [_tableViewModel r]
             [self startLoading:@"AAA"];
+            [[RACScheduler immediateScheduler] afterDelay:5 schedule:^{
+                [self stopLoading];
+            }];
         }];
         [_tableView registerClass:[HomeVerticalTableViewCell class] forCellReuseIdentifier:HomeVerticalTableViewCellIdentifier];
         [_tableView registerClass:[HomeChannelLiveCell class] forCellReuseIdentifier:HomeChannelLiveCellIdentifier];

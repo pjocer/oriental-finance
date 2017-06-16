@@ -22,6 +22,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     LocalChannelCell *cell = [tableView dequeueReusableCellWithIdentifier:LocalChannelCellIdentifier forIndexPath:indexPath];
+    cell.playAction = ^{
+        [self playAction];
+    };
     return cell;
 }
 
@@ -33,6 +36,8 @@
 
 }
 
-
+- (void)playAction {
+    
+}
 
 @end

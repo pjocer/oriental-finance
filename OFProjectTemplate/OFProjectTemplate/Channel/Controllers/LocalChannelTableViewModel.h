@@ -10,5 +10,5 @@
 #import "LocalChannelCell.h"
 
 @interface LocalChannelTableViewModel : NSObject <UITableViewDelegate, UITableViewDataSource>
-
+- (void)playAction;
 @end

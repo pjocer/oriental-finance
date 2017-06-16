@@ -34,10 +34,12 @@
 
 - (void)subscribe {
     [[self.tableViewModel rac_signalForSelector:@selector(tableView:didSelectRowAtIndexPath:) fromProtocol:@protocol(UITableViewDelegate)] subscribeNext:^(id x) {
-//        [OShowHud showErrorHudWith:@"123" animated:YES];
         ChanneldetailsVC *vc = [[ChanneldetailsVC alloc] initWithTitle:@"东方卫视" navBarBtns:NavBarBtnBack];
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
+    }];
+    [[self.tableViewModel rac_signalForSelector:@selector(playAction)] subscribeNext:^(id x) {
+        [OShowHud showErrorHudWith:@"Play Action" animated:YES];
     }];
 }
 
