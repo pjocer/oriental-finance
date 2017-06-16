@@ -8,6 +8,7 @@
 
 #import "MyOrderContainerViewModel.h"
 #import <UIColor+QMUI.h>
+#import "OrderViewController.h"
 
 @interface MyOrderContainerViewModel ()
 @property (nonatomic, copy) NSArray *titles;
@@ -30,7 +31,7 @@
 }
 
 - (UIViewController *)pagerController:(TYPagerController *)pagerController controllerForIndex:(NSInteger)index {
-    UIViewController *vc = [UIViewController new];
+    OrderViewController *vc = [[OrderViewController alloc] initWithControllerType:index];
     vc.view.backgroundColor = [UIColor qmui_randomColor];
     return vc;
 }

@@ -1,18 +1,14 @@
 //
-//  MyOrderContainer.h
+//  OrderViewController.h
 //  OFProjectTemplate
 //
-//  Created by 吉冠虎 on 2017/6/14.
+//  Created by 吉冠虎 on 2017/6/16.
 //  Copyright © 2017年 com.oriental-finance.ios. All rights reserved.
 //
 
 #import "OFBaseViewController.h"
-#import "OrderViewController.h"
+#import "OrderTableViewModel.h"
 
-@interface MyOrderContainer : OFBaseViewController
-
-@property (nonatomic, assign) OrderListType type;
-
+@interface OrderViewController : OFBaseViewController
 - (instancetype)initWithControllerType:(OrderListType)type;
-
 @end
