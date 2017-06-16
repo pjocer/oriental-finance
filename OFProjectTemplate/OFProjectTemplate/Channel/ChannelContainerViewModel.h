@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "TYTabButtonPagerController.h"
 
-@interface ChannelTabViewModel : NSObject <TYPagerControllerDataSource>
+@interface ChannelContainerViewModel : NSObject <TYPagerControllerDataSource>
 
 @end

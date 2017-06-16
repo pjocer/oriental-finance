@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-static NSString *LocalChannelCellIdentifier = @"LocalChannelCellIdentifier";
+static NSString *ChannelTableViewCellIdentifier = @"ChannelTableViewCellIdentifier";
 
-@interface LocalChannelCell : UITableViewCell
+@interface ChannelTableViewCell : UITableViewCell
 
 @property (nonatomic, copy) dispatch_block_t playAction;
 

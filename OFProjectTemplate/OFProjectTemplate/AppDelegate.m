@@ -12,7 +12,7 @@
 #import "RemoteViewController.h"
 #import "MyViewController.h"
 #import "ApplicationViewController.h"
-#import "ChannelViewController.h"
+#import "ChannelContainerController.h"
 #import "SocialAnalysisManager.h"
 #import "SocialShareManager.h"
 #import "OVendorMacro.h"
@@ -63,7 +63,7 @@
         _rootController.tabBar.backgroundColor = UIColorWhite;
         _rootController.tabBar.barTintColor = UIColorWhite;
         HomeContainerController *home = [[HomeContainerController alloc] initWithTitle:@"东方遥控宝" navBarBtns:NavBarBtnNone];
-        ChannelViewController *channel = [[ChannelViewController alloc] initWithTitle:@"频道" navBarBtns:NavBarBtnNone];
+        ChannelContainerController *channel = [[ChannelContainerController alloc] initWithTitle:@"频道" navBarBtns:NavBarBtnNone];
         RemoteViewController *vc3 = [[RemoteViewController alloc] initWithTitle:@"遥控器" navBarBtns:NavBarBtnNone];
         ApplicationViewController *vc4 = [[ApplicationViewController alloc] initWithTitle:@"应用" navBarBtns:NavBarBtnNone];
         MyViewController *vc5 = [[MyViewController alloc] initWithTitle:@"我的" navBarBtns:NavBarBtnNone];

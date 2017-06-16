@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "LocalChannelCell.h"
+#import "ChannelTableViewCell.h"
+#import "ChannelMacros.h"
 
-@interface LocalChannelTableViewModel : NSObject <UITableViewDelegate, UITableViewDataSource>
+@interface ChannelTableViewModel : NSObject <UITableViewDelegate, UITableViewDataSource>
+@property (nonatomic, assign) ChannelType type;
 - (void)playAction;
 @end

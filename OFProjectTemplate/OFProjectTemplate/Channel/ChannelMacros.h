@@ -9,5 +9,11 @@
 #ifndef ChannelMacros_h
 #define ChannelMacros_h
 
+typedef NS_ENUM(NSUInteger, ChannelType) {
+    ChannelTypeLocal,
+    ChannelTypeTV,
+    ChannelTypeCCTV,
+    ChannelTypeHD,
+};
 
 #endif /* ChannelMacros_h */

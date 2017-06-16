@@ -1,92 +1,79 @@
 //
-//  ChannelViewController.m
-//  OFClient
+//  LocalChannelController.m
+//  OFProjectTemplate
 //
-//  Created by wangdongwen on 2017/5/25.
-//  Copyright © 2017年 com.oriental-finance. All rights reserved.
+//  Created by 吉冠虎 on 2017/5/31.
+//  Copyright © 2017年 com.oriental-finance.ios. All rights reserved.
 //
 
 #import "ChannelViewController.h"
+#import "ChannelTableViewModel.h"
 #import <Masonry.h>
-#import <ReactiveCocoa.h>
 #import "OFUIkitMacro.h"
-#import "DetailsViewController.h"
-#import "ChannelTabViewModel.h"
-#import <QMUIKit.h>
-#import "OSearchController.h"
+#import <ReactiveCocoa.h>
 #import "OShowHud.h"
-#import "ODQTool.h"
+#import "OBannerView.h"
+#import "ChanneldetailsVC.h"
 
 @interface ChannelViewController ()
-@property (nonatomic, strong) ChannelTabViewModel *viewModel;
-@property (nonatomic, strong) TYTabButtonPagerController *pagerController;
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, assign) ChannelType type;
+@property (nonatomic, strong) ChannelTableViewModel *tableViewModel;
 @end
 
 @implementation ChannelViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self customizeNavBarBtns];
-    [self addTabContainerController];
+- (void)loadView {
+    [super loadView];
+    [self.view addSubview:self.tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.bottom.right.equalTo(self.view);
+    }];
+    [self subscribe];
 }
 
-- (void)customizeNavBarBtns {
-    UIBarButtonItem *code = [QMUINavigationButton barButtonItemWithImage:[ImageNamed(@"channel_DQ") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] position:QMUINavigationButtonPositionLeft target:self action:@selector(code)];
-    UIBarButtonItem *search = [QMUINavigationButton barButtonItemWithImage:[ImageNamed(@"channel_search") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] position:QMUINavigationButtonPositionRight target:self action:@selector(search)];
-    self.navigationItem.leftBarButtonItem = code;
-    self.navigationItem.rightBarButtonItem = search;
-}
-
-- (void)code {
-    if (IS_SIMULATOR) {
-        [OShowHud showErrorHudWith:@"模拟器不支持" animated:YES];
-    } else {
-        ODQTool *dq = [[ODQTool alloc]initWithTitle:@"二维码扫描" navBarBtns:NavBarBtnBack];
-        UINavigationController *navc = [[UINavigationController alloc]initWithRootViewController:dq];
-        [self presentViewController:navc animated:YES completion:^{
-            
-        }];
+- (instancetype)initWithChannelType:(ChannelType)type {
+    if (self = [super initWithTitle:nil navBarBtns:NavBarBtnNone]) {
+        self.type = type;
     }
+    return self;
 }
 
-- (void)search {
-    OSearchController *controller = [[OSearchController alloc] initWithTitle:@"搜索" navBarBtns:NavBarBtnNone];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:controller];
-    nav.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    [self presentViewController:nav animated:YES completion:^{
-        
+- (void)subscribe {
+    [[self.tableViewModel rac_signalForSelector:@selector(tableView:didSelectRowAtIndexPath:) fromProtocol:@protocol(UITableViewDelegate)] subscribeNext:^(id x) {
+        ChanneldetailsVC *vc = [[ChanneldetailsVC alloc] initWithTitle:@"东方卫视" navBarBtns:NavBarBtnBack];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+    }];
+    [[self.tableViewModel rac_signalForSelector:@selector(playAction)] subscribeNext:^(id x) {
+        [OShowHud showErrorHudWith:@"Play Action" animated:YES];
     }];
 }
 
-- (void)addTabContainerController {
-    self.pagerController.view.frame = self.view.bounds;
-    [self addChildViewController:self.pagerController];
-    [self.view addSubview:self.pagerController.view];
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.delegate = self.tableViewModel;
+        _tableView.dataSource = self.tableViewModel;
+        [_tableView registerClass:[ChannelTableViewCell class] forCellReuseIdentifier:ChannelTableViewCellIdentifier];
+    }
+    return _tableView;
 }
 
-- (TYTabButtonPagerController *)pagerController {
-    if (!_pagerController) {
-        _pagerController = [TYTabButtonPagerController new];
-        _pagerController.dataSource = self.viewModel;
-        _pagerController.barStyle = TYPagerBarStyleProgressElasticView;
-        _pagerController.cellSpacing = 0;
-        _pagerController.progressColor = DEFAULT_TEXT_COLOR_SELECTED;
-        _pagerController.normalTextColor = DEFAULT_TEXT_COLOR;
-        _pagerController.selectedTextColor = DEFAULT_TEXT_COLOR_SELECTED;
-        _pagerController.normalTextFont =UIFontMake(15);
-        _pagerController.selectedTextFont = UIFontMake(17);
-        _pagerController.cellWidth = SCREEN_WIDTH/4.f;
+- (ChannelTableViewModel *)tableViewModel {
+    if (!_tableViewModel) {
+        _tableViewModel = [[ChannelTableViewModel alloc] init];
+        _tableViewModel.type = self.type;
     }
-    return _pagerController;
+    return _tableViewModel;
 }
 
-- (ChannelTabViewModel *)viewModel {
-    if (!_viewModel) {
-        _viewModel = [ChannelTabViewModel new];
-        
-        
-    }
-    return _viewModel;
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    [OBannerView clearDiskCache];
 }
 
 @end

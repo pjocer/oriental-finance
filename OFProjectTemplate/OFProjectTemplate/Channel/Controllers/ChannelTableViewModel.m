@@ -6,14 +6,14 @@
 //  Copyright © 2017年 com.oriental-finance.ios. All rights reserved.
 //
 
-#import "LocalChannelTableViewModel.h"
+#import "ChannelTableViewModel.h"
 #import "ChanneldetailsVC.h"
 
-@interface LocalChannelTableViewModel ()
+@interface ChannelTableViewModel ()
 
 @end
 
-@implementation LocalChannelTableViewModel
+@implementation ChannelTableViewModel
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -21,7 +21,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    LocalChannelCell *cell = [tableView dequeueReusableCellWithIdentifier:LocalChannelCellIdentifier forIndexPath:indexPath];
+    ChannelTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ChannelTableViewCellIdentifier forIndexPath:indexPath];
     cell.playAction = ^{
         [self playAction];
     };
@@ -33,7 +33,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
+    
 }
 
 - (void)playAction {

@@ -6,12 +6,12 @@
 //  Copyright © 2017年 com.oriental-finance.ios. All rights reserved.
 //
 
-#import "LocalChannelCell.h"
+#import "ChannelTableViewCell.h"
 #import "OFUIkitMacro.h"
 #import <Masonry.h>
 #import <ReactiveCocoa.h>
 
-@interface LocalChannelCell ()
+@interface ChannelTableViewCell ()
 @property (nonatomic, strong) UIImageView *iconView;
 @property (nonatomic, strong) UIImageView *channelIconView;
 @property (nonatomic, strong) UILabel *titleLabel;
@@ -20,7 +20,7 @@
 @property (nonatomic, strong) QMUIButton *playIconView;
 @end
 
-@implementation LocalChannelCell
+@implementation ChannelTableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
