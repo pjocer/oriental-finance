@@ -10,5 +10,4 @@
 #import "TYTabButtonPagerController.h"
 
 @interface MyOrderContainerViewModel : NSObject <TYPagerControllerDataSource>
-
 @end

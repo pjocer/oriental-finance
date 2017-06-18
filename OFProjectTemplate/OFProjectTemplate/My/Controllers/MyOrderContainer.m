@@ -17,12 +17,21 @@
 
 @implementation MyOrderContainer
 
+- (instancetype)initWithControllerType:(OrderListType)type {
+    if (self = [super initWithTitle:@"我的订单"]) {
+        self.type = type;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = DEFAULT_BG_COLOR;
     self.pagerController.view.frame = self.view.bounds;
     self.pagerController.dataSource = self.viewModel;
     [self addChildViewController:self.pagerController];
     [self.view addSubview:self.pagerController.view];
+    [self.pagerController moveToControllerAtIndex:self.type animated:YES];
 }
 
 - (TYTabButtonPagerController *)pagerController {

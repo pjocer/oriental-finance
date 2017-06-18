@@ -34,6 +34,10 @@
 		D372FD381EF1429600F64916 /* WebViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D372FD371EF1429600F64916 /* WebViewManager.m */; };
 		D372FD3C1EF1436500F64916 /* OriRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = D372FD3B1EF1436500F64916 /* OriRoute.m */; };
 		D381F6351EF3BEDC00B38782 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = D381F6341EF3BEDC00B38782 /* User.m */; };
+		D381F63E1EF3E2A100B38782 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D381F63D1EF3E2A100B38782 /* OrderViewController.m */; };
+		D381F6411EF3E30E00B38782 /* OrderTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D381F6401EF3E30E00B38782 /* OrderTableViewModel.m */; };
+		D381F6441EF3E75B00B38782 /* OrderListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D381F6431EF3E75B00B38782 /* OrderListCell.m */; };
+		D381F6471EF3EC9500B38782 /* OrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D381F6461EF3EC9500B38782 /* OrderView.m */; };
 		D39EDAD31EF0C87B002C0D0B /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D39EDAD21EF0C87B002C0D0B /* AccountManager.m */; };
 		D39EDAD71EF0F280002C0D0B /* UIDevice+Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = D39EDAD61EF0F280002C0D0B /* UIDevice+Hardware.m */; };
 		D39EDADA1EF10969002C0D0B /* MyOrderContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = D39EDAD91EF10969002C0D0B /* MyOrderContainer.m */; };
@@ -228,6 +232,14 @@
 		D372FD3D1EF1499200F64916 /* H5LinkMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H5LinkMacro.h; sourceTree = "<group>"; };
 		D381F6331EF3BEDC00B38782 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = OFProjectTemplate/Macro/User.h; sourceTree = SOURCE_ROOT; };
 		D381F6341EF3BEDC00B38782 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = OFProjectTemplate/Macro/User.m; sourceTree = SOURCE_ROOT; };
+		D381F63C1EF3E2A100B38782 /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
+		D381F63D1EF3E2A100B38782 /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
+		D381F63F1EF3E30E00B38782 /* OrderTableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OrderTableViewModel.h; path = OFProjectTemplate/My/Controllers/OrderTableViewModel.h; sourceTree = SOURCE_ROOT; };
+		D381F6401EF3E30E00B38782 /* OrderTableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OrderTableViewModel.m; path = OFProjectTemplate/My/Controllers/OrderTableViewModel.m; sourceTree = SOURCE_ROOT; };
+		D381F6421EF3E75B00B38782 /* OrderListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderListCell.h; sourceTree = "<group>"; };
+		D381F6431EF3E75B00B38782 /* OrderListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderListCell.m; sourceTree = "<group>"; };
+		D381F6451EF3EC9500B38782 /* OrderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderView.h; sourceTree = "<group>"; };
+		D381F6461EF3EC9500B38782 /* OrderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderView.m; sourceTree = "<group>"; };
 		D39EDAD11EF0C87B002C0D0B /* AccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountManager.h; sourceTree = "<group>"; };
 		D39EDAD21EF0C87B002C0D0B /* AccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountManager.m; sourceTree = "<group>"; };
 		D39EDAD41EF0CD95002C0D0B /* UserCenterMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCenterMacros.h; sourceTree = "<group>"; };
@@ -1318,6 +1330,8 @@
 				D6EAF25E1EF15FBF00F6E44C /* SurePayPasswordVC.m */,
 				D39EDAD81EF10969002C0D0B /* MyOrderContainer.h */,
 				D39EDAD91EF10969002C0D0B /* MyOrderContainer.m */,
+				D381F63C1EF3E2A100B38782 /* OrderViewController.h */,
+				D381F63D1EF3E2A100B38782 /* OrderViewController.m */,
 				D6EAF2661EF19A3900F6E44C /* AddBankCardSuccess.h */,
 				D6EAF2671EF19A3900F6E44C /* AddBankCardSuccess.m */,
 			);
@@ -1338,6 +1352,8 @@
 			children = (
 				D39EDADB1EF109AC002C0D0B /* MyOrderContainerViewModel.h */,
 				D39EDADC1EF109AC002C0D0B /* MyOrderContainerViewModel.m */,
+				D381F63F1EF3E30E00B38782 /* OrderTableViewModel.h */,
+				D381F6401EF3E30E00B38782 /* OrderTableViewModel.m */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1373,6 +1389,10 @@
 				D6EAF24C1EF1171E00F6E44C /* MyBankCardCell.m */,
 				D6EAF2541EF1354A00F6E44C /* SetUpPayPasswordView.h */,
 				D6EAF2551EF1354A00F6E44C /* SetUpPayPasswordView.m */,
+				D381F6421EF3E75B00B38782 /* OrderListCell.h */,
+				D381F6431EF3E75B00B38782 /* OrderListCell.m */,
+				D381F6451EF3EC9500B38782 /* OrderView.h */,
+				D381F6461EF3EC9500B38782 /* OrderView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1655,6 +1675,7 @@
 				D372FD381EF1429600F64916 /* WebViewManager.m in Sources */,
 				D3207FD01ED91C8A00240DD2 /* HotPlayController.m in Sources */,
 				D609C2FA1EE16A8B00A09C19 /* VarietyViewController.m in Sources */,
+				D381F6471EF3EC9500B38782 /* OrderView.m in Sources */,
 				D6EAF24A1EF116C000F6E44C /* MyBankCardVC.m in Sources */,
 				D64095281EEA9F6D00DD24FF /* ConnectionEquipmentVC.m in Sources */,
 				D609C2F71EE16A5100A09C19 /* ProjectViewController.m in Sources */,
@@ -1675,6 +1696,7 @@
 				D65DC8CD1ED825500030636D /* DetailsViewController.m in Sources */,
 				D39EDAD71EF0F280002C0D0B /* UIDevice+Hardware.m in Sources */,
 				D609C3261EE1A87500A09C19 /* SetUpHeadTableViewCell.m in Sources */,
+				D381F6411EF3E30E00B38782 /* OrderTableViewModel.m in Sources */,
 				D3E543681ED959EF00D8898C /* UITableView+Extension.m in Sources */,
 				D6BF7F041EF660AD005F5F69 /* CityModel.m in Sources */,
 				D3E543731EDE68B800D8898C /* UIImageView+FadeForSDWebImage.m in Sources */,
@@ -1720,8 +1742,10 @@
 				D6EAF24D1EF1171E00F6E44C /* MyBankCardCell.m in Sources */,
 				D33821131EE6476000D5B99C /* SocialRegisterModel.m in Sources */,
 				D6EAF2561EF1354A00F6E44C /* SetUpPayPasswordView.m in Sources */,
+				D381F6441EF3E75B00B38782 /* OrderListCell.m in Sources */,
 				D65DC8D51ED825500030636D /* TYTabButtonPagerController.m in Sources */,
 				D65DC8D41ED825500030636D /* TYPagerController.m in Sources */,
+				D381F63E1EF3E2A100B38782 /* OrderViewController.m in Sources */,
 				D609C3231EE1A4C700A09C19 /* SetUpTableViewCell.m in Sources */,
 				D65DC8CE1ED825500030636D /* HomeContainerController.m in Sources */,
 				D65DC8D21ED825500030636D /* MyViewController.m in Sources */,
