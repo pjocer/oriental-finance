@@ -12,4 +12,6 @@
 
 @property (strong, nonatomic)UITableView *listTableView;
 
+@property (strong, nonatomic)NSMutableArray *dataList;
+
 @end

@@ -12,6 +12,7 @@
 #import "PlayHistorycell.h"
 #import "DetailsViewController.h"
 #import "WBAlertController.h"
+#import "MacroMy.h"
 
 
 @interface PlayHistoryVC ()<UITableViewDelegate, UITableViewDataSource>{
@@ -31,7 +32,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initNavigationBar];
-    self.array = [NSMutableArray arrayWithObjects:@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"0", @"01", @"10", @"11", @"14", @"15", @"17", @"18", @"19", nil];
+    [self getData];
+
     self.selectorPatnArray = [NSMutableArray array];
     [self.view addSubview:self.listTableView];
     [self.listTableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -41,7 +43,19 @@
     
     
 }
-
+- (void)getData{
+    NSDictionary *dic = @{@"start": @"0",@"length":@"10"};
+    
+    [[OrientalHttpManager sharedInstance] requestWithTarget:showWatchHistory params:dic success:^(NSURLSessionDataTask *task, id responseObject, BOOL success) {
+        if (success) {
+            self.array = [NSMutableArray arrayWithArray:[responseObject objectForKey:@"result"]];
+            [self.listTableView reloadData];
+        }
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+    }];
+}
 
 - (void)initNavigationBar {
     

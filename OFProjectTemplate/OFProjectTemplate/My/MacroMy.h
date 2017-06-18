@@ -11,7 +11,9 @@
 #import "OriNetworking.h"
 
 #define showTvBoxList @"355"  //我的电视(显示)
-
+#define delTvBox @"356"  //我的电视(删除)
+#define showWatchHistory @"451" //查看观看历史列表
+#define addMyAddr @"361" //新增我的地址
 
 
 #endif /* MacroMy_h */

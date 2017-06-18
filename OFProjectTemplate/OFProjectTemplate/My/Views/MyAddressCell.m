@@ -26,6 +26,16 @@
     [self.contentView addSubview:self.phoneLabel];
     [self.contentView addSubview:self.defaultAddress];
     [self.contentView addSubview:self.provincesAddress];
+    [self.contentView addSubview:self.detailedAddress];
+    [self.contentView addSubview:self.defaultImage];
+    [self.contentView addSubview:self.editBtn];
+    [self.contentView addSubview:self.deleteBtn];
+    
+    UILabel *label = [[UILabel alloc]init];
+    label.text = @"默认地址";
+    label.font = UIFontMake(14);
+    [self.contentView addSubview:label];
+    
 
 
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -37,6 +47,20 @@
     [self.phoneLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.right.equalTo(self.contentView).insets(UIEdgeInsetsMake(10, 15, 0, 15));
         make.height.equalTo(@22.5);
+    }];
+    
+    [self.defaultImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.detailedAddress.mas_bottom).offset(12);
+        make.left.equalTo(self.detailedAddress);
+        make.height.width.equalTo(@20);
+    }];
+    
+    
+
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.defaultImage.mas_right).offset(10);
+        make.top.equalTo(self.defaultImage);
+        
     }];
     
     
@@ -52,25 +76,73 @@
             make.top.equalTo(self.nameLabel.mas_bottom).offset(5);
             make.right.equalTo(self.contentView.mas_right).offset(-15);
         }];
+        [_defaultImage setImage:[UIImage imageNamed:@"1"] forState:UIControlStateNormal];
+        
     }else{
         [self.provincesAddress mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.nameLabel.mas_left);
             make.top.equalTo(self.nameLabel.mas_bottom).offset(5);
             make.right.equalTo(self.contentView.mas_right).offset(-15);
         }];
+        [_defaultImage setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
     }
     
     
-    [self.contentView addSubview:self.detailedAddress];
     [self.detailedAddress mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.nameLabel);
-        make.top.equalTo(self.provincesAddress.mas_bottom);
+        make.top.equalTo(self.provincesAddress.mas_bottom).offset(5);
         make.right.equalTo(self.contentView.mas_right).offset(-15);
+    }];
+    
+    [self.deleteBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.phoneLabel);
+        make.top.equalTo(self.defaultImage);
+        make.size.equalTo(self.defaultImage);
+    }];
+    
+    [self.editBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.defaultImage);
+        make.size.equalTo(self.defaultImage);
+        make.right.equalTo(self.deleteBtn.mas_left).offset(-15);
     }];
     
 }
 
+- (void)clickAction:(UIButton *)btn{
+    [self.delegate MyAddressWithBtn:btn];
+}
 
+- (UIButton *)defaultImage{
+    if (!_defaultImage) {
+        _defaultImage = [UIButton buttonWithType:UIButtonTypeCustom];
+        _defaultImage.tag = 101;
+        _defaultImage.backgroundColor = UIColorMake(204, 204, 204);
+        _defaultImage.layer.masksToBounds = YES;
+        _defaultImage.layer.cornerRadius = 10;
+        [_defaultImage addTarget:self action:@selector(clickAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _defaultImage;
+}
+- (UIButton *)editBtn{
+    if (!_editBtn) {
+        _editBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_editBtn setImage:[UIImage imageNamed:@"1"] forState:UIControlStateNormal];
+        _editBtn.tag = 102;
+        [_editBtn addTarget:self action:@selector(clickAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _editBtn;
+}
+
+
+- (UIButton *)deleteBtn{
+    if (!_deleteBtn) {
+        _deleteBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_deleteBtn setImage:[UIImage imageNamed:@"1"] forState:UIControlStateNormal];
+        _deleteBtn.tag = 103;
+        [_deleteBtn addTarget:self action:@selector(clickAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _deleteBtn;
+}
 
 
 - (UILabel *)nameLabel{

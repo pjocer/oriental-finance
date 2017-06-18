@@ -23,7 +23,7 @@
     [super viewDidLoad];
     
     [self getData];
-    
+    self.dataList = [NSMutableArray array];
     
     
     [self.view addSubview:self.listTableView];
@@ -39,6 +39,10 @@
     NSDictionary *dic = @{@"start": @"0",@"length":@"10"};
     
     [[OrientalHttpManager sharedInstance] requestWithTarget:showTvBoxList params:dic success:^(NSURLSessionDataTask *task, id responseObject, BOOL success) {
+        if (success) {
+            self.dataList = [NSMutableArray arrayWithArray:[responseObject objectForKey:@"result"]];
+            [self.listTableView reloadData];
+        }
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
@@ -58,7 +62,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 2;
+    return self.dataList.count;
 }
 
 
@@ -75,9 +79,38 @@
     if (!cell) {
         cell = [[MyTVTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"head"];
     }
-    
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    cell.TVNameLabel.text = [[self.dataList objectAtIndex:indexPath.row]objectForKey:@"box_location"];
+    cell.linkState.text = [[self.dataList objectAtIndex:indexPath.row]objectForKey:@"box_Status"];
 
     return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return @"删除";
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary *dic = @{@"box_id": [[self.dataList objectAtIndex:indexPath.row] objectForKey:@"box_id"]};
+    [[OrientalHttpManager sharedInstance] requestWithTarget:delTvBox params:dic success:^(NSURLSessionDataTask *task, id responseObject, BOOL success) {
+        if (success) {
+//            self.dataList = [NSMutableArray arrayWithArray:[responseObject objectForKey:@"result"]];
+            
+            [self.listTableView reloadData];
+        }
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+    }];
+    [self.dataList removeObjectAtIndex:indexPath.row];
+    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {

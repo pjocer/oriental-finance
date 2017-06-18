@@ -131,6 +131,16 @@
 		D65DC8D91ED825500030636D /* RemoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8C61ED825500030636D /* RemoteView.m */; };
 		D65DC8DC1ED83A490030636D /* OShowDetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8DB1ED83A490030636D /* OShowDetailsView.m */; };
 		D65DC8E21ED94B430030636D /* CommentsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D65DC8E11ED94B430030636D /* CommentsCell.m */; };
+		D6BF7EF41EF65754005F5F69 /* address.txt in Resources */ = {isa = PBXBuildFile; fileRef = D6BF7EED1EF65754005F5F69 /* address.txt */; };
+		D6BF7EF51EF65754005F5F69 /* AddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BF7EEF1EF65754005F5F69 /* AddressPickerView.m */; };
+		D6BF7EF61EF65754005F5F69 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BF7EF11EF65754005F5F69 /* City.m */; };
+		D6BF7EF71EF65754005F5F69 /* Province.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BF7EF31EF65754005F5F69 /* Province.m */; };
+		D6BF7F011EF660AD005F5F69 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6BF7EF81EF660AD005F5F69 /* area.plist */; };
+		D6BF7F021EF660AD005F5F69 /* AreaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BF7EFA1EF660AD005F5F69 /* AreaModel.m */; };
+		D6BF7F031EF660AD005F5F69 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6BF7EFB1EF660AD005F5F69 /* city.plist */; };
+		D6BF7F041EF660AD005F5F69 /* CityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BF7EFD1EF660AD005F5F69 /* CityModel.m */; };
+		D6BF7F051EF660AD005F5F69 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6BF7EFE1EF660AD005F5F69 /* Info.plist */; };
+		D6BF7F061EF660AD005F5F69 /* ProvinceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BF7F001EF660AD005F5F69 /* ProvinceModel.m */; };
 		D6EAF2371EEFC76300F6E44C /* MyApplicationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EAF2361EEFC76300F6E44C /* MyApplicationVC.m */; };
 		D6EAF23A1EEFC7F700F6E44C /* MyApplicationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EAF2391EEFC7F700F6E44C /* MyApplicationCell.m */; };
 		D6EAF23E1EF0DEC500F6E44C /* MyAddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EAF23D1EF0DEC500F6E44C /* MyAddressVC.m */; };
@@ -492,6 +502,22 @@
 		D65DC8DB1ED83A490030636D /* OShowDetailsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OShowDetailsView.m; sourceTree = "<group>"; };
 		D65DC8E01ED94B430030636D /* CommentsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsCell.h; sourceTree = "<group>"; };
 		D65DC8E11ED94B430030636D /* CommentsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsCell.m; sourceTree = "<group>"; };
+		D6BF7EED1EF65754005F5F69 /* address.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = address.txt; sourceTree = "<group>"; };
+		D6BF7EEE1EF65754005F5F69 /* AddressPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressPickerView.h; sourceTree = "<group>"; };
+		D6BF7EEF1EF65754005F5F69 /* AddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressPickerView.m; sourceTree = "<group>"; };
+		D6BF7EF01EF65754005F5F69 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		D6BF7EF11EF65754005F5F69 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
+		D6BF7EF21EF65754005F5F69 /* Province.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Province.h; sourceTree = "<group>"; };
+		D6BF7EF31EF65754005F5F69 /* Province.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Province.m; sourceTree = "<group>"; };
+		D6BF7EF81EF660AD005F5F69 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
+		D6BF7EF91EF660AD005F5F69 /* AreaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaModel.h; sourceTree = "<group>"; };
+		D6BF7EFA1EF660AD005F5F69 /* AreaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaModel.m; sourceTree = "<group>"; };
+		D6BF7EFB1EF660AD005F5F69 /* city.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = city.plist; sourceTree = "<group>"; };
+		D6BF7EFC1EF660AD005F5F69 /* CityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityModel.h; sourceTree = "<group>"; };
+		D6BF7EFD1EF660AD005F5F69 /* CityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityModel.m; sourceTree = "<group>"; };
+		D6BF7EFE1EF660AD005F5F69 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6BF7EFF1EF660AD005F5F69 /* ProvinceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProvinceModel.h; sourceTree = "<group>"; };
+		D6BF7F001EF660AD005F5F69 /* ProvinceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProvinceModel.m; sourceTree = "<group>"; };
 		D6EAF2351EEFC76300F6E44C /* MyApplicationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyApplicationVC.h; sourceTree = "<group>"; };
 		D6EAF2361EEFC76300F6E44C /* MyApplicationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyApplicationVC.m; sourceTree = "<group>"; };
 		D6EAF2381EEFC7F700F6E44C /* MyApplicationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyApplicationCell.h; path = ../Controllers/MyApplicationCell.h; sourceTree = "<group>"; };
@@ -1354,6 +1380,7 @@
 		D65DC8B31ED825500030636D /* OFFrameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D6BF7EEC1EF65754005F5F69 /* AddressPickerView */,
 				D39EDADE1EF12F5A002C0D0B /* OriH5Components */,
 				D3EA47BC1EE949BC00ECD89C /* OFNetworking */,
 				D3EA472A1EE7EA5300ECD89C /* RSASecurity */,
@@ -1422,6 +1449,29 @@
 				D65DC8C61ED825500030636D /* RemoteView.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		D6BF7EEC1EF65754005F5F69 /* AddressPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				D6BF7EED1EF65754005F5F69 /* address.txt */,
+				D6BF7EEE1EF65754005F5F69 /* AddressPickerView.h */,
+				D6BF7EEF1EF65754005F5F69 /* AddressPickerView.m */,
+				D6BF7EF01EF65754005F5F69 /* City.h */,
+				D6BF7EF11EF65754005F5F69 /* City.m */,
+				D6BF7EF21EF65754005F5F69 /* Province.h */,
+				D6BF7EF31EF65754005F5F69 /* Province.m */,
+				D6BF7EF81EF660AD005F5F69 /* area.plist */,
+				D6BF7EF91EF660AD005F5F69 /* AreaModel.h */,
+				D6BF7EFA1EF660AD005F5F69 /* AreaModel.m */,
+				D6BF7EFB1EF660AD005F5F69 /* city.plist */,
+				D6BF7EFC1EF660AD005F5F69 /* CityModel.h */,
+				D6BF7EFD1EF660AD005F5F69 /* CityModel.m */,
+				D6BF7EFE1EF660AD005F5F69 /* Info.plist */,
+				D6BF7EFF1EF660AD005F5F69 /* ProvinceModel.h */,
+				D6BF7F001EF660AD005F5F69 /* ProvinceModel.m */,
+			);
+			path = AddressPickerView;
 			sourceTree = "<group>";
 		};
 		E2D9EF11CB7F47353EABA8EC /* Frameworks */ = {
@@ -1533,6 +1583,10 @@
 				D30CB1B01ED7F6DE000AC0BB /* LaunchScreen.storyboard in Resources */,
 				D609C3281EE1A9E300A09C19 /* Assets.xcassets in Resources */,
 				D30CB1AB1ED7F6DE000AC0BB /* Main.storyboard in Resources */,
+				D6BF7F031EF660AD005F5F69 /* city.plist in Resources */,
+				D6BF7F051EF660AD005F5F69 /* Info.plist in Resources */,
+				D6BF7EF41EF65754005F5F69 /* address.txt in Resources */,
+				D6BF7F011EF660AD005F5F69 /* area.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1622,6 +1676,7 @@
 				D39EDAD71EF0F280002C0D0B /* UIDevice+Hardware.m in Sources */,
 				D609C3261EE1A87500A09C19 /* SetUpHeadTableViewCell.m in Sources */,
 				D3E543681ED959EF00D8898C /* UITableView+Extension.m in Sources */,
+				D6BF7F041EF660AD005F5F69 /* CityModel.m in Sources */,
 				D3E543731EDE68B800D8898C /* UIImageView+FadeForSDWebImage.m in Sources */,
 				D64095311EEBC90000DD24FF /* AddFamilyView.m in Sources */,
 				D3EA479E1EE8F1E300ECD89C /* NSData+Base64.m in Sources */,
@@ -1653,9 +1708,11 @@
 				D65DC8D81ED825500030636D /* RemoteViewController.m in Sources */,
 				D33820A21EE1133900D5B99C /* OSearchContentViewModel.m in Sources */,
 				D3E5435E1ED9505900D8898C /* VerticalVideoCollectionCell.m in Sources */,
+				D6BF7F061EF660AD005F5F69 /* ProvinceModel.m in Sources */,
 				D6EAF2531EF1319A00F6E44C /* SetUpPayPasswordVC.m in Sources */,
 				D3EA479F1EE8F1E300ECD89C /* NSString+Base64.m in Sources */,
 				D609C3141EE17E9A00A09C19 /* LoginView.m in Sources */,
+				D6BF7F021EF660AD005F5F69 /* AreaModel.m in Sources */,
 				D609C2A01EE0F8EE00A09C19 /* ZYBannerFooter.m in Sources */,
 				D640951F1EE9878800DD24FF /* MessageViewController.m in Sources */,
 				D3EA47271EE7BF8400ECD89C /* SocialShareManager.m in Sources */,
@@ -1681,6 +1738,7 @@
 				D33821181EE653D400D5B99C /* SocialLoginManager.m in Sources */,
 				D3EA47C81EEA486800ECD89C /* BaseModel.m in Sources */,
 				D338211B1EE6542000D5B99C /* SocialLoginResultModel.m in Sources */,
+				D6BF7EF51EF65754005F5F69 /* AddressPickerView.m in Sources */,
 				D6EAF2441EF1055F00F6E44C /* EditAddressVC.m in Sources */,
 				D640952B1EEA9F9E00DD24FF /* ConnectionEquipmentView.m in Sources */,
 				D609C31A1EE1977A00A09C19 /* SetupPasswordVC.m in Sources */,
@@ -1704,6 +1762,7 @@
 				D6EAF23A1EEFC7F700F6E44C /* MyApplicationCell.m in Sources */,
 				D609C2881EDFA67900A09C19 /* IntroductionCell.m in Sources */,
 				D609C2FD1EE16AC000A09C19 /* TVViewController.m in Sources */,
+				D6BF7EF71EF65754005F5F69 /* Province.m in Sources */,
 				D39EDADA1EF10969002C0D0B /* MyOrderContainer.m in Sources */,
 				D3E543881EDE95A200D8898C /* ChannelTableViewCell.m in Sources */,
 				D3EA473C1EE7FE2200ECD89C /* NSData+Godzippa.m in Sources */,
@@ -1721,6 +1780,7 @@
 				D3207FD91ED9487200240DD2 /* HomeTableViewModel.m in Sources */,
 				D39EDAD31EF0C87B002C0D0B /* AccountManager.m in Sources */,
 				D609C3111EE173E500A09C19 /* InformationInputView.m in Sources */,
+				D6BF7EF61EF65754005F5F69 /* City.m in Sources */,
 				D30CB1A21ED7F6DE000AC0BB /* main.m in Sources */,
 				D33820B81EE1714600D5B99C /* ChannelLiveHeaderView.m in Sources */,
 			);

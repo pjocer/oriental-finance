@@ -19,8 +19,8 @@
 
 //#define OriHost @"http://192.168.1.142:8080"
 
-#define OriHost @"http://192.168.1.43:8080/app/gateway"  //陈振威
+//#define OriHost @"http://192.168.1.43:8080/app/gateway"  //陈振威
 
-//#define OriHost @"http://192.168.1.79:8080/app/gateway" //晓光
+#define OriHost @"http://192.168.1.79:8080/app/gateway" //晓光
 
 #endif /* OriNetworking_h */

@@ -93,7 +93,7 @@
         [[OrientalHttpManager sharedInstance] requestWithTarget:SendCode params:dic success:^(NSURLSessionDataTask *task, id responseObject, BOOL success) {
             _registerID = responseObject[@"result"][@"msgId"];
             [self stopLoading];
-            [OShowHud showErrorHudWith:success?@"发送验证码成功":@"发送验证码失败" animated:YES];
+            [OShowHud showErrorHudWith:success?@"发送验证码成功":responseObject[@"result"][@"msg"] animated:YES];
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             [self stopLoading];
             [OShowHud showErrorHudWith:@"发送验证码失败" animated:YES];

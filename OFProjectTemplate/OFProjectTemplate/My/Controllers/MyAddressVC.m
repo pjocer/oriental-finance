@@ -12,7 +12,7 @@
 #import "OFUIkitMacro.h"
 #import "EditAddressVC.h"
 
-@interface MyAddressVC ()<UITableViewDelegate, UITableViewDataSource>
+@interface MyAddressVC ()<UITableViewDelegate, UITableViewDataSource, MyAddressDelegate>
 
 @end
 
@@ -56,7 +56,7 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 99;
+    return 130;
     
 }
 
@@ -66,10 +66,11 @@
         if (!cell) {
             if (indexPath.row ==0) {
                 cell = [[MyAddressCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellid type:@"default"];
+                cell.delegate = self;
 
             }else{
                 cell = [[MyAddressCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellid type:@"asd"];
-
+                cell.delegate = self;
             }
             
         }
@@ -77,12 +78,24 @@
     
     return cell;
 }
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    EditAddressVC *vc = [[EditAddressVC alloc]initWithTitle:@"添加收货地址" navBarBtns:NavBarBtnBack];
-    [self.navigationController pushViewController:vc animated:YES];
-    
+
+-(void)MyAddressWithBtn:(UIButton *)btn {
+    if (btn.tag == 101) {
+        
+    }else if (btn.tag == 102) {
+        EditAddressVC *vc = [[EditAddressVC alloc]initWithTitle:@"添加收货地址" navBarBtns:NavBarBtnBack];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (btn.tag == 103) {
+        
+    }
 }
+
+//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    
+//    EditAddressVC *vc = [[EditAddressVC alloc]initWithTitle:@"添加收货地址" navBarBtns:NavBarBtnBack];
+//    [self.navigationController pushViewController:vc animated:YES];
+//    
+//}
 
 
 - (UITableView *)listTableView{
