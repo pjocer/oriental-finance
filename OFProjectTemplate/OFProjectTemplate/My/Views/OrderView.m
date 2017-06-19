@@ -42,22 +42,22 @@
 
 - (instancetype)makeConstriants {
     [self.iconView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.bottom.equalTo(self);
-        make.width.equalTo(self.mas_height);
+        make.top.left.bottom.equalTo(self).priorityHigh();
+        make.width.mas_equalTo(100).priorityHigh();
     }];
-    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) { //0x7fb129cd9500
+    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.iconView.mas_right).offset(10);
         make.top.right.equalTo(self);
     }];
-    [self.options mas_makeConstraints:^(MASConstraintMaker *make) { //0x7fb129cd9790
+    [self.options mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.titleLabel);
         make.top.equalTo(self.titleLabel.mas_bottom).offset(3);
     }];
-    [self.price mas_makeConstraints:^(MASConstraintMaker *make) { //0x7fb129cd24f0
+    [self.price mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self);
         make.top.equalTo(self.options.mas_bottom);
     }];
-    [self.number mas_makeConstraints:^(MASConstraintMaker *make) { //0x7fb129cd24f0
+    [self.number mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self);
         make.top.equalTo(self.price.mas_bottom).offset(3);
     }];

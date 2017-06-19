@@ -13,7 +13,8 @@
 #import "ProjectViewController.h"
 #import "VarietyViewController.h"
 #import "TVViewController.h"
-
+#import "OriNetworking.h"
+#import "OFHomeMacro.h"
 
 @interface HomeTabContainerViewModel ()
 @property (nonatomic, strong) NSArray *titles;
@@ -56,6 +57,14 @@
     UIViewController *vc = [UIViewController new];
     vc.view.backgroundColor = [UIColor qmui_randomColor];
     return vc;
+}
+
+- (void)fetchCatelog:(void (^)(id))compeletion {
+    [OriNetwork requestWithTarget:ShowCatelog params:nil success:^(NSURLSessionDataTask *task, id responseObject, BOOL success) {
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+    }];
 }
 
 @end

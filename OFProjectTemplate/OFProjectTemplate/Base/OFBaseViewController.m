@@ -46,7 +46,6 @@
 - (instancetype)initWithTitle:(NSString *)title navBarBtns:(NavBarBtns)navBarBtns {
     if (self = [super init]) {
         self.navigationItem.title = title;
-        self.view.backgroundColor = [UIColor whiteColor];
         [self buildNavBarBtns:navBarBtns];
     }
     return self;

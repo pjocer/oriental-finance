@@ -11,4 +11,6 @@
 
 @interface HomeTabContainerViewModel : NSObject <TYPagerControllerDataSource>
 
+- (void)fetchCatelog:(void(^)(id data))compeletion;
+
 @end

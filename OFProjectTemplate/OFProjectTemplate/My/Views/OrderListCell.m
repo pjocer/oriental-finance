@@ -13,6 +13,7 @@
 @interface OrderListCell ()
 @property (nonatomic, strong) UILabel *bottomLine;
 @property (nonatomic, strong) UILabel *price;
+@property (nonatomic, strong) UILabel *bottomGap;
 @property (nonatomic, strong) QMUIGhostButton *ghostButton;
 @property (nonatomic, strong) UIButton *fillButton;
 @property (nonatomic, strong) MASConstraint *showGhost;
@@ -23,6 +24,7 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         [[self commitSubviews] subscribe].selectionStyle = UITableViewCellSelectionStyleNone;
+        self.backgroundColor = [UIColor whiteColor];
     }
     return self;
 }
@@ -35,8 +37,8 @@
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView).offset(12);
             make.right.equalTo(self.contentView).offset(-12);
-            make.height.mas_equalTo(100);
             make.top.equalTo(temp?temp.mas_bottom:self.contentView).offset(10);
+            make.height.mas_equalTo(100).priorityHigh();
         }];
         temp = view;
     }
@@ -45,7 +47,7 @@
         make.left.equalTo(self.contentView).offset(12);
         make.right.equalTo(self.contentView).offset(-12);
         make.top.equalTo(temp?temp.mas_bottom:self.contentView).offset(15);
-        make.height.mas_equalTo(0.5);
+        make.height.mas_equalTo(0.5).priorityHigh();
     }];
     [self.contentView addSubview:self.price];
     [self.price mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -54,7 +56,7 @@
     }];
     [self.contentView addSubview:self.fillButton];
     [self.fillButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.price.mas_bottom).offset(15);
+        make.top.equalTo(self.price.mas_bottom).offset(15).priorityHigh();
         make.right.equalTo(self.bottomLine);
         make.width.mas_equalTo(80);
         make.height.mas_equalTo(30);
@@ -65,9 +67,15 @@
         make.right.equalTo(self.bottomLine).priorityHigh();
         make.width.mas_equalTo(80);
         make.height.mas_equalTo(30);
-        make.top.equalTo(self.price.mas_bottom).offset(15);
+        make.top.equalTo(self.price.mas_bottom).offset(15).priorityHigh();
     }];
     [self.showGhost deactivate];
+    [self.contentView addSubview:self.bottomGap];
+    [self.bottomGap mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.equalTo(self.contentView);
+        make.top.equalTo(self.ghostButton.mas_bottom).offset(10);
+        make.height.mas_equalTo(10).priorityHigh();
+    }];
     return self;
 }
 
@@ -105,6 +113,14 @@
         _bottomLine.backgroundColor = DEFAULT_BOTTOM_LINE_COLOR;
     }
     return _bottomLine;
+}
+
+- (UILabel *)bottomGap {
+    if (!_bottomGap) {
+        _bottomGap = [[UILabel alloc] init];
+        _bottomGap.backgroundColor = DEFAULT_BG_COLOR;
+    }
+    return _bottomGap;
 }
 
 - (UILabel *)price {
