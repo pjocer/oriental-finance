@@ -28,8 +28,7 @@
 
 @property (nonatomic, strong)UILabel *scoreLabel;
 
-@property (nonatomic, strong)UIButton *platTVBtn;
 
-@property (nonatomic, strong)UILabel *introductionLabel;
+
 
 @end

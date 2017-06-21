@@ -31,7 +31,7 @@
 }
 
 - (void)customizeNavBarBtns {
-    UIBarButtonItem *code = [QMUINavigationButton barButtonItemWithImage:[ImageNamed(@"channel_DQ") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] position:QMUINavigationButtonPositionLeft target:self action:@selector(code)];
+    UIBarButtonItem *code = [QMUINavigationButton barButtonItemWithImage:[ImageNamed(@"home_bindingDQ") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] position:QMUINavigationButtonPositionLeft target:self action:@selector(code)];
     UIBarButtonItem *search = [QMUINavigationButton barButtonItemWithImage:[ImageNamed(@"channel_search") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] position:QMUINavigationButtonPositionRight target:self action:@selector(search)];
     self.navigationItem.leftBarButtonItem = code;
     self.navigationItem.rightBarButtonItem = search;

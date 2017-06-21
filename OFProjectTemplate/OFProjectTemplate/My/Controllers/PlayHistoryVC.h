@@ -13,4 +13,6 @@
 
 @property (strong, nonatomic)UITableView *listTableView;
 
+@property (strong, nonatomic)NSString *type;
+
 @end

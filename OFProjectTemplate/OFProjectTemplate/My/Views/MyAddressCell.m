@@ -65,7 +65,7 @@
     
     
     
-    if ([type isEqualToString:@"default"]) {
+    if ([type isEqualToString:@"0"]) {
         [self.defaultAddress mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.nameLabel);
             make.top.equalTo(self.nameLabel.mas_bottom).offset(5);

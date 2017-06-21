@@ -17,8 +17,12 @@
 
 @property (nonatomic, weak) id <applicationViewDelegate>delegate;
 
+- (instancetype)initwith:(NSString *)title;
+
 @property (nonatomic, strong) UIButton *hotBtn1;
 @property (nonatomic, strong) UIButton *hotBtn2;
 @property (nonatomic, strong) UIButton *hotBtn3;
+
+@property (nonatomic, strong)UILabel *titlelabel1;
 
 @end

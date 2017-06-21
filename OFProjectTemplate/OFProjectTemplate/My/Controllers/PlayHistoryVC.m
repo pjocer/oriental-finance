@@ -13,6 +13,7 @@
 #import "DetailsViewController.h"
 #import "WBAlertController.h"
 #import "MacroMy.h"
+#import "UIImageView+WebCache.h"
 
 
 @interface PlayHistoryVC ()<UITableViewDelegate, UITableViewDataSource>{
@@ -45,8 +46,17 @@
 }
 - (void)getData{
     NSDictionary *dic = @{@"start": @"0",@"length":@"10"};
+    NSString *postURL;
     
-    [[OrientalHttpManager sharedInstance] requestWithTarget:showWatchHistory params:dic success:^(NSURLSessionDataTask *task, id responseObject, BOOL success) {
+    if ([self.type isEqualToString:@"History"]) {
+        postURL = showWatchHistory;
+    } else if ([self.type isEqualToString:@"Appointment"]){
+        postURL = showProgAppointmentList;
+    } else if ([self.type isEqualToString:@"Collection"]){
+        postURL = showUserfavorite;
+    }
+    
+    [[OrientalHttpManager sharedInstance] requestWithTarget:postURL params:dic success:^(NSURLSessionDataTask *task, id responseObject, BOOL success) {
         if (success) {
             self.array = [NSMutableArray arrayWithArray:[responseObject objectForKey:@"result"]];
             [self.listTableView reloadData];
@@ -239,13 +249,35 @@
 {
   
         UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"Delete" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+            
+            NSDictionary *dic = @{@"id": [[self.array objectAtIndex:indexPath.row] objectForKey:@"id"]};
+            
+            if ([self.type isEqualToString:@"History"]) {
+                [[OrientalHttpManager sharedInstance] requestWithTarget:delWatchHistory params:dic success:^(NSURLSessionDataTask *task, id responseObject, BOOL success) {
+                    if (success) {
+                        [self.listTableView reloadData];
+                    }
+                    
+                } failure:^(NSURLSessionDataTask *task, NSError *error) {
+                    
+                }];
+            } else if ([self.type isEqualToString:@"Appointment"]){
+                [[OrientalHttpManager sharedInstance] requestWithTarget:delProgAppointment params:dic success:^(NSURLSessionDataTask *task, id responseObject, BOOL success) {
+                    if (success) {
+                        [self.listTableView reloadData];
+                    }
+                    
+                } failure:^(NSURLSessionDataTask *task, NSError *error) {
+                    
+                }];
+            }
+            
             // 从数据源中删除
             
             [self.array removeObjectAtIndex:indexPath.row];
             // 从列表中删除
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
             
-            //从数据库中删除
             
         }];
         
@@ -286,7 +318,25 @@
     if (!cell) {
         cell = [[PlayHistorycell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellid];
     }
-    
+    if ([self.type isEqualToString:@"History"]) {
+        if (![[[self.array objectAtIndex:indexPath.row] objectForKey:@"intro"] isEqual:[NSNull null]]) {
+            cell.centerLabel.text = [[self.array objectAtIndex:indexPath.row] objectForKey:@"intro"];
+
+        }else{
+            cell.centerLabel.text = @"未获取资源";
+
+        }
+        cell.nameLabel.text = [[self.array objectAtIndex:indexPath.row] objectForKey:@"program_name"];
+        cell.timeLabel.text = [[self.array objectAtIndex:indexPath.row] objectForKey:@"ctime"];
+        cell.stateLabel.text =[[self.array objectAtIndex:indexPath.row] objectForKey:@"channel_name"];
+        [cell.coverImage sd_setImageWithURL:[[self.array objectAtIndex:indexPath.row] objectForKey:@"play_imgs"] placeholderImage:nil];
+    } else if ([self.type isEqualToString:@"Appointment"]){
+        cell.centerLabel.text = [[self.array objectAtIndex:indexPath.row] objectForKey:@"intro"];
+        cell.nameLabel.text = [[self.array objectAtIndex:indexPath.row] objectForKey:@"programname"];
+        cell.timeLabel.text = [[self.array objectAtIndex:indexPath.row] objectForKey:@"ctime"];
+        cell.stateLabel.text =[[self.array objectAtIndex:indexPath.row] objectForKey:@"channel_name"];
+        [cell.coverImage sd_setImageWithURL:[[self.array objectAtIndex:indexPath.row] objectForKey:@"playimgs"] placeholderImage:nil];
+    }
     
     return cell;
 }

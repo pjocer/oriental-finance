@@ -40,8 +40,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     [self initNavigationBar];
     [self.view addSubview:self.listTableView];
+//    self.dataList = [NSMutableArray array];
     [self.listTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.bottom.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 111.5, 0));
     }];
@@ -97,17 +99,28 @@
         if (indexPath.row == 0) {
             cell.titleLabel.text = @"收货人";
             cell.textsLabel.placeholder = @"输入收货人姓名";
+            if (self.dataList.count > 0) {
+                cell.textsLabel.text = [self.dataList objectForKey:@"uname"];
+            }
         } else if (indexPath.row == 1) {
             cell.titleLabel.text = @"联系电话";
             cell.textsLabel.placeholder = @"输入电话号码";
+            if (self.dataList.count > 0) {
+                cell.textsLabel.text = [self.dataList objectForKey:@"phone"];
+            }
         } else if (indexPath.row == 2) {
             cell.titleLabel.text = @"所在地区";
             cell.textsLabel.placeholder = @"请选择地区";
             cell.textsLabel.userInteractionEnabled = NO;
+            if (self.dataList.count > 0) {
+                cell.textsLabel.text = [self.dataList objectForKey:@"zonename"];
+            }
         } else if (indexPath.row == 3) {
             cell.titleLabel.text = @"详细地址";
-            cell.textsLabel.text = @"请填写详细地址";
-            
+            cell.textsLabel.placeholder = @"请填写详细地址";
+            if (self.dataList.count > 0) {
+                cell.textsLabel.text = [self.dataList objectForKey:@"addr"];
+            }
             UILabel *line = [[UILabel alloc]initWithFrame:CGRectMake(0, 48.5, SCREEN_WIDTH, 10)];
             line.backgroundColor = UIColorMake(236, 236, 236);
             [cell.contentView addSubview:line];
@@ -251,9 +264,7 @@
     NSDictionary *dic = @{@"uname":cell.textsLabel.text, @"phone":cell1.textsLabel.text, @"zonecode":self.regionCode, @"zonename":cell2.textsLabel.text,@"addr":cell3.textsLabel.text, @"isdefault":@"0"};
     [[OrientalHttpManager sharedInstance] requestWithTarget:addMyAddr params:dic success:^(NSURLSessionDataTask *task, id responseObject, BOOL success) {
         if (success) {
-            [self dismissViewControllerAnimated:YES completion:^{
-                
-            }];
+            [self back];
             
         }
         

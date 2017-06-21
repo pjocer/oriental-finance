@@ -12,10 +12,17 @@
 #import "ApplicationTableViewCell.h"
 #import "ApplicationDetailsViewController.h"
 #import "ChanneldetailsVC.h"
+#import "OFUIkitMacro.h"
 
 @interface ApplicationViewController ()<UITableViewDelegate, UITableViewDataSource, applicationViewDelegate>
-
+@property (nonatomic, strong) NSArray *dataArray;
 @end
+
+#define kScreenWidth  [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+
+#define kNavigationBarHeight  50.0
+#define kBannerHeight 192.0
 
 @implementation ApplicationViewController
 
@@ -24,23 +31,72 @@
     self.title = @"应用";
     self.view.backgroundColor = [UIColor whiteColor];
     
+    
+    NSString *imageName =@"1";
+    
+    //     创建将要显示控件
+    UIImageView *imageView = [[UIImageView alloc] init];
+    imageView.image = [UIImage imageNamed:imageName];
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
+    [self.view addSubview: imageView];
+    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+        make.height.equalTo(@(self.view.frame.size.height*0.21 ));
+        
+    }];
+    
+    
     ApplicationView *view = [[ApplicationView alloc]init];
     view.delegate = self;
     view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:view];
     
+
+    
     [view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.right.left.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
-        make.height.equalTo(@(self.view.frame.size.height*0.21 +80));
+        make.top.equalTo(self.view.mas_top).offset(self.view.frame.size.height*0.21 );
+        make.right.left.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+        make.height.equalTo(@(0.15*SCREEN_HEIGHT +16+5+5));
     }];
     
-    [self.view addSubview:self.listTableView];
-    [self.listTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.bottom.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
-        make.top.equalTo(view.mas_bottom);
+    ApplicationView *view2 = [[ApplicationView alloc]init];
+    view2.titlelabel1.text = @"全部应用";
+    view2.delegate = self;
+    view2.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:view2];
+    
+    [view2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(view.mas_bottom).offset(5);
+        make.right.left.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+        make.height.equalTo(@(0.15*SCREEN_HEIGHT +16+5+5));
     }];
+    ApplicationView *view3 = [[ApplicationView alloc]init];
+    view3.titlelabel1.text = @"我的应用";
+    view3.delegate = self;
+    view3.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:view3];
+    
+    [view3 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(view2.mas_bottom).offset(5);
+        make.right.left.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+        make.height.equalTo(@(0.15*SCREEN_HEIGHT +16+5+5));
+    }];
+    
+//    [self.view addSubview:self.listTableView];
+//    [self.listTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.right.bottom.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+//        make.top.equalTo(view.mas_bottom);
+//    }];
+    view.titlelabel1.text = @"热门应用";
     
 }
+
+
+
+
+
+
+
 
 -(void)applicationViewActionWithBtn:(UIButton *)btn {
     if (btn.tag == 100) {

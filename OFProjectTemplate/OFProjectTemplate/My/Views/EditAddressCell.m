@@ -60,6 +60,7 @@
     if (!_textsLabel) {
         _textsLabel = [[UITextField alloc]init];
         _textsLabel.font = UIFontMake(14);
+        _textsLabel.textAlignment = NSTextAlignmentRight;
         _textsLabel.textColor = UIColorMake(153, 153, 153);
     }
     return _textsLabel;

@@ -14,4 +14,6 @@
 
 @property (strong, nonatomic) NSString *regionCode;
 
+@property (strong, nonatomic) NSDictionary *dataList;
+
 @end

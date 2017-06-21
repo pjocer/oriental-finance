@@ -8,6 +8,7 @@
 
 #import "ApplicationView.h"
 #import <Masonry.h>
+#import "OFUIkitMacro.h"
 
 
 @implementation ApplicationView{
@@ -23,12 +24,12 @@
     __weak ApplicationView *weakSelf = self;
     UILabel *titlelabel1 = [[UILabel alloc]init];
     titlelabel1.text = @"热门应用";
-    titlelabel1.font = [UIFont systemFontOfSize:18];
+    titlelabel1.font = [UIFont systemFontOfSize:16];
     [self addSubview:titlelabel1];
     
     [titlelabel1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.right.equalTo(weakSelf).insets(UIEdgeInsetsMake(0, 15, 0, 0));
-        make.height.equalTo(@30);
+        make.top.left.right.equalTo(weakSelf).insets(UIEdgeInsetsMake(13, 15, 0, 0));
+        make.height.equalTo(@16);
     }];
     
     hotView = [[UIScrollView alloc] init];
@@ -39,7 +40,7 @@
     [hotView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(titlelabel1.mas_bottom).offset(5);
         make.left.right.equalTo(weakSelf).insets(UIEdgeInsetsMake(0, 0, 0, 0));
-        make.height.height.equalTo(@(weakSelf.superview.frame.size.height *0.21));
+        make.height.equalTo(@(0.15*SCREEN_HEIGHT +16+15+5+5));
     }];
     
     for (NSInteger i = 0; i < 5; i++) {
@@ -50,16 +51,16 @@
         [hotBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         [hotBtn addTarget:self action:@selector(clientAction:) forControlEvents:UIControlEventTouchUpInside];
         [hotBtn setImage:[UIImage imageNamed:[arr objectAtIndex:i]] forState:UIControlStateNormal];
-        [hotBtn setBackgroundColor:[UIColor redColor]];
         hotBtn.layer.masksToBounds = YES;
         hotBtn.layer.cornerRadius = 20;
         [hotView addSubview:hotBtn];
         
         [hotBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(hotView.mas_left).offset(80 *i+15*(1+i));
-            make.centerY.equalTo(hotView).offset(-10);
-            make.width.equalTo(@80);
-            make.height.equalTo(@80);
+            make.left.equalTo(hotView.mas_left).offset(0.13*SCREEN_HEIGHT *i+15*(1+i));
+//            make.centerY.equalTo(hotView).offset(-10);
+            make.top.equalTo(hotView.mas_top);
+            make.width.equalTo(@(0.115*SCREEN_HEIGHT));
+            make.height.equalTo(@(0.12*SCREEN_HEIGHT));
         }];
         
         UILabel *label = [[UILabel alloc]init];
@@ -69,38 +70,19 @@
         [hotView addSubview:label];
         
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(hotView.mas_left).offset(80 *i+15*(1+i));
+//            make.left.equalTo(hotView.mas_left).offset(80 *i+15*(1+i));
             make.centerX.equalTo(hotBtn);
             make.top.equalTo(hotBtn.mas_bottom).offset(5);
-            make.width.equalTo(@80);
+            make.height.equalTo(@15);
+            make.width.equalTo(hotBtn);
         }];
     }
-    
-
-    UILabel *titlelabel2 = [[UILabel alloc]init];
-    titlelabel2.text = @"全部应用";
-    titlelabel2.font = [UIFont systemFontOfSize:18];
-    [self addSubview:titlelabel2];
-    
-    [titlelabel2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.equalTo(weakSelf).insets(UIEdgeInsetsMake(0, 15, 0, 0));
-        make.top.equalTo(hotView.mas_bottom).offset(20);
-        make.height.equalTo(@30);
-    }];
-
-    
 
     
     
 }
 
 
-
--(void)initButton:(UIButton*)btn{
-    btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;//使图片和文字水平居中显示
-    [btn setTitleEdgeInsets:UIEdgeInsetsMake(btn.imageView.frame.size.height ,-btn.imageView.frame.size.width, 0.0,0.0)];//文字距离上边框的距离增加imageView的高度，距离左边框减少imageView的宽度，距离下边框和右边框距离不变
-    [btn setImageEdgeInsets:UIEdgeInsetsMake(0.0, 0.0,btn.titleLabel.bounds.size.height, -btn.titleLabel.bounds.size.width)];//图片距离右边框距离减少图片的宽度，其它不边
-}
 
 - (void)clientAction: (UIButton *)btn {
 //    [self.delegate applicationViewActionWithBtn:btn];

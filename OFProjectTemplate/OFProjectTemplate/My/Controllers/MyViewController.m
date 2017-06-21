@@ -41,20 +41,7 @@
 
 - (void)myViewDelegateActionWithBtn:(UIButton *)btn{
     NSLog(@"%@",btn.titleLabel.text);
-    if (btn.tag == 1001) {
-
-//        LoginViewController *login = [[LoginViewController alloc]initWithTitle:@"登录" navBarBtns:NavBarBtnBack];
-//        UINavigationController *navc = [[UINavigationController alloc]initWithRootViewController:login];
-//        [self presentViewController:navc animated:YES completion:^{
-//            
-//        }];
-        
-        SetUpViewController *setup = [[SetUpViewController alloc] initWithTitle:@"设置" navBarBtns:NavBarBtnBack];
-        setup.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:setup animated:YES];
-
-        
-    }else if (btn.tag == 101) {
+    if (btn.tag == 101) {
         FamilyViewController *vc = [[FamilyViewController alloc] initWithTitle:@"家庭成员" navBarBtns:NavBarBtnBack];
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
@@ -65,22 +52,25 @@
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
     } else if (btn.tag == 111) {
-        PlayHistoryVC *vc = [[PlayHistoryVC alloc]initWithTitle:@"我的预约" navBarBtns:NavBarBtnBack];
+        PlayHistoryVC *vc = [[PlayHistoryVC alloc]initWithTitle:@"播放历史" navBarBtns:NavBarBtnBack];
+        vc.type =  @"History";
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
         
     } else if (btn.tag == 112) {
-        PlayHistoryVC *vc = [[PlayHistoryVC alloc]initWithTitle:@"播放历史" navBarBtns:NavBarBtnBack];
+        PlayHistoryVC *vc = [[PlayHistoryVC alloc]initWithTitle:@"我的预约" navBarBtns:NavBarBtnBack];
+        vc.type =  @"Appointment";
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
         
     } else if (btn.tag == 113) {
         MyCollectionVC *vc = [[MyCollectionVC alloc]initWithTitle:@"我的收藏" navBarBtns:NavBarBtnBack];
+//        vc.type =  @"Collection";
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
         
     } else if (btn.tag == 121) {
-        MyApplicationVC *vc = [[MyApplicationVC alloc]initWithTitle:@"我的应用" navBarBtns:NavBarBtnBack];
+        MyTVViewController *vc = [[MyTVViewController alloc]initWithTitle:@"我的电视" navBarBtns:NavBarBtnBack];
         vc.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:vc animated:YES];
         
@@ -102,12 +92,11 @@
         }];
         
     } else if (btn.tag == 132) {
-        MyTVViewController *setup = [[MyTVViewController alloc]initWithTitle:@"我的电视" navBarBtns:NavBarBtnBack];
-        setup.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:setup animated:YES];
+        
     } else if (btn.tag == 133) {
 
-        
+        NSURL *url = [NSURL URLWithString:@"telprompt://10010"];
+        [[UIApplication sharedApplication] openURL:url];
     }
     
    
@@ -117,6 +106,9 @@
 
 
 - (void)initNavigationBar {
+    self.view.backgroundColor = [UIColor whiteColor];
+    UIBarButtonItem *left = [QMUINavigationButton barButtonItemWithImage:OriImageNamed(@"setup") position:QMUINavigationButtonPositionLeft target:self action:@selector(pushSetup)];
+    self.navigationItem.leftBarButtonItem = left;
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.frame = CGRectMake(0, 0, 25, 25);
@@ -130,7 +122,12 @@
     self.navigationItem.rightBarButtonItems = @[negativeSeperator2, buttonItem2];
     
 }
+- (void)pushSetup {
+    SetUpViewController *setup = [[SetUpViewController alloc] initWithTitle:@"设置" navBarBtns:NavBarBtnBack];
+    setup.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:setup animated:YES];
 
+}
 - (void)pushMessage {
     MessageViewController *setup = [[MessageViewController alloc]initWithTitle:@"消息" navBarBtns:NavBarBtnBack];
     setup.hidesBottomBarWhenPushed = YES;

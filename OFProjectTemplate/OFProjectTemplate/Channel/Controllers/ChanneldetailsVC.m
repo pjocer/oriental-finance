@@ -12,6 +12,7 @@
 #import "ZYBannerView.h"
 #import "CommentsCell.h"
 #import "IntroductionCell.h"
+#import "OShowDetailsView.h"
 
 #define kScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
@@ -41,10 +42,10 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
 
-    
+   
     [self.view addSubview:self.listTableView];
     [self.listTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.bottom.left.right.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+        make.top.bottom.left.right.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 49, 0));
     }];
     [self.listTableView setNeedsLayout];
     [self.listTableView layoutIfNeeded];
@@ -65,8 +66,8 @@
     
     [timeline mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(scrollView.mas_top).offset(9.5);
-        make.left.equalTo(headView).offset(7.5);
-        make.right.equalTo(headView).offset(-7.5);
+        make.left.equalTo(headView);
+        make.right.equalTo(headView);
         make.height.equalTo(@1);
     }];
     
@@ -129,6 +130,36 @@
     headView.frame = frame;
 //
     self.listTableView.tableHeaderView = headView;
+    
+    UIView *footView = [[UIView alloc]init];
+    footView.backgroundColor = UIColorMake(236, 236, 236);
+    [self.view addSubview:footView];
+    
+    [footView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+        make.height.equalTo(@49);
+    }];
+    
+    UIImageView *headerImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Oval"]];
+    [footView addSubview:headerImage];
+    
+    [headerImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.bottom.equalTo(footView).insets(UIEdgeInsetsMake(9, 15, 9, 0));
+        make.width.height.equalTo(@30);
+    }];
+    
+    UIButton *replyBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    replyBtn.backgroundColor = [UIColor whiteColor];
+    [replyBtn setTitle:@"一秒登录,我来说几句..." forState:UIControlStateNormal];
+    [replyBtn setTitleColor:UIColorMake(153, 153, 153) forState:UIControlStateNormal];
+    replyBtn.titleLabel.font = UIFontMake(13);
+    [self.view addSubview:replyBtn];
+    
+    [replyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.right.bottom.equalTo(footView).insets(UIEdgeInsetsMake(9, 0, 9, 15));
+        make.left.equalTo(headerImage.mas_right).offset(15);
+    }];
+    
     
 
 
@@ -209,11 +240,15 @@
     NSString *imageName = self.dataArray[index];
     
     // 创建将要显示控件
-    UIImageView *imageView = [[UIImageView alloc] init];
-    imageView.image = [UIImage imageNamed:imageName];
-    imageView.contentMode = UIViewContentModeScaleAspectFill;
-    
-    return imageView;
+//    UIImageView *imageView = [[UIImageView alloc] init];
+//    imageView.image = [UIImage imageNamed:imageName];
+//    imageView.contentMode = UIViewContentModeScaleAspectFill;
+//    return imageView;
+
+    OShowDetailsView *view = [[OShowDetailsView alloc]init];
+    view.coverImage.image = [UIImage imageNamed:imageName];
+    view.backgroundView.image = [UIImage imageNamed:imageName];
+    return view;
 }
 
 
@@ -285,11 +320,16 @@
     if (indexPath.row == 0) {
         cell1 = [[IntroductionCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellid];
         cell1.delegate = self;
-        cell1.introductionLabel.text = @"《奇葩说》是一档由爱奇艺打造的说话达人秀。节目由马东主持，并邀请了蔡康永、金星、高晓松担任导师。旨在寻找华人华语世界中，观点独特、口才出众的“最会说话的人”。《奇葩说第三季》已于2016年3月4日起每周五、周六20:00在爱奇艺播出。先导节目《奇葩来了》已于2016年1月15日上线[1]  。2017年3月24日，《奇葩说第四季》举行发布会，并宣布导师由马东、蔡康永、罗振宇、张泉灵担任[2]  ，何炅担任节目主持人。《奇葩说第四季》已于2017年3月31日在爱奇艺独家上线！系列节目《奇葩大会》也已在2017年1月20日晚在爱奇艺独家上线。";
         return cell1;
     }else{
         if (!cell) {
-            cell = [[CommentsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellid];
+            if (indexPath.row == 2) {
+                cell = [[CommentsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellid type:@"reply"];
+                
+            }else{
+                cell = [[CommentsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellid type:@"123"];
+                
+            }
             NSArray *arr = @[@"1",@"2",@"1",@"1",@"2",@"1",@"1",@"2",@"1",@"2"];
             cell.coverImage.backgroundColor = [UIColor redColor];
             cell.coverImage.image = [UIImage imageNamed:[arr objectAtIndex:indexPath.row]];
@@ -301,8 +341,9 @@
         }
         
     }
+     return cell;
     
-    return cell;
+
 }
 
 -(void)IntroductionCellDelegate:(UIButton *)btn {

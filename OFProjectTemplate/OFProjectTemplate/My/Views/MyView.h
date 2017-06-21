@@ -21,10 +21,10 @@
 @property (nonatomic, strong) UIButton *headerBtn;
 
 @property (nonatomic, strong) UILabel *nameLabel;
-@property (nonatomic, strong) UILabel *introductionLabel;
+//@property (nonatomic, strong) UILabel *introductionLabel;
 
-@property (nonatomic, strong) UIButton *btn1;
-@property (nonatomic, strong) UIButton *btn2;
+//@property (nonatomic, strong) UIButton *btn1;
+//@property (nonatomic, strong) UIButton *btn2;
 @property (nonatomic, strong) UIButton *btn3;
 @property (nonatomic, strong) UIButton *btn4;
 @property (nonatomic, strong) UIButton *btn5;

@@ -29,7 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.view.backgroundColor = [UIColor whiteColor];
     loginView = [[InformationInputView alloc]initWithType:@"" num:2];
     loginView.titleLabel.text = @"昵称";
     loginView.textField.placeholder = @"用户名 / 手机号码";
